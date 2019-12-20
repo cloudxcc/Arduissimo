@@ -1,6 +1,6 @@
 # Arduissimo
 
-The project is documented here: doc/source/datasheet/Arduissimo_v0.1_datasheet.pdf
+The project is documented here: v0.1/doc/source/datasheet/Arduissimo_v0.1_datasheet.pdf
 
 It is released under the Apache 2.0 license.
 
