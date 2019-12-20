@@ -1,0 +1,1079 @@
+
+drivers_spi_0.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010074 <main>:
+#include "device.h"
+#include "driver_custom.h"
+#include "driver_spi.h"
+
+int main(void)
+{
+   10074:	1141                	addi	sp,sp,-16
+   //////////////
+   // SPI
+   //////////////
+   // INIT master
+   spi_master_init(0, 9, 10, 11, 3, 2000);
+   10076:	7d000793          	li	a5,2000
+   1007a:	470d                	li	a4,3
+   1007c:	46ad                	li	a3,11
+   1007e:	4629                	li	a2,10
+   10080:	45a5                	li	a1,9
+   10082:	4501                	li	a0,0
+{
+   10084:	c606                	sw	ra,12(sp)
+   spi_master_init(0, 9, 10, 11, 3, 2000);
+   10086:	2271                	jal	10212 <spi_master_init>
+   spi_master_ss_init(0, 8);
+   10088:	45a1                	li	a1,8
+   1008a:	4501                	li	a0,0
+   1008c:	2459                	jal	10312 <spi_master_ss_init>
+
+   // master write 0x5a
+   spi_master_write(0, 0, 0x5a);
+   1008e:	05a00613          	li	a2,90
+   10092:	4581                	li	a1,0
+   10094:	4501                	li	a0,0
+   10096:	297d                	jal	10554 <spi_master_write>
+
+   TC_KILL = 0x0;
+   10098:	800007b7          	lui	a5,0x80000
+   1009c:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed9cc>
+   asm volatile ("addi x0, x0, 0");
+   100a0:	00000013          	nop
+}
+   100a4:	40b2                	lw	ra,12(sp)
+   100a6:	4501                	li	a0,0
+   100a8:	0141                	addi	sp,sp,16
+   100aa:	8082                	ret
+
+000100ac <_start>:
+   100ac:	00002197          	auipc	gp,0x2
+   100b0:	58c18193          	addi	gp,gp,1420 # 12638 <__global_pointer$>
+   100b4:	80818513          	addi	a0,gp,-2040 # 11e40 <_edata>
+   100b8:	89818613          	addi	a2,gp,-1896 # 11ed0 <_end>
+   100bc:	40a60633          	sub	a2,a2,a0
+   100c0:	00000593          	li	a1,0
+   100c4:	678000ef          	jal	ra,1073c <memset>
+   100c8:	00000517          	auipc	a0,0x0
+   100cc:	56850513          	addi	a0,a0,1384 # 10630 <__libc_fini_array>
+   100d0:	514000ef          	jal	ra,105e4 <atexit>
+   100d4:	5d0000ef          	jal	ra,106a4 <__libc_init_array>
+   100d8:	00012503          	lw	a0,0(sp)
+   100dc:	00410593          	addi	a1,sp,4
+   100e0:	00000613          	li	a2,0
+   100e4:	f91ff0ef          	jal	ra,10074 <main>
+   100e8:	5100006f          	j	105f8 <exit>
+
+000100ec <_fini>:
+   100ec:	00008067          	ret
+
+000100f0 <deregister_tm_clones>:
+   100f0:	00002517          	auipc	a0,0x2
+   100f4:	d4850513          	addi	a0,a0,-696 # 11e38 <_global_impure_ptr>
+   100f8:	00002797          	auipc	a5,0x2
+   100fc:	d4078793          	addi	a5,a5,-704 # 11e38 <_global_impure_ptr>
+   10100:	00a78a63          	beq	a5,a0,10114 <deregister_tm_clones+0x24>
+   10104:	ffff0317          	auipc	t1,0xffff0
+   10108:	efc30313          	addi	t1,t1,-260 # 0 <main-0x10074>
+   1010c:	00030463          	beqz	t1,10114 <deregister_tm_clones+0x24>
+   10110:	00030067          	jr	t1
+   10114:	00008067          	ret
+
+00010118 <register_tm_clones>:
+   10118:	00002517          	auipc	a0,0x2
+   1011c:	d2050513          	addi	a0,a0,-736 # 11e38 <_global_impure_ptr>
+   10120:	00002597          	auipc	a1,0x2
+   10124:	d1858593          	addi	a1,a1,-744 # 11e38 <_global_impure_ptr>
+   10128:	40a585b3          	sub	a1,a1,a0
+   1012c:	4025d593          	srai	a1,a1,0x2
+   10130:	00200793          	li	a5,2
+   10134:	02f5c5b3          	div	a1,a1,a5
+   10138:	00058a63          	beqz	a1,1014c <register_tm_clones+0x34>
+   1013c:	ffff0317          	auipc	t1,0xffff0
+   10140:	ec430313          	addi	t1,t1,-316 # 0 <main-0x10074>
+   10144:	00030463          	beqz	t1,1014c <register_tm_clones+0x34>
+   10148:	00030067          	jr	t1
+   1014c:	00008067          	ret
+
+00010150 <__do_global_dtors_aux>:
+   10150:	00002797          	auipc	a5,0x2
+   10154:	cf07c783          	lbu	a5,-784(a5) # 11e40 <_edata>
+   10158:	04079263          	bnez	a5,1019c <__do_global_dtors_aux+0x4c>
+   1015c:	ff010113          	addi	sp,sp,-16
+   10160:	00112623          	sw	ra,12(sp)
+   10164:	f8dff0ef          	jal	ra,100f0 <deregister_tm_clones>
+   10168:	ffff0797          	auipc	a5,0xffff0
+   1016c:	e9878793          	addi	a5,a5,-360 # 0 <main-0x10074>
+   10170:	00078a63          	beqz	a5,10184 <__do_global_dtors_aux+0x34>
+   10174:	00001517          	auipc	a0,0x1
+   10178:	89050513          	addi	a0,a0,-1904 # 10a04 <__EH_FRAME_BEGIN__>
+   1017c:	ffff0097          	auipc	ra,0xffff0
+   10180:	e84080e7          	jalr	-380(ra) # 0 <main-0x10074>
+   10184:	00c12083          	lw	ra,12(sp)
+   10188:	00100793          	li	a5,1
+   1018c:	00002717          	auipc	a4,0x2
+   10190:	caf70a23          	sb	a5,-844(a4) # 11e40 <_edata>
+   10194:	01010113          	addi	sp,sp,16
+   10198:	00008067          	ret
+   1019c:	00008067          	ret
+
+000101a0 <frame_dummy>:
+   101a0:	ffff0797          	auipc	a5,0xffff0
+   101a4:	e6078793          	addi	a5,a5,-416 # 0 <main-0x10074>
+   101a8:	02078663          	beqz	a5,101d4 <frame_dummy+0x34>
+   101ac:	ff010113          	addi	sp,sp,-16
+   101b0:	00002597          	auipc	a1,0x2
+   101b4:	c9458593          	addi	a1,a1,-876 # 11e44 <object.5181>
+   101b8:	00001517          	auipc	a0,0x1
+   101bc:	84c50513          	addi	a0,a0,-1972 # 10a04 <__EH_FRAME_BEGIN__>
+   101c0:	00112623          	sw	ra,12(sp)
+   101c4:	ffff0097          	auipc	ra,0xffff0
+   101c8:	e3c080e7          	jalr	-452(ra) # 0 <main-0x10074>
+   101cc:	00c12083          	lw	ra,12(sp)
+   101d0:	01010113          	addi	sp,sp,16
+   101d4:	f45ff06f          	j	10118 <register_tm_clones>
+
+000101d8 <set_pin>:
+#include "driver_custom.h"
+#include "driver_gpio.h"
+
+void set_pin (unsigned pin, unsigned level) {
+   unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+   gpio_n_out += 0x40 * (pin >> 3);
+   101d8:	00355793          	srli	a5,a0,0x3
+   101dc:	80030737          	lui	a4,0x80030
+   101e0:	07a2                	slli	a5,a5,0x8
+   101e2:	0741                	addi	a4,a4,16
+   101e4:	97ba                	add	a5,a5,a4
+   if (level)
+   101e6:	c191                	beqz	a1,101ea <set_pin+0x12>
+      gpio_n_out += 0x1;
+   101e8:	0791                	addi	a5,a5,4
+   *gpio_n_out = 0x1 << (pin & 0x7);
+   101ea:	891d                	andi	a0,a0,7
+   101ec:	4705                	li	a4,1
+   101ee:	00a71533          	sll	a0,a4,a0
+   101f2:	c388                	sw	a0,0(a5)
+}
+   101f4:	8082                	ret
+
+000101f6 <set_dir>:
+
+void set_dir (unsigned pin, unsigned dir) {
+   unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+   gpio_n_dir += 0x40 * (pin >> 3);
+   101f6:	00355793          	srli	a5,a0,0x3
+   gpio_n_dir += dir;
+   *gpio_n_dir = 0x1 << (pin & 0x7);
+   101fa:	058a                	slli	a1,a1,0x2
+   101fc:	07a2                	slli	a5,a5,0x8
+   101fe:	97ae                	add	a5,a5,a1
+   10200:	891d                	andi	a0,a0,7
+   10202:	800305b7          	lui	a1,0x80030
+   10206:	4705                	li	a4,1
+   10208:	97ae                	add	a5,a5,a1
+   1020a:	00a71533          	sll	a0,a4,a0
+   1020e:	c388                	sw	a0,0(a5)
+}
+   10210:	8082                	ret
+
+00010212 <spi_master_init>:
+#include "driver_spi.h"
+
+///////////////////////////////////////////////////
+//	spi_master_init
+///////////////////////////////////////////////////
+void spi_master_init(unsigned id, char sclk_pin, char mosi_pin, char miso_pin, char mode, unsigned delay) {
+   10212:	7179                	addi	sp,sp,-48
+   10214:	d226                	sw	s1,36(sp)
+   10216:	84b6                	mv	s1,a3
+   10218:	d422                	sw	s0,40(sp)
+   // save the configuration
+   spi_master_mode[id] = mode;
+   1021a:	84c18693          	addi	a3,gp,-1972 # 11e84 <spi_master_mode>
+   1021e:	00251413          	slli	s0,a0,0x2
+void spi_master_init(unsigned id, char sclk_pin, char mosi_pin, char miso_pin, char mode, unsigned delay) {
+   10222:	d04a                	sw	s2,32(sp)
+   10224:	ce4e                	sw	s3,28(sp)
+   10226:	d606                	sw	ra,44(sp)
+   10228:	cc52                	sw	s4,24(sp)
+   spi_master_mode[id] = mode;
+   1022a:	96a2                	add	a3,a3,s0
+   1022c:	c298                	sw	a4,0(a3)
+   // save the day
+   spi_master_delay[id] = delay;
+   1022e:	89418693          	addi	a3,gp,-1900 # 11ecc <spi_master_delay>
+   10232:	96a2                	add	a3,a3,s0
+   10234:	c29c                	sw	a5,0(a3)
+   // link master final
+   int dummy = CA_CT;  // workaround
+   10236:	800017b7          	lui	a5,0x80001
+void spi_master_init(unsigned id, char sclk_pin, char mosi_pin, char miso_pin, char mode, unsigned delay) {
+   1023a:	89ae                	mv	s3,a1
+   int dummy = CA_CT;  // workaround
+   1023c:	478c                	lw	a1,8(a5)
+void spi_master_init(unsigned id, char sclk_pin, char mosi_pin, char miso_pin, char mode, unsigned delay) {
+   1023e:	8932                	mv	s2,a2
+   spi_master_mode[id] = mode;
+   10240:	c63a                	sw	a4,12(sp)
+   spi_master_hash[id] = spi_master_final(id, dummy);
+   10242:	2695                	jal	105a6 <spi_master_final>
+   10244:	88c18793          	addi	a5,gp,-1908 # 11ec4 <spi_master_hash>
+   10248:	97a2                	add	a5,a5,s0
+   1024a:	c388                	sw	a0,0(a5)
+   ///////////////////////////////////
+   // SCLK
+   ///////////////////////////////////
+   // get GPIO_N basic register
+   unsigned* gpio_n = &GPIO_0_OUT_CLR;
+   gpio_n += 0x40 * (sclk_pin >> 3);
+   1024c:	800306b7          	lui	a3,0x80030
+   10250:	4039d793          	srai	a5,s3,0x3
+   10254:	06c1                	addi	a3,a3,16
+   10256:	07a2                	slli	a5,a5,0x8
+   10258:	97b6                	add	a5,a5,a3
+   // get bit number
+   unsigned bit_mask = 0x1 << (sclk_pin & 0x7);
+   1025a:	0079f613          	andi	a2,s3,7
+   1025e:	4685                	li	a3,1
+   10260:	00c696b3          	sll	a3,a3,a2
+   spi_master_sclk_bit[id] = bit_mask;
+   // save clr and set addresses
+   if (mode & 0x2) { // CPOL = 1
+   10264:	4732                	lw	a4,12(sp)
+   spi_master_sclk_bit[id] = bit_mask;
+   10266:	86c18613          	addi	a2,gp,-1940 # 11ea4 <spi_master_sclk_bit>
+   1026a:	9622                	add	a2,a2,s0
+   1026c:	c214                	sw	a3,0(a2)
+   if (mode & 0x2) { // CPOL = 1
+   1026e:	8b09                	andi	a4,a4,2
+   10270:	00478613          	addi	a2,a5,4 # 80001004 <__global_pointer$+0x7ffee9cc>
+   10274:	85818593          	addi	a1,gp,-1960 # 11e90 <spi_master_sclk_lead_add>
+   10278:	83018513          	addi	a0,gp,-2000 # 11e68 <spi_master_sclk_trail_add>
+   1027c:	c749                	beqz	a4,10306 <spi_master_init+0xf4>
+     spi_master_sclk_lead_add[id] = gpio_n;
+   1027e:	95a2                	add	a1,a1,s0
+     gpio_n += 0x1;
+     spi_master_sclk_trail_add[id] = gpio_n;
+   10280:	9522                	add	a0,a0,s0
+     spi_master_sclk_lead_add[id] = gpio_n;
+   10282:	c19c                	sw	a5,0(a1)
+     spi_master_sclk_trail_add[id] = gpio_n;
+   10284:	c110                	sw	a2,0(a0)
+     // set bit
+     *gpio_n = bit_mask;
+   10286:	c3d4                	sw	a3,4(a5)
+      *gpio_n = bit_mask;
+      gpio_n += 0x1;
+      spi_master_sclk_lead_add[id] = gpio_n;
+   }
+   // set output
+   set_dir(sclk_pin, 1);
+   10288:	854e                	mv	a0,s3
+   1028a:	4585                	li	a1,1
+   1028c:	37ad                	jal	101f6 <set_dir>
+   ///////////////////////////////////
+   // MOSI
+   ///////////////////////////////////
+   // get GPIO_N basic register
+   gpio_n = &GPIO_0_OUT_CLR;
+   gpio_n += 0x40 * (mosi_pin >> 3);
+   1028e:	40395793          	srai	a5,s2,0x3
+   10292:	80030a37          	lui	s4,0x80030
+   10296:	010a0713          	addi	a4,s4,16 # 80030010 <__global_pointer$+0x8001d9d8>
+   1029a:	07a2                	slli	a5,a5,0x8
+   1029c:	97ba                	add	a5,a5,a4
+   // get bit number
+   bit_mask = 0x1 << (mosi_pin & 0x7);
+   1029e:	4985                	li	s3,1
+   102a0:	00797713          	andi	a4,s2,7
+   spi_master_mosi_bit[id] = bit_mask;
+   102a4:	86818693          	addi	a3,gp,-1944 # 11ea0 <spi_master_mosi_bit>
+   bit_mask = 0x1 << (mosi_pin & 0x7);
+   102a8:	00e99733          	sll	a4,s3,a4
+   spi_master_mosi_bit[id] = bit_mask;
+   102ac:	96a2                	add	a3,a3,s0
+   102ae:	c298                	sw	a4,0(a3)
+   // save clr and set addresses
+   spi_master_mosi_clr_add[id] = gpio_n;
+   102b0:	84418693          	addi	a3,gp,-1980 # 11e7c <spi_master_mosi_clr_add>
+   102b4:	96a2                	add	a3,a3,s0
+   102b6:	c29c                	sw	a5,0(a3)
+   gpio_n += 0x1;
+   spi_master_mosi_set_add[id] = gpio_n;
+   102b8:	89018693          	addi	a3,gp,-1904 # 11ec8 <spi_master_mosi_set_add>
+   102bc:	96a2                	add	a3,a3,s0
+   gpio_n += 0x1;
+   102be:	00478613          	addi	a2,a5,4
+   // set bit
+   *gpio_n = bit_mask;
+   102c2:	c3d8                	sw	a4,4(a5)
+   // set output
+   set_dir(mosi_pin, 1);
+   102c4:	854a                	mv	a0,s2
+   102c6:	4585                	li	a1,1
+   spi_master_mosi_set_add[id] = gpio_n;
+   102c8:	c290                	sw	a2,0(a3)
+   set_dir(mosi_pin, 1);
+   102ca:	3735                	jal	101f6 <set_dir>
+   ///////////////////////////////////
+   // MISO
+   ///////////////////////////////////
+   // get GPIO_N basic register
+   gpio_n = &GPIO_0_IN;
+   gpio_n += 0x40 * (miso_pin >> 3);
+   102cc:	4034d713          	srai	a4,s1,0x3
+   102d0:	020a0a13          	addi	s4,s4,32
+   spi_master_miso_bank[id] = gpio_n;
+   102d4:	87018793          	addi	a5,gp,-1936 # 11ea8 <spi_master_miso_bank>
+   gpio_n += 0x40 * (miso_pin >> 3);
+   102d8:	0722                	slli	a4,a4,0x8
+   spi_master_miso_bank[id] = gpio_n;
+   102da:	97a2                	add	a5,a5,s0
+   gpio_n += 0x40 * (miso_pin >> 3);
+   102dc:	9752                	add	a4,a4,s4
+   spi_master_miso_bank[id] = gpio_n;
+   102de:	c398                	sw	a4,0(a5)
+   // get bit number
+   bit_mask = 0x1 << (miso_pin & 0x7);
+   spi_master_miso_bit[id] = bit_mask;
+   102e0:	82818793          	addi	a5,gp,-2008 # 11e60 <spi_master_miso_bit>
+   102e4:	943e                	add	s0,s0,a5
+   bit_mask = 0x1 << (miso_pin & 0x7);
+   102e6:	0074f793          	andi	a5,s1,7
+   102ea:	00f999b3          	sll	s3,s3,a5
+   spi_master_miso_bit[id] = bit_mask;
+   102ee:	01342023          	sw	s3,0(s0)
+   // set input
+   set_dir(miso_pin, 0);
+}
+   102f2:	5422                	lw	s0,40(sp)
+   102f4:	50b2                	lw	ra,44(sp)
+   102f6:	5902                	lw	s2,32(sp)
+   102f8:	49f2                	lw	s3,28(sp)
+   102fa:	4a62                	lw	s4,24(sp)
+   set_dir(miso_pin, 0);
+   102fc:	8526                	mv	a0,s1
+}
+   102fe:	5492                	lw	s1,36(sp)
+   set_dir(miso_pin, 0);
+   10300:	4581                	li	a1,0
+}
+   10302:	6145                	addi	sp,sp,48
+   set_dir(miso_pin, 0);
+   10304:	bdcd                	j	101f6 <set_dir>
+      spi_master_sclk_trail_add[id] = gpio_n;
+   10306:	9522                	add	a0,a0,s0
+   10308:	c11c                	sw	a5,0(a0)
+      *gpio_n = bit_mask;
+   1030a:	c394                	sw	a3,0(a5)
+      spi_master_sclk_lead_add[id] = gpio_n;
+   1030c:	95a2                	add	a1,a1,s0
+   1030e:	c190                	sw	a2,0(a1)
+   10310:	bfa5                	j	10288 <spi_master_init+0x76>
+
+00010312 <spi_master_ss_init>:
+
+///////////////////////////////////////////////////
+//	spi_master_ss_init
+///////////////////////////////////////////////////
+void spi_master_ss_init(unsigned tag, char ss_pin) {
+   10312:	1141                	addi	sp,sp,-16
+   spi_master_slave_pin[tag] = ss_pin;
+   10314:	83c18793          	addi	a5,gp,-1988 # 11e74 <spi_master_slave_pin>
+   10318:	050a                	slli	a0,a0,0x2
+void spi_master_ss_init(unsigned tag, char ss_pin) {
+   1031a:	c422                	sw	s0,8(sp)
+   1031c:	c606                	sw	ra,12(sp)
+   1031e:	842e                	mv	s0,a1
+   spi_master_slave_pin[tag] = ss_pin;
+   10320:	953e                	add	a0,a0,a5
+   10322:	c10c                	sw	a1,0(a0)
+   // set level 1
+   set_pin(ss_pin, 1);
+   10324:	8522                	mv	a0,s0
+   10326:	4585                	li	a1,1
+   10328:	3d45                	jal	101d8 <set_pin>
+   // set output
+   set_dir(ss_pin, 1);
+   1032a:	8522                	mv	a0,s0
+}
+   1032c:	4422                	lw	s0,8(sp)
+   1032e:	40b2                	lw	ra,12(sp)
+   set_dir(ss_pin, 1);
+   10330:	4585                	li	a1,1
+}
+   10332:	0141                	addi	sp,sp,16
+   set_dir(ss_pin, 1);
+   10334:	b5c9                	j	101f6 <set_dir>
+
+00010336 <spi_master_event>:
+///////////////////////////////////////////////////
+//	spi_master_event
+// state is counting like -72d, 71d, 70d, ... 0
+///////////////////////////////////////////////////
+void spi_master_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   10336:	0205c263          	bltz	a1,1035a <spi_master_event+0x24>
+      CA_COM = 0xc0000000 +                             // execute threa
+               (tag << 14) +                            // save tag
+               (((unsigned)&&spi_master_event_label >> 1) & 0x3fff); // set pc
+   1033a:	000107b7          	lui	a5,0x10
+   1033e:	35a78793          	addi	a5,a5,858 # 1035a <spi_master_event+0x24>
+   10342:	07c6                	slli	a5,a5,0x11
+   10344:	83c9                	srli	a5,a5,0x12
+               (tag << 14) +                            // save tag
+   10346:	c0000737          	lui	a4,0xc0000
+   1034a:	97ba                	add	a5,a5,a4
+   1034c:	053a                	slli	a0,a0,0xe
+   1034e:	953e                	add	a0,a0,a5
+      CA_COM = 0xc0000000 +                             // execute threa
+   10350:	800017b7          	lui	a5,0x80001
+   10354:	c388                	sw	a0,0(a5)
+      CA_ET = start_time;
+   10356:	c3cc                	sw	a1,4(a5)
+   10358:	8082                	ret
+      unsigned* gpio_n;
+      unsigned bit_mask, ss_pin, data, trigger;
+      int state;
+      spi_master_event_label:
+         // get state
+         state = spi_master_state[tag];
+   1035a:	86418713          	addi	a4,gp,-1948 # 11e9c <spi_master_state>
+   1035e:	00251793          	slli	a5,a0,0x2
+   10362:	973e                	add	a4,a4,a5
+   10364:	4318                	lw	a4,0(a4)
+         ///////////////////////////////
+         // stop condition
+         ///////////////////////////////
+         if ((state & 0x1f) == 17)
+   10366:	46c5                	li	a3,17
+   10368:	86418613          	addi	a2,gp,-1948 # 11e9c <spi_master_state>
+   1036c:	01f77593          	andi	a1,a4,31
+   10370:	04d59663          	bne	a1,a3,103bc <spi_master_event+0x86>
+         {
+            // set SS pin
+            ss_pin = state >> 7;
+   10374:	871d                	srai	a4,a4,0x7
+            gpio_n = &GPIO_0_OUT_SET;
+            gpio_n += 0x40 * (ss_pin >> 3);
+   10376:	00375693          	srli	a3,a4,0x3
+            *gpio_n = 0x1 << (ss_pin & 0x7);
+   1037a:	00869613          	slli	a2,a3,0x8
+   1037e:	800306b7          	lui	a3,0x80030
+   10382:	96b2                	add	a3,a3,a2
+   10384:	8b1d                	andi	a4,a4,7
+   10386:	4605                	li	a2,1
+   10388:	00e61733          	sll	a4,a2,a4
+   1038c:	cad8                	sw	a4,20(a3)
+            // set MOSI to 1 per default
+            gpio_n = spi_master_mosi_set_add[tag];
+            bit_mask = spi_master_mosi_bit[tag];
+   1038e:	86818713          	addi	a4,gp,-1944 # 11ea0 <spi_master_mosi_bit>
+   10392:	973e                	add	a4,a4,a5
+   10394:	4314                	lw	a3,0(a4)
+            gpio_n = spi_master_mosi_set_add[tag];
+   10396:	89018713          	addi	a4,gp,-1904 # 11ec8 <spi_master_mosi_set_add>
+   1039a:	973e                	add	a4,a4,a5
+            *gpio_n = bit_mask;
+   1039c:	4318                	lw	a4,0(a4)
+   1039e:	c314                	sw	a3,0(a4)
+            TC_START = spi_master_hash[tag];
+   103a0:	88c18713          	addi	a4,gp,-1908 # 11ec4 <spi_master_hash>
+   103a4:	97ba                	add	a5,a5,a4
+   103a6:	4398                	lw	a4,0(a5)
+   103a8:	800007b7          	lui	a5,0x80000
+                     (((unsigned)&&spi_master_event_label >> 1) & 0x3fff); // set pc
+            CA_ET = trigger;
+            // save trigger
+            spi_master_trigger[tag] = trigger;
+            // update and save state
+            spi_master_state[tag] = state + 1;
+   103ac:	c398                	sw	a4,0(a5)
+         }
+         TC_KILL = 0x0;
+   103ae:	800007b7          	lui	a5,0x80000
+   103b2:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed9cc>
+         asm volatile ("addi x0, x0, 0");
+   103b6:	00000013          	nop
+   }
+}
+   103ba:	8082                	ret
+            if (state < 0)
+   103bc:	08075363          	bgez	a4,10442 <spi_master_event+0x10c>
+               state = 0 - state;
+   103c0:	40e00733          	neg	a4,a4
+               ss_pin = state >> 7;
+   103c4:	40775693          	srai	a3,a4,0x7
+               gpio_n += 0x40 * (ss_pin >> 3);
+   103c8:	0036d593          	srli	a1,a3,0x3
+               *gpio_n = 0x1 << (ss_pin & 0x7);
+   103cc:	00859813          	slli	a6,a1,0x8
+   103d0:	800305b7          	lui	a1,0x80030
+   103d4:	95c2                	add	a1,a1,a6
+   103d6:	8a9d                	andi	a3,a3,7
+   103d8:	4805                	li	a6,1
+   103da:	00d816b3          	sll	a3,a6,a3
+   103de:	c994                	sw	a3,16(a1)
+               if ((state & 0x40) == 0) { // CPHA = 0
+   103e0:	04077693          	andi	a3,a4,64
+   103e4:	e285                	bnez	a3,10404 <spi_master_event+0xce>
+                  data = spi_master_write_data[tag];
+   103e6:	87418693          	addi	a3,gp,-1932 # 11eac <spi_master_write_data>
+   103ea:	96be                	add	a3,a3,a5
+                  if ((data & 0x1) == 0) {
+   103ec:	4294                	lw	a3,0(a3)
+   103ee:	8a85                	andi	a3,a3,1
+   103f0:	ea91                	bnez	a3,10404 <spi_master_event+0xce>
+                     bit_mask = spi_master_mosi_bit[tag];
+   103f2:	86818693          	addi	a3,gp,-1944 # 11ea0 <spi_master_mosi_bit>
+   103f6:	96be                	add	a3,a3,a5
+   103f8:	428c                	lw	a1,0(a3)
+                     gpio_n = spi_master_mosi_clr_add[tag];
+   103fa:	84418693          	addi	a3,gp,-1980 # 11e7c <spi_master_mosi_clr_add>
+               gpio_n = spi_master_sclk_trail_add[tag];
+   103fe:	96be                	add	a3,a3,a5
+               *gpio_n = bit_mask;
+   10400:	4294                	lw	a3,0(a3)
+   10402:	c28c                	sw	a1,0(a3)
+            trigger = spi_master_trigger[tag] + spi_master_delay[tag];
+   10404:	82c18593          	addi	a1,gp,-2004 # 11e64 <spi_master_trigger>
+   10408:	89418693          	addi	a3,gp,-1900 # 11ecc <spi_master_delay>
+   1040c:	95be                	add	a1,a1,a5
+   1040e:	96be                	add	a3,a3,a5
+   10410:	0005a803          	lw	a6,0(a1) # 80030000 <__global_pointer$+0x8001d9c8>
+   10414:	4294                	lw	a3,0(a3)
+                     (tag << 14) +                            // save id
+   10416:	c00008b7          	lui	a7,0xc0000
+   1041a:	053a                	slli	a0,a0,0xe
+            trigger = spi_master_trigger[tag] + spi_master_delay[tag];
+   1041c:	9836                	add	a6,a6,a3
+                     (((unsigned)&&spi_master_event_label >> 1) & 0x3fff); // set pc
+   1041e:	000106b7          	lui	a3,0x10
+   10422:	35a68693          	addi	a3,a3,858 # 1035a <spi_master_event+0x24>
+   10426:	06c6                	slli	a3,a3,0x11
+   10428:	82c9                	srli	a3,a3,0x12
+                     (tag << 14) +                            // save id
+   1042a:	96c6                	add	a3,a3,a7
+   1042c:	9536                	add	a0,a0,a3
+            CA_COM = 0xc0000000 +                             // execute thread
+   1042e:	800016b7          	lui	a3,0x80001
+   10432:	c288                	sw	a0,0(a3)
+            CA_ET = trigger;
+   10434:	0106a223          	sw	a6,4(a3) # 80001004 <__global_pointer$+0x7ffee9cc>
+            spi_master_trigger[tag] = trigger;
+   10438:	0105a023          	sw	a6,0(a1)
+            spi_master_state[tag] = state + 1;
+   1043c:	97b2                	add	a5,a5,a2
+   1043e:	0705                	addi	a4,a4,1
+   10440:	b7b5                	j	103ac <spi_master_event+0x76>
+            if ((state & 0x1) == 0x1)
+   10442:	00177593          	andi	a1,a4,1
+   10446:	04077813          	andi	a6,a4,64
+   1044a:	86c18693          	addi	a3,gp,-1940 # 11ea4 <spi_master_sclk_bit>
+   1044e:	c1d1                	beqz	a1,104d2 <spi_master_event+0x19c>
+               if (state & 0x40) { // CPHA = 1
+   10450:	04080263          	beqz	a6,10494 <spi_master_event+0x15e>
+                  data = spi_master_write_data[tag];
+   10454:	87418813          	addi	a6,gp,-1932 # 11eac <spi_master_write_data>
+               if ((data >> ((state >> 1) & 0xf)) & 0x1)
+   10458:	40175593          	srai	a1,a4,0x1
+                  data = spi_master_write_data[tag];
+   1045c:	983e                	add	a6,a6,a5
+               if ((data >> ((state >> 1) & 0xf)) & 0x1)
+   1045e:	00f5f893          	andi	a7,a1,15
+   10462:	00082583          	lw	a1,0(a6)
+   10466:	0115d5b3          	srl	a1,a1,a7
+   1046a:	8985                	andi	a1,a1,1
+   1046c:	c18d                	beqz	a1,1048e <spi_master_event+0x158>
+                  gpio_n = spi_master_mosi_set_add[tag];
+   1046e:	89018593          	addi	a1,gp,-1904 # 11ec8 <spi_master_mosi_set_add>
+                  gpio_n = spi_master_mosi_clr_add[tag];
+   10472:	95be                	add	a1,a1,a5
+   10474:	0005a803          	lw	a6,0(a1)
+                  bit_mask = spi_master_mosi_bit[tag];
+   10478:	86818593          	addi	a1,gp,-1944 # 11ea0 <spi_master_mosi_bit>
+   1047c:	95be                	add	a1,a1,a5
+   1047e:	418c                	lw	a1,0(a1)
+                  *gpio_n = bit_mask;
+   10480:	00b82023          	sw	a1,0(a6)
+               bit_mask = spi_master_sclk_bit[tag];
+   10484:	96be                	add	a3,a3,a5
+   10486:	428c                	lw	a1,0(a3)
+               gpio_n = spi_master_sclk_lead_add[tag];
+   10488:	85818693          	addi	a3,gp,-1960 # 11e90 <spi_master_sclk_lead_add>
+   1048c:	bf8d                	j	103fe <spi_master_event+0xc8>
+                  gpio_n = spi_master_mosi_clr_add[tag];
+   1048e:	84418593          	addi	a1,gp,-1980 # 11e7c <spi_master_mosi_clr_add>
+   10492:	b7c5                	j	10472 <spi_master_event+0x13c>
+                  gpio_n = spi_master_miso_bank[tag];
+   10494:	87018893          	addi	a7,gp,-1936 # 11ea8 <spi_master_miso_bank>
+   10498:	98be                	add	a7,a7,a5
+                  unsigned read = *gpio_n;  // maybe a little bit late in the game
+   1049a:	0008a303          	lw	t1,0(a7) # c0000000 <__global_pointer$+0xbffed9c8>
+                  if (read & spi_master_miso_bit[tag])
+   1049e:	82818893          	addi	a7,gp,-2008 # 11e60 <spi_master_miso_bit>
+                  data = spi_master_read_data[tag];
+   104a2:	87818813          	addi	a6,gp,-1928 # 11eb0 <spi_master_read_data>
+                  if (read & spi_master_miso_bit[tag])
+   104a6:	98be                	add	a7,a7,a5
+                  data = spi_master_read_data[tag];
+   104a8:	983e                	add	a6,a6,a5
+                  if (read & spi_master_miso_bit[tag])
+   104aa:	00032303          	lw	t1,0(t1)
+   104ae:	0008a883          	lw	a7,0(a7)
+                  data = spi_master_read_data[tag];
+   104b2:	00082803          	lw	a6,0(a6)
+   104b6:	87818593          	addi	a1,gp,-1928 # 11eb0 <spi_master_read_data>
+                  if (read & spi_master_miso_bit[tag])
+   104ba:	011378b3          	and	a7,t1,a7
+                  data >>= 1;
+   104be:	00185813          	srli	a6,a6,0x1
+                  if (read & spi_master_miso_bit[tag])
+   104c2:	00088463          	beqz	a7,104ca <spi_master_event+0x194>
+                     data += 0x1 << 7;
+   104c6:	08080813          	addi	a6,a6,128
+                  spi_master_read_data[tag] = data;;
+   104ca:	95be                	add	a1,a1,a5
+   104cc:	0105a023          	sw	a6,0(a1)
+   104d0:	bf55                	j	10484 <spi_master_event+0x14e>
+               if ((state & 0x40) == 0) { // CPHA = 0
+   104d2:	04081263          	bnez	a6,10516 <spi_master_event+0x1e0>
+                  data = spi_master_write_data[tag];
+   104d6:	87418813          	addi	a6,gp,-1932 # 11eac <spi_master_write_data>
+                  if ((data >> ((state >> 1) & 0xf)) & 0x1)
+   104da:	40175593          	srai	a1,a4,0x1
+                  data = spi_master_write_data[tag];
+   104de:	983e                	add	a6,a6,a5
+                  if ((data >> ((state >> 1) & 0xf)) & 0x1)
+   104e0:	00f5f893          	andi	a7,a1,15
+   104e4:	00082583          	lw	a1,0(a6)
+   104e8:	0115d5b3          	srl	a1,a1,a7
+   104ec:	8985                	andi	a1,a1,1
+   104ee:	c18d                	beqz	a1,10510 <spi_master_event+0x1da>
+                     gpio_n = spi_master_mosi_set_add[tag];
+   104f0:	89018593          	addi	a1,gp,-1904 # 11ec8 <spi_master_mosi_set_add>
+                     gpio_n = spi_master_mosi_clr_add[tag];
+   104f4:	95be                	add	a1,a1,a5
+   104f6:	0005a803          	lw	a6,0(a1)
+                  bit_mask = spi_master_mosi_bit[tag];
+   104fa:	86818593          	addi	a1,gp,-1944 # 11ea0 <spi_master_mosi_bit>
+   104fe:	95be                	add	a1,a1,a5
+   10500:	418c                	lw	a1,0(a1)
+                  *gpio_n = bit_mask;
+   10502:	00b82023          	sw	a1,0(a6)
+               bit_mask = spi_master_sclk_bit[tag];
+   10506:	96be                	add	a3,a3,a5
+   10508:	428c                	lw	a1,0(a3)
+               gpio_n = spi_master_sclk_trail_add[tag];
+   1050a:	83018693          	addi	a3,gp,-2000 # 11e68 <spi_master_sclk_trail_add>
+   1050e:	bdc5                	j	103fe <spi_master_event+0xc8>
+                     gpio_n = spi_master_mosi_clr_add[tag];
+   10510:	84418593          	addi	a1,gp,-1980 # 11e7c <spi_master_mosi_clr_add>
+   10514:	b7c5                	j	104f4 <spi_master_event+0x1be>
+                  gpio_n = spi_master_miso_bank[tag];
+   10516:	87018893          	addi	a7,gp,-1936 # 11ea8 <spi_master_miso_bank>
+   1051a:	98be                	add	a7,a7,a5
+                  unsigned read = *gpio_n;  // maybe a little bit late in the game
+   1051c:	0008a303          	lw	t1,0(a7)
+                  if (read & spi_master_miso_bit[tag])
+   10520:	82818893          	addi	a7,gp,-2008 # 11e60 <spi_master_miso_bit>
+                  data = spi_master_read_data[tag];
+   10524:	87818813          	addi	a6,gp,-1928 # 11eb0 <spi_master_read_data>
+                  if (read & spi_master_miso_bit[tag])
+   10528:	98be                	add	a7,a7,a5
+                  data = spi_master_read_data[tag];
+   1052a:	983e                	add	a6,a6,a5
+                  if (read & spi_master_miso_bit[tag])
+   1052c:	00032303          	lw	t1,0(t1)
+   10530:	0008a883          	lw	a7,0(a7)
+                  data = spi_master_read_data[tag];
+   10534:	00082803          	lw	a6,0(a6)
+   10538:	87818593          	addi	a1,gp,-1928 # 11eb0 <spi_master_read_data>
+                  if (read & spi_master_miso_bit[tag])
+   1053c:	011378b3          	and	a7,t1,a7
+                  data >>= 1;
+   10540:	00185813          	srli	a6,a6,0x1
+                  if (read & spi_master_miso_bit[tag])
+   10544:	00088463          	beqz	a7,1054c <spi_master_event+0x216>
+                  data += 0x1 << 7;
+   10548:	08080813          	addi	a6,a6,128
+                  spi_master_read_data[tag] = data;;
+   1054c:	95be                	add	a1,a1,a5
+   1054e:	0105a023          	sw	a6,0(a1)
+   10552:	bf55                	j	10506 <spi_master_event+0x1d0>
+
+00010554 <spi_master_write>:
+   spi_master_write_data[tag] = data;        // data
+   10554:	00251713          	slli	a4,a0,0x2
+   10558:	87418793          	addi	a5,gp,-1932 # 11eac <spi_master_write_data>
+   1055c:	97ba                	add	a5,a5,a4
+   1055e:	c390                	sw	a2,0(a5)
+   int state = ((spi_master_mode[tag] & 0x1) << 6) +    // save CPHA
+   10560:	84c18793          	addi	a5,gp,-1972 # 11e84 <spi_master_mode>
+   10564:	97ba                	add	a5,a5,a4
+               (spi_master_slave_pin[ss_id] << 7);   // save SS-pin
+   10566:	83c18613          	addi	a2,gp,-1988 # 11e74 <spi_master_slave_pin>
+   1056a:	058a                	slli	a1,a1,0x2
+   int state = ((spi_master_mode[tag] & 0x1) << 6) +    // save CPHA
+   1056c:	439c                	lw	a5,0(a5)
+               (spi_master_slave_pin[ss_id] << 7);   // save SS-pin
+   1056e:	95b2                	add	a1,a1,a2
+   10570:	4190                	lw	a2,0(a1)
+   int state = ((spi_master_mode[tag] & 0x1) << 6) +    // save CPHA
+   10572:	079a                	slli	a5,a5,0x6
+   10574:	0407f793          	andi	a5,a5,64
+               (spi_master_slave_pin[ss_id] << 7);   // save SS-pin
+   10578:	061e                	slli	a2,a2,0x7
+   spi_master_state[tag] = 0 - state;
+   1057a:	86418693          	addi	a3,gp,-1948 # 11e9c <spi_master_state>
+   int state = ((spi_master_mode[tag] & 0x1) << 6) +    // save CPHA
+   1057e:	97b2                	add	a5,a5,a2
+   spi_master_state[tag] = 0 - state;
+   10580:	96ba                	add	a3,a3,a4
+   10582:	40f007b3          	neg	a5,a5
+   10586:	c29c                	sw	a5,0(a3)
+   spi_master_read_data[tag] = 0;   // why not for clear as well
+   10588:	87818793          	addi	a5,gp,-1928 # 11eb0 <spi_master_read_data>
+   1058c:	97ba                	add	a5,a5,a4
+   1058e:	0007a023          	sw	zero,0(a5)
+   unsigned trigger = CA_CT + 600;  // 120 cycle when 4 threads running,
+   10592:	800017b7          	lui	a5,0x80001
+   10596:	478c                	lw	a1,8(a5)
+   spi_master_trigger[tag] = trigger;
+   10598:	82c18793          	addi	a5,gp,-2004 # 11e64 <spi_master_trigger>
+   unsigned trigger = CA_CT + 600;  // 120 cycle when 4 threads running,
+   1059c:	25858593          	addi	a1,a1,600
+   spi_master_trigger[tag] = trigger;
+   105a0:	973e                	add	a4,a4,a5
+   105a2:	c30c                	sw	a1,0(a4)
+   spi_master_event(tag, trigger);
+   105a4:	bb49                	j	10336 <spi_master_event>
+
+000105a6 <spi_master_final>:
+
+///////////////////////////////////////////////////
+//	spi_master_final
+///////////////////////////////////////////////////
+unsigned spi_master_final(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   105a6:	0005ce63          	bltz	a1,105c2 <spi_master_final+0x1c>
+      return 0xc0000000 +                                // execute thread, set a0
+             (tag << 14) +                               // save tag
+             (((unsigned)&&spi_master_final_label >> 1) & 0x3fff); // set pc
+   105aa:	000107b7          	lui	a5,0x10
+   105ae:	5c278793          	addi	a5,a5,1474 # 105c2 <spi_master_final+0x1c>
+   105b2:	07c6                	slli	a5,a5,0x11
+             (tag << 14) +                               // save tag
+   105b4:	c0000737          	lui	a4,0xc0000
+             (((unsigned)&&spi_master_final_label >> 1) & 0x3fff); // set pc
+   105b8:	83c9                	srli	a5,a5,0x12
+             (tag << 14) +                               // save tag
+   105ba:	97ba                	add	a5,a5,a4
+   105bc:	053a                	slli	a0,a0,0xe
+   105be:	953e                	add	a0,a0,a5
+   105c0:	8082                	ret
+   } else {
+      spi_master_final_label:
+         GPIO_2_OUT_SET = spi_master_read_data[tag];
+   105c2:	87818793          	addi	a5,gp,-1928 # 11eb0 <spi_master_read_data>
+   105c6:	050a                	slli	a0,a0,0x2
+   105c8:	953e                	add	a0,a0,a5
+   105ca:	4118                	lw	a4,0(a0)
+   105cc:	800307b7          	lui	a5,0x80030
+   105d0:	20e7aa23          	sw	a4,532(a5) # 80030214 <__global_pointer$+0x8001dbdc>
+         TC_KILL = 0x0;
+   105d4:	800007b7          	lui	a5,0x80000
+   105d8:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed9cc>
+         asm volatile ("addi x0, x0, 0");
+   105dc:	00000013          	nop
+   }
+}
+   105e0:	8082                	ret
+	...
+
+000105e4 <atexit>:
+   105e4:	00050593          	mv	a1,a0
+   105e8:	00000693          	li	a3,0
+   105ec:	00000613          	li	a2,0
+   105f0:	00000513          	li	a0,0
+   105f4:	2240006f          	j	10818 <__register_exitproc>
+
+000105f8 <exit>:
+   105f8:	ff010113          	addi	sp,sp,-16
+   105fc:	00000593          	li	a1,0
+   10600:	00812423          	sw	s0,8(sp)
+   10604:	00112623          	sw	ra,12(sp)
+   10608:	00050413          	mv	s0,a0
+   1060c:	290000ef          	jal	ra,1089c <__call_exitprocs>
+   10610:	00002797          	auipc	a5,0x2
+   10614:	82878793          	addi	a5,a5,-2008 # 11e38 <_global_impure_ptr>
+   10618:	0007a503          	lw	a0,0(a5)
+   1061c:	03c52783          	lw	a5,60(a0)
+   10620:	00078463          	beqz	a5,10628 <exit+0x30>
+   10624:	000780e7          	jalr	a5
+   10628:	00040513          	mv	a0,s0
+   1062c:	384000ef          	jal	ra,109b0 <_exit>
+
+00010630 <__libc_fini_array>:
+   10630:	fe010113          	addi	sp,sp,-32
+   10634:	00001797          	auipc	a5,0x1
+   10638:	3dc78793          	addi	a5,a5,988 # 11a10 <__fini_array_end>
+   1063c:	00812c23          	sw	s0,24(sp)
+   10640:	00001417          	auipc	s0,0x1
+   10644:	3cc40413          	addi	s0,s0,972 # 11a0c <__init_array_end>
+   10648:	40878433          	sub	s0,a5,s0
+   1064c:	00912a23          	sw	s1,20(sp)
+   10650:	01212823          	sw	s2,16(sp)
+   10654:	01312623          	sw	s3,12(sp)
+   10658:	00112e23          	sw	ra,28(sp)
+   1065c:	40245413          	srai	s0,s0,0x2
+   10660:	00000493          	li	s1,0
+   10664:	00078913          	mv	s2,a5
+   10668:	ffc00993          	li	s3,-4
+   1066c:	02941063          	bne	s0,s1,1068c <__libc_fini_array+0x5c>
+   10670:	01812403          	lw	s0,24(sp)
+   10674:	01c12083          	lw	ra,28(sp)
+   10678:	01412483          	lw	s1,20(sp)
+   1067c:	01012903          	lw	s2,16(sp)
+   10680:	00c12983          	lw	s3,12(sp)
+   10684:	02010113          	addi	sp,sp,32
+   10688:	a65ff06f          	j	100ec <_fini>
+   1068c:	033487b3          	mul	a5,s1,s3
+   10690:	00148493          	addi	s1,s1,1
+   10694:	00f907b3          	add	a5,s2,a5
+   10698:	ffc7a783          	lw	a5,-4(a5)
+   1069c:	000780e7          	jalr	a5
+   106a0:	fcdff06f          	j	1066c <__libc_fini_array+0x3c>
+
+000106a4 <__libc_init_array>:
+   106a4:	ff010113          	addi	sp,sp,-16
+   106a8:	00812423          	sw	s0,8(sp)
+   106ac:	00912223          	sw	s1,4(sp)
+   106b0:	00001417          	auipc	s0,0x1
+   106b4:	35840413          	addi	s0,s0,856 # 11a08 <__frame_dummy_init_array_entry>
+   106b8:	00001497          	auipc	s1,0x1
+   106bc:	35048493          	addi	s1,s1,848 # 11a08 <__frame_dummy_init_array_entry>
+   106c0:	408484b3          	sub	s1,s1,s0
+   106c4:	01212023          	sw	s2,0(sp)
+   106c8:	00112623          	sw	ra,12(sp)
+   106cc:	4024d493          	srai	s1,s1,0x2
+   106d0:	00000913          	li	s2,0
+   106d4:	04991063          	bne	s2,s1,10714 <__libc_init_array+0x70>
+   106d8:	00001417          	auipc	s0,0x1
+   106dc:	33040413          	addi	s0,s0,816 # 11a08 <__frame_dummy_init_array_entry>
+   106e0:	00001497          	auipc	s1,0x1
+   106e4:	32c48493          	addi	s1,s1,812 # 11a0c <__init_array_end>
+   106e8:	408484b3          	sub	s1,s1,s0
+   106ec:	a01ff0ef          	jal	ra,100ec <_fini>
+   106f0:	4024d493          	srai	s1,s1,0x2
+   106f4:	00000913          	li	s2,0
+   106f8:	02991863          	bne	s2,s1,10728 <__libc_init_array+0x84>
+   106fc:	00c12083          	lw	ra,12(sp)
+   10700:	00812403          	lw	s0,8(sp)
+   10704:	00412483          	lw	s1,4(sp)
+   10708:	00012903          	lw	s2,0(sp)
+   1070c:	01010113          	addi	sp,sp,16
+   10710:	00008067          	ret
+   10714:	00042783          	lw	a5,0(s0)
+   10718:	00190913          	addi	s2,s2,1
+   1071c:	00440413          	addi	s0,s0,4
+   10720:	000780e7          	jalr	a5
+   10724:	fb1ff06f          	j	106d4 <__libc_init_array+0x30>
+   10728:	00042783          	lw	a5,0(s0)
+   1072c:	00190913          	addi	s2,s2,1
+   10730:	00440413          	addi	s0,s0,4
+   10734:	000780e7          	jalr	a5
+   10738:	fc1ff06f          	j	106f8 <__libc_init_array+0x54>
+
+0001073c <memset>:
+   1073c:	00f00313          	li	t1,15
+   10740:	00050713          	mv	a4,a0
+   10744:	02c37e63          	bleu	a2,t1,10780 <memset+0x44>
+   10748:	00f77793          	andi	a5,a4,15
+   1074c:	0a079063          	bnez	a5,107ec <memset+0xb0>
+   10750:	08059263          	bnez	a1,107d4 <memset+0x98>
+   10754:	ff067693          	andi	a3,a2,-16
+   10758:	00f67613          	andi	a2,a2,15
+   1075c:	00e686b3          	add	a3,a3,a4
+   10760:	00b72023          	sw	a1,0(a4) # c0000000 <__global_pointer$+0xbffed9c8>
+   10764:	00b72223          	sw	a1,4(a4)
+   10768:	00b72423          	sw	a1,8(a4)
+   1076c:	00b72623          	sw	a1,12(a4)
+   10770:	01070713          	addi	a4,a4,16
+   10774:	fed766e3          	bltu	a4,a3,10760 <memset+0x24>
+   10778:	00061463          	bnez	a2,10780 <memset+0x44>
+   1077c:	00008067          	ret
+   10780:	40c306b3          	sub	a3,t1,a2
+   10784:	00269693          	slli	a3,a3,0x2
+   10788:	00000297          	auipc	t0,0x0
+   1078c:	005686b3          	add	a3,a3,t0
+   10790:	00c68067          	jr	12(a3)
+   10794:	00b70723          	sb	a1,14(a4)
+   10798:	00b706a3          	sb	a1,13(a4)
+   1079c:	00b70623          	sb	a1,12(a4)
+   107a0:	00b705a3          	sb	a1,11(a4)
+   107a4:	00b70523          	sb	a1,10(a4)
+   107a8:	00b704a3          	sb	a1,9(a4)
+   107ac:	00b70423          	sb	a1,8(a4)
+   107b0:	00b703a3          	sb	a1,7(a4)
+   107b4:	00b70323          	sb	a1,6(a4)
+   107b8:	00b702a3          	sb	a1,5(a4)
+   107bc:	00b70223          	sb	a1,4(a4)
+   107c0:	00b701a3          	sb	a1,3(a4)
+   107c4:	00b70123          	sb	a1,2(a4)
+   107c8:	00b700a3          	sb	a1,1(a4)
+   107cc:	00b70023          	sb	a1,0(a4)
+   107d0:	00008067          	ret
+   107d4:	0ff5f593          	andi	a1,a1,255
+   107d8:	00859693          	slli	a3,a1,0x8
+   107dc:	00d5e5b3          	or	a1,a1,a3
+   107e0:	01059693          	slli	a3,a1,0x10
+   107e4:	00d5e5b3          	or	a1,a1,a3
+   107e8:	f6dff06f          	j	10754 <memset+0x18>
+   107ec:	00279693          	slli	a3,a5,0x2
+   107f0:	00000297          	auipc	t0,0x0
+   107f4:	005686b3          	add	a3,a3,t0
+   107f8:	00008293          	mv	t0,ra
+   107fc:	fa0680e7          	jalr	-96(a3)
+   10800:	00028093          	mv	ra,t0
+   10804:	ff078793          	addi	a5,a5,-16
+   10808:	40f70733          	sub	a4,a4,a5
+   1080c:	00f60633          	add	a2,a2,a5
+   10810:	f6c378e3          	bleu	a2,t1,10780 <memset+0x44>
+   10814:	f3dff06f          	j	10750 <memset+0x14>
+
+00010818 <__register_exitproc>:
+   10818:	00001797          	auipc	a5,0x1
+   1081c:	62078793          	addi	a5,a5,1568 # 11e38 <_global_impure_ptr>
+   10820:	0007a703          	lw	a4,0(a5)
+   10824:	00050313          	mv	t1,a0
+   10828:	14872783          	lw	a5,328(a4)
+   1082c:	00079663          	bnez	a5,10838 <__register_exitproc+0x20>
+   10830:	14c70793          	addi	a5,a4,332
+   10834:	14f72423          	sw	a5,328(a4)
+   10838:	0047a703          	lw	a4,4(a5)
+   1083c:	01f00813          	li	a6,31
+   10840:	fff00513          	li	a0,-1
+   10844:	04e84a63          	blt	a6,a4,10898 <__register_exitproc+0x80>
+   10848:	00271893          	slli	a7,a4,0x2
+   1084c:	02030c63          	beqz	t1,10884 <__register_exitproc+0x6c>
+   10850:	01178533          	add	a0,a5,a7
+   10854:	08c52423          	sw	a2,136(a0)
+   10858:	1887a803          	lw	a6,392(a5)
+   1085c:	00100613          	li	a2,1
+   10860:	00e61633          	sll	a2,a2,a4
+   10864:	00c86833          	or	a6,a6,a2
+   10868:	1907a423          	sw	a6,392(a5)
+   1086c:	10d52423          	sw	a3,264(a0)
+   10870:	00200693          	li	a3,2
+   10874:	00d31863          	bne	t1,a3,10884 <__register_exitproc+0x6c>
+   10878:	18c7a683          	lw	a3,396(a5)
+   1087c:	00c6e633          	or	a2,a3,a2
+   10880:	18c7a623          	sw	a2,396(a5)
+   10884:	00170713          	addi	a4,a4,1
+   10888:	00e7a223          	sw	a4,4(a5)
+   1088c:	011787b3          	add	a5,a5,a7
+   10890:	00b7a423          	sw	a1,8(a5)
+   10894:	00000513          	li	a0,0
+   10898:	00008067          	ret
+
+0001089c <__call_exitprocs>:
+   1089c:	fd010113          	addi	sp,sp,-48
+   108a0:	00001797          	auipc	a5,0x1
+   108a4:	59878793          	addi	a5,a5,1432 # 11e38 <_global_impure_ptr>
+   108a8:	01312e23          	sw	s3,28(sp)
+   108ac:	0007a983          	lw	s3,0(a5)
+   108b0:	01412c23          	sw	s4,24(sp)
+   108b4:	01512a23          	sw	s5,20(sp)
+   108b8:	01612823          	sw	s6,16(sp)
+   108bc:	02112623          	sw	ra,44(sp)
+   108c0:	02812423          	sw	s0,40(sp)
+   108c4:	02912223          	sw	s1,36(sp)
+   108c8:	03212023          	sw	s2,32(sp)
+   108cc:	01712623          	sw	s7,12(sp)
+   108d0:	00050a93          	mv	s5,a0
+   108d4:	00058a13          	mv	s4,a1
+   108d8:	00100b13          	li	s6,1
+   108dc:	1489a483          	lw	s1,328(s3)
+   108e0:	00048c63          	beqz	s1,108f8 <__call_exitprocs+0x5c>
+   108e4:	0044a403          	lw	s0,4(s1)
+   108e8:	fff40913          	addi	s2,s0,-1
+   108ec:	00241413          	slli	s0,s0,0x2
+   108f0:	00848433          	add	s0,s1,s0
+   108f4:	02095863          	bgez	s2,10924 <__call_exitprocs+0x88>
+   108f8:	02c12083          	lw	ra,44(sp)
+   108fc:	02812403          	lw	s0,40(sp)
+   10900:	02412483          	lw	s1,36(sp)
+   10904:	02012903          	lw	s2,32(sp)
+   10908:	01c12983          	lw	s3,28(sp)
+   1090c:	01812a03          	lw	s4,24(sp)
+   10910:	01412a83          	lw	s5,20(sp)
+   10914:	01012b03          	lw	s6,16(sp)
+   10918:	00c12b83          	lw	s7,12(sp)
+   1091c:	03010113          	addi	sp,sp,48
+   10920:	00008067          	ret
+   10924:	000a0c63          	beqz	s4,1093c <__call_exitprocs+0xa0>
+   10928:	10442783          	lw	a5,260(s0)
+   1092c:	01478863          	beq	a5,s4,1093c <__call_exitprocs+0xa0>
+   10930:	fff90913          	addi	s2,s2,-1
+   10934:	ffc40413          	addi	s0,s0,-4
+   10938:	fbdff06f          	j	108f4 <__call_exitprocs+0x58>
+   1093c:	0044a703          	lw	a4,4(s1)
+   10940:	00442783          	lw	a5,4(s0)
+   10944:	fff70713          	addi	a4,a4,-1
+   10948:	03271c63          	bne	a4,s2,10980 <__call_exitprocs+0xe4>
+   1094c:	0124a223          	sw	s2,4(s1)
+   10950:	fe0780e3          	beqz	a5,10930 <__call_exitprocs+0x94>
+   10954:	1884a683          	lw	a3,392(s1)
+   10958:	012b1733          	sll	a4,s6,s2
+   1095c:	0044ab83          	lw	s7,4(s1)
+   10960:	00d776b3          	and	a3,a4,a3
+   10964:	02069263          	bnez	a3,10988 <__call_exitprocs+0xec>
+   10968:	000780e7          	jalr	a5
+   1096c:	0044a703          	lw	a4,4(s1)
+   10970:	1489a783          	lw	a5,328(s3)
+   10974:	f77714e3          	bne	a4,s7,108dc <__call_exitprocs+0x40>
+   10978:	faf48ce3          	beq	s1,a5,10930 <__call_exitprocs+0x94>
+   1097c:	f61ff06f          	j	108dc <__call_exitprocs+0x40>
+   10980:	00042223          	sw	zero,4(s0)
+   10984:	fcdff06f          	j	10950 <__call_exitprocs+0xb4>
+   10988:	18c4a683          	lw	a3,396(s1)
+   1098c:	08442583          	lw	a1,132(s0)
+   10990:	00d77733          	and	a4,a4,a3
+   10994:	00071863          	bnez	a4,109a4 <__call_exitprocs+0x108>
+   10998:	000a8513          	mv	a0,s5
+   1099c:	000780e7          	jalr	a5
+   109a0:	fcdff06f          	j	1096c <__call_exitprocs+0xd0>
+   109a4:	00058513          	mv	a0,a1
+   109a8:	000780e7          	jalr	a5
+   109ac:	fc1ff06f          	j	1096c <__call_exitprocs+0xd0>
+
+000109b0 <_exit>:
+   109b0:	00000593          	li	a1,0
+   109b4:	00000613          	li	a2,0
+   109b8:	00000693          	li	a3,0
+   109bc:	00000713          	li	a4,0
+   109c0:	00000793          	li	a5,0
+   109c4:	05d00893          	li	a7,93
+   109c8:	00000073          	ecall
+   109cc:	02055263          	bgez	a0,109f0 <_exit+0x40>
+   109d0:	ff010113          	addi	sp,sp,-16
+   109d4:	00812423          	sw	s0,8(sp)
+   109d8:	00050413          	mv	s0,a0
+   109dc:	00112623          	sw	ra,12(sp)
+   109e0:	40800433          	neg	s0,s0
+   109e4:	010000ef          	jal	ra,109f4 <__errno>
+   109e8:	00852023          	sw	s0,0(a0)
+   109ec:	0000006f          	j	109ec <_exit+0x3c>
+   109f0:	0000006f          	j	109f0 <_exit+0x40>
+
+000109f4 <__errno>:
+   109f4:	00001797          	auipc	a5,0x1
+   109f8:	44878793          	addi	a5,a5,1096 # 11e3c <_impure_ptr>
+   109fc:	0007a503          	lw	a0,0(a5)
+   10a00:	00008067          	ret

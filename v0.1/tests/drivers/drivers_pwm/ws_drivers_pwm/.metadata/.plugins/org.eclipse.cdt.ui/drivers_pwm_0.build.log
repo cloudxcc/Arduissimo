@@ -1,0 +1,20 @@
+19:07:47 **** Incremental Build of configuration Release for project drivers_pwm_0 ****
+make all 
+Building target: drivers_pwm_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_pwm_0.map" -o "drivers_pwm_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_pwm.o   
+Finished building target: drivers_pwm_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_pwm_0.elf"  "drivers_pwm_0.hex"
+Finished building: drivers_pwm_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_pwm_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1740	   1080	     52	   2872	    b38	drivers_pwm_0.elf
+Finished building: drivers_pwm_0.siz
+ 
+
+19:07:49 Build Finished (took 2s.247ms)
+

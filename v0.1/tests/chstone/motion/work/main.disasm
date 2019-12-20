@@ -1,0 +1,1502 @@
+
+motion.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010074 <main>:
+}
+
+
+int
+main()
+{
+   10074:	7119                	addi	sp,sp,-128
+   10076:	d8ca                	sw	s2,112(sp)
+   10078:	d6ce                	sw	s3,108(sp)
+   1007a:	d4d2                	sw	s4,104(sp)
+   1007c:	d2d6                	sw	s5,100(sp)
+   1007e:	d0da                	sw	s6,96(sp)
+   int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+
+   while (1)
+   {
+      main_result = 0;
+      evalue = 0;
+   10080:	69c5                	lui	s3,0x11
+      for (i = 0; i < 2; i++)
+      for (j = 0; j < 2; j++)
+      {
+      //*tb = motion_vertical_field_select[i][j];
+          //*tb = outmvfs[i][j];
+      main_result += (motion_vertical_field_select[i][j] != inmvfs[i][j]);
+   10082:	6a45                	lui	s4,0x11
+   10084:	6ac5                	lui	s5,0x11
+      for (i = 0; i < 2; i++)
+      for (j = 0; j < 2; j++)
+      {
+      //*tb = motion_vertical_field_select[i][j];
+          //*tb = outmvfs[i][j];
+      main_result += (motion_vertical_field_select[i][j] != outmvfs[i][j]);
+   10086:	6b45                	lui	s6,0x11
+{
+   10088:	cede                	sw	s7,92(sp)
+   1008a:	de86                	sw	ra,124(sp)
+   1008c:	dca2                	sw	s0,120(sp)
+   1008e:	daa6                	sw	s1,116(sp)
+   10090:	cce2                	sw	s8,88(sp)
+      evalue = 0;
+   10092:	80c18913          	addi	s2,gp,-2036 # 1243c <evalue>
+      System_Stream_Flag = 0;
+   10096:	da898993          	addi	s3,s3,-600 # 10da8 <_ZL5inPMV>
+      main_result += (motion_vertical_field_select[i][j] != inmvfs[i][j]);
+   1009a:	e00a0a13          	addi	s4,s4,-512 # 10e00 <_ZL6inmvfs>
+   1009e:	e10a8a93          	addi	s5,s5,-496 # 10e10 <_ZL6outPMV>
+      main_result += (motion_vertical_field_select[i][j] != outmvfs[i][j]);
+   100a2:	630b0b13          	addi	s6,s6,1584 # 11630 <_ZL7outmvfs>
+          motion_vertical_field_select[i][j] = inmvfs[i][j];
+   100a6:	0e800793          	li	a5,232
+   100aa:	d03e                	sw	a5,32(sp)
+            PMV[i][j][k] = inPMV[i][j][k];
+   100ac:	02d00793          	li	a5,45
+   100b0:	d83e                	sw	a5,48(sp)
+   100b2:	0cf00793          	li	a5,207
+   100b6:	da3e                	sw	a5,52(sp)
+          motion_vertical_field_select[i][j] = inmvfs[i][j];
+   100b8:	0c800793          	li	a5,200
+   100bc:	d23e                	sw	a5,36(sp)
+            PMV[i][j][k] = inPMV[i][j][k];
+   100be:	04600793          	li	a5,70
+   100c2:	dc3e                	sw	a5,56(sp)
+   100c4:	02900793          	li	a5,41
+   100c8:	de3e                	sw	a5,60(sp)
+          motion_vertical_field_select[i][j] = inmvfs[i][j];
+   100ca:	02000793          	li	a5,32
+   100ce:	d43e                	sw	a5,40(sp)
+            PMV[i][j][k] = inPMV[i][j][k];
+   100d0:	4791                	li	a5,4
+   100d2:	c0be                	sw	a5,64(sp)
+   100d4:	0b400793          	li	a5,180
+   100d8:	c2be                	sw	a5,68(sp)
+          motion_vertical_field_select[i][j] = inmvfs[i][j];
+   100da:	0f000793          	li	a5,240
+   100de:	d63e                	sw	a5,44(sp)
+            PMV[i][j][k] = inPMV[i][j][k];
+   100e0:	07800793          	li	a5,120
+   100e4:	c4be                	sw	a5,72(sp)
+   100e6:	0d800793          	li	a5,216
+      evalue = 0;
+   100ea:	00092023          	sw	zero,0(s2)
+      System_Stream_Flag = 0;
+   100ee:	8001a423          	sw	zero,-2040(gp) # 12438 <_edata>
+      dmvector[i] = 0;
+   100f2:	cc02                	sw	zero,24(sp)
+   100f4:	ce02                	sw	zero,28(sp)
+            PMV[i][j][k] = inPMV[i][j][k];
+   100f6:	c6be                	sw	a5,76(sp)
+            *tb = PMV[i][j][k];
+   100f8:	10012737          	lui	a4,0x10012
+   100fc:	c75c                	sw	a5,12(a4)
+   100fe:	4501                	li	a0,0
+      main_result = 0;
+   10100:	4401                	li	s0,0
+         *tb = PMV[i][j][k];
+   10102:	10012837          	lui	a6,0x10012
+   10106:	4305                	li	t1,1
+      for (i = 0; i < 2; i++)
+   10108:	48c1                	li	a7,16
+   1010a:	00151793          	slli	a5,a0,0x1
+   1010e:	1818                	addi	a4,sp,48
+   10110:	00f705b3          	add	a1,a4,a5
+   10114:	862a                	mv	a2,a0
+   10116:	97ce                	add	a5,a5,s3
+      for (j = 0; j < 2; j++)
+   10118:	4481                	li	s1,0
+      main_result += (motion_vertical_field_select[i][j] != inmvfs[i][j]);
+   1011a:	1018                	addi	a4,sp,32
+   1011c:	9732                	add	a4,a4,a2
+   1011e:	00ca06b3          	add	a3,s4,a2
+   10122:	4294                	lw	a3,0(a3)
+   10124:	4318                	lw	a4,0(a4)
+         *tb = PMV[i][j][k];
+   10126:	00c80c13          	addi	s8,a6,12 # 1001200c <_end+0xffff3a0>
+   1012a:	05a1                	addi	a1,a1,8
+      main_result += (motion_vertical_field_select[i][j] != inmvfs[i][j]);
+   1012c:	8f15                	sub	a4,a4,a3
+   1012e:	00e03733          	snez	a4,a4
+   10132:	008706b3          	add	a3,a4,s0
+         *tb = PMV[i][j][k];
+   10136:	ff85a703          	lw	a4,-8(a1)
+   1013a:	07a1                	addi	a5,a5,8
+   1013c:	0611                	addi	a2,a2,4
+   1013e:	00e82623          	sw	a4,12(a6)
+         *tb = inPMV[i][j][k];
+   10142:	ff87a703          	lw	a4,-8(a5)
+   10146:	00e82623          	sw	a4,12(a6)
+         main_result += (PMV[i][j][k] != inPMV[i][j][k]);
+   1014a:	ff87a403          	lw	s0,-8(a5)
+   1014e:	ff85a703          	lw	a4,-8(a1)
+   10152:	8f01                	sub	a4,a4,s0
+   10154:	00e03433          	snez	s0,a4
+   10158:	00d40733          	add	a4,s0,a3
+         *tb = PMV[i][j][k];
+   1015c:	ffc5a683          	lw	a3,-4(a1)
+   10160:	00d82623          	sw	a3,12(a6)
+         *tb = inPMV[i][j][k];
+   10164:	ffc7a683          	lw	a3,-4(a5)
+   10168:	00d82623          	sw	a3,12(a6)
+         main_result += (PMV[i][j][k] != inPMV[i][j][k]);
+   1016c:	ffc5a403          	lw	s0,-4(a1)
+   10170:	ffc7a683          	lw	a3,-4(a5)
+   10174:	8c15                	sub	s0,s0,a3
+   10176:	00803433          	snez	s0,s0
+   1017a:	943a                	add	s0,s0,a4
+      for (j = 0; j < 2; j++)
+   1017c:	0c649363          	bne	s1,t1,10242 <main+0x1ce>
+   10180:	0521                	addi	a0,a0,8
+      for (i = 0; i < 2; i++)
+   10182:	f91514e3          	bne	a0,a7,1010a <main+0x96>
+      Initialize_Buffer ();
+   10186:	7b6000ef          	jal	ra,1093c <_Z17Initialize_Bufferv>
+      *tb = 0x80001;
+   1018a:	000807b7          	lui	a5,0x80
+   1018e:	0785                	addi	a5,a5,1
+   10190:	00fc2023          	sw	a5,0(s8)
+      motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+   10194:	1010                	addi	a2,sp,32
+   10196:	1808                	addi	a0,sp,48
+   10198:	c226                	sw	s1,4(sp)
+   1019a:	c002                	sw	zero,0(sp)
+   1019c:	0c800893          	li	a7,200
+   101a0:	0c800813          	li	a6,200
+   101a4:	4781                	li	a5,0
+   101a6:	4705                	li	a4,1
+   101a8:	4681                	li	a3,0
+   101aa:	082c                	addi	a1,sp,24
+   101ac:	2d45                	jal	1085c <_Z14motion_vectorsPA2_A2_iPiPS_iiiiiii>
+   101ae:	4501                	li	a0,0
+          //*tb = main_result;
+      for (k = 0; k < 2; k++)
+      {
+         *dbg0 = PMV[i][j][k];
+   101b0:	10012637          	lui	a2,0x10012
+      for (j = 0; j < 2; j++)
+   101b4:	4e05                	li	t3,1
+      for (i = 0; i < 2; i++)
+   101b6:	4341                	li	t1,16
+   101b8:	00151793          	slli	a5,a0,0x1
+   101bc:	1818                	addi	a4,sp,48
+   101be:	00f705b3          	add	a1,a4,a5
+   101c2:	882a                	mv	a6,a0
+   101c4:	97d6                	add	a5,a5,s5
+      for (j = 0; j < 2; j++)
+   101c6:	4881                	li	a7,0
+      main_result += (motion_vertical_field_select[i][j] != outmvfs[i][j]);
+   101c8:	1018                	addi	a4,sp,32
+   101ca:	9742                	add	a4,a4,a6
+   101cc:	010b06b3          	add	a3,s6,a6
+   101d0:	4294                	lw	a3,0(a3)
+   101d2:	4318                	lw	a4,0(a4)
+   101d4:	05a1                	addi	a1,a1,8
+   101d6:	07a1                	addi	a5,a5,8
+   101d8:	8f15                	sub	a4,a4,a3
+   101da:	00e03733          	snez	a4,a4
+   101de:	008706b3          	add	a3,a4,s0
+         *dbg0 = PMV[i][j][k];
+   101e2:	ff85a703          	lw	a4,-8(a1)
+   101e6:	0811                	addi	a6,a6,4
+   101e8:	c258                	sw	a4,4(a2)
+         *dbg1 = outPMV[i][j][k];
+   101ea:	ff87a703          	lw	a4,-8(a5) # 7fff8 <_end+0x6d38c>
+   101ee:	c618                	sw	a4,8(a2)
+         main_result += (PMV[i][j][k] != outPMV[i][j][k]);
+   101f0:	ff87a403          	lw	s0,-8(a5)
+   101f4:	ff85a703          	lw	a4,-8(a1)
+   101f8:	8f01                	sub	a4,a4,s0
+   101fa:	00e03433          	snez	s0,a4
+   101fe:	00d40733          	add	a4,s0,a3
+         *dbg0 = PMV[i][j][k];
+   10202:	ffc5a683          	lw	a3,-4(a1)
+   10206:	c254                	sw	a3,4(a2)
+         *dbg1 = outPMV[i][j][k];
+   10208:	ffc7a683          	lw	a3,-4(a5)
+   1020c:	c614                	sw	a3,8(a2)
+         main_result += (PMV[i][j][k] != outPMV[i][j][k]);
+   1020e:	ffc5a403          	lw	s0,-4(a1)
+   10212:	ffc7a683          	lw	a3,-4(a5)
+   10216:	8c15                	sub	s0,s0,a3
+   10218:	00803433          	snez	s0,s0
+   1021c:	943a                	add	s0,s0,a4
+      for (j = 0; j < 2; j++)
+   1021e:	03c89463          	bne	a7,t3,10246 <main+0x1d2>
+   10222:	0521                	addi	a0,a0,8
+      for (i = 0; i < 2; i++)
+   10224:	f8651ae3          	bne	a0,t1,101b8 <main+0x144>
+         //*tb = main_result;
+      }
+      }
+
+
+      if (main_result != 0x0)
+   10228:	c00d                	beqz	s0,1024a <main+0x1d6>
+      {
+         *tb = 0x80000;
+   1022a:	000807b7          	lui	a5,0x80
+   1022e:	c65c                	sw	a5,12(a2)
+         asm volatile ("addi x0, x0, 0");
+   10230:	00000013          	nop
+         asm volatile ("addi x0, x0, 0");
+   10234:	00000013          	nop
+         asm volatile ("addi x0, x0, 0");
+   10238:	00000013          	nop
+         asm volatile ("addi x0, x0, 0");
+   1023c:	00000013          	nop
+   10240:	a001                	j	10240 <main+0x1cc>
+   10242:	4485                	li	s1,1
+   10244:	bdd9                	j	1011a <main+0xa6>
+   10246:	88a6                	mv	a7,s1
+   10248:	b741                	j	101c8 <main+0x154>
+         *tb = 0x80000;
+         break;
+      }
+
+      *tb = 0x400000;
+   1024a:	004007b7          	lui	a5,0x400
+   1024e:	c65c                	sw	a5,12(a2)
+      asm volatile ("addi x0, x0, 0");
+   10250:	00000013          	nop
+      asm volatile ("addi x0, x0, 0");
+   10254:	00000013          	nop
+      asm volatile ("addi x0, x0, 0");
+   10258:	00000013          	nop
+      asm volatile ("addi x0, x0, 0");
+   1025c:	00000013          	nop
+      *tb = 0x400000;
+   10260:	c65c                	sw	a5,12(a2)
+      asm volatile ("addi x0, x0, 0");
+   10262:	00000013          	nop
+      asm volatile ("addi x0, x0, 0");
+   10266:	00000013          	nop
+      asm volatile ("addi x0, x0, 0");
+   1026a:	00000013          	nop
+      asm volatile ("addi x0, x0, 0");
+   1026e:	00000013          	nop
+      main_result = 0;
+   10272:	bd15                	j	100a6 <main+0x32>
+
+00010274 <_start>:
+   10274:	00003197          	auipc	gp,0x3
+   10278:	9bc18193          	addi	gp,gp,-1604 # 12c30 <__global_pointer$>
+   1027c:	80818513          	addi	a0,gp,-2040 # 12438 <_edata>
+   10280:	03c18613          	addi	a2,gp,60 # 12c6c <_end>
+   10284:	40a60633          	sub	a2,a2,a0
+   10288:	00000593          	li	a1,0
+   1028c:	055000ef          	jal	ra,10ae0 <memset>
+   10290:	00000517          	auipc	a0,0x0
+   10294:	74450513          	addi	a0,a0,1860 # 109d4 <__libc_fini_array>
+   10298:	6f0000ef          	jal	ra,10988 <atexit>
+   1029c:	7ac000ef          	jal	ra,10a48 <__libc_init_array>
+   102a0:	00012503          	lw	a0,0(sp)
+   102a4:	00410593          	addi	a1,sp,4
+   102a8:	00000613          	li	a2,0
+   102ac:	dc9ff0ef          	jal	ra,10074 <main>
+   102b0:	6ec0006f          	j	1099c <exit>
+
+000102b4 <_fini>:
+   102b4:	00008067          	ret
+
+000102b8 <deregister_tm_clones>:
+   102b8:	00002517          	auipc	a0,0x2
+   102bc:	17850513          	addi	a0,a0,376 # 12430 <_global_impure_ptr>
+   102c0:	00002797          	auipc	a5,0x2
+   102c4:	17078793          	addi	a5,a5,368 # 12430 <_global_impure_ptr>
+   102c8:	00a78a63          	beq	a5,a0,102dc <deregister_tm_clones+0x24>
+   102cc:	ffff0317          	auipc	t1,0xffff0
+   102d0:	d3430313          	addi	t1,t1,-716 # 0 <main-0x10074>
+   102d4:	00030463          	beqz	t1,102dc <deregister_tm_clones+0x24>
+   102d8:	00030067          	jr	t1
+   102dc:	00008067          	ret
+
+000102e0 <register_tm_clones>:
+   102e0:	00002517          	auipc	a0,0x2
+   102e4:	15050513          	addi	a0,a0,336 # 12430 <_global_impure_ptr>
+   102e8:	00002597          	auipc	a1,0x2
+   102ec:	14858593          	addi	a1,a1,328 # 12430 <_global_impure_ptr>
+   102f0:	40a585b3          	sub	a1,a1,a0
+   102f4:	4025d593          	srai	a1,a1,0x2
+   102f8:	00200793          	li	a5,2
+   102fc:	02f5c5b3          	div	a1,a1,a5
+   10300:	00058a63          	beqz	a1,10314 <register_tm_clones+0x34>
+   10304:	ffff0317          	auipc	t1,0xffff0
+   10308:	cfc30313          	addi	t1,t1,-772 # 0 <main-0x10074>
+   1030c:	00030463          	beqz	t1,10314 <register_tm_clones+0x34>
+   10310:	00030067          	jr	t1
+   10314:	00008067          	ret
+
+00010318 <__do_global_dtors_aux>:
+   10318:	8201c783          	lbu	a5,-2016(gp) # 12450 <completed.5176>
+   1031c:	04079063          	bnez	a5,1035c <__do_global_dtors_aux+0x44>
+   10320:	ff010113          	addi	sp,sp,-16
+   10324:	00112623          	sw	ra,12(sp)
+   10328:	f91ff0ef          	jal	ra,102b8 <deregister_tm_clones>
+   1032c:	ffff0797          	auipc	a5,0xffff0
+   10330:	cd478793          	addi	a5,a5,-812 # 0 <main-0x10074>
+   10334:	00078a63          	beqz	a5,10348 <__do_global_dtors_aux+0x30>
+   10338:	00001517          	auipc	a0,0x1
+   1033c:	30850513          	addi	a0,a0,776 # 11640 <__EH_FRAME_BEGIN__>
+   10340:	ffff0097          	auipc	ra,0xffff0
+   10344:	cc0080e7          	jalr	-832(ra) # 0 <main-0x10074>
+   10348:	00c12083          	lw	ra,12(sp)
+   1034c:	00100793          	li	a5,1
+   10350:	82f18023          	sb	a5,-2016(gp) # 12450 <completed.5176>
+   10354:	01010113          	addi	sp,sp,16
+   10358:	00008067          	ret
+   1035c:	00008067          	ret
+
+00010360 <frame_dummy>:
+   10360:	ffff0797          	auipc	a5,0xffff0
+   10364:	ca078793          	addi	a5,a5,-864 # 0 <main-0x10074>
+   10368:	02078463          	beqz	a5,10390 <frame_dummy+0x30>
+   1036c:	ff010113          	addi	sp,sp,-16
+   10370:	82418593          	addi	a1,gp,-2012 # 12454 <object.5181>
+   10374:	00001517          	auipc	a0,0x1
+   10378:	2cc50513          	addi	a0,a0,716 # 11640 <__EH_FRAME_BEGIN__>
+   1037c:	00112623          	sw	ra,12(sp)
+   10380:	ffff0097          	auipc	ra,0xffff0
+   10384:	c80080e7          	jalr	-896(ra) # 0 <main-0x10074>
+   10388:	00c12083          	lw	ra,12(sp)
+   1038c:	01010113          	addi	sp,sp,16
+   10390:	f51ff06f          	j	102e0 <register_tm_clones>
+
+00010394 <_Z4readPhPKhi>:
+  while (n_tmp-- > 0)
+   10394:	00c586b3          	add	a3,a1,a2
+   10398:	40b68733          	sub	a4,a3,a1
+   1039c:	00e05963          	blez	a4,103ae <_Z4readPhPKhi+0x1a>
+     *p1 = *p2;
+   103a0:	0005c703          	lbu	a4,0(a1)
+     p1++;
+   103a4:	0505                	addi	a0,a0,1
+     p2++;
+   103a6:	0585                	addi	a1,a1,1
+     *p1 = *p2;
+   103a8:	fee50fa3          	sb	a4,-1(a0)
+  while (n_tmp-- > 0)
+   103ac:	b7f5                	j	10398 <_Z4readPhPKhi+0x4>
+}
+   103ae:	8532                	mv	a0,a2
+   103b0:	8082                	ret
+
+000103b2 <_Z11Fill_Bufferv>:
+{
+   103b2:	1141                	addi	sp,sp,-16
+   103b4:	c422                	sw	s0,8(sp)
+  *dbg1 = 0xaffe00bb;
+   103b6:	affe07b7          	lui	a5,0xaffe0
+  *dbg0 = (unsigned)ld_Rdbfr;
+   103ba:	6449                	lui	s0,0x12
+{
+   103bc:	c226                	sw	s1,4(sp)
+   103be:	c606                	sw	ra,12(sp)
+  *dbg1 = 0xaffe00bb;
+   103c0:	10012737          	lui	a4,0x10012
+   103c4:	0bb78793          	addi	a5,a5,187 # affe00bb <_end+0xaffcd44f>
+  *dbg0 = (unsigned)ld_Rdbfr;
+   103c8:	46c40493          	addi	s1,s0,1132 # 1246c <ld_Rdbfr>
+  *dbg1 = 0xaffe00bb;
+   103cc:	c71c                	sw	a5,8(a4)
+  *dbg0 = (unsigned)ld_Rdbfr;
+   103ce:	c344                	sw	s1,4(a4)
+  asm volatile ("addi x0, x0, 0");
+   103d0:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   103d4:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   103d8:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   103dc:	00000013          	nop
+  Buffer_Level = read (ld_Rdbfr, inRdbfr, 2048);
+   103e0:	6605                	lui	a2,0x1
+   103e2:	65c5                	lui	a1,0x11
+   103e4:	46c40513          	addi	a0,s0,1132
+   103e8:	80060613          	addi	a2,a2,-2048 # 800 <main-0xf874>
+   103ec:	e3058593          	addi	a1,a1,-464 # 10e30 <_ZL7inRdbfr>
+   103f0:	3755                	jal	10394 <_Z4readPhPKhi>
+  ld_Rdptr = ld_Rdbfr;
+   103f2:	8091ae23          	sw	s1,-2020(gp) # 1244c <ld_Rdptr>
+  if (System_Stream_Flag)
+   103f6:	8081a783          	lw	a5,-2040(gp) # 12438 <_edata>
+   103fa:	46c40413          	addi	s0,s0,1132
+   103fe:	c799                	beqz	a5,1040c <_Z11Fill_Bufferv+0x5a>
+   ld_Rdmax -= 2048;
+   10400:	81818793          	addi	a5,gp,-2024 # 12448 <ld_Rdmax>
+   10404:	4398                	lw	a4,0(a5)
+   10406:	80070713          	addi	a4,a4,-2048 # 10011800 <_end+0xfffeb94>
+   1040a:	c398                	sw	a4,0(a5)
+  if (Buffer_Level < 2048)
+   1040c:	7ff00793          	li	a5,2047
+   10410:	04a7c363          	blt	a5,a0,10456 <_Z11Fill_Bufferv+0xa4>
+     if (Buffer_Level < 0)
+   10414:	02054963          	bltz	a0,10446 <_Z11Fill_Bufferv+0x94>
+     while (Buffer_Level & 3)
+   10418:	00357793          	andi	a5,a0,3
+   1041c:	e79d                	bnez	a5,1044a <_Z11Fill_Bufferv+0x98>
+   1041e:	9522                	add	a0,a0,s0
+     while (Buffer_Level < 2048)
+   10420:	7ff00693          	li	a3,2047
+     ld_Rdbfr[Buffer_Level++] = SEQUENCE_END_CODE >> 8;
+   10424:	4705                	li	a4,1
+     ld_Rdbfr[Buffer_Level++] = SEQUENCE_END_CODE & 0xff;
+   10426:	fb700793          	li	a5,-73
+     while (Buffer_Level < 2048)
+   1042a:	40950633          	sub	a2,a0,s1
+   1042e:	02c6c463          	blt	a3,a2,10456 <_Z11Fill_Bufferv+0xa4>
+     ld_Rdbfr[Buffer_Level++] = SEQUENCE_END_CODE >> 24;
+   10432:	00050023          	sb	zero,0(a0)
+     ld_Rdbfr[Buffer_Level++] = SEQUENCE_END_CODE >> 16;
+   10436:	000500a3          	sb	zero,1(a0)
+     ld_Rdbfr[Buffer_Level++] = SEQUENCE_END_CODE >> 8;
+   1043a:	00e50123          	sb	a4,2(a0)
+     ld_Rdbfr[Buffer_Level++] = SEQUENCE_END_CODE & 0xff;
+   1043e:	00f501a3          	sb	a5,3(a0)
+   10442:	0511                	addi	a0,a0,4
+     while (Buffer_Level < 2048)
+   10444:	b7dd                	j	1042a <_Z11Fill_Bufferv+0x78>
+   Buffer_Level = 0;
+   10446:	4501                	li	a0,0
+   10448:	bfd9                	j	1041e <_Z11Fill_Bufferv+0x6c>
+   ld_Rdbfr[Buffer_Level++] = 0;
+   1044a:	0505                	addi	a0,a0,1
+   1044c:	00a407b3          	add	a5,s0,a0
+   10450:	fe078fa3          	sb	zero,-1(a5)
+     while (Buffer_Level & 3)
+   10454:	b7d1                	j	10418 <_Z11Fill_Bufferv+0x66>
+}
+   10456:	40b2                	lw	ra,12(sp)
+   10458:	4422                	lw	s0,8(sp)
+   1045a:	4492                	lw	s1,4(sp)
+   1045c:	0141                	addi	sp,sp,16
+   1045e:	8082                	ret
+
+00010460 <_Z9Show_Bitsi>:
+  return ld_Bfr >> (unsigned)(32-N)%32;
+   10460:	8101a783          	lw	a5,-2032(gp) # 12440 <ld_Bfr>
+   10464:	40a00533          	neg	a0,a0
+}
+   10468:	00a7d533          	srl	a0,a5,a0
+   1046c:	8082                	ret
+
+0001046e <_Z12Flush_Bufferi>:
+{
+   1046e:	1101                	addi	sp,sp,-32
+   10470:	c84a                	sw	s2,16(sp)
+  ld_Bfr <<= N;
+   10472:	81018713          	addi	a4,gp,-2032 # 12440 <ld_Bfr>
+   10476:	431c                	lw	a5,0(a4)
+{
+   10478:	cc22                	sw	s0,24(sp)
+   1047a:	c64e                	sw	s3,12(sp)
+   1047c:	ce06                	sw	ra,28(sp)
+   1047e:	ca26                	sw	s1,20(sp)
+  ld_Bfr <<= N;
+   10480:	00a797b3          	sll	a5,a5,a0
+   10484:	c31c                	sw	a5,0(a4)
+  Incnt = ld_Incnt -= N;
+   10486:	81418793          	addi	a5,gp,-2028 # 12444 <ld_Incnt>
+   1048a:	4380                	lw	s0,0(a5)
+  *dbg1 = 0xaffe00aa;
+   1048c:	affe0737          	lui	a4,0xaffe0
+   10490:	0aa70713          	addi	a4,a4,170 # affe00aa <_end+0xaffcd43e>
+  Incnt = ld_Incnt -= N;
+   10494:	8c09                	sub	s0,s0,a0
+   10496:	c380                	sw	s0,0(a5)
+  *dbg1 = 0xaffe00aa;
+   10498:	100127b7          	lui	a5,0x10012
+   1049c:	c798                	sw	a4,8(a5)
+  *dbg0 = Incnt;
+   1049e:	c3c0                	sw	s0,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   104a0:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   104a4:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   104a8:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   104ac:	00000013          	nop
+  if (Incnt <= 24)
+   104b0:	4761                	li	a4,24
+   104b2:	06874263          	blt	a4,s0,10516 <_Z12Flush_Bufferi+0xa8>
+   if (ld_Rdptr < ld_Rdbfr + 2044)
+   104b6:	81c1a603          	lw	a2,-2020(gp) # 1244c <ld_Rdptr>
+   104ba:	03818693          	addi	a3,gp,56 # 12c68 <__global_pointer$+0x38>
+   104be:	81018913          	addi	s2,gp,-2032 # 12440 <ld_Bfr>
+   104c2:	81418993          	addi	s3,gp,-2028 # 12444 <ld_Incnt>
+   104c6:	81c18493          	addi	s1,gp,-2020 # 1244c <ld_Rdptr>
+   104ca:	06d67c63          	bleu	a3,a2,10542 <_Z12Flush_Bufferi+0xd4>
+   	  *dbg0 = 0x1;
+   104ce:	4685                	li	a3,1
+   104d0:	c3d4                	sw	a3,4(a5)
+   	  asm volatile ("addi x0, x0, 0");
+   104d2:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   104d6:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   104da:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   104de:	00000013          	nop
+     while (Incnt <= 24);
+   104e2:	47e1                	li	a5,24
+   104e4:	8f01                	sub	a4,a4,s0
+   	  asm volatile ("addi x0, x0, 0");
+   104e6:	8622                	mv	a2,s0
+        ld_Bfr |= *ld_Rdptr++ << (24 - Incnt);
+   104e8:	4094                	lw	a3,0(s1)
+        Incnt += 8;
+   104ea:	0621                	addi	a2,a2,8
+        ld_Bfr |= *ld_Rdptr++ << (24 - Incnt);
+   104ec:	00168593          	addi	a1,a3,1
+   104f0:	c08c                	sw	a1,0(s1)
+   104f2:	0006c683          	lbu	a3,0(a3)
+   104f6:	00092583          	lw	a1,0(s2)
+   104fa:	00e696b3          	sll	a3,a3,a4
+   104fe:	8ecd                	or	a3,a3,a1
+   10500:	00d92023          	sw	a3,0(s2)
+   10504:	1761                	addi	a4,a4,-8
+     while (Incnt <= 24);
+   10506:	fec7d1e3          	ble	a2,a5,104e8 <_Z12Flush_Bufferi+0x7a>
+   1050a:	8f81                	sub	a5,a5,s0
+   1050c:	9be1                	andi	a5,a5,-8
+   1050e:	0421                	addi	s0,s0,8
+   10510:	943e                	add	s0,s0,a5
+     ld_Incnt = Incnt;
+   10512:	0089a023          	sw	s0,0(s3)
+  *dbg1 = 0xaffe00a0;
+   10516:	affe07b7          	lui	a5,0xaffe0
+   1051a:	10012737          	lui	a4,0x10012
+   1051e:	0a078793          	addi	a5,a5,160 # affe00a0 <_end+0xaffcd434>
+   10522:	c71c                	sw	a5,8(a4)
+  asm volatile ("addi x0, x0, 0");
+   10524:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10528:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   1052c:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10530:	00000013          	nop
+}
+   10534:	40f2                	lw	ra,28(sp)
+   10536:	4462                	lw	s0,24(sp)
+   10538:	44d2                	lw	s1,20(sp)
+   1053a:	4942                	lw	s2,16(sp)
+   1053c:	49b2                	lw	s3,12(sp)
+   1053e:	6105                	addi	sp,sp,32
+   10540:	8082                	ret
+     if (ld_Rdptr >= (ld_Rdbfr + 2048))
+   10542:	03c18793          	addi	a5,gp,60 # 12c6c <_end>
+   10546:	00f66363          	bltu	a2,a5,1054c <_Z12Flush_Bufferi+0xde>
+        Fill_Buffer ();
+   1054a:	35a5                	jal	103b2 <_Z11Fill_Bufferv>
+   1054c:	4661                	li	a2,24
+   	  *dbg0 = (unsigned)ld_Rdptr;
+   1054e:	10012737          	lui	a4,0x10012
+   	  *dbg0 = (unsigned)ld_Rdbfr;
+   10552:	6549                	lui	a0,0x12
+   10554:	8e01                	sub	a2,a2,s0
+   	  asm volatile ("addi x0, x0, 0");
+   10556:	85a2                	mv	a1,s0
+   	  *dbg0 = (unsigned)ld_Rdptr;
+   10558:	0711                	addi	a4,a4,4
+   	  *dbg0 = (unsigned)ld_Rdbfr;
+   1055a:	46c50513          	addi	a0,a0,1132 # 1246c <ld_Rdbfr>
+     while (Incnt <= 24);
+   1055e:	47e1                	li	a5,24
+   	  *dbg0 = (unsigned)ld_Rdptr;
+   10560:	4094                	lw	a3,0(s1)
+   10562:	c314                	sw	a3,0(a4)
+   	  asm volatile ("addi x0, x0, 0");
+   10564:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   10568:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   1056c:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   10570:	00000013          	nop
+   	  *dbg0 = (unsigned)ld_Rdbfr;
+   10574:	c308                	sw	a0,0(a4)
+   	  asm volatile ("addi x0, x0, 0");
+   10576:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   1057a:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   1057e:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   10582:	00000013          	nop
+   	  *dbg0 = *ld_Rdptr;
+   10586:	4094                	lw	a3,0(s1)
+   10588:	0006c683          	lbu	a3,0(a3)
+   1058c:	c314                	sw	a3,0(a4)
+   	  asm volatile ("addi x0, x0, 0");
+   1058e:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   10592:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   10596:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   1059a:	00000013          	nop
+   	  ld_Bfr |= *ld_Rdptr++ << (24 - Incnt);
+   1059e:	4094                	lw	a3,0(s1)
+   105a0:	00168813          	addi	a6,a3,1
+   105a4:	0104a023          	sw	a6,0(s1)
+   105a8:	0006c683          	lbu	a3,0(a3)
+   105ac:	00092803          	lw	a6,0(s2)
+   105b0:	00c696b3          	sll	a3,a3,a2
+   105b4:	0106e6b3          	or	a3,a3,a6
+   105b8:	00d92023          	sw	a3,0(s2)
+   	  *dbg0 = ld_Bfr;
+   105bc:	c314                	sw	a3,0(a4)
+   	  asm volatile ("addi x0, x0, 0");
+   105be:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   105c2:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   105c6:	00000013          	nop
+   	  asm volatile ("addi x0, x0, 0");
+   105ca:	00000013          	nop
+        Incnt += 8;
+   105ce:	05a1                	addi	a1,a1,8
+   105d0:	1661                	addi	a2,a2,-8
+     while (Incnt <= 24);
+   105d2:	f8b7d7e3          	ble	a1,a5,10560 <_Z12Flush_Bufferi+0xf2>
+   105d6:	bf15                	j	1050a <_Z12Flush_Bufferi+0x9c>
+
+000105d8 <_Z8Get_Bitsi>:
+{
+   105d8:	1141                	addi	sp,sp,-16
+   105da:	c606                	sw	ra,12(sp)
+   105dc:	c422                	sw	s0,8(sp)
+   105de:	c226                	sw	s1,4(sp)
+   105e0:	84aa                	mv	s1,a0
+  Val = Show_Bits (N);
+   105e2:	3dbd                	jal	10460 <_Z9Show_Bitsi>
+   105e4:	842a                	mv	s0,a0
+  Flush_Buffer (N);
+   105e6:	8526                	mv	a0,s1
+   105e8:	3559                	jal	1046e <_Z12Flush_Bufferi>
+}
+   105ea:	8522                	mv	a0,s0
+   105ec:	40b2                	lw	ra,12(sp)
+   105ee:	4422                	lw	s0,8(sp)
+   105f0:	4492                	lw	s1,4(sp)
+   105f2:	0141                	addi	sp,sp,16
+   105f4:	8082                	ret
+
+000105f6 <_Z9Get_Bits1v>:
+  return Get_Bits (1);
+   105f6:	4505                	li	a0,1
+   105f8:	b7c5                	j	105d8 <_Z8Get_Bitsi>
+
+000105fa <_Z15Get_motion_codev>:
+{
+   105fa:	1141                	addi	sp,sp,-16
+   105fc:	c606                	sw	ra,12(sp)
+   105fe:	c422                	sw	s0,8(sp)
+  if (Get_Bits1 ())
+   10600:	3fdd                	jal	105f6 <_Z9Get_Bits1v>
+   10602:	c519                	beqz	a0,10610 <_Z15Get_motion_codev+0x16>
+     return 0;
+   10604:	4781                	li	a5,0
+}
+   10606:	40b2                	lw	ra,12(sp)
+   10608:	4422                	lw	s0,8(sp)
+   1060a:	853e                	mv	a0,a5
+   1060c:	0141                	addi	sp,sp,16
+   1060e:	8082                	ret
+  return ld_Bfr >> (unsigned)(32-N)%32;
+   10610:	8101a783          	lw	a5,-2032(gp) # 12440 <ld_Bfr>
+  *dbg1 = 0xaffe0000;
+   10614:	10012737          	lui	a4,0x10012
+   10618:	affe06b7          	lui	a3,0xaffe0
+  return ld_Bfr >> (unsigned)(32-N)%32;
+   1061c:	83dd                	srli	a5,a5,0x17
+  *dbg1 = 0xaffe0000;
+   1061e:	c714                	sw	a3,8(a4)
+  *dbg0 = code;
+   10620:	c35c                	sw	a5,4(a4)
+  asm volatile ("addi x0, x0, 0");
+   10622:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10626:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   1062a:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   1062e:	00000013          	nop
+  if (code >= 64)
+   10632:	03f00693          	li	a3,63
+   10636:	02f6f263          	bleu	a5,a3,1065a <_Z15Get_motion_codev+0x60>
+     code >>= 6;
+   1063a:	8799                	srai	a5,a5,0x6
+     Flush_Buffer (MVtab0[code][1]);
+   1063c:	6445                	lui	s0,0x11
+   1063e:	0786                	slli	a5,a5,0x1
+   10640:	dc840413          	addi	s0,s0,-568 # 10dc8 <_ZL6MVtab0>
+  Flush_Buffer (MVtab2[code][1]);
+   10644:	943e                	add	s0,s0,a5
+   10646:	00140503          	lb	a0,1(s0)
+   1064a:	3515                	jal	1046e <_Z12Flush_Bufferi>
+  return Get_Bits1 ()? -MVtab2[code][0] : MVtab2[code][0];
+   1064c:	376d                	jal	105f6 <_Z9Get_Bits1v>
+   1064e:	00040783          	lb	a5,0(s0)
+   10652:	d955                	beqz	a0,10606 <_Z15Get_motion_codev+0xc>
+   10654:	40f007b3          	neg	a5,a5
+   10658:	b77d                	j	10606 <_Z15Get_motion_codev+0xc>
+  if (code >= 24)
+   1065a:	46dd                	li	a3,23
+   1065c:	00f6f863          	bleu	a5,a3,1066c <_Z15Get_motion_codev+0x72>
+     code >>= 3;
+   10660:	878d                	srai	a5,a5,0x3
+     Flush_Buffer (MVtab1[code][1]);
+   10662:	6445                	lui	s0,0x11
+   10664:	0786                	slli	a5,a5,0x1
+   10666:	dd840413          	addi	s0,s0,-552 # 10dd8 <_ZL6MVtab1>
+   1066a:	bfe9                	j	10644 <_Z15Get_motion_codev+0x4a>
+  code -= 12;
+   1066c:	17d1                	addi	a5,a5,-12
+  if (code < 0)
+   1066e:	f807cbe3          	bltz	a5,10604 <_Z15Get_motion_codev+0xa>
+  *dbg0 = code;
+   10672:	c35c                	sw	a5,4(a4)
+  asm volatile ("addi x0, x0, 0");
+   10674:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10678:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   1067c:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10680:	00000013          	nop
+  Flush_Buffer (MVtab2[code][1]);
+   10684:	6445                	lui	s0,0x11
+   10686:	0786                	slli	a5,a5,0x1
+   10688:	de840413          	addi	s0,s0,-536 # 10de8 <_ZL6MVtab2>
+   1068c:	bf65                	j	10644 <_Z15Get_motion_codev+0x4a>
+
+0001068e <_Z12Get_dmvectorv>:
+{
+   1068e:	1141                	addi	sp,sp,-16
+  if (Get_Bits (1))
+   10690:	4505                	li	a0,1
+{
+   10692:	c606                	sw	ra,12(sp)
+  if (Get_Bits (1))
+   10694:	3791                	jal	105d8 <_Z8Get_Bitsi>
+     return 0;
+   10696:	4781                	li	a5,0
+  if (Get_Bits (1))
+   10698:	c511                	beqz	a0,106a4 <_Z12Get_dmvectorv+0x16>
+     return Get_Bits (1) ? -1 : 1;
+   1069a:	4505                	li	a0,1
+   1069c:	3f35                	jal	105d8 <_Z8Get_Bitsi>
+   1069e:	57fd                	li	a5,-1
+   106a0:	e111                	bnez	a0,106a4 <_Z12Get_dmvectorv+0x16>
+   106a2:	4785                	li	a5,1
+}
+   106a4:	40b2                	lw	ra,12(sp)
+   106a6:	853e                	mv	a0,a5
+   106a8:	0141                	addi	sp,sp,16
+   106aa:	8082                	ret
+
+000106ac <_Z20decode_motion_vectorPiiiii>:
+  *dbg1 = 0xaffe0001; //PMV[i][j][k];
+   106ac:	affe0837          	lui	a6,0xaffe0
+   106b0:	100127b7          	lui	a5,0x10012
+   106b4:	0805                	addi	a6,a6,1
+   106b6:	0107a423          	sw	a6,8(a5) # 10012008 <_end+0xffff39c>
+  *dbg0 = motion_code;
+   106ba:	c3d0                	sw	a2,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   106bc:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106c0:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106c4:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106c8:	00000013          	nop
+  *dbg0 = full_pel_vector;
+   106cc:	c3d8                	sw	a4,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   106ce:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106d2:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106d6:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106da:	00000013          	nop
+  *dbg0 = r_size;
+   106de:	c3cc                	sw	a1,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   106e0:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106e4:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106e8:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106ec:	00000013          	nop
+  *dbg0 = motion_residual;
+   106f0:	c3d4                	sw	a3,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   106f2:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106f6:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106fa:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   106fe:	00000013          	nop
+  *dbg0 = *pred;
+   10702:	00052803          	lw	a6,0(a0)
+   10706:	0107a223          	sw	a6,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   1070a:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   1070e:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10712:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10716:	00000013          	nop
+  r_size = r_size % 32;
+   1071a:	02000813          	li	a6,32
+   1071e:	0305e5b3          	rem	a1,a1,a6
+  lim = 16 << r_size;
+   10722:	4841                	li	a6,16
+   10724:	00b81833          	sll	a6,a6,a1
+  *dbg0 = lim;
+   10728:	0107a223          	sw	a6,4(a5)
+  asm volatile ("addi x0, x0, 0");
+   1072c:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10730:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10734:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10738:	00000013          	nop
+   1073c:	411c                	lw	a5,0(a0)
+  vec = full_pel_vector ? (*pred >> 1) : (*pred);
+   1073e:	c311                	beqz	a4,10742 <_Z20decode_motion_vectorPiiiii+0x96>
+   10740:	8785                	srai	a5,a5,0x1
+  *dbg0 = vec;
+   10742:	100128b7          	lui	a7,0x10012
+   10746:	00f8a223          	sw	a5,4(a7) # 10012004 <_end+0xffff398>
+  asm volatile ("addi x0, x0, 0");
+   1074a:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   1074e:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10752:	00000013          	nop
+  asm volatile ("addi x0, x0, 0");
+   10756:	00000013          	nop
+  if (motion_code > 0)
+   1075a:	02c05e63          	blez	a2,10796 <_Z20decode_motion_vectorPiiiii+0xea>
+     vec += ((motion_code - 1) << r_size) + motion_residual + 1;
+   1075e:	167d                	addi	a2,a2,-1
+   10760:	00b61633          	sll	a2,a2,a1
+   10764:	96b2                	add	a3,a3,a2
+   10766:	0685                	addi	a3,a3,1
+   10768:	97b6                	add	a5,a5,a3
+     *dbg0 = vec;
+   1076a:	00f8a223          	sw	a5,4(a7)
+     asm volatile ("addi x0, x0, 0");
+   1076e:	00000013          	nop
+     asm volatile ("addi x0, x0, 0");
+   10772:	00000013          	nop
+     asm volatile ("addi x0, x0, 0");
+   10776:	00000013          	nop
+     asm volatile ("addi x0, x0, 0");
+   1077a:	00000013          	nop
+     if (vec >= lim)
+   1077e:	0107c563          	blt	a5,a6,10788 <_Z20decode_motion_vectorPiiiii+0xdc>
+   vec -= lim + lim;
+   10782:	0806                	slli	a6,a6,0x1
+   10784:	410787b3          	sub	a5,a5,a6
+  *pred = full_pel_vector ? (vec << 1) : vec;
+   10788:	c311                	beqz	a4,1078c <_Z20decode_motion_vectorPiiiii+0xe0>
+   1078a:	0786                	slli	a5,a5,0x1
+   1078c:	c11c                	sw	a5,0(a0)
+  *dbg0 = *pred;
+   1078e:	10012737          	lui	a4,0x10012
+   10792:	c35c                	sw	a5,4(a4)
+}
+   10794:	8082                	ret
+  else if (motion_code < 0)
+   10796:	da6d                	beqz	a2,10788 <_Z20decode_motion_vectorPiiiii+0xdc>
+     vec -= ((-motion_code - 1) << r_size) + motion_residual + 1;
+   10798:	fff64613          	not	a2,a2
+   1079c:	00b61633          	sll	a2,a2,a1
+   107a0:	96b2                	add	a3,a3,a2
+   107a2:	0685                	addi	a3,a3,1
+   107a4:	8f95                	sub	a5,a5,a3
+     if (vec < -lim)
+   107a6:	410006b3          	neg	a3,a6
+   107aa:	fcd7dfe3          	ble	a3,a5,10788 <_Z20decode_motion_vectorPiiiii+0xdc>
+   vec += lim + lim;
+   107ae:	0806                	slli	a6,a6,0x1
+   107b0:	97c2                	add	a5,a5,a6
+   107b2:	bfd9                	j	10788 <_Z20decode_motion_vectorPiiiii+0xdc>
+
+000107b4 <_Z13motion_vectorPiS_iiiii>:
+{
+   107b4:	7179                	addi	sp,sp,-48
+   107b6:	d422                	sw	s0,40(sp)
+   107b8:	d226                	sw	s1,36(sp)
+   107ba:	d04a                	sw	s2,32(sp)
+   107bc:	ce4e                	sw	s3,28(sp)
+   107be:	cc52                	sw	s4,24(sp)
+   107c0:	ca56                	sw	s5,20(sp)
+   107c2:	c85a                	sw	s6,16(sp)
+   107c4:	8932                	mv	s2,a2
+   107c6:	84b6                	mv	s1,a3
+   107c8:	d606                	sw	ra,44(sp)
+   107ca:	842a                	mv	s0,a0
+   107cc:	89ae                	mv	s3,a1
+   107ce:	8a3a                	mv	s4,a4
+   107d0:	8abe                	mv	s5,a5
+   107d2:	8b42                	mv	s6,a6
+  motion_code = Get_motion_code ();
+   107d4:	351d                	jal	105fa <_Z15Get_motion_codev>
+   107d6:	862a                	mv	a2,a0
+        && motion_code != 0) ? Get_Bits (h_r_size) : 0;
+   107d8:	4681                	li	a3,0
+   107da:	00090863          	beqz	s2,107ea <_Z13motion_vectorPiS_iiiii+0x36>
+   107de:	c511                	beqz	a0,107ea <_Z13motion_vectorPiS_iiiii+0x36>
+   107e0:	c62a                	sw	a0,12(sp)
+   107e2:	854a                	mv	a0,s2
+   107e4:	3bd5                	jal	105d8 <_Z8Get_Bitsi>
+   107e6:	4632                	lw	a2,12(sp)
+   107e8:	86aa                	mv	a3,a0
+  decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual, full_pel_vector);
+   107ea:	875a                	mv	a4,s6
+   107ec:	85ca                	mv	a1,s2
+   107ee:	8522                	mv	a0,s0
+   107f0:	3d75                	jal	106ac <_Z20decode_motion_vectorPiiiii>
+  if (dmv)
+   107f2:	000a0563          	beqz	s4,107fc <_Z13motion_vectorPiS_iiiii+0x48>
+    dmvector[0] = Get_dmvector ();
+   107f6:	3d61                	jal	1068e <_Z12Get_dmvectorv>
+   107f8:	00a9a023          	sw	a0,0(s3)
+  *dbg1 = 0xaffe0002; //PMV[i][j][k];
+   107fc:	affe07b7          	lui	a5,0xaffe0
+   10800:	10012737          	lui	a4,0x10012
+   10804:	0789                	addi	a5,a5,2
+   10806:	c71c                	sw	a5,8(a4)
+  *dbg0 = *PMV;
+   10808:	401c                	lw	a5,0(s0)
+   1080a:	c35c                	sw	a5,4(a4)
+  motion_code = Get_motion_code ();
+   1080c:	33fd                	jal	105fa <_Z15Get_motion_codev>
+   1080e:	862a                	mv	a2,a0
+        && motion_code != 0) ? Get_Bits (v_r_size) : 0;
+   10810:	4681                	li	a3,0
+   10812:	c499                	beqz	s1,10820 <_Z13motion_vectorPiS_iiiii+0x6c>
+   10814:	c511                	beqz	a0,10820 <_Z13motion_vectorPiS_iiiii+0x6c>
+   10816:	c62a                	sw	a0,12(sp)
+   10818:	8526                	mv	a0,s1
+   1081a:	3b7d                	jal	105d8 <_Z8Get_Bitsi>
+   1081c:	4632                	lw	a2,12(sp)
+   1081e:	86aa                	mv	a3,a0
+  if (mvscale)
+   10820:	000a8563          	beqz	s5,1082a <_Z13motion_vectorPiS_iiiii+0x76>
+   PMV[1] >>= 1;   	/* DIV 2 */
+   10824:	405c                	lw	a5,4(s0)
+   10826:	8785                	srai	a5,a5,0x1
+   10828:	c05c                	sw	a5,4(s0)
+  decode_motion_vector (&PMV[1], v_r_size, motion_code, motion_residual, full_pel_vector);
+   1082a:	875a                	mv	a4,s6
+   1082c:	85a6                	mv	a1,s1
+   1082e:	00440513          	addi	a0,s0,4
+   10832:	3dad                	jal	106ac <_Z20decode_motion_vectorPiiiii>
+  if (mvscale)
+   10834:	000a8563          	beqz	s5,1083e <_Z13motion_vectorPiS_iiiii+0x8a>
+   PMV[1] <<= 1;
+   10838:	405c                	lw	a5,4(s0)
+   1083a:	0786                	slli	a5,a5,0x1
+   1083c:	c05c                	sw	a5,4(s0)
+  if (dmv)
+   1083e:	000a0563          	beqz	s4,10848 <_Z13motion_vectorPiS_iiiii+0x94>
+    dmvector[1] = Get_dmvector ();
+   10842:	35b1                	jal	1068e <_Z12Get_dmvectorv>
+   10844:	00a9a223          	sw	a0,4(s3)
+}
+   10848:	50b2                	lw	ra,44(sp)
+   1084a:	5422                	lw	s0,40(sp)
+   1084c:	5492                	lw	s1,36(sp)
+   1084e:	5902                	lw	s2,32(sp)
+   10850:	49f2                	lw	s3,28(sp)
+   10852:	4a62                	lw	s4,24(sp)
+   10854:	4ad2                	lw	s5,20(sp)
+   10856:	4b42                	lw	s6,16(sp)
+   10858:	6145                	addi	sp,sp,48
+   1085a:	8082                	ret
+
+0001085c <_Z14motion_vectorsPA2_A2_iPiPS_iiiiiii>:
+{
+   1085c:	7179                	addi	sp,sp,-48
+   1085e:	d422                	sw	s0,40(sp)
+   10860:	d226                	sw	s1,36(sp)
+   10862:	d04a                	sw	s2,32(sp)
+   10864:	ce4e                	sw	s3,28(sp)
+   10866:	cc52                	sw	s4,24(sp)
+   10868:	ca56                	sw	s5,20(sp)
+   1086a:	00369a13          	slli	s4,a3,0x3
+   1086e:	c85a                	sw	s6,16(sp)
+   10870:	c65e                	sw	s7,12(sp)
+   10872:	c462                	sw	s8,8(sp)
+   10874:	c266                	sw	s9,4(sp)
+   10876:	8436                	mv	s0,a3
+   10878:	d606                	sw	ra,44(sp)
+  if (motion_vector_count == 1)
+   1087a:	4685                	li	a3,1
+{
+   1087c:	84aa                	mv	s1,a0
+   1087e:	8aae                	mv	s5,a1
+   10880:	8932                	mv	s2,a2
+   10882:	8b42                	mv	s6,a6
+   10884:	8c46                	mv	s8,a7
+   10886:	59c2                	lw	s3,48(sp)
+   10888:	5bd2                	lw	s7,52(sp)
+   1088a:	01450cb3          	add	s9,a0,s4
+  if (motion_vector_count == 1)
+   1088e:	06d71163          	bne	a4,a3,108f0 <_Z14motion_vectorsPA2_A2_iPiPS_iiiiiii+0x94>
+     if (mv_format == MV_FIELD && !dmv)
+   10892:	eb91                	bnez	a5,108a6 <_Z14motion_vectorsPA2_A2_iPiPS_iiiiiii+0x4a>
+   10894:	00099963          	bnez	s3,108a6 <_Z14motion_vectorsPA2_A2_iPiPS_iiiiiii+0x4a>
+      motion_vertical_field_select[0][s] = Get_Bits (1);
+   10898:	4505                	li	a0,1
+   1089a:	3b3d                	jal	105d8 <_Z8Get_Bitsi>
+   1089c:	040a                	slli	s0,s0,0x2
+   1089e:	00890633          	add	a2,s2,s0
+   108a2:	c208                	sw	a0,0(a2)
+     motion_vertical_field_select[1][s] =
+   108a4:	c608                	sw	a0,8(a2)
+     motion_vector (PMV[0][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   108a6:	87de                	mv	a5,s7
+   108a8:	874e                	mv	a4,s3
+   108aa:	86e2                	mv	a3,s8
+   108ac:	865a                	mv	a2,s6
+   108ae:	85d6                	mv	a1,s5
+   108b0:	8566                	mv	a0,s9
+   108b2:	4801                	li	a6,0
+   108b4:	3701                	jal	107b4 <_Z13motion_vectorPiS_iiiii>
+     *dbg1 = 0xaffedead; //PMV[i][j][k];
+   108b6:	affee7b7          	lui	a5,0xaffee
+   108ba:	10012737          	lui	a4,0x10012
+   108be:	ead78793          	addi	a5,a5,-339 # affedead <_end+0xaffdb241>
+   108c2:	c71c                	sw	a5,8(a4)
+     *dbg0 = PMV[0][0][0];
+   108c4:	409c                	lw	a5,0(s1)
+     PMV[1][s][1] = PMV[0][s][1];
+   108c6:	94d2                	add	s1,s1,s4
+}
+   108c8:	50b2                	lw	ra,44(sp)
+     *dbg0 = PMV[0][0][0];
+   108ca:	c35c                	sw	a5,4(a4)
+     PMV[1][s][0] = PMV[0][s][0];
+   108cc:	000ca783          	lw	a5,0(s9)
+}
+   108d0:	5422                	lw	s0,40(sp)
+   108d2:	5902                	lw	s2,32(sp)
+     PMV[1][s][0] = PMV[0][s][0];
+   108d4:	00fca823          	sw	a5,16(s9)
+     PMV[1][s][1] = PMV[0][s][1];
+   108d8:	40dc                	lw	a5,4(s1)
+}
+   108da:	49f2                	lw	s3,28(sp)
+   108dc:	4a62                	lw	s4,24(sp)
+     PMV[1][s][1] = PMV[0][s][1];
+   108de:	c8dc                	sw	a5,20(s1)
+}
+   108e0:	4ad2                	lw	s5,20(sp)
+   108e2:	5492                	lw	s1,36(sp)
+   108e4:	4b42                	lw	s6,16(sp)
+   108e6:	4bb2                	lw	s7,12(sp)
+   108e8:	4c22                	lw	s8,8(sp)
+   108ea:	4c92                	lw	s9,4(sp)
+   108ec:	6145                	addi	sp,sp,48
+   108ee:	8082                	ret
+     motion_vertical_field_select[0][s] = Get_Bits (1);
+   108f0:	4505                	li	a0,1
+   108f2:	040a                	slli	s0,s0,0x2
+   108f4:	31d5                	jal	105d8 <_Z8Get_Bitsi>
+   108f6:	944a                	add	s0,s0,s2
+     motion_vector (PMV[0][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   108f8:	87de                	mv	a5,s7
+   108fa:	874e                	mv	a4,s3
+   108fc:	86e2                	mv	a3,s8
+   108fe:	865a                	mv	a2,s6
+   10900:	85d6                	mv	a1,s5
+     motion_vertical_field_select[0][s] = Get_Bits (1);
+   10902:	c008                	sw	a0,0(s0)
+     motion_vector (PMV[0][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   10904:	4801                	li	a6,0
+   10906:	8566                	mv	a0,s9
+   10908:	3575                	jal	107b4 <_Z13motion_vectorPiS_iiiii>
+     motion_vertical_field_select[1][s] = Get_Bits (1);
+   1090a:	4505                	li	a0,1
+   1090c:	31f1                	jal	105d8 <_Z8Get_Bitsi>
+   1090e:	c408                	sw	a0,8(s0)
+     motion_vector (PMV[1][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   10910:	01048513          	addi	a0,s1,16
+}
+   10914:	5422                	lw	s0,40(sp)
+   10916:	50b2                	lw	ra,44(sp)
+   10918:	5492                	lw	s1,36(sp)
+   1091a:	5902                	lw	s2,32(sp)
+   1091c:	4c92                	lw	s9,4(sp)
+     motion_vector (PMV[1][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   1091e:	87de                	mv	a5,s7
+   10920:	874e                	mv	a4,s3
+}
+   10922:	4bb2                	lw	s7,12(sp)
+   10924:	49f2                	lw	s3,28(sp)
+     motion_vector (PMV[1][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   10926:	86e2                	mv	a3,s8
+   10928:	865a                	mv	a2,s6
+}
+   1092a:	4c22                	lw	s8,8(sp)
+   1092c:	4b42                	lw	s6,16(sp)
+     motion_vector (PMV[1][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   1092e:	85d6                	mv	a1,s5
+   10930:	9552                	add	a0,a0,s4
+}
+   10932:	4ad2                	lw	s5,20(sp)
+   10934:	4a62                	lw	s4,24(sp)
+     motion_vector (PMV[1][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   10936:	4801                	li	a6,0
+}
+   10938:	6145                	addi	sp,sp,48
+     motion_vector (PMV[1][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+   1093a:	bdad                	j	107b4 <_Z13motion_vectorPiS_iiiii>
+
+0001093c <_Z17Initialize_Bufferv>:
+   ld_Incnt = 0;
+   1093c:	8001aa23          	sw	zero,-2028(gp) # 12444 <ld_Incnt>
+{
+   10940:	1141                	addi	sp,sp,-16
+   ld_Rdptr = ld_Rdbfr + 2048;
+   10942:	03c18793          	addi	a5,gp,60 # 12c6c <_end>
+{
+   10946:	c422                	sw	s0,8(sp)
+   ld_Rdptr = ld_Rdbfr + 2048;
+   10948:	80f1ae23          	sw	a5,-2020(gp) # 1244c <ld_Rdptr>
+{
+   1094c:	c606                	sw	ra,12(sp)
+   ld_Rdmax = ld_Rdptr;
+   1094e:	80f1ac23          	sw	a5,-2024(gp) # 12448 <ld_Rdmax>
+   ld_Bfr = 68157440;
+   10952:	81018413          	addi	s0,gp,-2032 # 12440 <ld_Bfr>
+   10956:	041007b7          	lui	a5,0x4100
+   Flush_Buffer (0);   	/* fills valid data into bfr */
+   1095a:	4501                	li	a0,0
+   ld_Bfr = 68157440;
+   1095c:	c01c                	sw	a5,0(s0)
+   Flush_Buffer (0);   	/* fills valid data into bfr */
+   1095e:	3e01                	jal	1046e <_Z12Flush_Bufferi>
+     *dbg1 = 0xaffe000a;
+   10960:	affe07b7          	lui	a5,0xaffe0
+   10964:	10012737          	lui	a4,0x10012
+   10968:	07a9                	addi	a5,a5,10
+   1096a:	c71c                	sw	a5,8(a4)
+     *dbg0 = ld_Bfr;
+   1096c:	401c                	lw	a5,0(s0)
+   1096e:	c35c                	sw	a5,4(a4)
+     asm volatile ("addi x0, x0, 0");
+   10970:	00000013          	nop
+     asm volatile ("addi x0, x0, 0");
+   10974:	00000013          	nop
+     asm volatile ("addi x0, x0, 0");
+   10978:	00000013          	nop
+     asm volatile ("addi x0, x0, 0");
+   1097c:	00000013          	nop
+}
+   10980:	40b2                	lw	ra,12(sp)
+   10982:	4422                	lw	s0,8(sp)
+   10984:	0141                	addi	sp,sp,16
+   10986:	8082                	ret
+
+00010988 <atexit>:
+   10988:	00050593          	mv	a1,a0
+   1098c:	00000693          	li	a3,0
+   10990:	00000613          	li	a2,0
+   10994:	00000513          	li	a0,0
+   10998:	2240006f          	j	10bbc <__register_exitproc>
+
+0001099c <exit>:
+   1099c:	ff010113          	addi	sp,sp,-16
+   109a0:	00000593          	li	a1,0
+   109a4:	00812423          	sw	s0,8(sp)
+   109a8:	00112623          	sw	ra,12(sp)
+   109ac:	00050413          	mv	s0,a0
+   109b0:	290000ef          	jal	ra,10c40 <__call_exitprocs>
+   109b4:	00002797          	auipc	a5,0x2
+   109b8:	a7c78793          	addi	a5,a5,-1412 # 12430 <_global_impure_ptr>
+   109bc:	0007a503          	lw	a0,0(a5)
+   109c0:	03c52783          	lw	a5,60(a0)
+   109c4:	00078463          	beqz	a5,109cc <exit+0x30>
+   109c8:	000780e7          	jalr	a5
+   109cc:	00040513          	mv	a0,s0
+   109d0:	384000ef          	jal	ra,10d54 <_exit>
+
+000109d4 <__libc_fini_array>:
+   109d4:	fe010113          	addi	sp,sp,-32
+   109d8:	00001797          	auipc	a5,0x1
+   109dc:	63078793          	addi	a5,a5,1584 # 12008 <__fini_array_end>
+   109e0:	00812c23          	sw	s0,24(sp)
+   109e4:	00001417          	auipc	s0,0x1
+   109e8:	62040413          	addi	s0,s0,1568 # 12004 <__init_array_end>
+   109ec:	40878433          	sub	s0,a5,s0
+   109f0:	00912a23          	sw	s1,20(sp)
+   109f4:	01212823          	sw	s2,16(sp)
+   109f8:	01312623          	sw	s3,12(sp)
+   109fc:	00112e23          	sw	ra,28(sp)
+   10a00:	40245413          	srai	s0,s0,0x2
+   10a04:	00000493          	li	s1,0
+   10a08:	00078913          	mv	s2,a5
+   10a0c:	ffc00993          	li	s3,-4
+   10a10:	02941063          	bne	s0,s1,10a30 <__libc_fini_array+0x5c>
+   10a14:	01812403          	lw	s0,24(sp)
+   10a18:	01c12083          	lw	ra,28(sp)
+   10a1c:	01412483          	lw	s1,20(sp)
+   10a20:	01012903          	lw	s2,16(sp)
+   10a24:	00c12983          	lw	s3,12(sp)
+   10a28:	02010113          	addi	sp,sp,32
+   10a2c:	889ff06f          	j	102b4 <_fini>
+   10a30:	033487b3          	mul	a5,s1,s3
+   10a34:	00148493          	addi	s1,s1,1
+   10a38:	00f907b3          	add	a5,s2,a5
+   10a3c:	ffc7a783          	lw	a5,-4(a5)
+   10a40:	000780e7          	jalr	a5
+   10a44:	fcdff06f          	j	10a10 <__libc_fini_array+0x3c>
+
+00010a48 <__libc_init_array>:
+   10a48:	ff010113          	addi	sp,sp,-16
+   10a4c:	00812423          	sw	s0,8(sp)
+   10a50:	00912223          	sw	s1,4(sp)
+   10a54:	00001417          	auipc	s0,0x1
+   10a58:	5ac40413          	addi	s0,s0,1452 # 12000 <__frame_dummy_init_array_entry>
+   10a5c:	00001497          	auipc	s1,0x1
+   10a60:	5a448493          	addi	s1,s1,1444 # 12000 <__frame_dummy_init_array_entry>
+   10a64:	408484b3          	sub	s1,s1,s0
+   10a68:	01212023          	sw	s2,0(sp)
+   10a6c:	00112623          	sw	ra,12(sp)
+   10a70:	4024d493          	srai	s1,s1,0x2
+   10a74:	00000913          	li	s2,0
+   10a78:	04991063          	bne	s2,s1,10ab8 <__libc_init_array+0x70>
+   10a7c:	00001417          	auipc	s0,0x1
+   10a80:	58440413          	addi	s0,s0,1412 # 12000 <__frame_dummy_init_array_entry>
+   10a84:	00001497          	auipc	s1,0x1
+   10a88:	58048493          	addi	s1,s1,1408 # 12004 <__init_array_end>
+   10a8c:	408484b3          	sub	s1,s1,s0
+   10a90:	825ff0ef          	jal	ra,102b4 <_fini>
+   10a94:	4024d493          	srai	s1,s1,0x2
+   10a98:	00000913          	li	s2,0
+   10a9c:	02991863          	bne	s2,s1,10acc <__libc_init_array+0x84>
+   10aa0:	00c12083          	lw	ra,12(sp)
+   10aa4:	00812403          	lw	s0,8(sp)
+   10aa8:	00412483          	lw	s1,4(sp)
+   10aac:	00012903          	lw	s2,0(sp)
+   10ab0:	01010113          	addi	sp,sp,16
+   10ab4:	00008067          	ret
+   10ab8:	00042783          	lw	a5,0(s0)
+   10abc:	00190913          	addi	s2,s2,1
+   10ac0:	00440413          	addi	s0,s0,4
+   10ac4:	000780e7          	jalr	a5
+   10ac8:	fb1ff06f          	j	10a78 <__libc_init_array+0x30>
+   10acc:	00042783          	lw	a5,0(s0)
+   10ad0:	00190913          	addi	s2,s2,1
+   10ad4:	00440413          	addi	s0,s0,4
+   10ad8:	000780e7          	jalr	a5
+   10adc:	fc1ff06f          	j	10a9c <__libc_init_array+0x54>
+
+00010ae0 <memset>:
+   10ae0:	00f00313          	li	t1,15
+   10ae4:	00050713          	mv	a4,a0
+   10ae8:	02c37e63          	bleu	a2,t1,10b24 <memset+0x44>
+   10aec:	00f77793          	andi	a5,a4,15
+   10af0:	0a079063          	bnez	a5,10b90 <memset+0xb0>
+   10af4:	08059263          	bnez	a1,10b78 <memset+0x98>
+   10af8:	ff067693          	andi	a3,a2,-16
+   10afc:	00f67613          	andi	a2,a2,15
+   10b00:	00e686b3          	add	a3,a3,a4
+   10b04:	00b72023          	sw	a1,0(a4) # 10012000 <_end+0xffff394>
+   10b08:	00b72223          	sw	a1,4(a4)
+   10b0c:	00b72423          	sw	a1,8(a4)
+   10b10:	00b72623          	sw	a1,12(a4)
+   10b14:	01070713          	addi	a4,a4,16
+   10b18:	fed766e3          	bltu	a4,a3,10b04 <memset+0x24>
+   10b1c:	00061463          	bnez	a2,10b24 <memset+0x44>
+   10b20:	00008067          	ret
+   10b24:	40c306b3          	sub	a3,t1,a2
+   10b28:	00269693          	slli	a3,a3,0x2
+   10b2c:	00000297          	auipc	t0,0x0
+   10b30:	005686b3          	add	a3,a3,t0
+   10b34:	00c68067          	jr	12(a3) # affe000c <_end+0xaffcd3a0>
+   10b38:	00b70723          	sb	a1,14(a4)
+   10b3c:	00b706a3          	sb	a1,13(a4)
+   10b40:	00b70623          	sb	a1,12(a4)
+   10b44:	00b705a3          	sb	a1,11(a4)
+   10b48:	00b70523          	sb	a1,10(a4)
+   10b4c:	00b704a3          	sb	a1,9(a4)
+   10b50:	00b70423          	sb	a1,8(a4)
+   10b54:	00b703a3          	sb	a1,7(a4)
+   10b58:	00b70323          	sb	a1,6(a4)
+   10b5c:	00b702a3          	sb	a1,5(a4)
+   10b60:	00b70223          	sb	a1,4(a4)
+   10b64:	00b701a3          	sb	a1,3(a4)
+   10b68:	00b70123          	sb	a1,2(a4)
+   10b6c:	00b700a3          	sb	a1,1(a4)
+   10b70:	00b70023          	sb	a1,0(a4)
+   10b74:	00008067          	ret
+   10b78:	0ff5f593          	andi	a1,a1,255
+   10b7c:	00859693          	slli	a3,a1,0x8
+   10b80:	00d5e5b3          	or	a1,a1,a3
+   10b84:	01059693          	slli	a3,a1,0x10
+   10b88:	00d5e5b3          	or	a1,a1,a3
+   10b8c:	f6dff06f          	j	10af8 <memset+0x18>
+   10b90:	00279693          	slli	a3,a5,0x2
+   10b94:	00000297          	auipc	t0,0x0
+   10b98:	005686b3          	add	a3,a3,t0
+   10b9c:	00008293          	mv	t0,ra
+   10ba0:	fa0680e7          	jalr	-96(a3)
+   10ba4:	00028093          	mv	ra,t0
+   10ba8:	ff078793          	addi	a5,a5,-16
+   10bac:	40f70733          	sub	a4,a4,a5
+   10bb0:	00f60633          	add	a2,a2,a5
+   10bb4:	f6c378e3          	bleu	a2,t1,10b24 <memset+0x44>
+   10bb8:	f3dff06f          	j	10af4 <memset+0x14>
+
+00010bbc <__register_exitproc>:
+   10bbc:	00002797          	auipc	a5,0x2
+   10bc0:	87478793          	addi	a5,a5,-1932 # 12430 <_global_impure_ptr>
+   10bc4:	0007a703          	lw	a4,0(a5)
+   10bc8:	00050313          	mv	t1,a0
+   10bcc:	14872783          	lw	a5,328(a4)
+   10bd0:	00079663          	bnez	a5,10bdc <__register_exitproc+0x20>
+   10bd4:	14c70793          	addi	a5,a4,332
+   10bd8:	14f72423          	sw	a5,328(a4)
+   10bdc:	0047a703          	lw	a4,4(a5)
+   10be0:	01f00813          	li	a6,31
+   10be4:	fff00513          	li	a0,-1
+   10be8:	04e84a63          	blt	a6,a4,10c3c <__register_exitproc+0x80>
+   10bec:	00271893          	slli	a7,a4,0x2
+   10bf0:	02030c63          	beqz	t1,10c28 <__register_exitproc+0x6c>
+   10bf4:	01178533          	add	a0,a5,a7
+   10bf8:	08c52423          	sw	a2,136(a0)
+   10bfc:	1887a803          	lw	a6,392(a5)
+   10c00:	00100613          	li	a2,1
+   10c04:	00e61633          	sll	a2,a2,a4
+   10c08:	00c86833          	or	a6,a6,a2
+   10c0c:	1907a423          	sw	a6,392(a5)
+   10c10:	10d52423          	sw	a3,264(a0)
+   10c14:	00200693          	li	a3,2
+   10c18:	00d31863          	bne	t1,a3,10c28 <__register_exitproc+0x6c>
+   10c1c:	18c7a683          	lw	a3,396(a5)
+   10c20:	00c6e633          	or	a2,a3,a2
+   10c24:	18c7a623          	sw	a2,396(a5)
+   10c28:	00170713          	addi	a4,a4,1
+   10c2c:	00e7a223          	sw	a4,4(a5)
+   10c30:	011787b3          	add	a5,a5,a7
+   10c34:	00b7a423          	sw	a1,8(a5)
+   10c38:	00000513          	li	a0,0
+   10c3c:	00008067          	ret
+
+00010c40 <__call_exitprocs>:
+   10c40:	fd010113          	addi	sp,sp,-48
+   10c44:	00001797          	auipc	a5,0x1
+   10c48:	7ec78793          	addi	a5,a5,2028 # 12430 <_global_impure_ptr>
+   10c4c:	01312e23          	sw	s3,28(sp)
+   10c50:	0007a983          	lw	s3,0(a5)
+   10c54:	01412c23          	sw	s4,24(sp)
+   10c58:	01512a23          	sw	s5,20(sp)
+   10c5c:	01612823          	sw	s6,16(sp)
+   10c60:	02112623          	sw	ra,44(sp)
+   10c64:	02812423          	sw	s0,40(sp)
+   10c68:	02912223          	sw	s1,36(sp)
+   10c6c:	03212023          	sw	s2,32(sp)
+   10c70:	01712623          	sw	s7,12(sp)
+   10c74:	00050a93          	mv	s5,a0
+   10c78:	00058a13          	mv	s4,a1
+   10c7c:	00100b13          	li	s6,1
+   10c80:	1489a483          	lw	s1,328(s3)
+   10c84:	00048c63          	beqz	s1,10c9c <__call_exitprocs+0x5c>
+   10c88:	0044a403          	lw	s0,4(s1)
+   10c8c:	fff40913          	addi	s2,s0,-1
+   10c90:	00241413          	slli	s0,s0,0x2
+   10c94:	00848433          	add	s0,s1,s0
+   10c98:	02095863          	bgez	s2,10cc8 <__call_exitprocs+0x88>
+   10c9c:	02c12083          	lw	ra,44(sp)
+   10ca0:	02812403          	lw	s0,40(sp)
+   10ca4:	02412483          	lw	s1,36(sp)
+   10ca8:	02012903          	lw	s2,32(sp)
+   10cac:	01c12983          	lw	s3,28(sp)
+   10cb0:	01812a03          	lw	s4,24(sp)
+   10cb4:	01412a83          	lw	s5,20(sp)
+   10cb8:	01012b03          	lw	s6,16(sp)
+   10cbc:	00c12b83          	lw	s7,12(sp)
+   10cc0:	03010113          	addi	sp,sp,48
+   10cc4:	00008067          	ret
+   10cc8:	000a0c63          	beqz	s4,10ce0 <__call_exitprocs+0xa0>
+   10ccc:	10442783          	lw	a5,260(s0)
+   10cd0:	01478863          	beq	a5,s4,10ce0 <__call_exitprocs+0xa0>
+   10cd4:	fff90913          	addi	s2,s2,-1
+   10cd8:	ffc40413          	addi	s0,s0,-4
+   10cdc:	fbdff06f          	j	10c98 <__call_exitprocs+0x58>
+   10ce0:	0044a703          	lw	a4,4(s1)
+   10ce4:	00442783          	lw	a5,4(s0)
+   10ce8:	fff70713          	addi	a4,a4,-1
+   10cec:	03271c63          	bne	a4,s2,10d24 <__call_exitprocs+0xe4>
+   10cf0:	0124a223          	sw	s2,4(s1)
+   10cf4:	fe0780e3          	beqz	a5,10cd4 <__call_exitprocs+0x94>
+   10cf8:	1884a683          	lw	a3,392(s1)
+   10cfc:	012b1733          	sll	a4,s6,s2
+   10d00:	0044ab83          	lw	s7,4(s1)
+   10d04:	00d776b3          	and	a3,a4,a3
+   10d08:	02069263          	bnez	a3,10d2c <__call_exitprocs+0xec>
+   10d0c:	000780e7          	jalr	a5
+   10d10:	0044a703          	lw	a4,4(s1)
+   10d14:	1489a783          	lw	a5,328(s3)
+   10d18:	f77714e3          	bne	a4,s7,10c80 <__call_exitprocs+0x40>
+   10d1c:	faf48ce3          	beq	s1,a5,10cd4 <__call_exitprocs+0x94>
+   10d20:	f61ff06f          	j	10c80 <__call_exitprocs+0x40>
+   10d24:	00042223          	sw	zero,4(s0)
+   10d28:	fcdff06f          	j	10cf4 <__call_exitprocs+0xb4>
+   10d2c:	18c4a683          	lw	a3,396(s1)
+   10d30:	08442583          	lw	a1,132(s0)
+   10d34:	00d77733          	and	a4,a4,a3
+   10d38:	00071863          	bnez	a4,10d48 <__call_exitprocs+0x108>
+   10d3c:	000a8513          	mv	a0,s5
+   10d40:	000780e7          	jalr	a5
+   10d44:	fcdff06f          	j	10d10 <__call_exitprocs+0xd0>
+   10d48:	00058513          	mv	a0,a1
+   10d4c:	000780e7          	jalr	a5
+   10d50:	fc1ff06f          	j	10d10 <__call_exitprocs+0xd0>
+
+00010d54 <_exit>:
+   10d54:	00000593          	li	a1,0
+   10d58:	00000613          	li	a2,0
+   10d5c:	00000693          	li	a3,0
+   10d60:	00000713          	li	a4,0
+   10d64:	00000793          	li	a5,0
+   10d68:	05d00893          	li	a7,93
+   10d6c:	00000073          	ecall
+   10d70:	02055263          	bgez	a0,10d94 <_exit+0x40>
+   10d74:	ff010113          	addi	sp,sp,-16
+   10d78:	00812423          	sw	s0,8(sp)
+   10d7c:	00050413          	mv	s0,a0
+   10d80:	00112623          	sw	ra,12(sp)
+   10d84:	40800433          	neg	s0,s0
+   10d88:	010000ef          	jal	ra,10d98 <__errno>
+   10d8c:	00852023          	sw	s0,0(a0)
+   10d90:	0000006f          	j	10d90 <_exit+0x3c>
+   10d94:	0000006f          	j	10d94 <_exit+0x40>
+
+00010d98 <__errno>:
+   10d98:	00001797          	auipc	a5,0x1
+   10d9c:	69c78793          	addi	a5,a5,1692 # 12434 <_impure_ptr>
+   10da0:	0007a503          	lw	a0,0(a5)
+   10da4:	00008067          	ret

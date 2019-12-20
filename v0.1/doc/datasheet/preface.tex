@@ -1,0 +1,15 @@
+\chapter{Preface}
+
+\textbf{System Hyper Pipelining:} With this project I want to demonstrate a certain digital design technique called system hyper pipelining (SHP), which creates high performance digital designs. The project is created to have a working example, which can be used for comparison. Please find more information on system hyper pipelining (SHP) technology online at \url{http://www.cloudx.cc/shp.html}.
+
+\textbf{ASIC vs. FPGA:} The technique can be used for ASICs and FPGA alike. I'm just using an FPGA for this project. The hardware is optimized towards the famous low-cost ARTY board from Xilinx. There is no reason not to use SHP for designs targeting other FPGA devices or silicon chips.
+
+\textbf{RISC-V:} I use the RISC-V for this project due to its raising popularity. Previous versions are based on a Cortex-M3 design, for instance. SHP is not limited to processors or particular processor families.
+
+\textbf{Dynamic Multi-threading and Virtual Peripherals:} One benefit of SHP is its dynamic multi-threading capability. This project is optimized towards using an SHP-ed 32-bit RISC-V quad core MP-SoC to support virtual peripherals such as RS232. I2C, SPI, 1-write, CAN, PWM, .... Nevertheless, I believe that SHP also has a future in HPC, etc.. It is not limited to the capabilities shown by this particular project.
+
+\textbf{Arduissimo:} For me the classical term “Arduino” stands for simple and easy microcontroller programming. Still, each microcontroller (Atmel, Mirochip, TI, ...) has its own set of peripherals and a microcontroller specific driver code is needed to use them. In this project, a reasonable set of virtual peripherals should be fairly easily re-usable. This aspect gave the project its name, the simplification and flexibility of peripheral programming on top of simple microcontroller programming, Arduissimo. Free the world from a fixed set of peripherals implemented in a fxied hardware! 
+
+\textbf{IDE:} The Arduissimo IDE still needs some work and is not released yet. Alternatively eclipse based Freedo Studio IDE from SiFive can be used. I hope that the community helps me in finding the right way to handle the hardware beast I created more efficiently. The problem is, that the SHP programming requires slightly more detailed programming than the “processing” method used in the Arduino world offers. There are still stack handling issues for such a simplified but multithreaded environment.
+
+\textbf{Future:} I would love to see the specific ideas of this very projects somehow realized on an ASIC. I think the resulting virtual peripheral speeds are fast enough to replace the fixed set of peripherals on microcontroller families. The programmable realtime unit subsystem (PRU) on some of TI's microcontroller is already an exampe for such a concept.  

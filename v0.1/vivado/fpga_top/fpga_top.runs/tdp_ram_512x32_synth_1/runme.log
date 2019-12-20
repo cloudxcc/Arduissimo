@@ -1,0 +1,13 @@
+
+*** Running vivado
+    with args -log tdp_ram_512x32.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tdp_ram_512x32.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source tdp_ram_512x32.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP tdp_ram_512x32, cache-ID = bd32c39469ac923c.
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  4 10:10:40 2019...

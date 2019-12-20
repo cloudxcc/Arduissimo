@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../dut/CUBEV_RV32iMC_P3C4D16.v" \
+"../../../../../../dut/mem_sim/RF_D16_sim.v" \
+"../../../../../../dut/mem_sim/Reg_D16_sim.v" \
+"../../../../../../dut/ca.v" \
+"../../../../../../dut/core_D16.v" \
+"../../../../../../dut/gpio.v" \
+"../../../../../../dut/mp.v" \
+"../../../../../../dut/quad.v" \
+"../../../../../../dut/mem_sim/sdp_ram_512x32x4.v" \
+"../../../../../../dut/mem_sim/tdp_ram_512x33.v" \
+"../../../../../../dut/mem_sim/tdp_ram_6144x16x2.v" \
+"../../../../../../testbench/testbench_quad.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,687 @@
+Archive member included to satisfy reference by file (symbol)
+
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-atexit.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o (atexit)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o (exit)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-fini.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o (__libc_fini_array)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-impure.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o) (_global_impure_ptr)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o (__libc_init_array)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-memset.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o (memset)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__atexit.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-atexit.o) (__register_exitproc)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__call_atexit.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o) (__call_exitprocs)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a(sys_exit.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o) (_exit)
+d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-errno.o)
+                              d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a(sys_exit.o) (__errno)
+
+Allocating common symbols
+Common symbol       size              file
+
+rl                  0x4               ./src/main.o
+dec_plt2            0x4               ./src/main.o
+rh2                 0x4               ./src/main.o
+spl                 0x4               ./src/main.o
+szh                 0x4               ./src/main.o
+dec_rlt             0x4               ./src/main.o
+ih                  0x4               ./src/main.o
+dec_plt1            0x4               ./src/main.o
+nbl                 0x4               ./src/main.o
+dec_nbh             0x4               ./src/main.o
+delay_dltx          0x18              ./src/main.o
+dec_del_dltx        0x18              ./src/main.o
+dec_ph1             0x4               ./src/main.o
+ph                  0x4               ./src/main.o
+dh                  0x4               ./src/main.o
+dec_sph             0x4               ./src/main.o
+sh                  0x4               ./src/main.o
+accumd              0x2c              ./src/main.o
+detl                0x4               ./src/main.o
+eh                  0x4               ./src/main.o
+yh                  0x4               ./src/main.o
+ah1                 0x4               ./src/main.o
+rlt                 0x4               ./src/main.o
+sl                  0x4               ./src/main.o
+xout1               0x4               ./src/main.o
+szl                 0x4               ./src/main.o
+dec_ph2             0x4               ./src/main.o
+dec_del_dhx         0x18              ./src/main.o
+dec_ah1             0x4               ./src/main.o
+dec_szl             0x4               ./src/main.o
+dec_dh              0x4               ./src/main.o
+rh                  0x4               ./src/main.o
+deth                0x4               ./src/main.o
+dec_rlt2            0x4               ./src/main.o
+dec_rlt1            0x4               ./src/main.o
+xh                  0x4               ./src/main.o
+dec_sl              0x4               ./src/main.o
+xout2               0x4               ./src/main.o
+dec_deth            0x4               ./src/main.o
+rlt2                0x4               ./src/main.o
+ph2                 0x4               ./src/main.o
+dec_dlt             0x4               ./src/main.o
+ah2                 0x4               ./src/main.o
+compressed          0x190             ./src/main.o
+il                  0x4               ./src/main.o
+ilr                 0x4               ./src/main.o
+el                  0x4               ./src/main.o
+dec_spl             0x4               ./src/main.o
+delay_dhx           0x18              ./src/main.o
+dec_szh             0x4               ./src/main.o
+dec_nbl             0x4               ./src/main.o
+dec_ph              0x4               ./src/main.o
+sph                 0x4               ./src/main.o
+dlt                 0x4               ./src/main.o
+dl                  0x4               ./src/main.o
+ph1                 0x4               ./src/main.o
+tqmf                0x60              ./src/main.o
+rh1                 0x4               ./src/main.o
+dec_sh              0x4               ./src/main.o
+result              0x190             ./src/main.o
+dec_del_bph         0x18              ./src/main.o
+xd                  0x4               ./src/main.o
+plt2                0x4               ./src/main.o
+dec_detl            0x4               ./src/main.o
+dec_al2             0x4               ./src/main.o
+accumc              0x2c              ./src/main.o
+plt1                0x4               ./src/main.o
+dec_plt             0x4               ./src/main.o
+dec_rh2             0x4               ./src/main.o
+al2                 0x4               ./src/main.o
+dec_rh1             0x4               ./src/main.o
+nbh                 0x4               ./src/main.o
+delay_bpl           0x18              ./src/main.o
+rlt1                0x4               ./src/main.o
+dec_del_bpl         0x18              ./src/main.o
+dec_al1             0x4               ./src/main.o
+xl                  0x4               ./src/main.o
+plt                 0x4               ./src/main.o
+dec_ah2             0x4               ./src/main.o
+xs                  0x4               ./src/main.o
+al1                 0x4               ./src/main.o
+delay_bph           0x18              ./src/main.o
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+ .sdata         0x0000000000000000        0x4 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+ .text          0x0000000000000000        0x0 ./src/main.o
+ .data          0x0000000000000000        0x0 ./src/main.o
+ .bss           0x0000000000000000        0x0 ./src/main.o
+ .text.abs      0x0000000000000000        0xa ./src/main.o
+ .text.filtep   0x0000000000000000       0x12 ./src/main.o
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-atexit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-atexit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-fini.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-fini.o)
+ .text          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__atexit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__atexit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__call_atexit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__call_atexit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a(sys_exit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a(sys_exit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-errno.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-errno.o)
+ .text          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+ .data          0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+ .bss           0x0000000000000000        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+LOAD ./src/main.o
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32\libgcc.a
+START GROUP
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a
+END GROUP
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32\libgcc.a
+LOAD d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+                [!provide]                        PROVIDE (__executable_start, SEGMENT_START ("text-segment", 0x10000))
+                0x0000000000010074                . = (SEGMENT_START ("text-segment", 0x10000) + SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rela.dyn       0x0000000000010074        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ .rela.text     0x0000000000010074        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .rela.text.reset
+                0x0000000000010074        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .rela.text.encode
+                0x0000000000010074        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .rela.text.decode
+                0x0000000000010074        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .rela.text.adpcm_main
+                0x0000000000010074        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ .rela.text.startup.main
+                0x0000000000010074        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start, .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end, .)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT(.init))
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000000010074      0xf40
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ .text.startup.main
+                0x0000000000010074       0xce ./src/main.o
+                0x0000000000010074                main
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ *fill*         0x0000000000010142        0x2 
+ .text          0x0000000000010144       0x44 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/crt0.o
+                0x0000000000010144                _start
+                0x0000000000010184                _fini
+                0x0000000000010184                _init
+ .text          0x0000000000010188       0xe8 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+ .text.reset    0x0000000000010270      0x134 ./src/main.o
+                0x0000000000010270                reset
+ .text.filtez   0x00000000000103a4       0x2e ./src/main.o
+                0x00000000000103a4                filtez
+ .text.quantl   0x00000000000103d2       0x42 ./src/main.o
+                0x00000000000103d2                quantl
+ .text.logscl   0x0000000000010414       0x30 ./src/main.o
+                0x0000000000010414                logscl
+ .text.scalel   0x0000000000010444       0x20 ./src/main.o
+                0x0000000000010444                scalel
+ .text.upzero   0x0000000000010464       0x64 ./src/main.o
+                0x0000000000010464                upzero
+ .text.uppol2   0x00000000000104c8       0x3e ./src/main.o
+                0x00000000000104c8                uppol2
+ .text.uppol1   0x0000000000010506       0x34 ./src/main.o
+                0x0000000000010506                uppol1
+ .text.logsch   0x000000000001053a       0x30 ./src/main.o
+                0x000000000001053a                logsch
+ .text.encode   0x000000000001056a      0x2e4 ./src/main.o
+                0x000000000001056a                encode
+ .text.decode   0x000000000001084e      0x2c4 ./src/main.o
+                0x000000000001084e                decode
+ .text.adpcm_main
+                0x0000000000010b12       0x80 ./src/main.o
+                0x0000000000010b12                adpcm_main
+ *fill*         0x0000000000010b92        0x2 
+ .text          0x0000000000010b94       0x14 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-atexit.o)
+                0x0000000000010b94                atexit
+ .text          0x0000000000010ba8       0x38 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o)
+                0x0000000000010ba8                exit
+ .text          0x0000000000010be0       0x74 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-fini.o)
+                0x0000000000010be0                __libc_fini_array
+ .text          0x0000000000010c54       0x98 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+                0x0000000000010c54                __libc_init_array
+ .text          0x0000000000010cec       0xdc d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-memset.o)
+                0x0000000000010cec                memset
+ .text          0x0000000000010dc8       0x84 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__atexit.o)
+                0x0000000000010dc8                __register_exitproc
+ .text          0x0000000000010e4c      0x114 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__call_atexit.o)
+                0x0000000000010e4c                __call_exitprocs
+ .text          0x0000000000010f60       0x44 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a(sys_exit.o)
+                0x0000000000010f60                _exit
+ .text          0x0000000000010fa4       0x10 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-errno.o)
+                0x0000000000010fa4                __errno
+ *(.gnu.warning)
+
+.fini
+ *(SORT(.fini))
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+
+.rodata         0x0000000000010fb4      0x8a0
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.decis_levl
+                0x0000000000010fb4       0x78 ./src/main.o
+                0x0000000000010fb4                decis_levl
+ .rodata.h      0x000000000001102c       0x60 ./src/main.o
+                0x000000000001102c                h
+ .rodata.ilb_table
+                0x000000000001108c       0x80 ./src/main.o
+                0x000000000001108c                ilb_table
+ .rodata.qq2_code2_table
+                0x000000000001110c       0x10 ./src/main.o
+                0x000000000001110c                qq2_code2_table
+ .rodata.qq4_code4_table
+                0x000000000001111c       0x40 ./src/main.o
+                0x000000000001111c                qq4_code4_table
+ .rodata.qq6_code6_table
+                0x000000000001115c      0x100 ./src/main.o
+                0x000000000001115c                qq6_code6_table
+ .rodata.quant26bt_neg
+                0x000000000001125c       0x7c ./src/main.o
+                0x000000000001125c                quant26bt_neg
+ .rodata.quant26bt_pos
+                0x00000000000112d8       0x7c ./src/main.o
+                0x00000000000112d8                quant26bt_pos
+ .rodata.test_compressed
+                0x0000000000011354      0x190 ./src/main.o
+                0x0000000000011354                test_compressed
+ .rodata.test_data
+                0x00000000000114e4      0x190 ./src/main.o
+                0x00000000000114e4                test_data
+ .rodata.test_result
+                0x0000000000011674      0x190 ./src/main.o
+                0x0000000000011674                test_result
+ .rodata.wh_code_table
+                0x0000000000011804       0x10 ./src/main.o
+                0x0000000000011804                wh_code_table
+ .rodata.wl_code_table
+                0x0000000000011814       0x40 ./src/main.o
+                0x0000000000011814                wl_code_table
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x0000000000011854        0x4
+ *(.eh_frame)
+ .eh_frame      0x0000000000011854        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+ .eh_frame      0x0000000000011854        0x4 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000000012000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000000012000        0x0
+                0x0000000000012000                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000000012000                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000000000012000        0x4
+                0x0000000000012000                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*) SORT(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x0000000000012000        0x4 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+                0x0000000000012004                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000000000012004        0x4
+                0x0000000000012004                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*) SORT(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000000012004        0x4 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+                0x0000000000012008                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+                0x0000000000012008                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000000012008      0x428
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000012008      0x428 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-impure.o)
+
+.tm_clone_table
+                0x0000000000012430        0x0
+ .tm_clone_table
+                0x0000000000012430        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+ .tm_clone_table
+                0x0000000000012430        0x0 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata          0x0000000000012430        0x8
+                0x0000000000012c30                __global_pointer$ = (. + 0x800)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x0000000000012430        0x8 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-impure.o)
+                0x0000000000012430                _global_impure_ptr
+                0x0000000000012434                _impure_ptr
+                0x0000000000012438                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0x0000000000012438                . = .
+                0x0000000000012438                __bss_start = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x0000000000012438      0x5c8
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000012438       0x1c d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+ *(COMMON)
+ COMMON         0x0000000000012454      0x5ac ./src/main.o
+                0x0000000000012454                rl
+                0x0000000000012458                dec_plt2
+                0x000000000001245c                rh2
+                0x0000000000012460                spl
+                0x0000000000012464                szh
+                0x0000000000012468                dec_rlt
+                0x000000000001246c                ih
+                0x0000000000012470                dec_plt1
+                0x0000000000012474                nbl
+                0x0000000000012478                dec_nbh
+                0x000000000001247c                delay_dltx
+                0x0000000000012494                dec_del_dltx
+                0x00000000000124ac                dec_ph1
+                0x00000000000124b0                ph
+                0x00000000000124b4                dh
+                0x00000000000124b8                dec_sph
+                0x00000000000124bc                sh
+                0x00000000000124c0                accumd
+                0x00000000000124ec                detl
+                0x00000000000124f0                eh
+                0x00000000000124f4                yh
+                0x00000000000124f8                ah1
+                0x00000000000124fc                rlt
+                0x0000000000012500                sl
+                0x0000000000012504                xout1
+                0x0000000000012508                szl
+                0x000000000001250c                dec_ph2
+                0x0000000000012510                dec_del_dhx
+                0x0000000000012528                dec_ah1
+                0x000000000001252c                dec_szl
+                0x0000000000012530                dec_dh
+                0x0000000000012534                rh
+                0x0000000000012538                deth
+                0x000000000001253c                dec_rlt2
+                0x0000000000012540                dec_rlt1
+                0x0000000000012544                xh
+                0x0000000000012548                dec_sl
+                0x000000000001254c                xout2
+                0x0000000000012550                dec_deth
+                0x0000000000012554                rlt2
+                0x0000000000012558                ph2
+                0x000000000001255c                dec_dlt
+                0x0000000000012560                ah2
+                0x0000000000012564                compressed
+                0x00000000000126f4                il
+                0x00000000000126f8                ilr
+                0x00000000000126fc                el
+                0x0000000000012700                dec_spl
+                0x0000000000012704                delay_dhx
+                0x000000000001271c                dec_szh
+                0x0000000000012720                dec_nbl
+                0x0000000000012724                dec_ph
+                0x0000000000012728                sph
+                0x000000000001272c                dlt
+                0x0000000000012730                dl
+                0x0000000000012734                ph1
+                0x0000000000012738                tqmf
+                0x0000000000012798                rh1
+                0x000000000001279c                dec_sh
+                0x00000000000127a0                result
+                0x0000000000012930                dec_del_bph
+                0x0000000000012948                xd
+                0x000000000001294c                plt2
+                0x0000000000012950                dec_detl
+                0x0000000000012954                dec_al2
+                0x0000000000012958                accumc
+                0x0000000000012984                plt1
+                0x0000000000012988                dec_plt
+                0x000000000001298c                dec_rh2
+                0x0000000000012990                al2
+                0x0000000000012994                dec_rh1
+                0x0000000000012998                nbh
+                0x000000000001299c                delay_bpl
+                0x00000000000129b4                rlt1
+                0x00000000000129b8                dec_del_bpl
+                0x00000000000129d0                dec_al1
+                0x00000000000129d4                xl
+                0x00000000000129d8                plt
+                0x00000000000129dc                dec_ah2
+                0x00000000000129e0                xs
+                0x00000000000129e4                al1
+                0x00000000000129e8                delay_bph
+                0x0000000000012a00                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0000000000012a00                . = ALIGN (0x4)
+                0x0000000000012a00                . = SEGMENT_START ("ldata-segment", .)
+                0x0000000000012a00                . = ALIGN (0x4)
+                0x0000000000012a00                _end = .
+                [!provide]                        PROVIDE (end, .)
+                0x0000000000012a00                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtbegin.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 ./src/main.o
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-atexit.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-exit.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-fini.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-impure.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__atexit.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-__call_atexit.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libgloss.a(sys_exit.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32\libc.a(lib_a-errno.o)
+ .comment       0x0000000000000011       0x12 d:/edaptix/projects/hifive/download_180812/freedomstudio/freedomstudio/sifive/riscv64-unknown-elf-gcc-20171231-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/rv32im/ilp32/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x90
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x90 ./src/main.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x1182
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000     0x1182 ./src/main.o
+
+.debug_abbrev   0x0000000000000000      0x27d
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x27d ./src/main.o
+
+.debug_line     0x0000000000000000      0xe4d
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0xe4d ./src/main.o
+
+.debug_frame    0x0000000000000000      0x1c0
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x1c0 ./src/main.o
+
+.debug_str      0x0000000000000000      0x3db
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x3db ./src/main.o
+                                        0x410 (size before relaxing)
+
+.debug_loc      0x0000000000000000      0xd66
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0xd66 ./src/main.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000      0x168
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000      0x168 ./src/main.o
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_addr
+ *(.debug_addr)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(adpcm.elf elf32-littleriscv)

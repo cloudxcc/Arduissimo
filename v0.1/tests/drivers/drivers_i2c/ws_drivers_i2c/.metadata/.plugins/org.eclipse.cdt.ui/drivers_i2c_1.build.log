@@ -1,0 +1,20 @@
+18:10:54 **** Incremental Build of configuration Release for project drivers_i2c_1 ****
+make all 
+Building target: drivers_i2c_1.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_i2c_1.map" -o "drivers_i2c_1.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_i2c.o ./include/driver_i2c_custom.o   
+Finished building target: drivers_i2c_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_i2c_1.elf"  "drivers_i2c_1.hex"
+Finished building: drivers_i2c_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_i2c_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2272	   1080	    408	   3760	    eb0	drivers_i2c_1.elf
+Finished building: drivers_i2c_1.siz
+ 
+
+18:10:59 Build Finished (took 5s.400ms)
+

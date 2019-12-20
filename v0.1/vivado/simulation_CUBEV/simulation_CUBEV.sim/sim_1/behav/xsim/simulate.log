@@ -1,0 +1,67 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Running test:           0
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           1
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           2
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           3
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           4
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           5
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           6
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           7
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           8
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:           9
+Test passed.
+cycles:           0 stalled:           0 ratio (decimal):           x
+==============================================================================
+Running test:          10
+Test passed.
+cycles:       40584 stalled:        8183 ratio (decimal):           4
+==============================================================================
+Running test:          11
+Test passed.
+cycles:       99468 stalled:       21746 ratio (decimal):           4
+==============================================================================
+Running test:          12
+Test passed.
+cycles:      173780 stalled:       34371 ratio (decimal):           5
+==============================================================================
+Running test:          13
+Test passed.
+cycles:      304362 stalled:       64502 ratio (decimal):           4
+==============================================================================
+Running test:          14
+Test passed.
+cycles:     1219861 stalled:      210828 ratio (decimal):           5
+==============================================================================
+Running test:          15
+Test passed.
+cycles:     2066198 stalled:      271873 ratio (decimal):           7
+==============================================================================
+$finish called at time : 82763573 ns : File "D:/projects/arduissimo/release/v0.1/testbench/testbench_CUBEV.v" Line 116

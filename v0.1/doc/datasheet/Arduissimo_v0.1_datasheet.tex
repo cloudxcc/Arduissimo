@@ -1,0 +1,59 @@
+
+\documentclass[twoside,11pt]{book}
+
+\input{preamble}
+
+\newcommand{\specrev}{0.1-draft}
+
+\begin{document}
+
+\title{\vspace{-0.7in}\Large {\bf Arduissimo Datasheet} \\
+  Document Version \specrev
+  \vspace{-0.1in}}
+
+\author{Editor: Tobias Strauch \\
+  Munich, Bavaria \\
+  {\tt tobias at cloudx dot cc} \\
+  \today
+}
+\date{} 
+
+\maketitle
+
+Contributors to all versions of the spec in
+alphabetical order (please contact editors to suggest
+corrections):
+Tobias Strauch.
+
+This document is released under the Apache License, Version 2.0.
+
+
+
+
+\markboth{Arduissimo v0.1 Datasheet}
+{Arduissimo v0.1 Datasheet}
+\thispagestyle{empty}
+
+\frontmatter
+
+\input{preface}
+
+\tableofcontents
+
+\mainmatter
+
+\input{concept}
+\input{licensing}
+\input{shortPath}
+\input{directory}
+\input{hw}
+\input{implementation_simulation}
+\input{event}
+\input{sw}
+\input{download}
+
+\appendix
+\input{registerMap}
+\input{pinning}
+
+\end{document}

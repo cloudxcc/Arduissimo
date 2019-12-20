@@ -1,0 +1,25 @@
+21:01:13 **** Incremental Build of configuration Release for project system_1_1 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: system_1_1.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"system_1_1.map" -o "system_1_1.elf"  ./src/main.o   
+Finished building target: system_1_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "system_1_1.elf"  "system_1_1.hex"
+Finished building: system_1_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "system_1_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1920	   1896	     80	   3896	    f38	system_1_1.elf
+Finished building: system_1_1.siz
+ 
+
+21:01:15 Build Finished (took 2s.743ms)
+

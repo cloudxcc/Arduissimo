@@ -1,0 +1,69 @@
+19:04:26 **** Build of configuration Release for project drivers_pwm_0 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_pwm\ws_drivers_pwm\drivers_pwm_0\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/driver_gpio.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_pwm\ws_drivers_pwm\drivers_pwm_0\include" -std=gnu11 -MMD -MP -MF"include/driver_gpio.d" -MT"include/driver_gpio.o" -c -o "include/driver_gpio.o" "../include/driver_gpio.c"
+../include/driver_gpio.c: In function 'set_pin':
+../include/driver_gpio.c:12:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+../include/driver_gpio.c: In function 'set_dir':
+../include/driver_gpio.c:20:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+                           ^
+Finished building: ../include/driver_gpio.c
+ 
+Building file: ../include/driver_pwm.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_pwm\ws_drivers_pwm\drivers_pwm_0\include" -std=gnu11 -MMD -MP -MF"include/driver_pwm.d" -MT"include/driver_pwm.o" -c -o "include/driver_pwm.o" "../include/driver_pwm.c"
+../include/driver_pwm.c: In function 'pwm_init':
+../include/driver_pwm.c:29:4: warning: implicit declaration of function 'set_dir' [-Wimplicit-function-declaration]
+    set_dir(pwm_pin, 1);
+    ^~~~~~~
+Finished building: ../include/driver_pwm.c
+ 
+Building target: drivers_pwm_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_pwm_0.map" -o "drivers_pwm_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_pwm.o   
+Finished building target: drivers_pwm_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_pwm_0.elf"  "drivers_pwm_0.hex"
+Finished building: drivers_pwm_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_pwm_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1740	   1080	     52	   2872	    b38	drivers_pwm_0.elf
+Finished building: drivers_pwm_0.siz
+ 
+19:05:02 **** Incremental Build of configuration Release for project drivers_pwm_0 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_pwm_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1740	   1080	     52	   2872	    b38	drivers_pwm_0.elf
+Finished building: drivers_pwm_0.siz
+ 
+19:07:47 **** Incremental Build of configuration Release for project drivers_pwm_0 ****
+make all 
+Building target: drivers_pwm_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_pwm_0.map" -o "drivers_pwm_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_pwm.o   
+Finished building target: drivers_pwm_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_pwm_0.elf"  "drivers_pwm_0.hex"
+Finished building: drivers_pwm_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_pwm_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1740	   1080	     52	   2872	    b38	drivers_pwm_0.elf
+Finished building: drivers_pwm_0.siz
+ 

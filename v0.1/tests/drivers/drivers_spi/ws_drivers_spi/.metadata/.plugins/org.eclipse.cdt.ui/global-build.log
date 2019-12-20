@@ -1,0 +1,222 @@
+18:46:48 **** Build of configuration Release for project drivers_spi_1 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_spi\ws_drivers_spi\drivers_spi_1\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/driver_gpio.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_spi\ws_drivers_spi\drivers_spi_1\include" -std=gnu11 -MMD -MP -MF"include/driver_gpio.d" -MT"include/driver_gpio.o" -c -o "include/driver_gpio.o" "../include/driver_gpio.c"
+../include/driver_gpio.c: In function 'set_pin':
+../include/driver_gpio.c:12:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+../include/driver_gpio.c: In function 'set_dir':
+../include/driver_gpio.c:20:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+                           ^
+Finished building: ../include/driver_gpio.c
+ 
+Building file: ../include/driver_spi.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_spi\ws_drivers_spi\drivers_spi_1\include" -std=gnu11 -MMD -MP -MF"include/driver_spi.d" -MT"include/driver_spi.o" -c -o "include/driver_spi.o" "../include/driver_spi.c"
+../include/driver_spi.c: In function 'spi_master_init':
+../include/driver_spi.c:27:23: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n = &GPIO_0_OUT_CLR;
+                       ^
+../include/driver_spi.c:34:35: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+      spi_master_sclk_lead_add[id] = gpio_n;
+                                   ^
+../include/driver_spi.c:36:36: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+      spi_master_sclk_trail_add[id] = gpio_n;
+                                    ^
+../include/driver_spi.c:40:37: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+       spi_master_sclk_trail_add[id] = gpio_n;
+                                     ^
+../include/driver_spi.c:44:36: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+       spi_master_sclk_lead_add[id] = gpio_n;
+                                    ^
+../include/driver_spi.c:52:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n = &GPIO_0_OUT_CLR;
+           ^
+../include/driver_spi.c:58:32: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_master_mosi_clr_add[id] = gpio_n;
+                                ^
+../include/driver_spi.c:60:32: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_master_mosi_set_add[id] = gpio_n;
+                                ^
+../include/driver_spi.c:69:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n = &GPIO_0_IN;
+           ^
+../include/driver_spi.c:71:29: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_master_miso_bank[id] = gpio_n;
+                             ^
+../include/driver_spi.c: In function 'spi_master_write':
+../include/driver_spi.c:109:4: warning: implicit declaration of function 'spi_master_event'; did you mean 'spi_master_init'? [-Wimplicit-function-declaration]
+    spi_master_event(tag, trigger);
+    ^~~~~~~~~~~~~~~~
+    spi_master_init
+../include/driver_spi.c: At top level:
+../include/driver_spi.c:116:6: warning: conflicting types for 'spi_master_event'
+ void spi_master_event(unsigned tag, int start_time) {
+      ^~~~~~~~~~~~~~~~
+../include/driver_spi.c:109:4: note: previous implicit declaration of 'spi_master_event' was here
+    spi_master_event(tag, trigger);
+    ^~~~~~~~~~~~~~~~
+../include/driver_spi.c: In function 'spi_master_event':
+../include/driver_spi.c:136:20: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+             gpio_n = &GPIO_0_OUT_SET;
+                    ^
+../include/driver_spi.c:140:20: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n = spi_master_mosi_set_add[tag];
+                    ^
+../include/driver_spi.c:155:23: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+                gpio_n = &GPIO_0_OUT_CLR;
+                       ^
+../include/driver_spi.c:163:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_master_mosi_clr_add[tag];
+                             ^
+../include/driver_spi.c:177:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_master_mosi_set_add[tag];
+                          ^
+../include/driver_spi.c:179:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_master_mosi_clr_add[tag];
+                          ^
+../include/driver_spi.c:184:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_master_miso_bank[tag];
+                          ^
+../include/driver_spi.c:192:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n = spi_master_sclk_lead_add[tag];
+                       ^
+../include/driver_spi.c:204:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_master_mosi_set_add[tag];
+                             ^
+../include/driver_spi.c:206:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_master_mosi_clr_add[tag];
+                             ^
+../include/driver_spi.c:211:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_master_miso_bank[tag];
+                          ^
+../include/driver_spi.c:219:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n = spi_master_sclk_trail_add[tag];
+                       ^
+../include/driver_spi.c: In function 'spi_slave_init':
+../include/driver_spi.c:258:23: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n = &GPIO_0_IN;
+                       ^
+../include/driver_spi.c:260:26: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_slave_ss_bank[id] = gpio_n;
+                          ^
+../include/driver_spi.c:273:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n = &GPIO_0_CAP;
+           ^
+../include/driver_spi.c:275:28: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_slave_sclk_bank[id] = gpio_n;
+                            ^
+../include/driver_spi.c:286:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n = &GPIO_0_OUT_CLR;
+           ^
+../include/driver_spi.c:292:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_slave_miso_clr_add[id] = gpio_n;
+                               ^
+../include/driver_spi.c:294:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_slave_miso_set_add[id] = gpio_n;
+                               ^
+../include/driver_spi.c:303:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n = &GPIO_0_IN;
+           ^
+../include/driver_spi.c:305:28: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    spi_slave_mosi_bank[id] = gpio_n;
+                            ^
+../include/driver_spi.c: In function 'spi_slave_enable':
+../include/driver_spi.c:327:26: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+    unsigned* gpio_n_in = spi_slave_ss_bank[id];
+                          ^~~~~~~~~~~~~~~~~
+../include/driver_spi.c: In function 'spi_slave_event':
+../include/driver_spi.c:350:20: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n = spi_slave_miso_set_add[tag];
+                    ^
+../include/driver_spi.c:359:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_slave_mosi_bank[tag];
+                          ^
+../include/driver_spi.c:368:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n = spi_slave_sclk_bank[tag];
+                       ^
+../include/driver_spi.c:378:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_slave_miso_set_add[tag];
+                             ^
+../include/driver_spi.c:380:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_slave_miso_clr_add[tag];
+                             ^
+../include/driver_spi.c:388:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_slave_ss_bank[tag];
+                          ^
+../include/driver_spi.c:395:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_slave_mosi_bank[tag];
+                          ^
+../include/driver_spi.c:405:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = spi_slave_sclk_bank[tag];
+                          ^
+../include/driver_spi.c:416:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_slave_miso_set_add[tag];
+                             ^
+../include/driver_spi.c:418:29: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                      gpio_n = spi_slave_miso_clr_add[tag];
+                             ^
+Finished building: ../include/driver_spi.c
+ 
+Building file: ../include/driver_spi_custom.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_spi\ws_drivers_spi\drivers_spi_1\include" -std=gnu11 -MMD -MP -MF"include/driver_spi_custom.d" -MT"include/driver_spi_custom.o" -c -o "include/driver_spi_custom.o" "../include/driver_spi_custom.c"
+Finished building: ../include/driver_spi_custom.c
+ 
+Building target: drivers_spi_1.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_spi_1.map" -o "drivers_spi_1.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_spi.o ./include/driver_spi_custom.o   
+Finished building target: drivers_spi_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_spi_1.elf"  "drivers_spi_1.hex"
+Finished building: drivers_spi_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_spi_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2340	   1080	    432	   3852	    f0c	drivers_spi_1.elf
+Finished building: drivers_spi_1.siz
+ 
+18:49:42 **** Incremental Build of configuration Release for project drivers_spi_1 ****
+make all 
+Building target: drivers_spi_1.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_spi_1.map" -o "drivers_spi_1.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_spi.o ./include/driver_spi_custom.o   
+Finished building target: drivers_spi_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_spi_1.elf"  "drivers_spi_1.hex"
+Finished building: drivers_spi_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_spi_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2340	   1080	    432	   3852	    f0c	drivers_spi_1.elf
+Finished building: drivers_spi_1.siz
+ 
+18:49:54 **** Incremental Build of configuration Release for project drivers_spi_0 ****
+make all 
+Building target: drivers_spi_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_spi_0.map" -o "drivers_spi_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_spi.o ./include/driver_spi_custom.o   
+Finished building target: drivers_spi_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_spi_0.elf"  "drivers_spi_0.hex"
+Finished building: drivers_spi_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_spi_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2452	   1080	    144	   3676	    e5c	drivers_spi_0.elf
+Finished building: drivers_spi_0.siz
+ 

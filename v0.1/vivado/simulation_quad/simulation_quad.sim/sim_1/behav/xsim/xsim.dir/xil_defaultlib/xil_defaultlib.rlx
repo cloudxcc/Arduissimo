@@ -1,0 +1,18 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/projects/arduissimo/release/v0.1/dut/CUBEV_RV32iMC_P3C4D16.v,1574458165,verilog,,D:/projects/arduissimo/release/v0.1/dut/mem_sim/RF_D16_sim.v,D:/projects/arduissimo/release/v0.1/dut/MPSOC_parameters.v,CUBEV_RV32iMC_P3C4D16,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/MPSOC_parameters.v,1574880643,verilog,,,,,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/ca.v,1574184569,verilog,,D:/projects/arduissimo/release/v0.1/dut/core_D16.v,D:/projects/arduissimo/release/v0.1/dut/MPSOC_parameters.v,ca,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/core_D16.v,1574184532,verilog,,D:/projects/arduissimo/release/v0.1/dut/gpio.v,D:/projects/arduissimo/release/v0.1/dut/MPSOC_parameters.v,core_D16,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/gpio.v,1574184371,verilog,,D:/projects/arduissimo/release/v0.1/dut/mp.v,D:/projects/arduissimo/release/v0.1/dut/MPSOC_parameters.v,gpio,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/mem_sim/RF_D16_sim.v,1572645502,verilog,,D:/projects/arduissimo/release/v0.1/dut/mem_sim/Reg_D16_sim.v,,RF_D16,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/mem_sim/Reg_D16_sim.v,1574184892,verilog,,D:/projects/arduissimo/release/v0.1/dut/ca.v,,Reg_D16,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/mem_sim/sdp_ram_512x32x4.v,1574184879,verilog,,D:/projects/arduissimo/release/v0.1/dut/mem_sim/tdp_ram_512x33.v,,sdp_ram_512x32x4,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/mem_sim/tdp_ram_512x33.v,1574184869,verilog,,D:/projects/arduissimo/release/v0.1/dut/mem_sim/tdp_ram_6144x16x2.v,,tdp_ram_512x33,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/mem_sim/tdp_ram_6144x16x2.v,1574184860,verilog,,D:/projects/arduissimo/release/v0.1/testbench/testbench_quad.v,,tdp_ram_6144x16x2,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/mp.v,1573577144,verilog,,D:/projects/arduissimo/release/v0.1/dut/quad.v,D:/projects/arduissimo/release/v0.1/dut/MPSOC_parameters.v,mp,,,,,,,,
+D:/projects/arduissimo/release/v0.1/dut/quad.v,1575310948,verilog,,D:/projects/arduissimo/release/v0.1/dut/mem_sim/sdp_ram_512x32x4.v,,quad,,,,,,,,
+D:/projects/arduissimo/release/v0.1/testbench/testbench_quad.v,1575393766,verilog,,,,tb_quad,,,,,,,,
+D:/projects/arduissimo/release/v0.1/vivado/simulation_quad/simulation_quad.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="tdp_ram_6144x16x2_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1575450621">
+  <File Type="PA-TCL" Name="tdp_ram_6144x16x2.tcl"/>
+  <File Type="REPORTS-TCL" Name="tdp_ram_6144x16x2_reports.tcl"/>
+  <File Type="RDS-RDS" Name="tdp_ram_6144x16x2.vds"/>
+  <File Type="RDS-DCP" Name="tdp_ram_6144x16x2.dcp"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tdp_ram_6144x16x2">
+    <File Path="$PSRCDIR/sources_1/ip/tdp_ram_6144x16x2/tdp_ram_6144x16x2.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="tdp_ram_6144x16x2"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tdp_ram_6144x16x2">
+    <File Path="$PSRCDIR/sources_1/ip/tdp_ram_6144x16x2/tdp_ram_6144x16x2.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="tdp_ram_6144x16x2"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

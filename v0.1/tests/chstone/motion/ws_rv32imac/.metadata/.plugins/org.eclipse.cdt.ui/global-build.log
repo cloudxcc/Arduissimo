@@ -1,0 +1,3085 @@
+14:16:51 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/getvlc.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu11 -MMD -MP -MF"src/getvlc.d" -MT"src/getvlc.o" -c -o "src/getvlc.o" "../src/getvlc.c"
+../src/getvlc.c: In function 'Get_motion_code':
+../src/getvlc.c:53:7: warning: implicit declaration of function 'Get_Bits1' [-Wimplicit-function-declaration]
+   if (Get_Bits1 ())
+       ^~~~~~~~~
+../src/getvlc.c:58:15: warning: implicit declaration of function 'Show_Bits' [-Wimplicit-function-declaration]
+   if ((code = Show_Bits (9)) >= 64)
+               ^~~~~~~~~
+../src/getvlc.c:61:7: warning: implicit declaration of function 'Flush_Buffer' [-Wimplicit-function-declaration]
+       Flush_Buffer (MVtab0[code][1]);
+       ^~~~~~~~~~~~
+../src/getvlc.c:61:21: error: 'MVtab0' undeclared (first use in this function)
+       Flush_Buffer (MVtab0[code][1]);
+                     ^~~~~~
+../src/getvlc.c:61:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/getvlc.c:69:21: error: 'MVtab1' undeclared (first use in this function); did you mean 'MVtab0'?
+       Flush_Buffer (MVtab1[code][1]);
+                     ^~~~~~
+                     MVtab0
+../src/getvlc.c:77:17: error: 'MVtab2' undeclared (first use in this function); did you mean 'MVtab1'?
+   Flush_Buffer (MVtab2[code][1]);
+                 ^~~~~~
+                 MVtab1
+../src/getvlc.c: In function 'Get_dmvector':
+../src/getvlc.c:86:7: warning: implicit declaration of function 'Get_Bits' [-Wimplicit-function-declaration]
+   if (Get_Bits (1))
+       ^~~~~~~~
+src/subdir.mk:31: recipe for target 'src/getvlc.o' failed
+make: *** [src/getvlc.o] Error 1
+14:19:45 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/getvlc.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu11 -MMD -MP -MF"src/getvlc.d" -MT"src/getvlc.o" -c -o "src/getvlc.o" "../src/getvlc.c"
+../src/getvlc.c: In function 'Get_motion_code':
+../src/getvlc.c:53:7: warning: implicit declaration of function 'Get_Bits1' [-Wimplicit-function-declaration]
+   if (Get_Bits1 ())
+       ^~~~~~~~~
+../src/getvlc.c:58:15: warning: implicit declaration of function 'Show_Bits' [-Wimplicit-function-declaration]
+   if ((code = Show_Bits (9)) >= 64)
+               ^~~~~~~~~
+../src/getvlc.c:61:7: warning: implicit declaration of function 'Flush_Buffer' [-Wimplicit-function-declaration]
+       Flush_Buffer (MVtab0[code][1]);
+       ^~~~~~~~~~~~
+../src/getvlc.c:61:21: error: 'MVtab0' undeclared (first use in this function)
+       Flush_Buffer (MVtab0[code][1]);
+                     ^~~~~~
+../src/getvlc.c:61:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/getvlc.c:69:21: error: 'MVtab1' undeclared (first use in this function); did you mean 'MVtab0'?
+       Flush_Buffer (MVtab1[code][1]);
+                     ^~~~~~
+                     MVtab0
+../src/getvlc.c:77:17: error: 'MVtab2' undeclared (first use in this function); did you mean 'MVtab1'?
+   Flush_Buffer (MVtab2[code][1]);
+                 ^~~~~~
+                 MVtab1
+../src/getvlc.c: In function 'Get_dmvector':
+../src/getvlc.c:86:7: warning: implicit declaration of function 'Get_Bits' [-Wimplicit-function-declaration]
+   if (Get_Bits (1))
+       ^~~~~~~~
+src/subdir.mk:31: recipe for target 'src/getvlc.o' failed
+make: *** [src/getvlc.o] Error 1
+14:21:04 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/getvlc.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu11 -MMD -MP -MF"src/getvlc.d" -MT"src/getvlc.o" -c -o "src/getvlc.o" "../src/getvlc.c"
+../src/getvlc.c: In function 'Get_motion_code':
+../src/getvlc.c:70:7: warning: implicit declaration of function 'Get_Bits1' [-Wimplicit-function-declaration]
+   if (Get_Bits1 ())
+       ^~~~~~~~~
+../src/getvlc.c:75:15: warning: implicit declaration of function 'Show_Bits' [-Wimplicit-function-declaration]
+   if ((code = Show_Bits (9)) >= 64)
+               ^~~~~~~~~
+../src/getvlc.c:78:7: warning: implicit declaration of function 'Flush_Buffer' [-Wimplicit-function-declaration]
+       Flush_Buffer (MVtab0[code][1]);
+       ^~~~~~~~~~~~
+../src/getvlc.c: In function 'Get_dmvector':
+../src/getvlc.c:103:7: warning: implicit declaration of function 'Get_Bits' [-Wimplicit-function-declaration]
+   if (Get_Bits (1))
+       ^~~~~~~~
+Finished building: ../src/getvlc.c
+ 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:135:10: fatal error: getvlc.h: No such file or directory
+ #include "getvlc.h"
+          ^~~~~~~~~~
+compilation terminated.
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:21:41 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:35: error: 'dmvector' has not been declared
+ motion_vectors (int PMV[2][2][2], dmvector, motion_vertical_field_select, s,
+                                   ^~~~~~~~
+../src/motion.c:55:45: error: 'motion_vertical_field_select' has not been declared
+ motion_vectors (int PMV[2][2][2], dmvector, motion_vertical_field_select, s,
+                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/motion.c:55:75: error: 's' has not been declared
+ motion_vectors (int PMV[2][2][2], dmvector, motion_vertical_field_select, s,
+                                                                           ^
+../src/motion.c:56:3: error: 'motion_vector_count' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+   ^~~~~~~~~~~~~~~~~~~
+../src/motion.c:56:24: error: 'mv_format' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                        ^~~~~~~~~
+../src/motion.c:56:35: error: 'h_r_size' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                   ^~~~~~~~
+../src/motion.c:56:45: error: 'v_r_size' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                             ^~~~~~~~
+../src/motion.c:56:55: error: 'dmv' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                                       ^~~
+../src/motion.c:57:3: error: 'mvscale' has not been declared
+   mvscale)
+   ^~~~~~~
+../src/motion.c:59:6: error: expected initializer before 'int'
+      int dmvector[2];
+      ^~~
+../src/motion.c:62:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/motion.c:95:16: error: variable or field 'motion_vector' declared void
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                ^~~
+../src/motion.c:95:16: error: 'PMV' was not declared in this scope
+../src/motion.c:95:16: note: suggested alternative: 'inPMV'
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                ^~~
+                inPMV
+../src/motion.c:95:21: error: 'dmvector' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                     ^~~~~~~~
+../src/motion.c:95:21: note: suggested alternative: 'Get_dmvector'
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                     ^~~~~~~~
+                     Get_dmvector
+../src/motion.c:96:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:99:10: error: redefinition of 'int h_r_size'
+      int h_r_size;
+          ^~~~~~~~
+../src/motion.c:61:45: note: 'int h_r_size' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                             ^~~~~~~~
+../src/motion.c:100:10: error: redefinition of 'int v_r_size'
+      int v_r_size;
+          ^~~~~~~~
+../src/motion.c:61:55: note: 'int v_r_size' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                                       ^~~~~~~~
+../src/motion.c:101:10: error: redefinition of 'int dmv'
+      int dmv;   /* MPEG-2 only: get differential motion vectors */
+          ^~~
+../src/motion.c:61:65: note: 'int dmv' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                                                 ^~~
+../src/motion.c:102:10: error: redefinition of 'int mvscale'
+      int mvscale;  /* MPEG-2 only: field vector in frame pic */
+          ^~~~~~~
+../src/motion.c:61:70: note: 'int mvscale' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                                                      ^~~~~~~
+../src/motion.c:104:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/motion.c:147:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:147:23: error: 'pred' was not declared in this scope
+../src/motion.c:147:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:147:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:147:29: note: suggested alternative: 'v_r_size'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+                             v_r_size
+../src/motion.c:147:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:147:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:147:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:147:50: note: suggested alternative: 'motion_vector'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vector
+../src/motion.c:151:10: error: redefinition of 'int full_pel_vector'
+      int full_pel_vector; /* MPEG-1 (ISO/IEC 11172-1) support */
+          ^~~~~~~~~~~~~~~
+../src/motion.c:103:10: note: 'int full_pel_vector' previously declared here
+      int full_pel_vector; /* MPEG-1 only */
+          ^~~~~~~~~~~~~~~
+../src/motion.c:152:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:248:5: error: 'motion_vectors' was not declared in this scope
+     motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+     ^~~~~~~~~~~~~~
+../src/main.cpp:248:5: note: suggested alternative: 'motion_vector'
+     motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+     ^~~~~~~~~~~~~~
+     motion_vector
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:22:10 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:49: error: 'motion_vertical_field_select' has not been declared
+ motion_vectors (int PMV[2][2][2], int dmvector, motion_vertical_field_select, s,
+                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/motion.c:55:79: error: 's' has not been declared
+ motion_vectors (int PMV[2][2][2], int dmvector, motion_vertical_field_select, s,
+                                                                               ^
+../src/motion.c:56:3: error: 'motion_vector_count' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+   ^~~~~~~~~~~~~~~~~~~
+../src/motion.c:56:24: error: 'mv_format' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                        ^~~~~~~~~
+../src/motion.c:56:35: error: 'h_r_size' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                   ^~~~~~~~
+../src/motion.c:56:45: error: 'v_r_size' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                             ^~~~~~~~
+../src/motion.c:56:55: error: 'dmv' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                                       ^~~
+../src/motion.c:57:3: error: 'mvscale' has not been declared
+   mvscale)
+   ^~~~~~~
+../src/motion.c:60:6: error: expected initializer before 'int'
+      int motion_vertical_field_select[2][2];
+      ^~~
+../src/motion.c:62:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/motion.c:95:16: error: variable or field 'motion_vector' declared void
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                ^~~
+../src/motion.c:95:16: error: 'PMV' was not declared in this scope
+../src/motion.c:95:16: note: suggested alternative: 'inPMV'
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                ^~~
+                inPMV
+../src/motion.c:95:21: error: 'dmvector' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                     ^~~~~~~~
+../src/motion.c:95:21: note: suggested alternative: 'Get_dmvector'
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                     ^~~~~~~~
+                     Get_dmvector
+../src/motion.c:96:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:99:10: error: redefinition of 'int h_r_size'
+      int h_r_size;
+          ^~~~~~~~
+../src/motion.c:61:45: note: 'int h_r_size' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                             ^~~~~~~~
+../src/motion.c:100:10: error: redefinition of 'int v_r_size'
+      int v_r_size;
+          ^~~~~~~~
+../src/motion.c:61:55: note: 'int v_r_size' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                                       ^~~~~~~~
+../src/motion.c:101:10: error: redefinition of 'int dmv'
+      int dmv;   /* MPEG-2 only: get differential motion vectors */
+          ^~~
+../src/motion.c:61:65: note: 'int dmv' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                                                 ^~~
+../src/motion.c:102:10: error: redefinition of 'int mvscale'
+      int mvscale;  /* MPEG-2 only: field vector in frame pic */
+          ^~~~~~~
+../src/motion.c:61:70: note: 'int mvscale' previously declared here
+      int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+                                                                      ^~~~~~~
+../src/motion.c:104:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/motion.c:147:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:147:23: error: 'pred' was not declared in this scope
+../src/motion.c:147:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:147:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:147:29: note: suggested alternative: 'v_r_size'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+                             v_r_size
+../src/motion.c:147:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:147:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:147:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:147:50: note: suggested alternative: 'motion_vector'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vector
+../src/motion.c:151:10: error: redefinition of 'int full_pel_vector'
+      int full_pel_vector; /* MPEG-1 (ISO/IEC 11172-1) support */
+          ^~~~~~~~~~~~~~~
+../src/motion.c:103:10: note: 'int full_pel_vector' previously declared here
+      int full_pel_vector; /* MPEG-1 only */
+          ^~~~~~~~~~~~~~~
+../src/motion.c:152:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:248:5: error: 'motion_vectors' was not declared in this scope
+     motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+     ^~~~~~~~~~~~~~
+../src/main.cpp:248:5: note: suggested alternative: 'motion_vector'
+     motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+     ^~~~~~~~~~~~~~
+     motion_vector
+make: *** [src/main.o] Error 1
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+14:23:05 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)':
+../src/motion.c:72:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:83:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:88:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: At global scope:
+../src/motion.c:95:16: error: variable or field 'motion_vector' declared void
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                ^~~
+../src/motion.c:95:16: error: 'PMV' was not declared in this scope
+../src/motion.c:95:16: note: suggested alternative: 'inPMV'
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                ^~~
+                inPMV
+../src/motion.c:95:21: error: 'dmvector' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                     ^~~~~~~~
+../src/motion.c:95:21: note: suggested alternative: 'Get_dmvector'
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                     ^~~~~~~~
+                     Get_dmvector
+../src/motion.c:95:31: error: 'h_r_size' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                               ^~~~~~~~
+../src/motion.c:95:41: error: 'v_r_size' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                                         ^~~~~~~~
+../src/motion.c:95:51: error: 'dmv' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                                                   ^~~
+../src/motion.c:95:56: error: 'mvscale' was not declared in this scope
+ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
+                                                        ^~~~~~~
+../src/motion.c:96:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:104:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/motion.c:147:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:147:23: error: 'pred' was not declared in this scope
+../src/motion.c:147:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:147:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:147:29: note: suggested alternative: 'v_r_size'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+                             v_r_size
+../src/motion.c:147:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:147:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:147:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:147:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:151:10: error: redefinition of 'int full_pel_vector'
+      int full_pel_vector; /* MPEG-1 (ISO/IEC 11172-1) support */
+          ^~~~~~~~~~~~~~~
+../src/motion.c:103:10: note: 'int full_pel_vector' previously declared here
+      int full_pel_vector; /* MPEG-1 only */
+          ^~~~~~~~~~~~~~~
+../src/motion.c:152:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+make: *** [src/main.o] Error 1
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+14:24:23 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)':
+../src/motion.c:72:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:83:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:88:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: At global scope:
+../src/motion.c:147:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:147:23: error: 'pred' was not declared in this scope
+../src/motion.c:147:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:147:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:147:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:147:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:147:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:147:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:148:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:152:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+../src/motion.c: At global scope:
+../src/motion.c:49:13: warning: 'void decode_motion_vector(int*, int, int, int, int)' used but never defined
+ static void decode_motion_vector
+             ^~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:25:06 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)':
+../src/motion.c:72:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:83:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:88:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/motion.c:115:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+../src/motion.c:115:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+../src/motion.c: At global scope:
+../src/motion.c:147:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:147:23: error: 'pred' was not declared in this scope
+../src/motion.c:147:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:147:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:147:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:147:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:147:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:147:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:148:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:152:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:25:46 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)':
+../src/motion.c:71:78: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+       motion_vector (PMV[0][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+                                                                              ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:82:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:87:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/motion.c:114:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+../src/motion.c:114:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+../src/motion.c: At global scope:
+../src/motion.c:146:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:146:23: error: 'pred' was not declared in this scope
+../src/motion.c:146:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:146:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:146:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:146:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:146:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:146:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:147:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:151:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:28:21 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)':
+../src/motion.c:71:78: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+       motion_vector (PMV[0][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+                                                                              ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:82:9: error: cannot convert 'int (*)[2]' to 'int*' for argument '1' to 'void motion_vector(int*, int*, int, int, int, int, int)'
+        0);
+         ^
+../src/motion.c:87:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/motion.c:114:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+../src/motion.c:114:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+../src/motion.c: At global scope:
+../src/motion.c:146:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:146:23: error: 'pred' was not declared in this scope
+../src/motion.c:146:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:146:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:146:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:146:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:146:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:146:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:147:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:151:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:28:32 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)':
+../src/motion.c:71:78: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+       motion_vector (PMV[0][s], dmvector, h_r_size, v_r_size, dmv, mvscale, 0);
+                                                                              ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:82:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:87:9: error: invalid conversion from 'int' to 'int*' [-fpermissive]
+        0);
+         ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:71:6: note:   initializing argument 2 of 'void motion_vector(int*, int*, int, int, int, int, int)'
+ void motion_vector
+      ^~~~~~~~~~~~~
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/motion.c:114:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+../src/motion.c:114:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+../src/motion.c: At global scope:
+../src/motion.c:146:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:146:23: error: 'pred' was not declared in this scope
+../src/motion.c:146:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:146:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:146:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:146:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:146:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:146:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:147:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:151:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:31:10 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/motion.c:114:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+../src/motion.c:114:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+../src/motion.c: At global scope:
+../src/motion.c:146:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:146:23: error: 'pred' was not declared in this scope
+../src/motion.c:146:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:146:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:146:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:146:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:146:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:146:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:147:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:151:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:31:58 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:137:0:
+../src/motion.c: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/motion.c:129:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[1], v_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+../src/motion.c:129:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[1], v_r_size, motion_code, motion_residual,
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+../src/motion.c: At global scope:
+../src/motion.c:146:23: error: variable or field 'decode_motion_vector' declared void
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+../src/motion.c:146:23: error: 'pred' was not declared in this scope
+../src/motion.c:146:23: note: suggested alternative: 'read'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                       ^~~~
+                       read
+../src/motion.c:146:29: error: 'r_size' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                             ^~~~~~
+../src/motion.c:146:37: error: 'motion_code' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+../src/motion.c:146:37: note: suggested alternative: 'Get_motion_code'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                     ^~~~~~~~~~~
+                                     Get_motion_code
+../src/motion.c:146:50: error: 'motion_residual' was not declared in this scope
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+../src/motion.c:146:50: note: suggested alternative: 'motion_vectors'
+ decode_motion_vector (pred, r_size, motion_code, motion_residual,
+                                                  ^~~~~~~~~~~~~~~
+                                                  motion_vectors
+../src/motion.c:147:9: error: 'full_pel_vector' was not declared in this scope
+         full_pel_vector)
+         ^~~~~~~~~~~~~~~
+../src/motion.c:151:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:250:16: error: invalid conversion from 'int*' to 'int' [-fpermissive]
+         mvscale);
+                ^
+In file included from ../src/main.cpp:137:0:
+../src/motion.c:55:1: note:   initializing argument 2 of 'void motion_vectors(int (*)[2][2], int, int (*)[2], int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector, int motion_vertical_field_select[2][2], int s,
+ ^~~~~~~~~~~~~~
+make: *** [src/main.o] Error 1
+src/subdir.mk:38: recipe for target 'src/main.o' failed
+14:33:05 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:136:10: fatal error: getvlc.c: No such file or directory
+ #include "getvlc.c"
+          ^~~~~~~~~~
+compilation terminated.
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:33:29 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:248:5: error: 'motion_vectors' was not declared in this scope
+     motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+     ^~~~~~~~~~~~~~
+../src/main.cpp:248:5: note: suggested alternative: 'motion_vector'
+     motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
+     ^~~~~~~~~~~~~~
+     motion_vector
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:35:40 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:139:86: error: 's' has not been declared
+ motion_vectors (int PMV[2][2][2], int dmvector[2], int motion_vertical_field_select, s,
+                                                                                      ^
+../src/main.cpp:140:3: error: 'motion_vector_count' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+   ^~~~~~~~~~~~~~~~~~~
+../src/main.cpp:140:24: error: 'mv_format' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                        ^~~~~~~~~
+../src/main.cpp:140:35: error: 'h_r_size' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                   ^~~~~~~~
+../src/main.cpp:140:45: error: 'v_r_size' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                             ^~~~~~~~
+../src/main.cpp:140:55: error: 'dmv' has not been declared
+   motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+                                                       ^~~
+../src/main.cpp:141:3: error: 'mvscale' has not been declared
+   mvscale)
+   ^~~~~~~
+../src/main.cpp: In function 'void motion_vectors(int (*)[2][2], int*, int, int, int, int, int, int, int, int)':
+../src/main.cpp:147:7: error: 'motion_vector_count' was not declared in this scope
+   if (motion_vector_count == 1)
+       ^~~~~~~~~~~~~~~~~~~
+../src/main.cpp:147:7: note: suggested alternative: 'motion_vectors'
+   if (motion_vector_count == 1)
+       ^~~~~~~~~~~~~~~~~~~
+       motion_vectors
+../src/main.cpp:149:11: error: 'mv_format' was not declared in this scope
+       if (mv_format == MV_FIELD && !dmv)
+           ^~~~~~~~~
+../src/main.cpp:149:37: error: 'dmv' was not declared in this scope
+       if (mv_format == MV_FIELD && !dmv)
+                                     ^~~
+../src/main.cpp:151:34: error: invalid types 'int[int]' for array subscript
+    motion_vertical_field_select[1][s] =
+                                  ^
+../src/main.cpp:151:36: error: 's' was not declared in this scope
+    motion_vertical_field_select[1][s] =
+                                    ^
+../src/main.cpp:152:36: error: invalid types 'int[int]' for array subscript
+      motion_vertical_field_select[0][s] = Get_Bits (1);
+                                    ^
+../src/main.cpp:158:14: error: 's' was not declared in this scope
+       PMV[1][s][0] = PMV[0][s][0];
+              ^
+../src/main.cpp:163:37: error: invalid types 'int[int]' for array subscript
+       motion_vertical_field_select[0][s] = Get_Bits (1);
+                                     ^
+../src/main.cpp:163:39: error: 's' was not declared in this scope
+       motion_vertical_field_select[0][s] = Get_Bits (1);
+                                       ^
+../src/main.cpp:167:37: error: invalid types 'int[int]' for array subscript
+       motion_vertical_field_select[1][s] = Get_Bits (1);
+                                     ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:284:16: error: invalid conversion from 'int (*)[2]' to 'int' [-fpermissive]
+         mvscale);
+                ^
+../src/main.cpp:139:1: note:   initializing argument 3 of 'void motion_vectors(int (*)[2][2], int*, int, int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector[2], int motion_vertical_field_select, s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:36:15 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void motion_vectors(int (*)[2][2], int*, int, int, int, int, int, int, int, int)':
+../src/main.cpp:151:34: error: invalid types 'int[int]' for array subscript
+    motion_vertical_field_select[1][s] =
+                                  ^
+../src/main.cpp:152:36: error: invalid types 'int[int]' for array subscript
+      motion_vertical_field_select[0][s] = Get_Bits (1);
+                                    ^
+../src/main.cpp:163:37: error: invalid types 'int[int]' for array subscript
+       motion_vertical_field_select[0][s] = Get_Bits (1);
+                                     ^
+../src/main.cpp:167:37: error: invalid types 'int[int]' for array subscript
+       motion_vertical_field_select[1][s] = Get_Bits (1);
+                                     ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:284:16: error: invalid conversion from 'int (*)[2]' to 'int' [-fpermissive]
+         mvscale);
+                ^
+../src/main.cpp:139:1: note:   initializing argument 3 of 'void motion_vectors(int (*)[2][2], int*, int, int, int, int, int, int, int, int)'
+ motion_vectors (int PMV[2][2][2], int dmvector[2], int motion_vertical_field_select, int s,
+ ^~~~~~~~~~~~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:36:38 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+./src/main.o: In function `main':
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\motion\ws_rv32imac\motion\Release/../src/main.cpp:171: undefined reference to `Get_Bits(int)'
+collect2.exe: error: ld returned 1 exit status
+make: *** [motion.elf] Error 1
+makefile:57: recipe for target 'motion.elf' failed
+14:38:13 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+./src/main.o: In function `main':
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\motion\ws_rv32imac\motion\Release/../src/main.cpp:77: undefined reference to `Get_Bits(int)'
+collect2.exe: error: ld returned 1 exit status
+makefile:57: recipe for target 'motion.elf' failed
+make: *** [motion.elf] Error 1
+14:40:02 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:65:13: error: 'unsigned int Show_Bits' redeclared as different kind of symbol
+ Show_Bits (N)
+             ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:58:14: note: previous declaration 'unsigned int Show_Bits(int)'
+ unsigned int Show_Bits _ANSI_ARGS_ ((int n));
+              ^~~~~~~~~
+../src/main.cpp:65:12: error: 'N' was not declared in this scope
+ Show_Bits (N)
+            ^
+../src/main.cpp:67:1: error: expected unqualified-id before '{' token
+ {
+ ^
+../src/main.cpp:117:12: error: 'unsigned int Get_Bits' redeclared as different kind of symbol
+ Get_Bits (N)
+            ^
+In file included from ../src/main.cpp:8:0:
+../src/global.h:61:14: note: previous declaration 'unsigned int Get_Bits(int)'
+ unsigned int Get_Bits _ANSI_ARGS_ ((int n));
+              ^~~~~~~~
+../src/main.cpp:117:11: error: 'N' was not declared in this scope
+ Get_Bits (N)
+           ^
+../src/main.cpp:119:1: error: expected unqualified-id before '{' token
+ {
+ ^
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+14:41:03 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5276	   1080	   2112	   8468	   2114	motion.elf
+Finished building: motion.siz
+ 
+15:53:13 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+./src/main.o: In function `main':
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\motion\ws_rv32imac\motion\Release/../src/main.cpp:176: undefined reference to `Get_motion_code()'
+collect2.exe: error: ld returned 1 exit status
+make: *** [motion.elf] Error 1
+makefile:57: recipe for target 'motion.elf' failed
+15:53:39 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5512	   1080	   2112	   8704	   2200	motion.elf
+Finished building: motion.siz
+ 
+15:56:55 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5600	   1080	   2112	   8792	   2258	motion.elf
+Finished building: motion.siz
+ 
+16:00:06 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int Get_motion_code()':
+../src/main.cpp:142:21: error: 'MVtab0' was not declared in this scope
+       Flush_Buffer (MVtab0[code][1]);
+                     ^~~~~~
+../src/main.cpp:150:21: error: 'MVtab1' was not declared in this scope
+       Flush_Buffer (MVtab1[code][1]);
+                     ^~~~~~
+../src/main.cpp:158:17: error: 'MVtab2' was not declared in this scope
+   Flush_Buffer (MVtab2[code][1]);
+                 ^~~~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+16:18:14 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5804	   1080	   2112	   8996	   2324	motion.elf
+Finished building: motion.siz
+ 
+16:20:02 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5804	   1080	   2112	   8996	   2324	motion.elf
+Finished building: motion.siz
+ 
+16:22:16 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/main.cpp:240:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual, full_pel_vector);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/main.cpp:240:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual, full_pel_vector);
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+16:22:58 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/main.cpp:240:3: error: 'decode_motion_vector' was not declared in this scope
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual, full_pel_vector);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/main.cpp:240:3: note: suggested alternative: 'motion_vector'
+   decode_motion_vector (&PMV[0], h_r_size, motion_code, motion_residual, full_pel_vector);
+   ^~~~~~~~~~~~~~~~~~~~
+   motion_vector
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+16:23:50 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5916	   1080	   2112	   9108	   2394	motion.elf
+Finished building: motion.siz
+ 
+16:26:14 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5968	   1080	   2112	   9160	   23c8	motion.elf
+Finished building: motion.siz
+ 
+16:26:55 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6008	   1080	   2112	   9200	   23f0	motion.elf
+Finished building: motion.siz
+ 
+16:29:32 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6008	   1080	   2112	   9200	   23f0	motion.elf
+Finished building: motion.siz
+ 
+11:00:25 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6148	   1080	   2112	   9340	   247c	motion.elf
+Finished building: motion.siz
+ 
+11:01:25 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6008	   1080	   2112	   9200	   23f0	motion.elf
+Finished building: motion.siz
+ 
+11:01:49 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6148	   1080	   2112	   9340	   247c	motion.elf
+Finished building: motion.siz
+ 
+13:27:00 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6148	   1080	   2112	   9340	   247c	motion.elf
+Finished building: motion.siz
+ 
+13:29:10 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6172	   1080	   2112	   9364	   2494	motion.elf
+Finished building: motion.siz
+ 
+13:50:55 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6240	   1080	   2112	   9432	   24d8	motion.elf
+Finished building: motion.siz
+ 
+14:00:16 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6248	   1080	   2112	   9440	   24e0	motion.elf
+Finished building: motion.siz
+ 
+14:34:23 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6260	   1080	   2112	   9452	   24ec	motion.elf
+Finished building: motion.siz
+ 
+14:34:48 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6268	   1080	   2112	   9460	   24f4	motion.elf
+Finished building: motion.siz
+ 
+15:44:30 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6244	   1080	   2112	   9436	   24dc	motion.elf
+Finished building: motion.siz
+ 
+15:45:04 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6244	   1080	   2112	   9436	   24dc	motion.elf
+Finished building: motion.siz
+ 
+15:45:26 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6268	   1080	   2112	   9460	   24f4	motion.elf
+Finished building: motion.siz
+ 
+16:29:09 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6264	   1080	   2112	   9456	   24f0	motion.elf
+Finished building: motion.siz
+ 
+16:29:59 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6268	   1080	   2112	   9460	   24f4	motion.elf
+Finished building: motion.siz
+ 
+16:33:25 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6272	   1080	   2112	   9464	   24f8	motion.elf
+Finished building: motion.siz
+ 
+16:34:28 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6268	   1080	   2112	   9460	   24f4	motion.elf
+Finished building: motion.siz
+ 
+12:36:06 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+12:59:48 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:00:23 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:02:24 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:03:39 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:04:02 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:05:29 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:06:41 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:07:05 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:07:57 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6236	   1080	   2112	   9428	   24d4	motion.elf
+Finished building: motion.siz
+ 
+13:08:22 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6248	   1080	   2112	   9440	   24e0	motion.elf
+Finished building: motion.siz
+ 
+13:09:40 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6364	   1080	   2112	   9556	   2554	motion.elf
+Finished building: motion.siz
+ 
+13:10:31 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6448	   1080	   2112	   9640	   25a8	motion.elf
+Finished building: motion.siz
+ 
+13:16:28 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6452	   1084	   2112	   9648	   25b0	motion.elf
+Finished building: motion.siz
+ 
+13:28:36 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6484	   1092	   2112	   9688	   25d8	motion.elf
+Finished building: motion.siz
+ 
+13:37:10 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6484	   1092	   2112	   9688	   25d8	motion.elf
+Finished building: motion.siz
+ 
+17:37:26 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6440	   1080	   2112	   9632	   25a0	motion.elf
+Finished building: motion.siz
+ 
+18:13:52 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6452	   1080	   2112	   9644	   25ac	motion.elf
+Finished building: motion.siz
+ 
+18:14:51 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6456	   1080	   2112	   9648	   25b0	motion.elf
+Finished building: motion.siz
+ 
+18:16:13 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6472	   1080	   2112	   9664	   25c0	motion.elf
+Finished building: motion.siz
+ 
+18:17:59 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6488	   1080	   2112	   9680	   25d0	motion.elf
+Finished building: motion.siz
+ 
+18:35:46 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6492	   1080	   2112	   9684	   25d4	motion.elf
+Finished building: motion.siz
+ 
+18:37:09 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6528	   1080	   2112	   9720	   25f8	motion.elf
+Finished building: motion.siz
+ 
+18:37:55 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6528	   1080	   2112	   9720	   25f8	motion.elf
+Finished building: motion.siz
+ 
+18:38:16 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6528	   1080	   2112	   9720	   25f8	motion.elf
+Finished building: motion.siz
+ 
+18:38:54 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6492	   1080	   2112	   9684	   25d4	motion.elf
+Finished building: motion.siz
+ 
+18:39:22 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6488	   1080	   2112	   9680	   25d0	motion.elf
+Finished building: motion.siz
+ 
+18:42:47 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void decode_motion_vector(int*, int, int, int, int)':
+../src/main.cpp:280:11: error: invalid conversion from 'int*' to 'unsigned int' [-fpermissive]
+   *dbg0 = pred;
+           ^~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:43:01 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void decode_motion_vector(int*, int, int, int, int)':
+../src/main.cpp:280:11: error: invalid conversion from 'int**' to 'unsigned int' [-fpermissive]
+   *dbg0 = &pred;
+           ^~~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:43:10 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6488	   1080	   2112	   9680	   25d0	motion.elf
+Finished building: motion.siz
+ 
+18:43:24 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6492	   1080	   2112	   9684	   25d4	motion.elf
+Finished building: motion.siz
+ 
+18:45:31 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void motion_vector(int*, int*, int, int, int, int, int)':
+../src/main.cpp:314:19: error: invalid types 'int[int]' for array subscript
+   *dbg0 = PMV[0][0][0];
+                   ^
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:45:57 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6492	   1080	   2112	   9684	   25d4	motion.elf
+Finished building: motion.siz
+ 
+18:47:15 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void decode_motion_vector(int*, int, int, int, int)':
+../src/main.cpp:259:4: error: expected primary-expression before '/' token
+   */
+    ^
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:47:25 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6532	   1080	   2112	   9724	   25fc	motion.elf
+Finished building: motion.siz
+ 
+18:48:35 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6556	   1080	   2112	   9748	   2614	motion.elf
+Finished building: motion.siz
+ 
+18:52:39 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6596	   1080	   2112	   9788	   263c	motion.elf
+Finished building: motion.siz
+ 
+18:55:47 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6616	   1080	   2112	   9808	   2650	motion.elf
+Finished building: motion.siz
+ 
+18:59:21 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6652	   1080	   2112	   9844	   2674	motion.elf
+Finished building: motion.siz
+ 
+19:50:21 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6672	   1080	   2112	   9864	   2688	motion.elf
+Finished building: motion.siz
+ 
+19:50:32 **** Incremental Build of configuration Release for project motion ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6672	   1080	   2112	   9864	   2688	motion.elf
+Finished building: motion.siz
+ 
+19:50:47 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6672	   1080	   2112	   9864	   2688	motion.elf
+Finished building: motion.siz
+ 
+19:51:46 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6668	   1080	   2112	   9860	   2684	motion.elf
+Finished building: motion.siz
+ 
+19:52:50 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6672	   1080	   2112	   9864	   2688	motion.elf
+Finished building: motion.siz
+ 
+19:54:04 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6668	   1080	   2112	   9860	   2684	motion.elf
+Finished building: motion.siz
+ 
+19:55:44 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6704	   1080	   2112	   9896	   26a8	motion.elf
+Finished building: motion.siz
+ 
+11:11:06 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void Initialize_Buffer()':
+../src/main.cpp:398:12: error: 'code' was not declared in this scope
+    *dbg0 = code;
+            ^~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+11:11:37 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6752	   1080	   2112	   9944	   26d8	motion.elf
+Finished building: motion.siz
+ 
+11:14:14 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6784	   1080	   2112	   9976	   26f8	motion.elf
+Finished building: motion.siz
+ 
+11:20:10 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void Flush_Buffer(int)':
+../src/main.cpp:121:16: error: 'ox2' was not declared in this scope
+        *dbg0 = ox2;
+                ^~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+11:20:21 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6824	   1080	   2112	  10016	   2720	motion.elf
+Finished building: motion.siz
+ 
+11:22:03 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6836	   1080	   2112	  10028	   272c	motion.elf
+Finished building: motion.siz
+ 
+11:24:37 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6856	   1080	   2112	  10048	   2740	motion.elf
+Finished building: motion.siz
+ 
+11:42:46 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6884	   1080	   2112	  10076	   275c	motion.elf
+Finished building: motion.siz
+ 
+11:46:01 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void Fill_Buffer()':
+../src/main.cpp:46:11: error: invalid conversion from 'unsigned char*' to 'unsigned int' [-fpermissive]
+   *dbg0 = ld_Rdbfr;
+           ^~~~~~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+11:46:18 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void Fill_Buffer()':
+../src/main.cpp:46:11: error: invalid conversion from 'unsigned char*' to 'unsigned int' [-fpermissive]
+   *dbg0 = ld_Rdbfr;
+           ^~~~~~~~
+make: *** [src/main.o] Error 1
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+11:46:25 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void Fill_Buffer()':
+../src/main.cpp:46:11: error: invalid conversion from 'unsigned char*' to 'unsigned int' [-fpermissive]
+   *dbg0 = ld_Rdbfr;
+           ^~~~~~~~
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+11:46:47 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6920	   1080	   2112	  10112	   2780	motion.elf
+Finished building: motion.siz
+ 
+12:04:06 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void Flush_Buffer(int)':
+../src/main.cpp:132:16: error: invalid conversion from 'unsigned char*' to 'unsigned int' [-fpermissive]
+        *dbg0 = ld_Rdptr;
+                ^~~~~~~~
+../src/main.cpp:138:16: error: invalid conversion from 'unsigned char*' to 'unsigned int' [-fpermissive]
+        *dbg0 = ld_Rdbfr;
+                ^~~~~~~~
+make: *** [src/main.o] Error 1
+src/subdir.mk:25: recipe for target 'src/main.o' failed
+12:04:40 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6956	   1080	   2112	  10148	   27a4	motion.elf
+Finished building: motion.siz
+ 
+12:10:06 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6956	   1080	   2112	  10148	   27a4	motion.elf
+Finished building: motion.siz
+ 
+12:19:02 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6984	   1080	   2112	  10176	   27c0	motion.elf
+Finished building: motion.siz
+ 
+13:58:45 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6928	   1080	   2112	  10120	   2788	motion.elf
+Finished building: motion.siz
+ 
+14:06:14 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6944	   1080	   2112	  10136	   2798	motion.elf
+Finished building: motion.siz
+ 
+21:09:56 **** Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6116	   1080	   2100	   9296	   2450	motion.elf
+Finished building: motion.siz
+ 

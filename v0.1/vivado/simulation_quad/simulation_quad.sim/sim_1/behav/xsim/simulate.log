@@ -1,0 +1,14 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Test           0 passed.
+Test           1 passed.
+Test           2 passed.
+Test           3 passed.
+Test           4 passed.
+Test           5 passed.
+Test           6 passed.
+Test           7 passed.
+Test           8 passed.
+Test           9 passed.
+Test          10 passed.
+$finish called at time : 9139355 ns : File "D:/projects/arduissimo/release/v0.1/testbench/testbench_quad.v" Line 656

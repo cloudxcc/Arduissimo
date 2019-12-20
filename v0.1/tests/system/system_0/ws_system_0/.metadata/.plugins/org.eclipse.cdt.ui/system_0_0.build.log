@@ -1,0 +1,30 @@
+18:21:07 **** Incremental Build of configuration Release for project system_0_0 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\system\system_0\ws_system_0\system_0_0\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/system.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\system\system_0\ws_system_0\system_0_0\include" -std=gnu11 -MMD -MP -MF"include/system.d" -MT"include/system.o" -c -o "include/system.o" "../include/system.c"
+Finished building: ../include/system.c
+ 
+Building target: system_0_0.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"system_0_0.map" -o "system_0_0.elf"  ./src/main.o  ./include/system.o   
+Finished building target: system_0_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "system_0_0.elf"  "system_0_0.hex"
+Finished building: system_0_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "system_0_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1608	   1080	     28	   2716	    a9c	system_0_0.elf
+Finished building: system_0_0.siz
+ 
+
+18:21:32 Build Finished (took 25s.635ms)
+

@@ -1,0 +1,30 @@
+15:35:53 **** Build of configuration Release for project blinky64_1 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\system\blinky64\ws_blinky64\blinky64_1\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/system.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\system\blinky64\ws_blinky64\blinky64_1\include" -std=gnu11 -MMD -MP -MF"include/system.d" -MT"include/system.o" -c -o "include/system.o" "../include/system.c"
+Finished building: ../include/system.c
+ 
+Building target: blinky64_1.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"blinky64_1.map" -o "blinky64_1.elf"  ./src/main.o  ./include/system.o   
+Finished building target: blinky64_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "blinky64_1.elf"  "blinky64_1.hex"
+Finished building: blinky64_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "blinky64_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2252	   1080	     28	   3360	    d20	blinky64_1.elf
+Finished building: blinky64_1.siz
+ 
+
+15:36:19 Build Finished (took 25s.594ms)
+

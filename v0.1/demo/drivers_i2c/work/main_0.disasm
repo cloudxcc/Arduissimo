@@ -1,0 +1,1365 @@
+
+drivers_i2c_0.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010074 <main>:
+#include "device.h"
+#include "driver_custom.h"
+#include "driver_i2c.h"
+
+int main(void)
+{
+   10074:	1141                	addi	sp,sp,-16
+   //////////////
+   // I2C
+   //////////////
+   // INIT master
+   i2c_master_init(0,  0,  1, I2C_baud_50k);
+   10076:	38400693          	li	a3,900
+   1007a:	4605                	li	a2,1
+   1007c:	4581                	li	a1,0
+   1007e:	4501                	li	a0,0
+{
+   10080:	c606                	sw	ra,12(sp)
+   i2c_master_init(0,  0,  1, I2C_baud_50k);
+   10082:	2c61                	jal	1031a <i2c_master_init>
+   i2c_master_init(1,  4,  5, I2C_baud_50k);
+   10084:	38400693          	li	a3,900
+   10088:	4615                	li	a2,5
+   1008a:	4591                	li	a1,4
+   1008c:	4505                	li	a0,1
+   1008e:	2471                	jal	1031a <i2c_master_init>
+   i2c_master_init(2,  8,  9, I2C_baud_50k);
+   10090:	38400693          	li	a3,900
+   10094:	4625                	li	a2,9
+   10096:	45a1                	li	a1,8
+   10098:	4509                	li	a0,2
+   1009a:	2441                	jal	1031a <i2c_master_init>
+   i2c_master_init(3, 12, 13, I2C_baud_50k);
+   1009c:	38400693          	li	a3,900
+   100a0:	4635                	li	a2,13
+   100a2:	45b1                	li	a1,12
+   100a4:	450d                	li	a0,3
+   100a6:	2c95                	jal	1031a <i2c_master_init>
+   i2c_master_init(4, 16, 17, I2C_baud_50k);
+   100a8:	38400693          	li	a3,900
+   100ac:	4645                	li	a2,17
+   100ae:	45c1                	li	a1,16
+   100b0:	4511                	li	a0,4
+   100b2:	24a5                	jal	1031a <i2c_master_init>
+   i2c_master_init(5, 20, 21, I2C_baud_50k);
+   100b4:	38400693          	li	a3,900
+   100b8:	4655                	li	a2,21
+   100ba:	45d1                	li	a1,20
+   100bc:	4515                	li	a0,5
+   100be:	2cb1                	jal	1031a <i2c_master_init>
+   i2c_master_init(6, 24, 25, I2C_baud_50k);
+   100c0:	38400693          	li	a3,900
+   100c4:	4665                	li	a2,25
+   100c6:	45e1                	li	a1,24
+   100c8:	4519                	li	a0,6
+   100ca:	2c81                	jal	1031a <i2c_master_init>
+   i2c_master_init(7, 28, 29, I2C_baud_50k);
+   100cc:	38400693          	li	a3,900
+   100d0:	4675                	li	a2,29
+   100d2:	45f1                	li	a1,28
+   100d4:	451d                	li	a0,7
+   100d6:	2491                	jal	1031a <i2c_master_init>
+
+   // Init slave and enable
+   i2c_slave_init(0,  2,  3, 0x40);
+   100d8:	04000693          	li	a3,64
+   100dc:	460d                	li	a2,3
+   100de:	4589                	li	a1,2
+   100e0:	4501                	li	a0,0
+   100e2:	6ac000ef          	jal	ra,1078e <i2c_slave_init>
+   i2c_slave_init(1,  6,  7, 0x41);
+   100e6:	04100693          	li	a3,65
+   100ea:	461d                	li	a2,7
+   100ec:	4599                	li	a1,6
+   100ee:	4505                	li	a0,1
+   100f0:	69e000ef          	jal	ra,1078e <i2c_slave_init>
+   i2c_slave_init(2, 10, 11, 0x42);
+   100f4:	04200693          	li	a3,66
+   100f8:	462d                	li	a2,11
+   100fa:	45a9                	li	a1,10
+   100fc:	4509                	li	a0,2
+   100fe:	690000ef          	jal	ra,1078e <i2c_slave_init>
+   i2c_slave_init(3, 14, 15, 0x43);
+   10102:	04300693          	li	a3,67
+   10106:	463d                	li	a2,15
+   10108:	45b9                	li	a1,14
+   1010a:	450d                	li	a0,3
+   1010c:	682000ef          	jal	ra,1078e <i2c_slave_init>
+   i2c_slave_init(4, 18, 19, 0x44);
+   10110:	04400693          	li	a3,68
+   10114:	464d                	li	a2,19
+   10116:	45c9                	li	a1,18
+   10118:	4511                	li	a0,4
+   1011a:	674000ef          	jal	ra,1078e <i2c_slave_init>
+   i2c_slave_init(5, 22, 23, 0x45);
+   1011e:	04500693          	li	a3,69
+   10122:	465d                	li	a2,23
+   10124:	45d9                	li	a1,22
+   10126:	4515                	li	a0,5
+   10128:	259d                	jal	1078e <i2c_slave_init>
+   i2c_slave_init(6, 26, 27, 0x46);
+   1012a:	04600693          	li	a3,70
+   1012e:	466d                	li	a2,27
+   10130:	45e9                	li	a1,26
+   10132:	4519                	li	a0,6
+   10134:	2da9                	jal	1078e <i2c_slave_init>
+   i2c_slave_init(7, 30, 31, 0x47);
+   10136:	04700693          	li	a3,71
+   1013a:	467d                	li	a2,31
+   1013c:	45f9                	li	a1,30
+   1013e:	451d                	li	a0,7
+   10140:	25b9                	jal	1078e <i2c_slave_init>
+   i2c_slave_enable(0, 0);
+   10142:	4581                	li	a1,0
+   10144:	4501                	li	a0,0
+   10146:	21a9                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(1, 0);
+   10148:	4581                	li	a1,0
+   1014a:	4505                	li	a0,1
+   1014c:	2191                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(2, 0);
+   1014e:	4581                	li	a1,0
+   10150:	4509                	li	a0,2
+   10152:	293d                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(3, 0);
+   10154:	4581                	li	a1,0
+   10156:	450d                	li	a0,3
+   10158:	2925                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(4, 0);
+   1015a:	4581                	li	a1,0
+   1015c:	4511                	li	a0,4
+   1015e:	290d                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(5, 0);
+   10160:	4581                	li	a1,0
+   10162:	4515                	li	a0,5
+   10164:	2135                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(6, 0);
+   10166:	4581                	li	a1,0
+   10168:	4519                	li	a0,6
+   1016a:	211d                	jal	10590 <i2c_slave_enable>
+   i2c_slave_enable(7, 0);
+   1016c:	4581                	li	a1,0
+   1016e:	451d                	li	a0,7
+   10170:	2105                	jal	10590 <i2c_slave_enable>
+
+   // master write
+   i2c_master_write(0, 0x40, 0x0);
+   10172:	4601                	li	a2,0
+   10174:	04000593          	li	a1,64
+   10178:	4501                	li	a0,0
+   1017a:	26f1                	jal	10546 <i2c_master_write>
+
+   TC_KILL = 0x0;
+   1017c:	800007b7          	lui	a5,0x80000
+   10180:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffee3d4>
+   asm volatile ("addi x0, x0, 0");
+   10184:	00000013          	nop
+}
+   10188:	40b2                	lw	ra,12(sp)
+   1018a:	4501                	li	a0,0
+   1018c:	0141                	addi	sp,sp,16
+   1018e:	8082                	ret
+
+00010190 <_start>:
+   10190:	00002197          	auipc	gp,0x2
+   10194:	aa018193          	addi	gp,gp,-1376 # 11c30 <__global_pointer$>
+   10198:	80818513          	addi	a0,gp,-2040 # 11438 <_edata>
+   1019c:	c0818613          	addi	a2,gp,-1016 # 11838 <_end>
+   101a0:	40a60633          	sub	a2,a2,a0
+   101a4:	00000593          	li	a1,0
+   101a8:	0d9000ef          	jal	ra,10a80 <memset>
+   101ac:	00000517          	auipc	a0,0x0
+   101b0:	7c850513          	addi	a0,a0,1992 # 10974 <__libc_fini_array>
+   101b4:	774000ef          	jal	ra,10928 <atexit>
+   101b8:	031000ef          	jal	ra,109e8 <__libc_init_array>
+   101bc:	00012503          	lw	a0,0(sp)
+   101c0:	00410593          	addi	a1,sp,4
+   101c4:	00000613          	li	a2,0
+   101c8:	eadff0ef          	jal	ra,10074 <main>
+   101cc:	7700006f          	j	1093c <exit>
+
+000101d0 <_fini>:
+   101d0:	00008067          	ret
+
+000101d4 <deregister_tm_clones>:
+   101d4:	00001517          	auipc	a0,0x1
+   101d8:	25c50513          	addi	a0,a0,604 # 11430 <_global_impure_ptr>
+   101dc:	00001797          	auipc	a5,0x1
+   101e0:	25478793          	addi	a5,a5,596 # 11430 <_global_impure_ptr>
+   101e4:	00a78a63          	beq	a5,a0,101f8 <deregister_tm_clones+0x24>
+   101e8:	ffff0317          	auipc	t1,0xffff0
+   101ec:	e1830313          	addi	t1,t1,-488 # 0 <main-0x10074>
+   101f0:	00030463          	beqz	t1,101f8 <deregister_tm_clones+0x24>
+   101f4:	00030067          	jr	t1
+   101f8:	00008067          	ret
+
+000101fc <register_tm_clones>:
+   101fc:	00001517          	auipc	a0,0x1
+   10200:	23450513          	addi	a0,a0,564 # 11430 <_global_impure_ptr>
+   10204:	00001597          	auipc	a1,0x1
+   10208:	22c58593          	addi	a1,a1,556 # 11430 <_global_impure_ptr>
+   1020c:	40a585b3          	sub	a1,a1,a0
+   10210:	4025d593          	srai	a1,a1,0x2
+   10214:	00200793          	li	a5,2
+   10218:	02f5c5b3          	div	a1,a1,a5
+   1021c:	00058a63          	beqz	a1,10230 <register_tm_clones+0x34>
+   10220:	ffff0317          	auipc	t1,0xffff0
+   10224:	de030313          	addi	t1,t1,-544 # 0 <main-0x10074>
+   10228:	00030463          	beqz	t1,10230 <register_tm_clones+0x34>
+   1022c:	00030067          	jr	t1
+   10230:	00008067          	ret
+
+00010234 <__do_global_dtors_aux>:
+   10234:	00001797          	auipc	a5,0x1
+   10238:	2047c783          	lbu	a5,516(a5) # 11438 <_edata>
+   1023c:	04079263          	bnez	a5,10280 <__do_global_dtors_aux+0x4c>
+   10240:	ff010113          	addi	sp,sp,-16
+   10244:	00112623          	sw	ra,12(sp)
+   10248:	f8dff0ef          	jal	ra,101d4 <deregister_tm_clones>
+   1024c:	ffff0797          	auipc	a5,0xffff0
+   10250:	db478793          	addi	a5,a5,-588 # 0 <main-0x10074>
+   10254:	00078a63          	beqz	a5,10268 <__do_global_dtors_aux+0x34>
+   10258:	00001517          	auipc	a0,0x1
+   1025c:	af050513          	addi	a0,a0,-1296 # 10d48 <__EH_FRAME_BEGIN__>
+   10260:	ffff0097          	auipc	ra,0xffff0
+   10264:	da0080e7          	jalr	-608(ra) # 0 <main-0x10074>
+   10268:	00c12083          	lw	ra,12(sp)
+   1026c:	00100793          	li	a5,1
+   10270:	00001717          	auipc	a4,0x1
+   10274:	1cf70423          	sb	a5,456(a4) # 11438 <_edata>
+   10278:	01010113          	addi	sp,sp,16
+   1027c:	00008067          	ret
+   10280:	00008067          	ret
+
+00010284 <frame_dummy>:
+   10284:	ffff0797          	auipc	a5,0xffff0
+   10288:	d7c78793          	addi	a5,a5,-644 # 0 <main-0x10074>
+   1028c:	02078663          	beqz	a5,102b8 <frame_dummy+0x34>
+   10290:	ff010113          	addi	sp,sp,-16
+   10294:	00001597          	auipc	a1,0x1
+   10298:	1a858593          	addi	a1,a1,424 # 1143c <object.5181>
+   1029c:	00001517          	auipc	a0,0x1
+   102a0:	aac50513          	addi	a0,a0,-1364 # 10d48 <__EH_FRAME_BEGIN__>
+   102a4:	00112623          	sw	ra,12(sp)
+   102a8:	ffff0097          	auipc	ra,0xffff0
+   102ac:	d58080e7          	jalr	-680(ra) # 0 <main-0x10074>
+   102b0:	00c12083          	lw	ra,12(sp)
+   102b4:	01010113          	addi	sp,sp,16
+   102b8:	f45ff06f          	j	101fc <register_tm_clones>
+
+000102bc <ca_delay>:
+
+#include "device.h"
+#include "ca_util.h"
+
+void ca_delay(unsigned delay) {
+   unsigned end_time = CA_CT + delay;
+   102bc:	800017b7          	lui	a5,0x80001
+   102c0:	479c                	lw	a5,8(a5)
+   while (CA_CT < end_time) {}
+   102c2:	80001737          	lui	a4,0x80001
+   unsigned end_time = CA_CT + delay;
+   102c6:	953e                	add	a0,a0,a5
+   while (CA_CT < end_time) {}
+   102c8:	471c                	lw	a5,8(a4)
+   102ca:	fea7efe3          	bltu	a5,a0,102c8 <ca_delay+0xc>
+}
+   102ce:	8082                	ret
+
+000102d0 <set_dir>:
+   *gpio_n_out = 0x1 << (pin & 0x7);
+}
+
+void set_dir (unsigned pin, unsigned dir) {
+   unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+   gpio_n_dir += 0x40 * (pin >> 3);
+   102d0:	00355793          	srli	a5,a0,0x3
+   gpio_n_dir += dir;
+   *gpio_n_dir = 0x1 << (pin & 0x7);
+   102d4:	058a                	slli	a1,a1,0x2
+   102d6:	07a2                	slli	a5,a5,0x8
+   102d8:	97ae                	add	a5,a5,a1
+   102da:	891d                	andi	a0,a0,7
+   102dc:	800305b7          	lui	a1,0x80030
+   102e0:	4705                	li	a4,1
+   102e2:	97ae                	add	a5,a5,a1
+   102e4:	00a71533          	sll	a0,a4,a0
+   102e8:	c388                	sw	a0,0(a5)
+}
+   102ea:	8082                	ret
+
+000102ec <gpio_event>:
+
+void gpio_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   102ec:	0005cc63          	bltz	a1,10304 <gpio_event+0x18>
+     GPIO_EVENT_ADD = (((unsigned)&&gpio_event_label >> 1) & 0x3fff);
+   102f0:	000107b7          	lui	a5,0x10
+   102f4:	30478793          	addi	a5,a5,772 # 10304 <gpio_event+0x18>
+   102f8:	07c6                	slli	a5,a5,0x11
+   102fa:	83c9                	srli	a5,a5,0x12
+   102fc:	80031737          	lui	a4,0x80031
+   10300:	c31c                	sw	a5,0(a4)
+   10302:	8082                	ret
+   } else
+   {
+     gpio_event_label:
+       TC_SAK = gpio_event_hash[tag];
+   10304:	ae818793          	addi	a5,gp,-1304 # 11718 <gpio_event_hash>
+   10308:	050a                	slli	a0,a0,0x2
+   1030a:	953e                	add	a0,a0,a5
+   1030c:	4118                	lw	a4,0(a0)
+   1030e:	800007b7          	lui	a5,0x80000
+   10312:	c798                	sw	a4,8(a5)
+       //TC_START = gpio_event_hash[tag];
+       //TC_KILL = 0x0;
+       asm volatile ("addi x0, x0, 0");
+   10314:	00000013          	nop
+   }
+}
+   10318:	8082                	ret
+
+0001031a <i2c_master_init>:
+   i2c_master_read_data[tag] = 0;   // why not for write as well
+
+   unsigned trigger = CA_CT + 600;  // 120 cycle when 4 threads running,
+                                    // 480 for maximal number of threads
+   i2c_master_trigger[tag] = trigger;
+   i2c_master_event(tag, trigger);
+   1031a:	7179                	addi	sp,sp,-48
+   1031c:	d422                	sw	s0,40(sp)
+   1031e:	9e818793          	addi	a5,gp,-1560 # 11618 <i2c_master_delay>
+   10322:	00251413          	slli	s0,a0,0x2
+   10326:	d606                	sw	ra,44(sp)
+   10328:	d226                	sw	s1,36(sp)
+   1032a:	d04a                	sw	s2,32(sp)
+   1032c:	ce4e                	sw	s3,28(sp)
+   1032e:	cc52                	sw	s4,24(sp)
+   10330:	97a2                	add	a5,a5,s0
+   10332:	c394                	sw	a3,0(a5)
+   10334:	800017b7          	lui	a5,0x80001
+   10338:	8a2e                	mv	s4,a1
+   1033a:	478c                	lw	a1,8(a5)
+   1033c:	c632                	sw	a2,12(sp)
+   1033e:	4905                	li	s2,1
+   10340:	2309                	jal	10842 <i2c_master_final>
+   10342:	8e818793          	addi	a5,gp,-1816 # 11518 <i2c_master_hash>
+   10346:	97a2                	add	a5,a5,s0
+   10348:	c388                	sw	a0,0(a5)
+   1034a:	800307b7          	lui	a5,0x80030
+   1034e:	01078993          	addi	s3,a5,16 # 80030010 <__global_pointer$+0x8001e3e0>
+   10352:	003a5493          	srli	s1,s4,0x3
+   10356:	007a7793          	andi	a5,s4,7
+   1035a:	8a418713          	addi	a4,gp,-1884 # 114d4 <i2c_master_scl_bit>
+   1035e:	00f917b3          	sll	a5,s2,a5
+   10362:	9722                	add	a4,a4,s0
+   10364:	04a2                	slli	s1,s1,0x8
+   10366:	94ce                	add	s1,s1,s3
+   10368:	c31c                	sw	a5,0(a4)
+   1036a:	c09c                	sw	a5,0(s1)
+   1036c:	8552                	mv	a0,s4
+   1036e:	4581                	li	a1,0
+   10370:	3785                	jal	102d0 <set_dir>
+   10372:	aa818713          	addi	a4,gp,-1368 # 116d8 <i2c_master_scl_clr_add>
+   10376:	9722                	add	a4,a4,s0
+   10378:	ff448793          	addi	a5,s1,-12
+   1037c:	c31c                	sw	a5,0(a4)
+   1037e:	4632                	lw	a2,12(sp)
+   10380:	a4818713          	addi	a4,gp,-1464 # 11678 <i2c_master_scl_set_add>
+   10384:	9722                	add	a4,a4,s0
+   10386:	14c1                	addi	s1,s1,-16
+   10388:	c304                	sw	s1,0(a4)
+   1038a:	00365793          	srli	a5,a2,0x3
+   1038e:	90818713          	addi	a4,gp,-1784 # 11538 <i2c_master_sda_bit>
+   10392:	8a1d                	andi	a2,a2,7
+   10394:	00c91633          	sll	a2,s2,a2
+   10398:	9722                	add	a4,a4,s0
+   1039a:	c310                	sw	a2,0(a4)
+   1039c:	07a2                	slli	a5,a5,0x8
+   1039e:	97ce                	add	a5,a5,s3
+   103a0:	98818713          	addi	a4,gp,-1656 # 115b8 <i2c_master_sda_clr_add>
+   103a4:	c390                	sw	a2,0(a5)
+   103a6:	9722                	add	a4,a4,s0
+   103a8:	ff478693          	addi	a3,a5,-12
+   103ac:	c314                	sw	a3,0(a4)
+   103ae:	8c818713          	addi	a4,gp,-1848 # 114f8 <i2c_master_sda_set_add>
+   103b2:	9722                	add	a4,a4,s0
+   103b4:	ff078693          	addi	a3,a5,-16
+   103b8:	c314                	sw	a3,0(a4)
+   103ba:	6745                	lui	a4,0x11
+   103bc:	45470713          	addi	a4,a4,1108 # 11454 <i2c_master_sda_bank>
+   103c0:	fec7a823          	sw	a2,-16(a5)
+   103c4:	943a                	add	s0,s0,a4
+   103c6:	07c1                	addi	a5,a5,16
+   103c8:	c01c                	sw	a5,0(s0)
+   103ca:	50b2                	lw	ra,44(sp)
+   103cc:	5422                	lw	s0,40(sp)
+   103ce:	5492                	lw	s1,36(sp)
+   103d0:	5902                	lw	s2,32(sp)
+   103d2:	49f2                	lw	s3,28(sp)
+   103d4:	4a62                	lw	s4,24(sp)
+   103d6:	6145                	addi	sp,sp,48
+   103d8:	8082                	ret
+
+000103da <i2c_master_event>:
+   103da:	0205c263          	bltz	a1,103fe <i2c_master_event+0x24>
+   103de:	000107b7          	lui	a5,0x10
+   103e2:	3fe78793          	addi	a5,a5,1022 # 103fe <i2c_master_event+0x24>
+   103e6:	07c6                	slli	a5,a5,0x11
+   103e8:	83c9                	srli	a5,a5,0x12
+   103ea:	c0000737          	lui	a4,0xc0000
+   103ee:	97ba                	add	a5,a5,a4
+   103f0:	053a                	slli	a0,a0,0xe
+   103f2:	953e                	add	a0,a0,a5
+   103f4:	800017b7          	lui	a5,0x80001
+   103f8:	c388                	sw	a0,0(a5)
+   103fa:	c3cc                	sw	a1,4(a5)
+   103fc:	8082                	ret
+   103fe:	a2818713          	addi	a4,gp,-1496 # 11658 <i2c_master_state>
+   10402:	00251793          	slli	a5,a0,0x2
+   10406:	973e                	add	a4,a4,a5
+   10408:	4318                	lw	a4,0(a4)
+   1040a:	a2818613          	addi	a2,gp,-1496 # 11658 <i2c_master_state>
+   1040e:	04075c63          	bgez	a4,10466 <i2c_master_event+0x8c>
+   10412:	90818693          	addi	a3,gp,-1784 # 11538 <i2c_master_sda_bit>
+   10416:	96be                	add	a3,a3,a5
+   10418:	428c                	lw	a1,0(a3)
+   1041a:	98818693          	addi	a3,gp,-1656 # 115b8 <i2c_master_sda_clr_add>
+   1041e:	96be                	add	a3,a3,a5
+   10420:	4294                	lw	a3,0(a3)
+   10422:	40e00733          	neg	a4,a4
+   10426:	c28c                	sw	a1,0(a3)
+   10428:	84418593          	addi	a1,gp,-1980 # 11474 <i2c_master_trigger>
+   1042c:	9e818693          	addi	a3,gp,-1560 # 11618 <i2c_master_delay>
+   10430:	95be                	add	a1,a1,a5
+   10432:	96be                	add	a3,a3,a5
+   10434:	0005a803          	lw	a6,0(a1) # 80030000 <__global_pointer$+0x8001e3d0>
+   10438:	4294                	lw	a3,0(a3)
+   1043a:	c00008b7          	lui	a7,0xc0000
+   1043e:	053a                	slli	a0,a0,0xe
+   10440:	9836                	add	a6,a6,a3
+   10442:	000106b7          	lui	a3,0x10
+   10446:	3fe68693          	addi	a3,a3,1022 # 103fe <i2c_master_event+0x24>
+   1044a:	06c6                	slli	a3,a3,0x11
+   1044c:	82c9                	srli	a3,a3,0x12
+   1044e:	96c6                	add	a3,a3,a7
+   10450:	9536                	add	a0,a0,a3
+   10452:	800016b7          	lui	a3,0x80001
+   10456:	c288                	sw	a0,0(a3)
+   10458:	0106a223          	sw	a6,4(a3) # 80001004 <__global_pointer$+0x7ffef3d4>
+   1045c:	0105a023          	sw	a6,0(a1)
+   10460:	97b2                	add	a5,a5,a2
+   10462:	177d                	addi	a4,a4,-1
+   10464:	a00d                	j	10486 <i2c_master_event+0xac>
+   10466:	eb05                	bnez	a4,10496 <i2c_master_event+0xbc>
+   10468:	90818713          	addi	a4,gp,-1784 # 11538 <i2c_master_sda_bit>
+   1046c:	973e                	add	a4,a4,a5
+   1046e:	4314                	lw	a3,0(a4)
+   10470:	8c818713          	addi	a4,gp,-1848 # 114f8 <i2c_master_sda_set_add>
+   10474:	973e                	add	a4,a4,a5
+   10476:	4318                	lw	a4,0(a4)
+   10478:	c314                	sw	a3,0(a4)
+   1047a:	8e818713          	addi	a4,gp,-1816 # 11518 <i2c_master_hash>
+   1047e:	97ba                	add	a5,a5,a4
+   10480:	4398                	lw	a4,0(a5)
+   10482:	800007b7          	lui	a5,0x80000
+   10486:	c398                	sw	a4,0(a5)
+   10488:	800007b7          	lui	a5,0x80000
+   1048c:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffee3d4>
+   10490:	00000013          	nop
+   10494:	8082                	ret
+   10496:	00377693          	andi	a3,a4,3
+   1049a:	eaa9                	bnez	a3,104ec <i2c_master_event+0x112>
+   1049c:	02400813          	li	a6,36
+   104a0:	f8e844e3          	blt	a6,a4,10428 <i2c_master_event+0x4e>
+   104a4:	66c5                	lui	a3,0x11
+   104a6:	45468693          	addi	a3,a3,1108 # 11454 <i2c_master_sda_bank>
+   104aa:	96be                	add	a3,a3,a5
+   104ac:	4294                	lw	a3,0(a3)
+   104ae:	428c                	lw	a1,0(a3)
+   104b0:	90818693          	addi	a3,gp,-1784 # 11538 <i2c_master_sda_bit>
+   104b4:	96be                	add	a3,a3,a5
+   104b6:	4294                	lw	a3,0(a3)
+   104b8:	8df5                	and	a1,a1,a3
+   104ba:	05e2                	slli	a1,a1,0x18
+   104bc:	85e1                	srai	a1,a1,0x18
+   104be:	01071963          	bne	a4,a6,104d0 <i2c_master_event+0xf6>
+   104c2:	d1bd                	beqz	a1,10428 <i2c_master_event+0x4e>
+   104c4:	9a818693          	addi	a3,gp,-1624 # 115d8 <i2c_master_read_data>
+   104c8:	96be                	add	a3,a3,a5
+   104ca:	4585                	li	a1,1
+   104cc:	c28c                	sw	a1,0(a3)
+   104ce:	bfa9                	j	10428 <i2c_master_event+0x4e>
+   104d0:	9a818813          	addi	a6,gp,-1624 # 115d8 <i2c_master_read_data>
+   104d4:	983e                	add	a6,a6,a5
+   104d6:	00082803          	lw	a6,0(a6)
+   104da:	9a818693          	addi	a3,gp,-1624 # 115d8 <i2c_master_read_data>
+   104de:	0806                	slli	a6,a6,0x1
+   104e0:	c191                	beqz	a1,104e4 <i2c_master_event+0x10a>
+   104e2:	0805                	addi	a6,a6,1
+   104e4:	96be                	add	a3,a3,a5
+   104e6:	0106a023          	sw	a6,0(a3)
+   104ea:	bf3d                	j	10428 <i2c_master_event+0x4e>
+   104ec:	4585                	li	a1,1
+   104ee:	00b69b63          	bne	a3,a1,10504 <i2c_master_event+0x12a>
+   104f2:	8a418693          	addi	a3,gp,-1884 # 114d4 <i2c_master_scl_bit>
+   104f6:	96be                	add	a3,a3,a5
+   104f8:	428c                	lw	a1,0(a3)
+   104fa:	a4818693          	addi	a3,gp,-1464 # 11678 <i2c_master_scl_set_add>
+   104fe:	96be                	add	a3,a3,a5
+   10500:	4294                	lw	a3,0(a3)
+   10502:	b7e9                	j	104cc <i2c_master_event+0xf2>
+   10504:	4589                	li	a1,2
+   10506:	02b69963          	bne	a3,a1,10538 <i2c_master_event+0x15e>
+   1050a:	a8818593          	addi	a1,gp,-1400 # 116b8 <i2c_master_write_data>
+   1050e:	95be                	add	a1,a1,a5
+   10510:	418c                	lw	a1,0(a1)
+   10512:	40275693          	srai	a3,a4,0x2
+   10516:	00d5d6b3          	srl	a3,a1,a3
+   1051a:	8a85                	andi	a3,a3,1
+   1051c:	ca99                	beqz	a3,10532 <i2c_master_event+0x158>
+   1051e:	8c818693          	addi	a3,gp,-1848 # 114f8 <i2c_master_sda_set_add>
+   10522:	96be                	add	a3,a3,a5
+   10524:	428c                	lw	a1,0(a3)
+   10526:	90818693          	addi	a3,gp,-1784 # 11538 <i2c_master_sda_bit>
+   1052a:	96be                	add	a3,a3,a5
+   1052c:	4294                	lw	a3,0(a3)
+   1052e:	c194                	sw	a3,0(a1)
+   10530:	bde5                	j	10428 <i2c_master_event+0x4e>
+   10532:	98818693          	addi	a3,gp,-1656 # 115b8 <i2c_master_sda_clr_add>
+   10536:	b7f5                	j	10522 <i2c_master_event+0x148>
+   10538:	8a418693          	addi	a3,gp,-1884 # 114d4 <i2c_master_scl_bit>
+   1053c:	96be                	add	a3,a3,a5
+   1053e:	428c                	lw	a1,0(a3)
+   10540:	aa818693          	addi	a3,gp,-1368 # 116d8 <i2c_master_scl_clr_add>
+   10544:	bf6d                	j	104fe <i2c_master_event+0x124>
+
+00010546 <i2c_master_write>:
+   10546:	000406b7          	lui	a3,0x40
+   1054a:	80068693          	addi	a3,a3,-2048 # 3f800 <__global_pointer$+0x2dbd0>
+   1054e:	05ae                	slli	a1,a1,0xb
+   10550:	0606                	slli	a2,a2,0x1
+   10552:	00251793          	slli	a5,a0,0x2
+   10556:	8df5                	and	a1,a1,a3
+   10558:	a8818713          	addi	a4,gp,-1400 # 116b8 <i2c_master_write_data>
+   1055c:	20060613          	addi	a2,a2,512
+   10560:	973e                	add	a4,a4,a5
+   10562:	95b2                	add	a1,a1,a2
+   10564:	c30c                	sw	a1,0(a4)
+   10566:	a2818713          	addi	a4,gp,-1496 # 11658 <i2c_master_state>
+   1056a:	973e                	add	a4,a4,a5
+   1056c:	fb800693          	li	a3,-72
+   10570:	c314                	sw	a3,0(a4)
+   10572:	9a818713          	addi	a4,gp,-1624 # 115d8 <i2c_master_read_data>
+   10576:	973e                	add	a4,a4,a5
+   10578:	00072023          	sw	zero,0(a4) # c0000000 <__global_pointer$+0xbffee3d0>
+   1057c:	80001737          	lui	a4,0x80001
+   10580:	470c                	lw	a1,8(a4)
+   10582:	84418713          	addi	a4,gp,-1980 # 11474 <i2c_master_trigger>
+   10586:	25858593          	addi	a1,a1,600
+   1058a:	97ba                	add	a5,a5,a4
+   1058c:	c38c                	sw	a1,0(a5)
+   1058e:	b5b1                	j	103da <i2c_master_event>
+
+00010590 <i2c_slave_enable>:
+///////////////////////////////////////////////////
+//	i2c_slave_enable
+///////////////////////////////////////////////////
+unsigned i2c_slave_enable(unsigned id, unsigned data) {
+   // save write data
+   i2c_slave_write_data[id] = data & 0xff;
+   10590:	050a                	slli	a0,a0,0x2
+   10592:	86418793          	addi	a5,gp,-1948 # 11494 <i2c_slave_write_data>
+   10596:	97aa                	add	a5,a5,a0
+   10598:	0ff5f593          	andi	a1,a1,255
+   1059c:	c38c                	sw	a1,0(a5)
+   // reset slave state
+   i2c_slave_state[id] = 0;
+   1059e:	88418793          	addi	a5,gp,-1916 # 114b4 <i2c_slave_state>
+   105a2:	97aa                	add	a5,a5,a0
+   105a4:	0007a023          	sw	zero,0(a5)
+   // get GPIO_N_IN register
+   unsigned* gpio_n_in = i2c_slave_sda_bank[id];
+   105a8:	96818793          	addi	a5,gp,-1688 # 11598 <i2c_slave_sda_bank>
+   105ac:	97aa                	add	a5,a5,a0
+   // enable falling edge GPIO event at sda_pin
+   gpio_n_in -= 0x4;
+   *gpio_n_in = 0x1 << i2c_slave_sda_bit[id];
+   105ae:	4398                	lw	a4,0(a5)
+   105b0:	ac818793          	addi	a5,gp,-1336 # 116f8 <i2c_slave_sda_bit>
+   105b4:	953e                	add	a0,a0,a5
+   105b6:	4114                	lw	a3,0(a0)
+   105b8:	4785                	li	a5,1
+   105ba:	00d797b3          	sll	a5,a5,a3
+   105be:	fef72823          	sw	a5,-16(a4) # 80000ff0 <__global_pointer$+0x7ffef3c0>
+}
+   105c2:	8082                	ret
+
+000105c4 <i2c_slave_event>:
+//                   i2c_slave_read_data[tag][7:0] = address accessed
+//     = 0225 => restart by reseting state and re-arming SDA pin
+//
+///////////////////////////////////////////////////
+unsigned i2c_slave_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   105c4:	0005cf63          	bltz	a1,105e2 <i2c_slave_event+0x1e>
+     return 0xc0000000 +                          // execute thread
+            (tag << 14) +                         // save id
+            (((unsigned)&&i2c_slave_label >> 1) & 0x3fff); // set pc
+   105c8:	000106b7          	lui	a3,0x10
+   105cc:	5e268693          	addi	a3,a3,1506 # 105e2 <i2c_slave_event+0x1e>
+   105d0:	06c6                	slli	a3,a3,0x11
+   105d2:	82c9                	srli	a3,a3,0x12
+            (tag << 14) +                         // save id
+   105d4:	c00007b7          	lui	a5,0xc0000
+   105d8:	96be                	add	a3,a3,a5
+   105da:	053a                	slli	a0,a0,0xe
+   105dc:	96aa                	add	a3,a3,a0
+         }
+         i2c_slave_state[tag] = state + 1;
+         TC_KILL = 0x0;
+         asm volatile ("addi x0, x0, 0");
+   }
+}
+   105de:	8536                	mv	a0,a3
+   105e0:	8082                	ret
+         state = i2c_slave_state[tag];
+   105e2:	88418713          	addi	a4,gp,-1916 # 114b4 <i2c_slave_state>
+   105e6:	050a                	slli	a0,a0,0x2
+   105e8:	972a                	add	a4,a4,a0
+   105ea:	431c                	lw	a5,0(a4)
+   105ec:	88418593          	addi	a1,gp,-1916 # 114b4 <i2c_slave_state>
+         if (state & 0x1) {
+   105f0:	0017f813          	andi	a6,a5,1
+   105f4:	0ff7f613          	andi	a2,a5,255
+   105f8:	14080463          	beqz	a6,10740 <i2c_slave_event+0x17c>
+            if ((state & 0xff) == 0x25) {
+   105fc:	02500813          	li	a6,37
+   10600:	05061e63          	bne	a2,a6,1065c <i2c_slave_event+0x98>
+               if (state == 0x225) {
+   10604:	22500613          	li	a2,549
+   10608:	04c79263          	bne	a5,a2,1064c <i2c_slave_event+0x88>
+                  i2c_slave_state[tag] = 0;
+   1060c:	00072023          	sw	zero,0(a4)
+                  gpio_n = i2c_slave_sda_bank[tag];
+   10610:	96818713          	addi	a4,gp,-1688 # 11598 <i2c_slave_sda_bank>
+   10614:	972a                	add	a4,a4,a0
+                  *gpio_n = 0x1 << i2c_slave_sda_bit[tag];
+   10616:	4310                	lw	a2,0(a4)
+   10618:	ac818713          	addi	a4,gp,-1336 # 116f8 <i2c_slave_sda_bit>
+   1061c:	972a                	add	a4,a4,a0
+   1061e:	00072803          	lw	a6,0(a4)
+   10622:	4705                	li	a4,1
+   10624:	01071733          	sll	a4,a4,a6
+   10628:	fee62823          	sw	a4,-16(a2)
+                  TC_KILL = 0x0;
+   1062c:	80000737          	lui	a4,0x80000
+   10630:	00072223          	sw	zero,4(a4) # 80000004 <__global_pointer$+0x7ffee3d4>
+                  asm volatile ("addi x0, x0, 0");
+   10634:	00000013          	nop
+         i2c_slave_state[tag] = state + 1;
+   10638:	952e                	add	a0,a0,a1
+   1063a:	0785                	addi	a5,a5,1
+   1063c:	c11c                	sw	a5,0(a0)
+         TC_KILL = 0x0;
+   1063e:	800007b7          	lui	a5,0x80000
+   10642:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffee3d4>
+         asm volatile ("addi x0, x0, 0");
+   10646:	00000013          	nop
+   1064a:	bf51                	j	105de <i2c_slave_event+0x1a>
+                  TC_START = i2c_slave_hash[tag];
+   1064c:	a6818713          	addi	a4,gp,-1432 # 11698 <i2c_slave_hash>
+   10650:	972a                	add	a4,a4,a0
+   10652:	4310                	lw	a2,0(a4)
+   10654:	80000737          	lui	a4,0x80000
+   10658:	c310                	sw	a2,0(a4)
+   1065a:	bff9                	j	10638 <i2c_slave_event+0x74>
+               gpio_n = i2c_slave_sda_bank[tag];
+   1065c:	96818713          	addi	a4,gp,-1688 # 11598 <i2c_slave_sda_bank>
+   10660:	972a                	add	a4,a4,a0
+   10662:	00072803          	lw	a6,0(a4) # 80000000 <__global_pointer$+0x7ffee3d0>
+               char sda_bit = i2c_slave_sda_bit[tag];
+   10666:	ac818893          	addi	a7,gp,-1336 # 116f8 <i2c_slave_sda_bit>
+   1066a:	98aa                	add	a7,a7,a0
+               data = i2c_slave_read_data[tag];
+   1066c:	92818613          	addi	a2,gp,-1752 # 11558 <i2c_slave_read_data>
+   10670:	962a                	add	a2,a2,a0
+               char sda_bit = i2c_slave_sda_bit[tag];
+   10672:	00088e03          	lb	t3,0(a7) # c0000000 <__global_pointer$+0xbffee3d0>
+               if (state == 0x11) {
+   10676:	48c5                	li	a7,17
+               read = *gpio_n;
+   10678:	00082703          	lw	a4,0(a6)
+               data = i2c_slave_read_data[tag];
+   1067c:	00062303          	lw	t1,0(a2)
+               if (state == 0x11) {
+   10680:	05179263          	bne	a5,a7,106c4 <i2c_slave_event+0x100>
+                  if (data == i2c_slave_add[tag]) {
+   10684:	a0818893          	addi	a7,gp,-1528 # 11638 <i2c_slave_add>
+   10688:	98aa                	add	a7,a7,a0
+   1068a:	0008a883          	lw	a7,0(a7)
+   1068e:	0b131363          	bne	t1,a7,10734 <i2c_slave_event+0x170>
+                     *gpio_n = 0x1 << sda_bit;
+   10692:	4885                	li	a7,1
+   10694:	01c89333          	sll	t1,a7,t3
+                     if ((read >> sda_bit) & 0x1)  // read mode
+   10698:	01c75733          	srl	a4,a4,t3
+                     *gpio_n = 0x1 << sda_bit;
+   1069c:	fc682223          	sw	t1,-60(a6)
+                     if ((read >> sda_bit) & 0x1)  // read mode
+   106a0:	8b05                	andi	a4,a4,1
+   106a2:	ef41                	bnez	a4,1073a <i2c_slave_event+0x176>
+                        i2c_slave_read_data[tag] = 1;
+   106a4:	01162023          	sw	a7,0(a2)
+            gpio_n = i2c_slave_scl_bank[tag] ;
+   106a8:	94818713          	addi	a4,gp,-1720 # 11578 <i2c_slave_scl_bank>
+   106ac:	972a                	add	a4,a4,a0
+            *gpio_n = 0x1 << i2c_slave_scl_bit[tag];
+   106ae:	4310                	lw	a2,0(a4)
+   106b0:	9c818713          	addi	a4,gp,-1592 # 115f8 <i2c_slave_scl_bit>
+   106b4:	972a                	add	a4,a4,a0
+   106b6:	00072803          	lw	a6,0(a4)
+   106ba:	4705                	li	a4,1
+   106bc:	01071733          	sll	a4,a4,a6
+   106c0:	ca58                	sw	a4,20(a2)
+   106c2:	bf9d                	j	10638 <i2c_slave_event+0x74>
+               } else if (state == 0x13) {
+   106c4:	48cd                	li	a7,19
+   106c6:	01179863          	bne	a5,a7,106d6 <i2c_slave_event+0x112>
+                  *gpio_n = 0x1 << sda_bit;
+   106ca:	4605                	li	a2,1
+   106cc:	01c61733          	sll	a4,a2,t3
+   106d0:	fce82023          	sw	a4,-64(a6)
+   106d4:	bfd1                	j	106a8 <i2c_slave_event+0xe4>
+               } else if (state >= 0x213) {
+   106d6:	21200893          	li	a7,530
+   106da:	fcf8e7e3          	bltu	a7,a5,106a8 <i2c_slave_event+0xe4>
+               } else if (state >= 0x113) {
+   106de:	11200893          	li	a7,274
+   106e2:	02f8ff63          	bleu	a5,a7,10720 <i2c_slave_event+0x15c>
+                     ((i2c_slave_write_data[tag] >> (7 - ((state - 0x113) >> 0x1))) & 0x1)) {
+   106e6:	86418893          	addi	a7,gp,-1948 # 11494 <i2c_slave_write_data>
+   106ea:	eed78313          	addi	t1,a5,-275
+   106ee:	461d                	li	a2,7
+   106f0:	98aa                	add	a7,a7,a0
+   106f2:	00135313          	srli	t1,t1,0x1
+   106f6:	40660333          	sub	t1,a2,t1
+   106fa:	0008a603          	lw	a2,0(a7)
+   106fe:	00665633          	srl	a2,a2,t1
+                  if ((state == 0x123) |
+   10702:	8a05                	andi	a2,a2,1
+   10704:	e611                	bnez	a2,10710 <i2c_slave_event+0x14c>
+   10706:	edd78613          	addi	a2,a5,-291
+                     gpio_n -= 15;            	// set output
+   1070a:	fc480893          	addi	a7,a6,-60
+                  if ((state == 0x123) |
+   1070e:	e219                	bnez	a2,10714 <i2c_slave_event+0x150>
+                     gpio_n -= 16;            	// set input
+   10710:	fc080893          	addi	a7,a6,-64
+                  *gpio_n = 0x1 << sda_bit;
+   10714:	4605                	li	a2,1
+   10716:	01c61733          	sll	a4,a2,t3
+   1071a:	00e8a023          	sw	a4,0(a7)
+   1071e:	b769                	j	106a8 <i2c_slave_event+0xe4>
+               } else if (state > 2) {
+   10720:	4809                	li	a6,2
+   10722:	f8f873e3          	bleu	a5,a6,106a8 <i2c_slave_event+0xe4>
+                  data += (read >> sda_bit) & 0x1;
+   10726:	01c75733          	srl	a4,a4,t3
+                  data <<= 1;
+   1072a:	0306                	slli	t1,t1,0x1
+                  data += (read >> sda_bit) & 0x1;
+   1072c:	8b05                	andi	a4,a4,1
+   1072e:	971a                	add	a4,a4,t1
+                  i2c_slave_read_data[tag] = data;
+   10730:	c218                	sw	a4,0(a2)
+   10732:	bf9d                	j	106a8 <i2c_slave_event+0xe4>
+                     state = 0x211;
+   10734:	21100793          	li	a5,529
+   10738:	bf85                	j	106a8 <i2c_slave_event+0xe4>
+                        state = 0x111;
+   1073a:	11100793          	li	a5,273
+   1073e:	b7ad                	j	106a8 <i2c_slave_event+0xe4>
+            if ((state & 0xff) == 0x24) {
+   10740:	02400713          	li	a4,36
+   10744:	02e61163          	bne	a2,a4,10766 <i2c_slave_event+0x1a2>
+               gpio_n = i2c_slave_sda_bank[tag];
+   10748:	96818713          	addi	a4,gp,-1688 # 11598 <i2c_slave_sda_bank>
+   1074c:	972a                	add	a4,a4,a0
+               *gpio_n = bit_mask;
+   1074e:	4310                	lw	a2,0(a4)
+               unsigned bit_mask = 0x1 << i2c_slave_sda_bit[tag];
+   10750:	ac818713          	addi	a4,gp,-1336 # 116f8 <i2c_slave_sda_bit>
+   10754:	972a                	add	a4,a4,a0
+   10756:	00072803          	lw	a6,0(a4)
+   1075a:	4705                	li	a4,1
+   1075c:	01071733          	sll	a4,a4,a6
+               *gpio_n = bit_mask;
+   10760:	fee62a23          	sw	a4,-12(a2)
+   10764:	bdd1                	j	10638 <i2c_slave_event+0x74>
+               if (state == 0x0)
+   10766:	e791                	bnez	a5,10772 <i2c_slave_event+0x1ae>
+                  i2c_slave_read_data[tag] = 0;
+   10768:	92818713          	addi	a4,gp,-1752 # 11558 <i2c_slave_read_data>
+   1076c:	972a                	add	a4,a4,a0
+   1076e:	00072023          	sw	zero,0(a4)
+               gpio_n = i2c_slave_scl_bank[tag];
+   10772:	94818713          	addi	a4,gp,-1720 # 11578 <i2c_slave_scl_bank>
+   10776:	972a                	add	a4,a4,a0
+               *gpio_n = bit_mask;
+   10778:	4310                	lw	a2,0(a4)
+               unsigned bit_mask = 0x1 << i2c_slave_scl_bit[tag];
+   1077a:	9c818713          	addi	a4,gp,-1592 # 115f8 <i2c_slave_scl_bit>
+   1077e:	972a                	add	a4,a4,a0
+   10780:	00072803          	lw	a6,0(a4)
+   10784:	4705                	li	a4,1
+   10786:	01071733          	sll	a4,a4,a6
+               *gpio_n = bit_mask;
+   1078a:	ca18                	sw	a4,16(a2)
+   1078c:	b575                	j	10638 <i2c_slave_event+0x74>
+
+0001078e <i2c_slave_init>:
+void i2c_slave_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned add) {
+   1078e:	1101                	addi	sp,sp,-32
+   10790:	cc22                	sw	s0,24(sp)
+   i2c_slave_add[id] = add;
+   10792:	a0818793          	addi	a5,gp,-1528 # 11638 <i2c_slave_add>
+   10796:	00251413          	slli	s0,a0,0x2
+void i2c_slave_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned add) {
+   1079a:	ce06                	sw	ra,28(sp)
+   1079c:	ca26                	sw	s1,20(sp)
+   1079e:	c84a                	sw	s2,16(sp)
+   107a0:	c64e                	sw	s3,12(sp)
+   107a2:	c452                	sw	s4,8(sp)
+   107a4:	c256                	sw	s5,4(sp)
+   i2c_slave_add[id] = add;
+   107a6:	97a2                	add	a5,a5,s0
+   107a8:	c394                	sw	a3,0(a5)
+   int dummy = CA_CT;  // workaround
+   107aa:	800017b7          	lui	a5,0x80001
+   107ae:	0087aa03          	lw	s4,8(a5) # 80001008 <__global_pointer$+0x7ffef3d8>
+void i2c_slave_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned add) {
+   107b2:	84ae                	mv	s1,a1
+   107b4:	8932                	mv	s2,a2
+   i2c_slave_hash[id] = i2c_slave_final(id, dummy);
+   107b6:	85d2                	mv	a1,s4
+void i2c_slave_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned add) {
+   107b8:	8aaa                	mv	s5,a0
+   i2c_slave_hash[id] = i2c_slave_final(id, dummy);
+   107ba:	28d5                	jal	108ae <i2c_slave_final>
+   107bc:	a6818793          	addi	a5,gp,-1432 # 11698 <i2c_slave_hash>
+   107c0:	97a2                	add	a5,a5,s0
+   107c2:	c388                	sw	a0,0(a5)
+   gpio_n_in += 0x40 * (scl_pin >> 3);
+   107c4:	0034d693          	srli	a3,s1,0x3
+   107c8:	800309b7          	lui	s3,0x80030
+   107cc:	02098713          	addi	a4,s3,32 # 80030020 <__global_pointer$+0x8001e3f0>
+   i2c_slave_scl_bank[id] = gpio_n_in;
+   107d0:	94818793          	addi	a5,gp,-1720 # 11578 <i2c_slave_scl_bank>
+   gpio_n_in += 0x40 * (scl_pin >> 3);
+   107d4:	06a2                	slli	a3,a3,0x8
+   107d6:	96ba                	add	a3,a3,a4
+   i2c_slave_scl_bank[id] = gpio_n_in;
+   107d8:	97a2                	add	a5,a5,s0
+   107da:	c394                	sw	a3,0(a5)
+   i2c_slave_scl_bit[id] = scl_pin & 0x7;
+   107dc:	9c818793          	addi	a5,gp,-1592 # 115f8 <i2c_slave_scl_bit>
+   107e0:	97a2                	add	a5,a5,s0
+   unsigned bit_mask = 0x1 << (scl_pin & 0x7);
+   107e2:	0074f713          	andi	a4,s1,7
+   set_dir(scl_pin, 0);
+   107e6:	8526                	mv	a0,s1
+   107e8:	4581                	li	a1,0
+   i2c_slave_scl_bit[id] = scl_pin & 0x7;
+   107ea:	c398                	sw	a4,0(a5)
+   set_dir(scl_pin, 0);
+   107ec:	34d5                	jal	102d0 <set_dir>
+   unsigned event_hash = i2c_slave_event(id, dummy);
+   107ee:	85d2                	mv	a1,s4
+   107f0:	8556                	mv	a0,s5
+   107f2:	3bc9                	jal	105c4 <i2c_slave_event>
+   gpio_event_hash[sda_pin] = event_hash;
+   107f4:	ae818793          	addi	a5,gp,-1304 # 11718 <gpio_event_hash>
+   107f8:	00291713          	slli	a4,s2,0x2
+   107fc:	973e                	add	a4,a4,a5
+   gpio_event_hash[scl_pin] = event_hash;
+   107fe:	048a                	slli	s1,s1,0x2
+   gpio_event_hash[sda_pin] = event_hash;
+   10800:	c308                	sw	a0,0(a4)
+   gpio_event_hash[scl_pin] = event_hash;
+   10802:	94be                	add	s1,s1,a5
+   10804:	c088                	sw	a0,0(s1)
+   gpio_event(0x0, dummy);
+   10806:	85d2                	mv	a1,s4
+   10808:	4501                	li	a0,0
+   1080a:	34cd                	jal	102ec <gpio_event>
+   gpio_n_in += 0x40 * (sda_pin >> 3);
+   1080c:	00395713          	srli	a4,s2,0x3
+   10810:	04098993          	addi	s3,s3,64
+   i2c_slave_sda_bank[id] = gpio_n_in;
+   10814:	96818793          	addi	a5,gp,-1688 # 11598 <i2c_slave_sda_bank>
+   gpio_n_in += 0x40 * (sda_pin >> 3);
+   10818:	0722                	slli	a4,a4,0x8
+   i2c_slave_sda_bank[id] = gpio_n_in;
+   1081a:	97a2                	add	a5,a5,s0
+   gpio_n_in += 0x40 * (sda_pin >> 3);
+   1081c:	974e                	add	a4,a4,s3
+   i2c_slave_sda_bank[id] = gpio_n_in;
+   1081e:	c398                	sw	a4,0(a5)
+   i2c_slave_sda_bit[id] = sda_pin & 0x7;
+   10820:	ac818793          	addi	a5,gp,-1336 # 116f8 <i2c_slave_sda_bit>
+   10824:	943e                	add	s0,s0,a5
+   bit_mask = 0x1 << (sda_pin & 0x7);
+   10826:	00797793          	andi	a5,s2,7
+   i2c_slave_sda_bit[id] = sda_pin & 0x7;
+   1082a:	c01c                	sw	a5,0(s0)
+}
+   1082c:	4462                	lw	s0,24(sp)
+   1082e:	40f2                	lw	ra,28(sp)
+   10830:	44d2                	lw	s1,20(sp)
+   10832:	49b2                	lw	s3,12(sp)
+   10834:	4a22                	lw	s4,8(sp)
+   10836:	4a92                	lw	s5,4(sp)
+   set_dir(sda_pin, 0);
+   10838:	854a                	mv	a0,s2
+}
+   1083a:	4942                	lw	s2,16(sp)
+   set_dir(sda_pin, 0);
+   1083c:	4581                	li	a1,0
+}
+   1083e:	6105                	addi	sp,sp,32
+   set_dir(sda_pin, 0);
+   10840:	bc41                	j	102d0 <set_dir>
+
+00010842 <i2c_master_final>:
+
+///////////////////////////////////////////////////
+//	i2c_master_final
+///////////////////////////////////////////////////
+unsigned i2c_master_final(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   10842:	0005ce63          	bltz	a1,1085e <i2c_master_final+0x1c>
+      return 0xc0000000 +                                // execute thread, set a0
+             (tag << 14) +                               // save tag
+             (((unsigned)&&i2c_master_final_label >> 1) & 0x3fff); // set pc
+   10846:	000117b7          	lui	a5,0x11
+   1084a:	85e78793          	addi	a5,a5,-1954 # 1085e <i2c_master_final+0x1c>
+   1084e:	07c6                	slli	a5,a5,0x11
+             (tag << 14) +                               // save tag
+   10850:	c0000737          	lui	a4,0xc0000
+             (((unsigned)&&i2c_master_final_label >> 1) & 0x3fff); // set pc
+   10854:	83c9                	srli	a5,a5,0x12
+             (tag << 14) +                               // save tag
+   10856:	97ba                	add	a5,a5,a4
+   10858:	053a                	slli	a0,a0,0xe
+   1085a:	953e                	add	a0,a0,a5
+   1085c:	8082                	ret
+   } else {
+      unsigned data;
+      i2c_master_final_label:
+         if (tag == 0) {
+   1085e:	e129                	bnez	a0,108a0 <i2c_master_final+0x5e>
+unsigned i2c_master_final(unsigned tag, int start_time) {
+   10860:	1141                	addi	sp,sp,-16
+   10862:	c422                	sw	s0,8(sp)
+            data = (i2c_master_write_data[0] >> 1) & 0xff;
+   10864:	a881a403          	lw	s0,-1400(gp) # 116b8 <i2c_master_write_data>
+unsigned i2c_master_final(unsigned tag, int start_time) {
+   10868:	c606                	sw	ra,12(sp)
+            if (data < 15 * 0x10) {
+   1086a:	0ef00793          	li	a5,239
+            data = (i2c_master_write_data[0] >> 1) & 0xff;
+   1086e:	8005                	srli	s0,s0,0x1
+   10870:	0ff47413          	andi	s0,s0,255
+            if (data < 15 * 0x10) {
+   10874:	0087ec63          	bltu	a5,s0,1088c <i2c_master_final+0x4a>
+               ca_delay(10000);
+   10878:	6509                	lui	a0,0x2
+   1087a:	71050513          	addi	a0,a0,1808 # 2710 <main-0xd964>
+   1087e:	3c3d                	jal	102bc <ca_delay>
+               i2c_master_write(0, 0x40, data + 0x10);
+   10880:	01040613          	addi	a2,s0,16
+   10884:	04000593          	li	a1,64
+   10888:	4501                	li	a0,0
+   1088a:	3975                	jal	10546 <i2c_master_write>
+            }
+         }
+         TC_KILL = 0x0;
+   1088c:	800007b7          	lui	a5,0x80000
+   10890:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffee3d4>
+         asm volatile ("addi x0, x0, 0");
+   10894:	00000013          	nop
+   }
+}
+   10898:	40b2                	lw	ra,12(sp)
+   1089a:	4422                	lw	s0,8(sp)
+   1089c:	0141                	addi	sp,sp,16
+   1089e:	8082                	ret
+         TC_KILL = 0x0;
+   108a0:	800007b7          	lui	a5,0x80000
+   108a4:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffee3d4>
+         asm volatile ("addi x0, x0, 0");
+   108a8:	00000013          	nop
+}
+   108ac:	8082                	ret
+
+000108ae <i2c_slave_final>:
+
+///////////////////////////////////////////////////
+//	i2c_slave_final
+///////////////////////////////////////////////////
+unsigned i2c_slave_final(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   108ae:	0005ce63          	bltz	a1,108ca <i2c_slave_final+0x1c>
+      return 0xc0000000 +                               // execute thread, set a0
+             (tag << 14) +                              // save tag
+             (((unsigned)&&i2c_slave_final_label >> 1) & 0x3fff); // set pc
+   108b2:	000117b7          	lui	a5,0x11
+   108b6:	8ca78793          	addi	a5,a5,-1846 # 108ca <i2c_slave_final+0x1c>
+   108ba:	07c6                	slli	a5,a5,0x11
+             (tag << 14) +                              // save tag
+   108bc:	c0000737          	lui	a4,0xc0000
+             (((unsigned)&&i2c_slave_final_label >> 1) & 0x3fff); // set pc
+   108c0:	83c9                	srli	a5,a5,0x12
+             (tag << 14) +                              // save tag
+   108c2:	97ba                	add	a5,a5,a4
+   108c4:	053a                	slli	a0,a0,0xe
+   108c6:	953e                	add	a0,a0,a5
+         }
+         i2c_slave_enable(tag, 0);
+         TC_KILL = 0x0;
+         asm volatile ("addi x0, x0, 0");
+   }
+   108c8:	8082                	ret
+unsigned i2c_slave_final(unsigned tag, int start_time) {
+   108ca:	1141                	addi	sp,sp,-16
+   108cc:	c422                	sw	s0,8(sp)
+   108ce:	c606                	sw	ra,12(sp)
+   108d0:	c226                	sw	s1,4(sp)
+         if (tag < 7) {
+   108d2:	4799                	li	a5,6
+   108d4:	842a                	mv	s0,a0
+   108d6:	02a7ea63          	bltu	a5,a0,1090a <i2c_slave_final+0x5c>
+            data = i2c_slave_read_data[tag] & 0xff;
+   108da:	00251793          	slli	a5,a0,0x2
+   108de:	92818713          	addi	a4,gp,-1752 # 11558 <i2c_slave_read_data>
+   108e2:	97ba                	add	a5,a5,a4
+   108e4:	4388                	lw	a0,0(a5)
+   108e6:	0ff57493          	andi	s1,a0,255
+            ca_delay(((data & 0xf) + ((data & 0xff) >> 4)) * 10);
+   108ea:	0044d793          	srli	a5,s1,0x4
+   108ee:	893d                	andi	a0,a0,15
+   108f0:	953e                	add	a0,a0,a5
+   108f2:	47a9                	li	a5,10
+   108f4:	02f50533          	mul	a0,a0,a5
+   108f8:	9c5ff0ef          	jal	ra,102bc <ca_delay>
+            i2c_master_write(tag + 1, 0x40 + tag + 1, data + 1);
+   108fc:	00148613          	addi	a2,s1,1
+   10900:	04140593          	addi	a1,s0,65
+   10904:	00140513          	addi	a0,s0,1
+   10908:	393d                	jal	10546 <i2c_master_write>
+         i2c_slave_enable(tag, 0);
+   1090a:	4581                	li	a1,0
+   1090c:	8522                	mv	a0,s0
+   1090e:	3149                	jal	10590 <i2c_slave_enable>
+         TC_KILL = 0x0;
+   10910:	800007b7          	lui	a5,0x80000
+   10914:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffee3d4>
+         asm volatile ("addi x0, x0, 0");
+   10918:	00000013          	nop
+   1091c:	40b2                	lw	ra,12(sp)
+   1091e:	4422                	lw	s0,8(sp)
+   10920:	4492                	lw	s1,4(sp)
+   10922:	0141                	addi	sp,sp,16
+   10924:	8082                	ret
+	...
+
+00010928 <atexit>:
+   10928:	00050593          	mv	a1,a0
+   1092c:	00000693          	li	a3,0
+   10930:	00000613          	li	a2,0
+   10934:	00000513          	li	a0,0
+   10938:	2240006f          	j	10b5c <__register_exitproc>
+
+0001093c <exit>:
+   1093c:	ff010113          	addi	sp,sp,-16
+   10940:	00000593          	li	a1,0
+   10944:	00812423          	sw	s0,8(sp)
+   10948:	00112623          	sw	ra,12(sp)
+   1094c:	00050413          	mv	s0,a0
+   10950:	290000ef          	jal	ra,10be0 <__call_exitprocs>
+   10954:	00001797          	auipc	a5,0x1
+   10958:	adc78793          	addi	a5,a5,-1316 # 11430 <_global_impure_ptr>
+   1095c:	0007a503          	lw	a0,0(a5)
+   10960:	03c52783          	lw	a5,60(a0)
+   10964:	00078463          	beqz	a5,1096c <exit+0x30>
+   10968:	000780e7          	jalr	a5
+   1096c:	00040513          	mv	a0,s0
+   10970:	384000ef          	jal	ra,10cf4 <_exit>
+
+00010974 <__libc_fini_array>:
+   10974:	fe010113          	addi	sp,sp,-32
+   10978:	00000797          	auipc	a5,0x0
+   1097c:	69078793          	addi	a5,a5,1680 # 11008 <__fini_array_end>
+   10980:	00812c23          	sw	s0,24(sp)
+   10984:	00000417          	auipc	s0,0x0
+   10988:	68040413          	addi	s0,s0,1664 # 11004 <__init_array_end>
+   1098c:	40878433          	sub	s0,a5,s0
+   10990:	00912a23          	sw	s1,20(sp)
+   10994:	01212823          	sw	s2,16(sp)
+   10998:	01312623          	sw	s3,12(sp)
+   1099c:	00112e23          	sw	ra,28(sp)
+   109a0:	40245413          	srai	s0,s0,0x2
+   109a4:	00000493          	li	s1,0
+   109a8:	00078913          	mv	s2,a5
+   109ac:	ffc00993          	li	s3,-4
+   109b0:	02941063          	bne	s0,s1,109d0 <__libc_fini_array+0x5c>
+   109b4:	01812403          	lw	s0,24(sp)
+   109b8:	01c12083          	lw	ra,28(sp)
+   109bc:	01412483          	lw	s1,20(sp)
+   109c0:	01012903          	lw	s2,16(sp)
+   109c4:	00c12983          	lw	s3,12(sp)
+   109c8:	02010113          	addi	sp,sp,32
+   109cc:	805ff06f          	j	101d0 <_fini>
+   109d0:	033487b3          	mul	a5,s1,s3
+   109d4:	00148493          	addi	s1,s1,1
+   109d8:	00f907b3          	add	a5,s2,a5
+   109dc:	ffc7a783          	lw	a5,-4(a5)
+   109e0:	000780e7          	jalr	a5
+   109e4:	fcdff06f          	j	109b0 <__libc_fini_array+0x3c>
+
+000109e8 <__libc_init_array>:
+   109e8:	ff010113          	addi	sp,sp,-16
+   109ec:	00812423          	sw	s0,8(sp)
+   109f0:	00912223          	sw	s1,4(sp)
+   109f4:	00000417          	auipc	s0,0x0
+   109f8:	60c40413          	addi	s0,s0,1548 # 11000 <__frame_dummy_init_array_entry>
+   109fc:	00000497          	auipc	s1,0x0
+   10a00:	60448493          	addi	s1,s1,1540 # 11000 <__frame_dummy_init_array_entry>
+   10a04:	408484b3          	sub	s1,s1,s0
+   10a08:	01212023          	sw	s2,0(sp)
+   10a0c:	00112623          	sw	ra,12(sp)
+   10a10:	4024d493          	srai	s1,s1,0x2
+   10a14:	00000913          	li	s2,0
+   10a18:	04991063          	bne	s2,s1,10a58 <__libc_init_array+0x70>
+   10a1c:	00000417          	auipc	s0,0x0
+   10a20:	5e440413          	addi	s0,s0,1508 # 11000 <__frame_dummy_init_array_entry>
+   10a24:	00000497          	auipc	s1,0x0
+   10a28:	5e048493          	addi	s1,s1,1504 # 11004 <__init_array_end>
+   10a2c:	408484b3          	sub	s1,s1,s0
+   10a30:	fa0ff0ef          	jal	ra,101d0 <_fini>
+   10a34:	4024d493          	srai	s1,s1,0x2
+   10a38:	00000913          	li	s2,0
+   10a3c:	02991863          	bne	s2,s1,10a6c <__libc_init_array+0x84>
+   10a40:	00c12083          	lw	ra,12(sp)
+   10a44:	00812403          	lw	s0,8(sp)
+   10a48:	00412483          	lw	s1,4(sp)
+   10a4c:	00012903          	lw	s2,0(sp)
+   10a50:	01010113          	addi	sp,sp,16
+   10a54:	00008067          	ret
+   10a58:	00042783          	lw	a5,0(s0)
+   10a5c:	00190913          	addi	s2,s2,1
+   10a60:	00440413          	addi	s0,s0,4
+   10a64:	000780e7          	jalr	a5
+   10a68:	fb1ff06f          	j	10a18 <__libc_init_array+0x30>
+   10a6c:	00042783          	lw	a5,0(s0)
+   10a70:	00190913          	addi	s2,s2,1
+   10a74:	00440413          	addi	s0,s0,4
+   10a78:	000780e7          	jalr	a5
+   10a7c:	fc1ff06f          	j	10a3c <__libc_init_array+0x54>
+
+00010a80 <memset>:
+   10a80:	00f00313          	li	t1,15
+   10a84:	00050713          	mv	a4,a0
+   10a88:	02c37e63          	bleu	a2,t1,10ac4 <memset+0x44>
+   10a8c:	00f77793          	andi	a5,a4,15
+   10a90:	0a079063          	bnez	a5,10b30 <memset+0xb0>
+   10a94:	08059263          	bnez	a1,10b18 <memset+0x98>
+   10a98:	ff067693          	andi	a3,a2,-16
+   10a9c:	00f67613          	andi	a2,a2,15
+   10aa0:	00e686b3          	add	a3,a3,a4
+   10aa4:	00b72023          	sw	a1,0(a4) # c0000000 <__global_pointer$+0xbffee3d0>
+   10aa8:	00b72223          	sw	a1,4(a4)
+   10aac:	00b72423          	sw	a1,8(a4)
+   10ab0:	00b72623          	sw	a1,12(a4)
+   10ab4:	01070713          	addi	a4,a4,16
+   10ab8:	fed766e3          	bltu	a4,a3,10aa4 <memset+0x24>
+   10abc:	00061463          	bnez	a2,10ac4 <memset+0x44>
+   10ac0:	00008067          	ret
+   10ac4:	40c306b3          	sub	a3,t1,a2
+   10ac8:	00269693          	slli	a3,a3,0x2
+   10acc:	00000297          	auipc	t0,0x0
+   10ad0:	005686b3          	add	a3,a3,t0
+   10ad4:	00c68067          	jr	12(a3)
+   10ad8:	00b70723          	sb	a1,14(a4)
+   10adc:	00b706a3          	sb	a1,13(a4)
+   10ae0:	00b70623          	sb	a1,12(a4)
+   10ae4:	00b705a3          	sb	a1,11(a4)
+   10ae8:	00b70523          	sb	a1,10(a4)
+   10aec:	00b704a3          	sb	a1,9(a4)
+   10af0:	00b70423          	sb	a1,8(a4)
+   10af4:	00b703a3          	sb	a1,7(a4)
+   10af8:	00b70323          	sb	a1,6(a4)
+   10afc:	00b702a3          	sb	a1,5(a4)
+   10b00:	00b70223          	sb	a1,4(a4)
+   10b04:	00b701a3          	sb	a1,3(a4)
+   10b08:	00b70123          	sb	a1,2(a4)
+   10b0c:	00b700a3          	sb	a1,1(a4)
+   10b10:	00b70023          	sb	a1,0(a4)
+   10b14:	00008067          	ret
+   10b18:	0ff5f593          	andi	a1,a1,255
+   10b1c:	00859693          	slli	a3,a1,0x8
+   10b20:	00d5e5b3          	or	a1,a1,a3
+   10b24:	01059693          	slli	a3,a1,0x10
+   10b28:	00d5e5b3          	or	a1,a1,a3
+   10b2c:	f6dff06f          	j	10a98 <memset+0x18>
+   10b30:	00279693          	slli	a3,a5,0x2
+   10b34:	00000297          	auipc	t0,0x0
+   10b38:	005686b3          	add	a3,a3,t0
+   10b3c:	00008293          	mv	t0,ra
+   10b40:	fa0680e7          	jalr	-96(a3)
+   10b44:	00028093          	mv	ra,t0
+   10b48:	ff078793          	addi	a5,a5,-16
+   10b4c:	40f70733          	sub	a4,a4,a5
+   10b50:	00f60633          	add	a2,a2,a5
+   10b54:	f6c378e3          	bleu	a2,t1,10ac4 <memset+0x44>
+   10b58:	f3dff06f          	j	10a94 <memset+0x14>
+
+00010b5c <__register_exitproc>:
+   10b5c:	00001797          	auipc	a5,0x1
+   10b60:	8d478793          	addi	a5,a5,-1836 # 11430 <_global_impure_ptr>
+   10b64:	0007a703          	lw	a4,0(a5)
+   10b68:	00050313          	mv	t1,a0
+   10b6c:	14872783          	lw	a5,328(a4)
+   10b70:	00079663          	bnez	a5,10b7c <__register_exitproc+0x20>
+   10b74:	14c70793          	addi	a5,a4,332
+   10b78:	14f72423          	sw	a5,328(a4)
+   10b7c:	0047a703          	lw	a4,4(a5)
+   10b80:	01f00813          	li	a6,31
+   10b84:	fff00513          	li	a0,-1
+   10b88:	04e84a63          	blt	a6,a4,10bdc <__register_exitproc+0x80>
+   10b8c:	00271893          	slli	a7,a4,0x2
+   10b90:	02030c63          	beqz	t1,10bc8 <__register_exitproc+0x6c>
+   10b94:	01178533          	add	a0,a5,a7
+   10b98:	08c52423          	sw	a2,136(a0)
+   10b9c:	1887a803          	lw	a6,392(a5)
+   10ba0:	00100613          	li	a2,1
+   10ba4:	00e61633          	sll	a2,a2,a4
+   10ba8:	00c86833          	or	a6,a6,a2
+   10bac:	1907a423          	sw	a6,392(a5)
+   10bb0:	10d52423          	sw	a3,264(a0)
+   10bb4:	00200693          	li	a3,2
+   10bb8:	00d31863          	bne	t1,a3,10bc8 <__register_exitproc+0x6c>
+   10bbc:	18c7a683          	lw	a3,396(a5)
+   10bc0:	00c6e633          	or	a2,a3,a2
+   10bc4:	18c7a623          	sw	a2,396(a5)
+   10bc8:	00170713          	addi	a4,a4,1
+   10bcc:	00e7a223          	sw	a4,4(a5)
+   10bd0:	011787b3          	add	a5,a5,a7
+   10bd4:	00b7a423          	sw	a1,8(a5)
+   10bd8:	00000513          	li	a0,0
+   10bdc:	00008067          	ret
+
+00010be0 <__call_exitprocs>:
+   10be0:	fd010113          	addi	sp,sp,-48
+   10be4:	00001797          	auipc	a5,0x1
+   10be8:	84c78793          	addi	a5,a5,-1972 # 11430 <_global_impure_ptr>
+   10bec:	01312e23          	sw	s3,28(sp)
+   10bf0:	0007a983          	lw	s3,0(a5)
+   10bf4:	01412c23          	sw	s4,24(sp)
+   10bf8:	01512a23          	sw	s5,20(sp)
+   10bfc:	01612823          	sw	s6,16(sp)
+   10c00:	02112623          	sw	ra,44(sp)
+   10c04:	02812423          	sw	s0,40(sp)
+   10c08:	02912223          	sw	s1,36(sp)
+   10c0c:	03212023          	sw	s2,32(sp)
+   10c10:	01712623          	sw	s7,12(sp)
+   10c14:	00050a93          	mv	s5,a0
+   10c18:	00058a13          	mv	s4,a1
+   10c1c:	00100b13          	li	s6,1
+   10c20:	1489a483          	lw	s1,328(s3)
+   10c24:	00048c63          	beqz	s1,10c3c <__call_exitprocs+0x5c>
+   10c28:	0044a403          	lw	s0,4(s1)
+   10c2c:	fff40913          	addi	s2,s0,-1
+   10c30:	00241413          	slli	s0,s0,0x2
+   10c34:	00848433          	add	s0,s1,s0
+   10c38:	02095863          	bgez	s2,10c68 <__call_exitprocs+0x88>
+   10c3c:	02c12083          	lw	ra,44(sp)
+   10c40:	02812403          	lw	s0,40(sp)
+   10c44:	02412483          	lw	s1,36(sp)
+   10c48:	02012903          	lw	s2,32(sp)
+   10c4c:	01c12983          	lw	s3,28(sp)
+   10c50:	01812a03          	lw	s4,24(sp)
+   10c54:	01412a83          	lw	s5,20(sp)
+   10c58:	01012b03          	lw	s6,16(sp)
+   10c5c:	00c12b83          	lw	s7,12(sp)
+   10c60:	03010113          	addi	sp,sp,48
+   10c64:	00008067          	ret
+   10c68:	000a0c63          	beqz	s4,10c80 <__call_exitprocs+0xa0>
+   10c6c:	10442783          	lw	a5,260(s0)
+   10c70:	01478863          	beq	a5,s4,10c80 <__call_exitprocs+0xa0>
+   10c74:	fff90913          	addi	s2,s2,-1
+   10c78:	ffc40413          	addi	s0,s0,-4
+   10c7c:	fbdff06f          	j	10c38 <__call_exitprocs+0x58>
+   10c80:	0044a703          	lw	a4,4(s1)
+   10c84:	00442783          	lw	a5,4(s0)
+   10c88:	fff70713          	addi	a4,a4,-1
+   10c8c:	03271c63          	bne	a4,s2,10cc4 <__call_exitprocs+0xe4>
+   10c90:	0124a223          	sw	s2,4(s1)
+   10c94:	fe0780e3          	beqz	a5,10c74 <__call_exitprocs+0x94>
+   10c98:	1884a683          	lw	a3,392(s1)
+   10c9c:	012b1733          	sll	a4,s6,s2
+   10ca0:	0044ab83          	lw	s7,4(s1)
+   10ca4:	00d776b3          	and	a3,a4,a3
+   10ca8:	02069263          	bnez	a3,10ccc <__call_exitprocs+0xec>
+   10cac:	000780e7          	jalr	a5
+   10cb0:	0044a703          	lw	a4,4(s1)
+   10cb4:	1489a783          	lw	a5,328(s3)
+   10cb8:	f77714e3          	bne	a4,s7,10c20 <__call_exitprocs+0x40>
+   10cbc:	faf48ce3          	beq	s1,a5,10c74 <__call_exitprocs+0x94>
+   10cc0:	f61ff06f          	j	10c20 <__call_exitprocs+0x40>
+   10cc4:	00042223          	sw	zero,4(s0)
+   10cc8:	fcdff06f          	j	10c94 <__call_exitprocs+0xb4>
+   10ccc:	18c4a683          	lw	a3,396(s1)
+   10cd0:	08442583          	lw	a1,132(s0)
+   10cd4:	00d77733          	and	a4,a4,a3
+   10cd8:	00071863          	bnez	a4,10ce8 <__call_exitprocs+0x108>
+   10cdc:	000a8513          	mv	a0,s5
+   10ce0:	000780e7          	jalr	a5
+   10ce4:	fcdff06f          	j	10cb0 <__call_exitprocs+0xd0>
+   10ce8:	00058513          	mv	a0,a1
+   10cec:	000780e7          	jalr	a5
+   10cf0:	fc1ff06f          	j	10cb0 <__call_exitprocs+0xd0>
+
+00010cf4 <_exit>:
+   10cf4:	00000593          	li	a1,0
+   10cf8:	00000613          	li	a2,0
+   10cfc:	00000693          	li	a3,0
+   10d00:	00000713          	li	a4,0
+   10d04:	00000793          	li	a5,0
+   10d08:	05d00893          	li	a7,93
+   10d0c:	00000073          	ecall
+   10d10:	02055263          	bgez	a0,10d34 <_exit+0x40>
+   10d14:	ff010113          	addi	sp,sp,-16
+   10d18:	00812423          	sw	s0,8(sp)
+   10d1c:	00050413          	mv	s0,a0
+   10d20:	00112623          	sw	ra,12(sp)
+   10d24:	40800433          	neg	s0,s0
+   10d28:	010000ef          	jal	ra,10d38 <__errno>
+   10d2c:	00852023          	sw	s0,0(a0)
+   10d30:	0000006f          	j	10d30 <_exit+0x3c>
+   10d34:	0000006f          	j	10d34 <_exit+0x40>
+
+00010d38 <__errno>:
+   10d38:	00000797          	auipc	a5,0x0
+   10d3c:	6fc78793          	addi	a5,a5,1788 # 11434 <_impure_ptr>
+   10d40:	0007a503          	lw	a0,0(a5)
+   10d44:	00008067          	ret

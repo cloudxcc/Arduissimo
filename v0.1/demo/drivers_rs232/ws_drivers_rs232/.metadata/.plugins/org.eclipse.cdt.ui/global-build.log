@@ -1,0 +1,61 @@
+21:27:24 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\demo\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/driver_rs232_custom.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\demo\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF"include/driver_rs232_custom.d" -MT"include/driver_rs232_custom.o" -c -o "include/driver_rs232_custom.o" "../include/driver_rs232_custom.c"
+../include/driver_rs232_custom.c: In function 'rs232_rx_final':
+../include/driver_rs232_custom.c:48:10: warning: implicit declaration of function 'ca_delay' [-Wimplicit-function-declaration]
+          ca_delay(((rs232_rx_data[tag] & 0xf) + ((rs232_rx_data[tag] & 0xff) >> 4)) * 10);
+          ^~~~~~~~
+Finished building: ../include/driver_rs232_custom.c
+ 
+Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\demo\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" -c -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building target: drivers_rs232_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_rs232_0.map" -o "drivers_rs232_0.elf"  ./src/main.o  ./include/ca_util.o ./include/driver_gpio.o ./include/driver_rs232.o ./include/driver_rs232_custom.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
+Finished building target: drivers_rs232_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_rs232_0.elf"  "drivers_rs232_0.hex"
+Finished building: drivers_rs232_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2864	   1080	    744	   4688	   1250	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 
+21:28:26 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2864	   1080	    744	   4688	   1250	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 
+21:33:32 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Building target: drivers_rs232_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_rs232_0.map" -o "drivers_rs232_0.elf"  ./src/main.o  ./include/ca_util.o ./include/driver_gpio.o ./include/driver_rs232.o ./include/driver_rs232_custom.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
+Finished building target: drivers_rs232_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_rs232_0.elf"  "drivers_rs232_0.hex"
+Finished building: drivers_rs232_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2864	   1080	    744	   4688	   1250	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 

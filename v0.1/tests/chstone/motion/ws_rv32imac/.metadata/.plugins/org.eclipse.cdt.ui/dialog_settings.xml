@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="D:\EDAptix\projects\microRISC\work\v0\tests\chstone\motion\ws_rv32imac\motion\Release\riscv.ld" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="PDOMSearchPage">
+		<item value="false" key="caseSensitive"/>
+		<item value="227191" key="searchFlags"/>
+		<list key="previousPatterns">
+			<item value="ld_Bfr"/>
+			<item value="h_r_size"/>
+		</list>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+</section>

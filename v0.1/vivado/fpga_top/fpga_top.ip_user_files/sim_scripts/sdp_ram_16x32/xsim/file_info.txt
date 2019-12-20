@@ -1,0 +1,2 @@
+sdp_ram_16x32.v,verilog,xil_defaultlib,../../../../fpga_top.srcs/sources_1/ip/sdp_ram_16x32/sim/sdp_ram_16x32.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

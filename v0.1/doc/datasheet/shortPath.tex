@@ -1,0 +1,12 @@
+\chapter{The shortest path to happiness}
+\label{atomics}
+
+Two steps need to be executed to run a demo program after connecting the ARTY board to the PC:
+
+First, the ''bit'' file needs to be downloaded into the FPGA. You can use the stand-alone LAB tool from Xilinx, or just open the fpga\_top project by double click on the \$project/vivado/fpga\_top/fpga\_top.xpr file. Select the \$project/vivado/bit/fpga\_top.bit file and download it onto the FPGA.
+
+Second, one or (multiple) .hex files need to be downloaded, which takes in case of the color demo program approximately 20 seconds. Go to \$project/hw/arty\_ftdi/work/. When using cygwin just use ''make colors'' and ''make downloadHex''. The results will be reported once the download has finished. Alternatively use the colors.bat command when executed in the Command Prompt. Here you will see the download progress directly.
+
+The 4 color LEDS on the ARTY board will blink as if there is no tomorrow. Each core blinks one LED.
+
+

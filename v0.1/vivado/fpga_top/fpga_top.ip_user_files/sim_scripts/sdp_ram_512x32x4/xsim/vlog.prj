@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../fpga_top.srcs/sources_1/ip/sdp_ram_512x32x4/sim/sdp_ram_512x32x4.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

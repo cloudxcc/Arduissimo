@@ -1,0 +1,25 @@
+21:02:52 **** Incremental Build of configuration Release for project blowfish ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\chstone\blowfish\blowfish_ws_rv32imc\blowfish\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: blowfish.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"blowfish.map" -o "blowfish.elf"  ./src/main.o   
+Finished building target: blowfish.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "blowfish.elf"  "blowfish.hex"
+Finished building: blowfish.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "blowfish.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19492	   1080	   4196	  24768	   60c0	blowfish.elf
+Finished building: blowfish.siz
+ 
+
+21:03:06 Build Finished (took 14s.445ms)
+

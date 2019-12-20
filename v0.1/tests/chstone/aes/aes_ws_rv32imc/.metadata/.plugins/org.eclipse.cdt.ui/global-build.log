@@ -1,0 +1,544 @@
+12:08:41 **** Build of configuration Release for project aes ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9212	   1080	   2232	  12524	   30ec	aes.elf
+Finished building: aes.siz
+ 
+12:09:37 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9256	   1080	   2232	  12568	   3118	aes.elf
+Finished building: aes.siz
+ 
+12:12:03 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9296	   1080	   2232	  12608	   3140	aes.elf
+Finished building: aes.siz
+ 
+12:15:54 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9308	   1080	   2232	  12620	   314c	aes.elf
+Finished building: aes.siz
+ 
+12:16:43 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9308	   1080	   2232	  12620	   314c	aes.elf
+Finished building: aes.siz
+ 
+12:17:51 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9308	   1080	   2232	  12620	   314c	aes.elf
+Finished building: aes.siz
+ 
+12:18:34 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9316	   1080	   2232	  12628	   3154	aes.elf
+Finished building: aes.siz
+ 
+12:19:51 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9316	   1080	   2232	  12628	   3154	aes.elf
+Finished building: aes.siz
+ 
+12:34:20 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9352	   1080	   2232	  12664	   3178	aes.elf
+Finished building: aes.siz
+ 
+12:35:06 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9348	   1080	   2232	  12660	   3174	aes.elf
+Finished building: aes.siz
+ 
+12:57:40 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9356	   1080	   2232	  12668	   317c	aes.elf
+Finished building: aes.siz
+ 
+13:03:31 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9384	   1080	   2232	  12696	   3198	aes.elf
+Finished building: aes.siz
+ 
+13:32:39 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9512	   1080	   2232	  12824	   3218	aes.elf
+Finished building: aes.siz
+ 
+15:24:21 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9316	   1080	   2232	  12628	   3154	aes.elf
+Finished building: aes.siz
+ 
+15:25:40 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9212	   1080	   2232	  12524	   30ec	aes.elf
+Finished building: aes.siz
+ 
+15:28:22 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9260	   1080	   2232	  12572	   311c	aes.elf
+Finished building: aes.siz
+ 
+17:04:57 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9304	   1080	   2232	  12616	   3148	aes.elf
+Finished building: aes.siz
+ 
+17:07:45 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9300	   1080	   2232	  12612	   3144	aes.elf
+Finished building: aes.siz
+ 
+17:09:23 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9360	   1080	   2232	  12672	   3180	aes.elf
+Finished building: aes.siz
+ 
+17:12:35 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\microRISC\work\v0\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9400	   1080	   2232	  12712	   31a8	aes.elf
+Finished building: aes.siz
+ 
+17:12:42 **** Incremental Build of configuration Release for project aes ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9400	   1080	   2232	  12712	   31a8	aes.elf
+Finished building: aes.siz
+ 
+17:12:53 **** Incremental Build of configuration Release for project aes ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9400	   1080	   2232	  12712	   31a8	aes.elf
+Finished building: aes.siz
+ 
+21:00:29 **** Incremental Build of configuration Release for project aes ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\chstone\aes\aes_ws_rv32imc\aes\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:9:0:
+D:\EDAptix\projects\arduissimo\dev\tests\chstone\aes\aes_ws_rv32imc\aes\include/aes.h:66:5: warning: built-in function 'round' declared as non-function
+ int round;
+     ^~~~~
+Finished building: ../src/main.c
+ 
+Building target: aes.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"aes.map" -o "aes.elf"  ./src/main.o   
+Finished building target: aes.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "aes.elf"  "aes.hex"
+Finished building: aes.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8052	   1080	   2220	  11352	   2c58	aes.elf
+Finished building: aes.siz
+ 

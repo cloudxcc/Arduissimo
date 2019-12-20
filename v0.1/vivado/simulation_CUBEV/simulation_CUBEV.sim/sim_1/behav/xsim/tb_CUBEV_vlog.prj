@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../dut/CUBEV_RV32iMC_P3C4D16.v" \
+"../../../../../../dut/mem_sim/RF_D16_sim.v" \
+"../../../../../../dut/mem_sim/Reg_D16_sim.v" \
+"../../../../../../testbench/testbench_CUBEV.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

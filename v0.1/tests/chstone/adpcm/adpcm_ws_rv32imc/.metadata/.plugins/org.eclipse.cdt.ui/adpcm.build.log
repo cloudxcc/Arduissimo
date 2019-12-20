@@ -1,0 +1,25 @@
+20:55:36 **** Incremental Build of configuration Release for project adpcm ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\chstone\adpcm\adpcm_ws_rv32imc\adpcm\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: adpcm.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"adpcm.map" -o "adpcm.elf"  ./src/main.o   
+Finished building target: adpcm.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "adpcm.elf"  "adpcm.hex"
+Finished building: adpcm.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "adpcm.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6116	   1080	   1480	   8676	   21e4	adpcm.elf
+Finished building: adpcm.siz
+ 
+
+20:55:51 Build Finished (took 14s.687ms)
+

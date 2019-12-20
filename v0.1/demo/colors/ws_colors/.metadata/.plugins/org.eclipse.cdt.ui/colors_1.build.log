@@ -1,0 +1,11 @@
+14:54:06 **** Incremental Build of configuration Release for project colors_1 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "colors_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1720	   1080	     28	   2828	    b0c	colors_1.elf
+Finished building: colors_1.siz
+ 
+
+14:54:06 Build Finished (took 422ms)
+

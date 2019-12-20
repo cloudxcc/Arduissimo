@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_CUBEV_behav/xsimk.exe -simmode gui -wdb tb_CUBEV_behav.wdb -simrunnum 0 -socket 52849
+Design successfully loaded
+Design Loading Memory Usage: 7492 KB (Peak: 7492 KB)
+Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 26708 KB (Peak: 26708 KB)
+Simulation CPU Usage: 477843 ms

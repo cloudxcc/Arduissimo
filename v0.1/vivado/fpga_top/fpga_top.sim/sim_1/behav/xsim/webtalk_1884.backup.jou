@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Dec  2 20:22:56 2019
+# Process ID: 1884
+# Current directory: D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace

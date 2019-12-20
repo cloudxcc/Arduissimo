@@ -1,0 +1,1060 @@
+
+drivers_rs232_0.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010074 <main>:
+#include "device.h"
+#include "driver_custom.h"
+#include "driver_rs232.h"
+
+int main(void)
+{
+   10074:	1141                	addi	sp,sp,-16
+   // INIT TX
+   rs232_tx_init(0, 8, RS232_parity_even, RS232_stop_1, RS232_baud_115200);
+   10076:	61a00713          	li	a4,1562
+   1007a:	4681                	li	a3,0
+   1007c:	4605                	li	a2,1
+   1007e:	45a1                	li	a1,8
+   10080:	4501                	li	a0,0
+{
+   10082:	c606                	sw	ra,12(sp)
+   rs232_tx_init(0, 8, RS232_parity_even, RS232_stop_1, RS232_baud_115200);
+   10084:	2255                	jal	10228 <rs232_tx_init>
+
+   // INIT RX
+   rs232_rx_init(0, 9, RS232_parity_even, RS232_baud_115200);
+   10086:	61a00693          	li	a3,1562
+   1008a:	4605                	li	a2,1
+   1008c:	45a5                	li	a1,9
+   1008e:	4501                	li	a0,0
+   10090:	29b5                	jal	1050c <rs232_rx_init>
+
+   // TX
+   rs232_tx(0, 0x5A);
+   10092:	05a00593          	li	a1,90
+   10096:	4501                	li	a0,0
+   10098:	24e9                	jal	10362 <rs232_tx>
+
+   // RX is handled in rs232_rx_finish
+
+   TC_KILL = 0x0;
+   1009a:	800007b7          	lui	a5,0x80000
+   1009e:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed994>
+   asm volatile ("addi x0, x0, 0");
+   100a2:	00000013          	nop
+}
+   100a6:	40b2                	lw	ra,12(sp)
+   100a8:	4501                	li	a0,0
+   100aa:	0141                	addi	sp,sp,16
+   100ac:	8082                	ret
+	...
+
+000100b0 <_start>:
+   100b0:	00002197          	auipc	gp,0x2
+   100b4:	5c018193          	addi	gp,gp,1472 # 12670 <__global_pointer$>
+   100b8:	80818513          	addi	a0,gp,-2040 # 11e78 <_edata>
+   100bc:	98018613          	addi	a2,gp,-1664 # 11ff0 <_end>
+   100c0:	40a60633          	sub	a2,a2,a0
+   100c4:	00000593          	li	a1,0
+   100c8:	6a8000ef          	jal	ra,10770 <memset>
+   100cc:	00000517          	auipc	a0,0x0
+   100d0:	59850513          	addi	a0,a0,1432 # 10664 <__libc_fini_array>
+   100d4:	544000ef          	jal	ra,10618 <atexit>
+   100d8:	600000ef          	jal	ra,106d8 <__libc_init_array>
+   100dc:	00012503          	lw	a0,0(sp)
+   100e0:	00410593          	addi	a1,sp,4
+   100e4:	00000613          	li	a2,0
+   100e8:	f8dff0ef          	jal	ra,10074 <main>
+   100ec:	5400006f          	j	1062c <exit>
+
+000100f0 <_fini>:
+   100f0:	00008067          	ret
+
+000100f4 <deregister_tm_clones>:
+   100f4:	00002517          	auipc	a0,0x2
+   100f8:	d7c50513          	addi	a0,a0,-644 # 11e70 <_global_impure_ptr>
+   100fc:	00002797          	auipc	a5,0x2
+   10100:	d7478793          	addi	a5,a5,-652 # 11e70 <_global_impure_ptr>
+   10104:	00a78a63          	beq	a5,a0,10118 <deregister_tm_clones+0x24>
+   10108:	ffff0317          	auipc	t1,0xffff0
+   1010c:	ef830313          	addi	t1,t1,-264 # 0 <main-0x10074>
+   10110:	00030463          	beqz	t1,10118 <deregister_tm_clones+0x24>
+   10114:	00030067          	jr	t1
+   10118:	00008067          	ret
+
+0001011c <register_tm_clones>:
+   1011c:	00002517          	auipc	a0,0x2
+   10120:	d5450513          	addi	a0,a0,-684 # 11e70 <_global_impure_ptr>
+   10124:	00002597          	auipc	a1,0x2
+   10128:	d4c58593          	addi	a1,a1,-692 # 11e70 <_global_impure_ptr>
+   1012c:	40a585b3          	sub	a1,a1,a0
+   10130:	4025d593          	srai	a1,a1,0x2
+   10134:	00200793          	li	a5,2
+   10138:	02f5c5b3          	div	a1,a1,a5
+   1013c:	00058a63          	beqz	a1,10150 <register_tm_clones+0x34>
+   10140:	ffff0317          	auipc	t1,0xffff0
+   10144:	ec030313          	addi	t1,t1,-320 # 0 <main-0x10074>
+   10148:	00030463          	beqz	t1,10150 <register_tm_clones+0x34>
+   1014c:	00030067          	jr	t1
+   10150:	00008067          	ret
+
+00010154 <__do_global_dtors_aux>:
+   10154:	00002797          	auipc	a5,0x2
+   10158:	d247c783          	lbu	a5,-732(a5) # 11e78 <_edata>
+   1015c:	04079263          	bnez	a5,101a0 <__do_global_dtors_aux+0x4c>
+   10160:	ff010113          	addi	sp,sp,-16
+   10164:	00112623          	sw	ra,12(sp)
+   10168:	f8dff0ef          	jal	ra,100f4 <deregister_tm_clones>
+   1016c:	ffff0797          	auipc	a5,0xffff0
+   10170:	e9478793          	addi	a5,a5,-364 # 0 <main-0x10074>
+   10174:	00078a63          	beqz	a5,10188 <__do_global_dtors_aux+0x34>
+   10178:	00001517          	auipc	a0,0x1
+   1017c:	8c050513          	addi	a0,a0,-1856 # 10a38 <__EH_FRAME_BEGIN__>
+   10180:	ffff0097          	auipc	ra,0xffff0
+   10184:	e80080e7          	jalr	-384(ra) # 0 <main-0x10074>
+   10188:	00c12083          	lw	ra,12(sp)
+   1018c:	00100793          	li	a5,1
+   10190:	00002717          	auipc	a4,0x2
+   10194:	cef70423          	sb	a5,-792(a4) # 11e78 <_edata>
+   10198:	01010113          	addi	sp,sp,16
+   1019c:	00008067          	ret
+   101a0:	00008067          	ret
+
+000101a4 <frame_dummy>:
+   101a4:	ffff0797          	auipc	a5,0xffff0
+   101a8:	e5c78793          	addi	a5,a5,-420 # 0 <main-0x10074>
+   101ac:	02078663          	beqz	a5,101d8 <frame_dummy+0x34>
+   101b0:	ff010113          	addi	sp,sp,-16
+   101b4:	00002597          	auipc	a1,0x2
+   101b8:	cc858593          	addi	a1,a1,-824 # 11e7c <object.5181>
+   101bc:	00001517          	auipc	a0,0x1
+   101c0:	87c50513          	addi	a0,a0,-1924 # 10a38 <__EH_FRAME_BEGIN__>
+   101c4:	00112623          	sw	ra,12(sp)
+   101c8:	ffff0097          	auipc	ra,0xffff0
+   101cc:	e38080e7          	jalr	-456(ra) # 0 <main-0x10074>
+   101d0:	00c12083          	lw	ra,12(sp)
+   101d4:	01010113          	addi	sp,sp,16
+   101d8:	f45ff06f          	j	1011c <register_tm_clones>
+
+000101dc <set_dir>:
+   *gpio_n_out = 0x1 << (pin & 0x7);
+}
+
+void set_dir (unsigned pin, unsigned dir) {
+   unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+   gpio_n_dir += 0x40 * (pin >> 3);
+   101dc:	00355793          	srli	a5,a0,0x3
+   gpio_n_dir += dir;
+   *gpio_n_dir = 0x1 << (pin & 0x7);
+   101e0:	058a                	slli	a1,a1,0x2
+   101e2:	07a2                	slli	a5,a5,0x8
+   101e4:	97ae                	add	a5,a5,a1
+   101e6:	891d                	andi	a0,a0,7
+   101e8:	800305b7          	lui	a1,0x80030
+   101ec:	4705                	li	a4,1
+   101ee:	97ae                	add	a5,a5,a1
+   101f0:	00a71533          	sll	a0,a4,a0
+   101f4:	c388                	sw	a0,0(a5)
+}
+   101f6:	8082                	ret
+
+000101f8 <gpio_event>:
+
+void gpio_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   101f8:	0005cc63          	bltz	a1,10210 <gpio_event+0x18>
+     GPIO_EVENT_ADD = (((unsigned)&&gpio_event_label >> 1) & 0x3fff);
+   101fc:	000107b7          	lui	a5,0x10
+   10200:	21078793          	addi	a5,a5,528 # 10210 <gpio_event+0x18>
+   10204:	07c6                	slli	a5,a5,0x11
+   10206:	83c9                	srli	a5,a5,0x12
+   10208:	80031737          	lui	a4,0x80031
+   1020c:	c31c                	sw	a5,0(a4)
+   1020e:	8082                	ret
+   } else
+   {
+     gpio_event_label:
+       TC_SAK = gpio_event_hash[tag];
+   10210:	67c9                	lui	a5,0x12
+   10212:	ed078793          	addi	a5,a5,-304 # 11ed0 <gpio_event_hash>
+   10216:	050a                	slli	a0,a0,0x2
+   10218:	953e                	add	a0,a0,a5
+   1021a:	4118                	lw	a4,0(a0)
+   1021c:	800007b7          	lui	a5,0x80000
+   10220:	c798                	sw	a4,8(a5)
+       //TC_START = gpio_event_hash[tag];
+       //TC_KILL = 0x0;
+       asm volatile ("addi x0, x0, 0");
+   10222:	00000013          	nop
+   }
+}
+   10226:	8082                	ret
+
+00010228 <rs232_tx_init>:
+#include "driver_rs232.h"
+
+///////////////////////////////////////////////////
+//	rs232_tx_init
+///////////////////////////////////////////////////
+void rs232_tx_init(unsigned id, char tx_pin, char parity, char stop_bits, unsigned delay) {
+   10228:	1141                	addi	sp,sp,-16
+   1022a:	c226                	sw	s1,4(sp)
+   1022c:	84aa                	mv	s1,a0
+   // save the configuration
+   rs232_tx_conf[id] = ((parity & 0x3) << 1) + (stop_bits & 0x1);
+   1022e:	0606                	slli	a2,a2,0x1
+void rs232_tx_init(unsigned id, char tx_pin, char parity, char stop_bits, unsigned delay) {
+   10230:	c422                	sw	s0,8(sp)
+   rs232_tx_conf[id] = ((parity & 0x3) << 1) + (stop_bits & 0x1);
+   10232:	8a85                	andi	a3,a3,1
+   10234:	00249413          	slli	s0,s1,0x2
+   10238:	83c18793          	addi	a5,gp,-1988 # 11eac <rs232_tx_conf>
+   1023c:	8a19                	andi	a2,a2,6
+void rs232_tx_init(unsigned id, char tx_pin, char parity, char stop_bits, unsigned delay) {
+   1023e:	c606                	sw	ra,12(sp)
+   rs232_tx_conf[id] = ((parity & 0x3) << 1) + (stop_bits & 0x1);
+   10240:	8e55                	or	a2,a2,a3
+   10242:	97a2                	add	a5,a5,s0
+   10244:	c390                	sw	a2,0(a5)
+   // save the day
+   rs232_tx_delay[id] = delay;
+   10246:	85018793          	addi	a5,gp,-1968 # 11ec0 <rs232_tx_delay>
+   1024a:	97a2                	add	a5,a5,s0
+   1024c:	c398                	sw	a4,0(a5)
+   // get GPIO_N basic register
+   unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+   gpio_n_out += 0x40 * (tx_pin >> 3);
+   1024e:	4035d793          	srai	a5,a1,0x3
+   10252:	80030737          	lui	a4,0x80030
+   10256:	0741                	addi	a4,a4,16
+   10258:	07a2                	slli	a5,a5,0x8
+   1025a:	97ba                	add	a5,a5,a4
+   // save clr and set addresses
+   rs232_tx_clr_add[id] = gpio_n_out;
+   1025c:	84c18713          	addi	a4,gp,-1972 # 11ebc <rs232_tx_clr_add>
+   10260:	9722                	add	a4,a4,s0
+   10262:	c31c                	sw	a5,0(a4)
+   gpio_n_out += 0x1;
+   rs232_tx_set_add[id] = gpio_n_out;
+   10264:	84018713          	addi	a4,gp,-1984 # 11eb0 <rs232_tx_set_add>
+   gpio_n_out += 0x1;
+   10268:	00478693          	addi	a3,a5,4 # 80000004 <__global_pointer$+0x7ffed994>
+   rs232_tx_set_add[id] = gpio_n_out;
+   1026c:	9722                	add	a4,a4,s0
+   1026e:	c314                	sw	a3,0(a4)
+   // get bit number
+   unsigned bit_mask = 0x1 << (tx_pin & 0x7);
+   10270:	0075f713          	andi	a4,a1,7
+   10274:	4685                	li	a3,1
+   10276:	00e696b3          	sll	a3,a3,a4
+   rs232_tx_bit[id] = bit_mask;
+   1027a:	85418713          	addi	a4,gp,-1964 # 11ec4 <rs232_tx_bit>
+   1027e:	9722                	add	a4,a4,s0
+void rs232_tx_init(unsigned id, char tx_pin, char parity, char stop_bits, unsigned delay) {
+   10280:	852e                	mv	a0,a1
+   // set bit to 1 (before setting output)
+   *gpio_n_out = bit_mask;
+   10282:	c3d4                	sw	a3,4(a5)
+   // set output
+   set_dir(tx_pin, 1);
+   10284:	4585                	li	a1,1
+   rs232_tx_bit[id] = bit_mask;
+   10286:	c314                	sw	a3,0(a4)
+   set_dir(tx_pin, 1);
+   10288:	3f91                	jal	101dc <set_dir>
+   // link TX final
+   int dummy = CA_CT;  // workaround
+   1028a:	800017b7          	lui	a5,0x80001
+   1028e:	478c                	lw	a1,8(a5)
+   rs232_tx_hash[id] = rs232_tx_final(id, dummy);
+   10290:	8526                	mv	a0,s1
+   10292:	2e11                	jal	105a6 <rs232_tx_final>
+   10294:	83818793          	addi	a5,gp,-1992 # 11ea8 <rs232_tx_hash>
+   10298:	943e                	add	s0,s0,a5
+   1029a:	c008                	sw	a0,0(s0)
+}
+   1029c:	40b2                	lw	ra,12(sp)
+   1029e:	4422                	lw	s0,8(sp)
+   102a0:	4492                	lw	s1,4(sp)
+   102a2:	0141                	addi	sp,sp,16
+   102a4:	8082                	ret
+
+000102a6 <rs232_tx_event>:
+
+///////////////////////////////////////////////////
+//	rs232_tx_event
+///////////////////////////////////////////////////
+void rs232_tx_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   102a6:	0205c263          	bltz	a1,102ca <rs232_tx_event+0x24>
+      CA_COM = 0xc0000000 +                                      // execute threa
+               (tag << 14) +                                     // save tag
+               (((unsigned)&&rs232_tx_bit_label >> 1) & 0x3fff); // set pc
+   102aa:	000107b7          	lui	a5,0x10
+   102ae:	2ca78793          	addi	a5,a5,714 # 102ca <rs232_tx_event+0x24>
+   102b2:	07c6                	slli	a5,a5,0x11
+   102b4:	83c9                	srli	a5,a5,0x12
+               (tag << 14) +                                     // save tag
+   102b6:	c0000737          	lui	a4,0xc0000
+   102ba:	97ba                	add	a5,a5,a4
+   102bc:	053a                	slli	a0,a0,0xe
+   102be:	953e                	add	a0,a0,a5
+      CA_COM = 0xc0000000 +                                      // execute threa
+   102c0:	800017b7          	lui	a5,0x80001
+   102c4:	c388                	sw	a0,0(a5)
+      CA_ET = start_time;
+   102c6:	c3cc                	sw	a1,4(a5)
+   102c8:	8082                	ret
+   } else {
+      unsigned* gpio_n_out;
+      unsigned bit_mask, data, trigger;
+      rs232_tx_bit_label:
+         // get data
+         data = rs232_tx_data[tag];
+   102ca:	83018693          	addi	a3,gp,-2000 # 11ea0 <rs232_tx_data>
+   102ce:	00151593          	slli	a1,a0,0x1
+   102d2:	96ae                	add	a3,a3,a1
+   102d4:	0006d683          	lhu	a3,0(a3)
+         // continue ?
+         if ((data & 0xffe) != 0)
+   102d8:	6605                	lui	a2,0x1
+   102da:	1679                	addi	a2,a2,-2
+   102dc:	8e75                	and	a2,a2,a3
+   102de:	83018713          	addi	a4,gp,-2000 # 11ea0 <rs232_tx_data>
+   102e2:	00251793          	slli	a5,a0,0x2
+   102e6:	c635                	beqz	a2,10352 <rs232_tx_event+0xac>
+         {
+            // set or clear output pin
+            if (data & 0x1)
+   102e8:	0016f613          	andi	a2,a3,1
+   102ec:	c225                	beqz	a2,1034c <rs232_tx_event+0xa6>
+               gpio_n_out = rs232_tx_set_add[tag];
+   102ee:	84018613          	addi	a2,gp,-1984 # 11eb0 <rs232_tx_set_add>
+            else
+               gpio_n_out = rs232_tx_clr_add[tag];
+   102f2:	963e                	add	a2,a2,a5
+   102f4:	00062803          	lw	a6,0(a2) # 1000 <main-0xf074>
+            bit_mask = rs232_tx_bit[tag];
+   102f8:	85418613          	addi	a2,gp,-1964 # 11ec4 <rs232_tx_bit>
+   102fc:	963e                	add	a2,a2,a5
+   102fe:	4210                	lw	a2,0(a2)
+            *gpio_n_out = bit_mask;
+            // update data
+            rs232_tx_data[tag] = data >> 0x1;
+   10300:	972e                	add	a4,a4,a1
+   10302:	8285                	srli	a3,a3,0x1
+            *gpio_n_out = bit_mask;
+   10304:	00c82023          	sw	a2,0(a6)
+            rs232_tx_data[tag] = data >> 0x1;
+   10308:	00d71023          	sh	a3,0(a4) # c0000000 <__global_pointer$+0xbffed990>
+            // next event
+            trigger = rs232_tx_trigger[tag] + rs232_tx_delay[tag];
+   1030c:	85018693          	addi	a3,gp,-1968 # 11ec0 <rs232_tx_delay>
+   10310:	82c18713          	addi	a4,gp,-2004 # 11e9c <rs232_tx_trigger>
+   10314:	973e                	add	a4,a4,a5
+   10316:	97b6                	add	a5,a5,a3
+   10318:	439c                	lw	a5,0(a5)
+   1031a:	4314                	lw	a3,0(a4)
+            // re-arm the calendar
+            CA_COM = 0xc0000000 +                                      // execute thread
+                     (tag << 14) +                                     // save id
+   1031c:	c0000637          	lui	a2,0xc0000
+   10320:	053a                	slli	a0,a0,0xe
+            trigger = rs232_tx_trigger[tag] + rs232_tx_delay[tag];
+   10322:	96be                	add	a3,a3,a5
+                     (((unsigned)&&rs232_tx_bit_label >> 1) & 0x3fff); // set pc
+   10324:	000107b7          	lui	a5,0x10
+   10328:	2ca78793          	addi	a5,a5,714 # 102ca <rs232_tx_event+0x24>
+   1032c:	07c6                	slli	a5,a5,0x11
+   1032e:	83c9                	srli	a5,a5,0x12
+                     (tag << 14) +                                     // save id
+   10330:	97b2                	add	a5,a5,a2
+   10332:	953e                	add	a0,a0,a5
+            CA_COM = 0xc0000000 +                                      // execute thread
+   10334:	800017b7          	lui	a5,0x80001
+   10338:	c388                	sw	a0,0(a5)
+            CA_ET = trigger;
+   1033a:	c3d4                	sw	a3,4(a5)
+            rs232_tx_trigger[tag] = trigger;
+   1033c:	c314                	sw	a3,0(a4)
+         } else
+            TC_START = rs232_tx_hash[tag];
+      TC_KILL = 0x0;
+   1033e:	800007b7          	lui	a5,0x80000
+   10342:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed994>
+      asm volatile ("addi x0, x0, 0");
+   10346:	00000013          	nop
+   }
+}
+   1034a:	8082                	ret
+               gpio_n_out = rs232_tx_clr_add[tag];
+   1034c:	84c18613          	addi	a2,gp,-1972 # 11ebc <rs232_tx_clr_add>
+   10350:	b74d                	j	102f2 <rs232_tx_event+0x4c>
+            TC_START = rs232_tx_hash[tag];
+   10352:	83818713          	addi	a4,gp,-1992 # 11ea8 <rs232_tx_hash>
+   10356:	97ba                	add	a5,a5,a4
+   10358:	4398                	lw	a4,0(a5)
+   1035a:	800007b7          	lui	a5,0x80000
+   1035e:	c398                	sw	a4,0(a5)
+   10360:	bff9                	j	1033e <rs232_tx_event+0x98>
+
+00010362 <rs232_tx>:
+   if (rs232_tx_conf[tag] & 0x6) {
+   10362:	00251613          	slli	a2,a0,0x2
+   10366:	83c18713          	addi	a4,gp,-1988 # 11eac <rs232_tx_conf>
+   1036a:	9732                	add	a4,a4,a2
+   1036c:	4318                	lw	a4,0(a4)
+   1036e:	00677793          	andi	a5,a4,6
+   10372:	00177893          	andi	a7,a4,1
+   10376:	cfa9                	beqz	a5,103d0 <rs232_tx+0x6e>
+      for (int n = 0; n < 8; n++)
+   10378:	4681                	li	a3,0
+      unsigned parity = 0;
+   1037a:	4781                	li	a5,0
+      for (int n = 0; n < 8; n++)
+   1037c:	4321                	li	t1,8
+         parity += (data >> n) & 0x1;
+   1037e:	00d5d833          	srl	a6,a1,a3
+   10382:	00187813          	andi	a6,a6,1
+      for (int n = 0; n < 8; n++)
+   10386:	0685                	addi	a3,a3,1
+         parity += (data >> n) & 0x1;
+   10388:	97c2                	add	a5,a5,a6
+      for (int n = 0; n < 8; n++)
+   1038a:	fe669ae3          	bne	a3,t1,1037e <rs232_tx+0x1c>
+      if (rs232_tx_conf[tag] & 0x4)
+   1038e:	8b11                	andi	a4,a4,4
+   10390:	c311                	beqz	a4,10394 <rs232_tx+0x32>
+         parity += 0x1;
+   10392:	0785                	addi	a5,a5,1
+      data += (parity & 0x1) << 8;
+   10394:	07a2                	slli	a5,a5,0x8
+   10396:	1007f793          	andi	a5,a5,256
+   1039a:	95be                	add	a1,a1,a5
+         data += 0x600;
+   1039c:	60058793          	addi	a5,a1,1536 # 80030600 <__global_pointer$+0x8001df90>
+      if (rs232_tx_conf[tag] & 0x1)
+   103a0:	00088663          	beqz	a7,103ac <rs232_tx+0x4a>
+         data += 0xe00;
+   103a4:	6785                	lui	a5,0x1
+   103a6:	e0078793          	addi	a5,a5,-512 # e00 <main-0xf274>
+   103aa:	97ae                	add	a5,a5,a1
+      rs232_tx_data[tag] = data << 1;
+   103ac:	00151713          	slli	a4,a0,0x1
+   103b0:	83018693          	addi	a3,gp,-2000 # 11ea0 <rs232_tx_data>
+   103b4:	9736                	add	a4,a4,a3
+   103b6:	0786                	slli	a5,a5,0x1
+   103b8:	00f71023          	sh	a5,0(a4)
+   unsigned CT = CA_CT + 600;  // 120 cycle when 4 threads running,
+   103bc:	800017b7          	lui	a5,0x80001
+   103c0:	478c                	lw	a1,8(a5)
+   rs232_tx_trigger[tag] = CT;
+   103c2:	82c18793          	addi	a5,gp,-2004 # 11e9c <rs232_tx_trigger>
+   unsigned CT = CA_CT + 600;  // 120 cycle when 4 threads running,
+   103c6:	25858593          	addi	a1,a1,600
+   rs232_tx_trigger[tag] = CT;
+   103ca:	97b2                	add	a5,a5,a2
+   103cc:	c38c                	sw	a1,0(a5)
+   rs232_tx_event(tag, CT);
+   103ce:	bde1                	j	102a6 <rs232_tx_event>
+         data += 0x300;
+   103d0:	30058693          	addi	a3,a1,768
+      if (rs232_tx_conf[tag] & 0x1)
+   103d4:	00088463          	beqz	a7,103dc <rs232_tx+0x7a>
+         data += 0x700;
+   103d8:	70058693          	addi	a3,a1,1792
+       rs232_tx_data[tag] = data << 1;
+   103dc:	00151713          	slli	a4,a0,0x1
+   103e0:	83018793          	addi	a5,gp,-2000 # 11ea0 <rs232_tx_data>
+   103e4:	973e                	add	a4,a4,a5
+   103e6:	0686                	slli	a3,a3,0x1
+   103e8:	00d71023          	sh	a3,0(a4)
+   103ec:	bfc1                	j	103bc <rs232_tx+0x5a>
+
+000103ee <rs232_rx>:
+
+///////////////////////////////////////////////////
+//	rs232_rx
+///////////////////////////////////////////////////
+unsigned rs232_rx(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   103ee:	0005cf63          	bltz	a1,1040c <rs232_rx+0x1e>
+      return 0xc0000000 +                                  // execute thread
+             (tag << 14) +                                 // save id
+             (((unsigned)&&rs232_rx_label >> 1) & 0x3fff); // set pc
+   103f2:	00010737          	lui	a4,0x10
+   103f6:	40c70713          	addi	a4,a4,1036 # 1040c <rs232_rx+0x1e>
+   103fa:	0746                	slli	a4,a4,0x11
+   103fc:	8349                	srli	a4,a4,0x12
+             (tag << 14) +                                 // save id
+   103fe:	c00007b7          	lui	a5,0xc0000
+   10402:	973e                	add	a4,a4,a5
+   10404:	053a                	slli	a0,a0,0xe
+   10406:	972a                	add	a4,a4,a0
+          rs232_rx_trigger[tag] = trigger;
+      }
+      TC_KILL = 0x0;
+      asm volatile ("addi x0, x0, 0");
+   }
+}
+   10408:	853a                	mv	a0,a4
+   1040a:	8082                	ret
+      gpio_n_in = rs232_rx_bank[tag];
+   1040c:	00251613          	slli	a2,a0,0x2
+   10410:	83418793          	addi	a5,gp,-1996 # 11ea4 <rs232_rx_bank>
+   10414:	97b2                	add	a5,a5,a2
+      read = *gpio_n_in;
+   10416:	439c                	lw	a5,0(a5)
+      data = rs232_rx_data[tag];
+   10418:	84818813          	addi	a6,gp,-1976 # 11eb8 <rs232_rx_data>
+   1041c:	00151e13          	slli	t3,a0,0x1
+   10420:	9872                	add	a6,a6,t3
+      read = *gpio_n_in;
+   10422:	438c                	lw	a1,0(a5)
+      data = rs232_rx_data[tag];
+   10424:	00085783          	lhu	a5,0(a6)
+   10428:	84818893          	addi	a7,gp,-1976 # 11eb8 <rs232_rx_data>
+      if ((data & 0x1) != 0) {   // Parity or stop bit
+   1042c:	0017f693          	andi	a3,a5,1
+   10430:	ce8d                	beqz	a3,1046a <rs232_rx+0x7c>
+         data += (read << (8 - rs232_rx_bit[tag])) & 0x100;
+   10432:	85c18693          	addi	a3,gp,-1956 # 11ecc <rs232_rx_bit>
+   10436:	96b2                	add	a3,a3,a2
+   10438:	4288                	lw	a0,0(a3)
+   1043a:	46a1                	li	a3,8
+         data >>= 1;
+   1043c:	8385                	srli	a5,a5,0x1
+         data += (read << (8 - rs232_rx_bit[tag])) & 0x100;
+   1043e:	8e89                	sub	a3,a3,a0
+   10440:	00d596b3          	sll	a3,a1,a3
+   10444:	1006f693          	andi	a3,a3,256
+   10448:	97b6                	add	a5,a5,a3
+         rs232_rx_data[tag] = data;
+   1044a:	00f81023          	sh	a5,0(a6)
+         TC_START = rs232_rx_hash[tag];
+   1044e:	82418793          	addi	a5,gp,-2012 # 11e94 <rs232_rx_hash>
+   10452:	963e                	add	a2,a2,a5
+   10454:	4214                	lw	a3,0(a2)
+   10456:	800007b7          	lui	a5,0x80000
+   1045a:	c394                	sw	a3,0(a5)
+      TC_KILL = 0x0;
+   1045c:	800007b7          	lui	a5,0x80000
+   10460:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed994>
+      asm volatile ("addi x0, x0, 0");
+   10464:	00000013          	nop
+   10468:	b745                	j	10408 <rs232_rx+0x1a>
+   1046a:	84418313          	addi	t1,gp,-1980 # 11eb4 <rs232_rx_conf>
+   1046e:	9332                	add	t1,t1,a2
+   10470:	82818693          	addi	a3,gp,-2008 # 11e98 <rs232_rx_delay>
+   10474:	96b2                	add	a3,a3,a2
+   10476:	00032f03          	lw	t5,0(t1)
+   1047a:	4294                	lw	a3,0(a3)
+   1047c:	85818313          	addi	t1,gp,-1960 # 11ec8 <rs232_rx_trigger>
+         if (data == 0) {      // start bit
+   10480:	e7a9                	bnez	a5,104ca <rs232_rx+0xdc>
+            trigger = CA_CT + ((rs232_rx_delay[tag] * 3) >> 1) - 70;
+   10482:	458d                	li	a1,3
+   10484:	02b686b3          	mul	a3,a3,a1
+   10488:	800017b7          	lui	a5,0x80001
+   1048c:	479c                	lw	a5,8(a5)
+   1048e:	fba78793          	addi	a5,a5,-70 # 80000fba <__global_pointer$+0x7ffee94a>
+   10492:	8285                	srli	a3,a3,0x1
+   10494:	96be                	add	a3,a3,a5
+               rs232_rx_data[tag] = 0x100;
+   10496:	10000793          	li	a5,256
+            if (rs232_rx_conf[tag] == 0)
+   1049a:	000f0463          	beqz	t5,104a2 <rs232_rx+0xb4>
+               rs232_rx_data[tag] = 0x200;
+   1049e:	20000793          	li	a5,512
+   104a2:	00f81023          	sh	a5,0(a6)
+                   (((unsigned)&&rs232_rx_label >> 1) & 0x3fff); // set pc
+   104a6:	000107b7          	lui	a5,0x10
+   104aa:	40c78793          	addi	a5,a5,1036 # 1040c <rs232_rx+0x1e>
+   104ae:	07c6                	slli	a5,a5,0x11
+   104b0:	83c9                	srli	a5,a5,0x12
+                   (tag << 14) +                                 // save id
+   104b2:	c00005b7          	lui	a1,0xc0000
+   104b6:	97ae                	add	a5,a5,a1
+   104b8:	053a                	slli	a0,a0,0xe
+   104ba:	953e                	add	a0,a0,a5
+          CA_COM = 0xc0000000 +                                 // execute thread
+   104bc:	800017b7          	lui	a5,0x80001
+   104c0:	c388                	sw	a0,0(a5)
+          CA_ET = trigger;
+   104c2:	c3d4                	sw	a3,4(a5)
+          rs232_rx_trigger[tag] = trigger;
+   104c4:	961a                	add	a2,a2,t1
+   104c6:	c214                	sw	a3,0(a2)
+   104c8:	bf51                	j	1045c <rs232_rx+0x6e>
+            trigger = rs232_rx_trigger[tag] + rs232_rx_delay[tag];
+   104ca:	00c30833          	add	a6,t1,a2
+   104ce:	00082803          	lw	a6,0(a6)
+            data >>= 1;
+   104d2:	8385                	srli	a5,a5,0x1
+            trigger = rs232_rx_trigger[tag] + rs232_rx_delay[tag];
+   104d4:	96c2                	add	a3,a3,a6
+   104d6:	85c18813          	addi	a6,gp,-1956 # 11ecc <rs232_rx_bit>
+   104da:	9832                	add	a6,a6,a2
+   104dc:	00082e83          	lw	t4,0(a6)
+            if (rs232_rx_conf[tag] == 0)
+   104e0:	000f1e63          	bnez	t5,104fc <rs232_rx+0x10e>
+               data += (read << (8 - rs232_rx_bit[tag])) & 0x100;
+   104e4:	4821                	li	a6,8
+   104e6:	41d80833          	sub	a6,a6,t4
+   104ea:	010595b3          	sll	a1,a1,a6
+   104ee:	1005f593          	andi	a1,a1,256
+               data += (read << (9 - rs232_rx_bit[tag])) & 0x200;
+   104f2:	97ae                	add	a5,a5,a1
+            rs232_rx_data[tag] = data;
+   104f4:	98f2                	add	a7,a7,t3
+   104f6:	00f89023          	sh	a5,0(a7)
+   104fa:	b775                	j	104a6 <rs232_rx+0xb8>
+               data += (read << (9 - rs232_rx_bit[tag])) & 0x200;
+   104fc:	4825                	li	a6,9
+   104fe:	41d80833          	sub	a6,a6,t4
+   10502:	010595b3          	sll	a1,a1,a6
+   10506:	2005f593          	andi	a1,a1,512
+   1050a:	b7e5                	j	104f2 <rs232_rx+0x104>
+
+0001050c <rs232_rx_init>:
+void rs232_rx_init(unsigned id, char rx_pin, char parity, unsigned delay) {
+   1050c:	1101                	addi	sp,sp,-32
+   1050e:	cc22                	sw	s0,24(sp)
+   rs232_rx_conf[id] = parity & 0x3;
+   10510:	84418793          	addi	a5,gp,-1980 # 11eb4 <rs232_rx_conf>
+   10514:	00251413          	slli	s0,a0,0x2
+void rs232_rx_init(unsigned id, char rx_pin, char parity, unsigned delay) {
+   10518:	ce06                	sw	ra,28(sp)
+   1051a:	ca26                	sw	s1,20(sp)
+   1051c:	c84a                	sw	s2,16(sp)
+   1051e:	c64e                	sw	s3,12(sp)
+   rs232_rx_conf[id] = parity & 0x3;
+   10520:	8a0d                	andi	a2,a2,3
+   10522:	97a2                	add	a5,a5,s0
+   10524:	c390                	sw	a2,0(a5)
+   rs232_rx_delay[id] = delay;
+   10526:	82818793          	addi	a5,gp,-2008 # 11e98 <rs232_rx_delay>
+   1052a:	97a2                	add	a5,a5,s0
+   1052c:	c394                	sw	a3,0(a5)
+   rs232_rx_data[id] = 0;
+   1052e:	84818713          	addi	a4,gp,-1976 # 11eb8 <rs232_rx_data>
+   10532:	00151793          	slli	a5,a0,0x1
+   10536:	97ba                	add	a5,a5,a4
+   10538:	00079023          	sh	zero,0(a5) # 80001000 <__global_pointer$+0x7ffee990>
+   int dummy = CA_CT;  // workaround
+   1053c:	800017b7          	lui	a5,0x80001
+   10540:	0087a983          	lw	s3,8(a5) # 80001008 <__global_pointer$+0x7ffee998>
+void rs232_rx_init(unsigned id, char rx_pin, char parity, unsigned delay) {
+   10544:	84ae                	mv	s1,a1
+   10546:	892a                	mv	s2,a0
+   gpio_event_hash[rx_pin] = rs232_rx(id, dummy);
+   10548:	85ce                	mv	a1,s3
+   1054a:	3555                	jal	103ee <rs232_rx>
+   1054c:	6749                	lui	a4,0x12
+   1054e:	ed070713          	addi	a4,a4,-304 # 11ed0 <gpio_event_hash>
+   10552:	00249793          	slli	a5,s1,0x2
+   10556:	97ba                	add	a5,a5,a4
+   10558:	c388                	sw	a0,0(a5)
+   gpio_event(0x0, dummy);
+   1055a:	85ce                	mv	a1,s3
+   1055c:	4501                	li	a0,0
+   1055e:	3969                	jal	101f8 <gpio_event>
+   rs232_rx_hash[id] = rs232_rx_final(id, dummy);
+   10560:	85ce                	mv	a1,s3
+   10562:	854a                	mv	a0,s2
+   10564:	28a5                	jal	105dc <rs232_rx_final>
+   10566:	82418793          	addi	a5,gp,-2012 # 11e94 <rs232_rx_hash>
+   1056a:	97a2                	add	a5,a5,s0
+   1056c:	c388                	sw	a0,0(a5)
+   gpio_n_in += 0x40 * (rx_pin >> 3);
+   1056e:	80030737          	lui	a4,0x80030
+   10572:	4034d793          	srai	a5,s1,0x3
+   10576:	02070713          	addi	a4,a4,32 # 80030020 <__global_pointer$+0x8001d9b0>
+   1057a:	07a2                	slli	a5,a5,0x8
+   1057c:	97ba                	add	a5,a5,a4
+   rs232_rx_bank[id] = gpio_n_in;
+   1057e:	83418713          	addi	a4,gp,-1996 # 11ea4 <rs232_rx_bank>
+   10582:	9722                	add	a4,a4,s0
+   10584:	c31c                	sw	a5,0(a4)
+   10586:	889d                	andi	s1,s1,7
+   unsigned bit_mask = 0x1 << (rx_pin & 0x7);
+   10588:	4705                	li	a4,1
+   1058a:	00971733          	sll	a4,a4,s1
+   *gpio_n_in = bit_mask;
+   1058e:	cb98                	sw	a4,16(a5)
+   rs232_rx_bit[id] = rx_pin & 0x7;
+   10590:	85c18793          	addi	a5,gp,-1956 # 11ecc <rs232_rx_bit>
+   10594:	943e                	add	s0,s0,a5
+   10596:	c004                	sw	s1,0(s0)
+}
+   10598:	40f2                	lw	ra,28(sp)
+   1059a:	4462                	lw	s0,24(sp)
+   1059c:	44d2                	lw	s1,20(sp)
+   1059e:	4942                	lw	s2,16(sp)
+   105a0:	49b2                	lw	s3,12(sp)
+   105a2:	6105                	addi	sp,sp,32
+   105a4:	8082                	ret
+
+000105a6 <rs232_tx_final>:
+
+///////////////////////////////////////////////////
+//	rs232_tx_final
+///////////////////////////////////////////////////
+unsigned rs232_tx_final(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   105a6:	0005ce63          	bltz	a1,105c2 <rs232_tx_final+0x1c>
+      return 0xc0000000 +                                        // execute thread, set a0
+             (tag << 14) +                                       // save tag
+             (((unsigned)&&rs232_tx_final_label >> 1) & 0x3fff); // set pc
+   105aa:	000107b7          	lui	a5,0x10
+   105ae:	5c278793          	addi	a5,a5,1474 # 105c2 <rs232_tx_final+0x1c>
+   105b2:	07c6                	slli	a5,a5,0x11
+             (tag << 14) +                                       // save tag
+   105b4:	c0000737          	lui	a4,0xc0000
+             (((unsigned)&&rs232_tx_final_label >> 1) & 0x3fff); // set pc
+   105b8:	83c9                	srli	a5,a5,0x12
+             (tag << 14) +                                       // save tag
+   105ba:	97ba                	add	a5,a5,a4
+   105bc:	053a                	slli	a0,a0,0xe
+   105be:	953e                	add	a0,a0,a5
+   105c0:	8082                	ret
+   } else {
+      rs232_tx_final_label:
+         GPIO_2_OUT_SET = 0xff;
+   105c2:	800307b7          	lui	a5,0x80030
+   105c6:	0ff00713          	li	a4,255
+   105ca:	20e7aa23          	sw	a4,532(a5) # 80030214 <__global_pointer$+0x8001dba4>
+         TC_KILL = 0x0;
+   105ce:	800007b7          	lui	a5,0x80000
+   105d2:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed994>
+         asm volatile ("addi x0, x0, 0");
+   105d6:	00000013          	nop
+   }
+}
+   105da:	8082                	ret
+
+000105dc <rs232_rx_final>:
+
+///////////////////////////////////////////////////
+//	rs232_rx_final
+///////////////////////////////////////////////////
+unsigned rs232_rx_final(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   105dc:	0005ce63          	bltz	a1,105f8 <rs232_rx_final+0x1c>
+      return 0xc0000000 +                                        // execute thread, set a0
+             (tag << 14) +                                       // save tag
+             (((unsigned)&&rs232_rx_final_label >> 1) & 0x3fff); // set pc
+   105e0:	000107b7          	lui	a5,0x10
+   105e4:	5f878793          	addi	a5,a5,1528 # 105f8 <rs232_rx_final+0x1c>
+   105e8:	07c6                	slli	a5,a5,0x11
+             (tag << 14) +                                       // save tag
+   105ea:	c0000737          	lui	a4,0xc0000
+             (((unsigned)&&rs232_rx_final_label >> 1) & 0x3fff); // set pc
+   105ee:	83c9                	srli	a5,a5,0x12
+             (tag << 14) +                                       // save tag
+   105f0:	97ba                	add	a5,a5,a4
+   105f2:	053a                	slli	a0,a0,0xe
+   105f4:	953e                	add	a0,a0,a5
+   105f6:	8082                	ret
+   } else {
+      rs232_rx_final_label:
+         GPIO_0_OUT_SET = rs232_rx_data[tag];
+   105f8:	84818793          	addi	a5,gp,-1976 # 11eb8 <rs232_rx_data>
+   105fc:	0506                	slli	a0,a0,0x1
+   105fe:	953e                	add	a0,a0,a5
+   10600:	00055703          	lhu	a4,0(a0)
+   10604:	800307b7          	lui	a5,0x80030
+   10608:	cbd8                	sw	a4,20(a5)
+         TC_KILL = 0x0;
+   1060a:	800007b7          	lui	a5,0x80000
+   1060e:	0007a223          	sw	zero,4(a5) # 80000004 <__global_pointer$+0x7ffed994>
+         asm volatile ("addi x0, x0, 0");
+   10612:	00000013          	nop
+   }
+}
+   10616:	8082                	ret
+
+00010618 <atexit>:
+   10618:	00050593          	mv	a1,a0
+   1061c:	00000693          	li	a3,0
+   10620:	00000613          	li	a2,0
+   10624:	00000513          	li	a0,0
+   10628:	2240006f          	j	1084c <__register_exitproc>
+
+0001062c <exit>:
+   1062c:	ff010113          	addi	sp,sp,-16
+   10630:	00000593          	li	a1,0
+   10634:	00812423          	sw	s0,8(sp)
+   10638:	00112623          	sw	ra,12(sp)
+   1063c:	00050413          	mv	s0,a0
+   10640:	290000ef          	jal	ra,108d0 <__call_exitprocs>
+   10644:	00002797          	auipc	a5,0x2
+   10648:	82c78793          	addi	a5,a5,-2004 # 11e70 <_global_impure_ptr>
+   1064c:	0007a503          	lw	a0,0(a5)
+   10650:	03c52783          	lw	a5,60(a0)
+   10654:	00078463          	beqz	a5,1065c <exit+0x30>
+   10658:	000780e7          	jalr	a5
+   1065c:	00040513          	mv	a0,s0
+   10660:	384000ef          	jal	ra,109e4 <_exit>
+
+00010664 <__libc_fini_array>:
+   10664:	fe010113          	addi	sp,sp,-32
+   10668:	00001797          	auipc	a5,0x1
+   1066c:	3dc78793          	addi	a5,a5,988 # 11a44 <__fini_array_end>
+   10670:	00812c23          	sw	s0,24(sp)
+   10674:	00001417          	auipc	s0,0x1
+   10678:	3cc40413          	addi	s0,s0,972 # 11a40 <__init_array_end>
+   1067c:	40878433          	sub	s0,a5,s0
+   10680:	00912a23          	sw	s1,20(sp)
+   10684:	01212823          	sw	s2,16(sp)
+   10688:	01312623          	sw	s3,12(sp)
+   1068c:	00112e23          	sw	ra,28(sp)
+   10690:	40245413          	srai	s0,s0,0x2
+   10694:	00000493          	li	s1,0
+   10698:	00078913          	mv	s2,a5
+   1069c:	ffc00993          	li	s3,-4
+   106a0:	02941063          	bne	s0,s1,106c0 <__libc_fini_array+0x5c>
+   106a4:	01812403          	lw	s0,24(sp)
+   106a8:	01c12083          	lw	ra,28(sp)
+   106ac:	01412483          	lw	s1,20(sp)
+   106b0:	01012903          	lw	s2,16(sp)
+   106b4:	00c12983          	lw	s3,12(sp)
+   106b8:	02010113          	addi	sp,sp,32
+   106bc:	a35ff06f          	j	100f0 <_fini>
+   106c0:	033487b3          	mul	a5,s1,s3
+   106c4:	00148493          	addi	s1,s1,1
+   106c8:	00f907b3          	add	a5,s2,a5
+   106cc:	ffc7a783          	lw	a5,-4(a5)
+   106d0:	000780e7          	jalr	a5
+   106d4:	fcdff06f          	j	106a0 <__libc_fini_array+0x3c>
+
+000106d8 <__libc_init_array>:
+   106d8:	ff010113          	addi	sp,sp,-16
+   106dc:	00812423          	sw	s0,8(sp)
+   106e0:	00912223          	sw	s1,4(sp)
+   106e4:	00001417          	auipc	s0,0x1
+   106e8:	35840413          	addi	s0,s0,856 # 11a3c <__frame_dummy_init_array_entry>
+   106ec:	00001497          	auipc	s1,0x1
+   106f0:	35048493          	addi	s1,s1,848 # 11a3c <__frame_dummy_init_array_entry>
+   106f4:	408484b3          	sub	s1,s1,s0
+   106f8:	01212023          	sw	s2,0(sp)
+   106fc:	00112623          	sw	ra,12(sp)
+   10700:	4024d493          	srai	s1,s1,0x2
+   10704:	00000913          	li	s2,0
+   10708:	04991063          	bne	s2,s1,10748 <__libc_init_array+0x70>
+   1070c:	00001417          	auipc	s0,0x1
+   10710:	33040413          	addi	s0,s0,816 # 11a3c <__frame_dummy_init_array_entry>
+   10714:	00001497          	auipc	s1,0x1
+   10718:	32c48493          	addi	s1,s1,812 # 11a40 <__init_array_end>
+   1071c:	408484b3          	sub	s1,s1,s0
+   10720:	9d1ff0ef          	jal	ra,100f0 <_fini>
+   10724:	4024d493          	srai	s1,s1,0x2
+   10728:	00000913          	li	s2,0
+   1072c:	02991863          	bne	s2,s1,1075c <__libc_init_array+0x84>
+   10730:	00c12083          	lw	ra,12(sp)
+   10734:	00812403          	lw	s0,8(sp)
+   10738:	00412483          	lw	s1,4(sp)
+   1073c:	00012903          	lw	s2,0(sp)
+   10740:	01010113          	addi	sp,sp,16
+   10744:	00008067          	ret
+   10748:	00042783          	lw	a5,0(s0)
+   1074c:	00190913          	addi	s2,s2,1
+   10750:	00440413          	addi	s0,s0,4
+   10754:	000780e7          	jalr	a5
+   10758:	fb1ff06f          	j	10708 <__libc_init_array+0x30>
+   1075c:	00042783          	lw	a5,0(s0)
+   10760:	00190913          	addi	s2,s2,1
+   10764:	00440413          	addi	s0,s0,4
+   10768:	000780e7          	jalr	a5
+   1076c:	fc1ff06f          	j	1072c <__libc_init_array+0x54>
+
+00010770 <memset>:
+   10770:	00f00313          	li	t1,15
+   10774:	00050713          	mv	a4,a0
+   10778:	02c37e63          	bleu	a2,t1,107b4 <memset+0x44>
+   1077c:	00f77793          	andi	a5,a4,15
+   10780:	0a079063          	bnez	a5,10820 <memset+0xb0>
+   10784:	08059263          	bnez	a1,10808 <memset+0x98>
+   10788:	ff067693          	andi	a3,a2,-16
+   1078c:	00f67613          	andi	a2,a2,15
+   10790:	00e686b3          	add	a3,a3,a4
+   10794:	00b72023          	sw	a1,0(a4) # c0000000 <__global_pointer$+0xbffed990>
+   10798:	00b72223          	sw	a1,4(a4)
+   1079c:	00b72423          	sw	a1,8(a4)
+   107a0:	00b72623          	sw	a1,12(a4)
+   107a4:	01070713          	addi	a4,a4,16
+   107a8:	fed766e3          	bltu	a4,a3,10794 <memset+0x24>
+   107ac:	00061463          	bnez	a2,107b4 <memset+0x44>
+   107b0:	00008067          	ret
+   107b4:	40c306b3          	sub	a3,t1,a2
+   107b8:	00269693          	slli	a3,a3,0x2
+   107bc:	00000297          	auipc	t0,0x0
+   107c0:	005686b3          	add	a3,a3,t0
+   107c4:	00c68067          	jr	12(a3)
+   107c8:	00b70723          	sb	a1,14(a4)
+   107cc:	00b706a3          	sb	a1,13(a4)
+   107d0:	00b70623          	sb	a1,12(a4)
+   107d4:	00b705a3          	sb	a1,11(a4)
+   107d8:	00b70523          	sb	a1,10(a4)
+   107dc:	00b704a3          	sb	a1,9(a4)
+   107e0:	00b70423          	sb	a1,8(a4)
+   107e4:	00b703a3          	sb	a1,7(a4)
+   107e8:	00b70323          	sb	a1,6(a4)
+   107ec:	00b702a3          	sb	a1,5(a4)
+   107f0:	00b70223          	sb	a1,4(a4)
+   107f4:	00b701a3          	sb	a1,3(a4)
+   107f8:	00b70123          	sb	a1,2(a4)
+   107fc:	00b700a3          	sb	a1,1(a4)
+   10800:	00b70023          	sb	a1,0(a4)
+   10804:	00008067          	ret
+   10808:	0ff5f593          	andi	a1,a1,255
+   1080c:	00859693          	slli	a3,a1,0x8
+   10810:	00d5e5b3          	or	a1,a1,a3
+   10814:	01059693          	slli	a3,a1,0x10
+   10818:	00d5e5b3          	or	a1,a1,a3
+   1081c:	f6dff06f          	j	10788 <memset+0x18>
+   10820:	00279693          	slli	a3,a5,0x2
+   10824:	00000297          	auipc	t0,0x0
+   10828:	005686b3          	add	a3,a3,t0
+   1082c:	00008293          	mv	t0,ra
+   10830:	fa0680e7          	jalr	-96(a3)
+   10834:	00028093          	mv	ra,t0
+   10838:	ff078793          	addi	a5,a5,-16
+   1083c:	40f70733          	sub	a4,a4,a5
+   10840:	00f60633          	add	a2,a2,a5
+   10844:	f6c378e3          	bleu	a2,t1,107b4 <memset+0x44>
+   10848:	f3dff06f          	j	10784 <memset+0x14>
+
+0001084c <__register_exitproc>:
+   1084c:	00001797          	auipc	a5,0x1
+   10850:	62478793          	addi	a5,a5,1572 # 11e70 <_global_impure_ptr>
+   10854:	0007a703          	lw	a4,0(a5)
+   10858:	00050313          	mv	t1,a0
+   1085c:	14872783          	lw	a5,328(a4)
+   10860:	00079663          	bnez	a5,1086c <__register_exitproc+0x20>
+   10864:	14c70793          	addi	a5,a4,332
+   10868:	14f72423          	sw	a5,328(a4)
+   1086c:	0047a703          	lw	a4,4(a5)
+   10870:	01f00813          	li	a6,31
+   10874:	fff00513          	li	a0,-1
+   10878:	04e84a63          	blt	a6,a4,108cc <__register_exitproc+0x80>
+   1087c:	00271893          	slli	a7,a4,0x2
+   10880:	02030c63          	beqz	t1,108b8 <__register_exitproc+0x6c>
+   10884:	01178533          	add	a0,a5,a7
+   10888:	08c52423          	sw	a2,136(a0)
+   1088c:	1887a803          	lw	a6,392(a5)
+   10890:	00100613          	li	a2,1
+   10894:	00e61633          	sll	a2,a2,a4
+   10898:	00c86833          	or	a6,a6,a2
+   1089c:	1907a423          	sw	a6,392(a5)
+   108a0:	10d52423          	sw	a3,264(a0)
+   108a4:	00200693          	li	a3,2
+   108a8:	00d31863          	bne	t1,a3,108b8 <__register_exitproc+0x6c>
+   108ac:	18c7a683          	lw	a3,396(a5)
+   108b0:	00c6e633          	or	a2,a3,a2
+   108b4:	18c7a623          	sw	a2,396(a5)
+   108b8:	00170713          	addi	a4,a4,1
+   108bc:	00e7a223          	sw	a4,4(a5)
+   108c0:	011787b3          	add	a5,a5,a7
+   108c4:	00b7a423          	sw	a1,8(a5)
+   108c8:	00000513          	li	a0,0
+   108cc:	00008067          	ret
+
+000108d0 <__call_exitprocs>:
+   108d0:	fd010113          	addi	sp,sp,-48
+   108d4:	00001797          	auipc	a5,0x1
+   108d8:	59c78793          	addi	a5,a5,1436 # 11e70 <_global_impure_ptr>
+   108dc:	01312e23          	sw	s3,28(sp)
+   108e0:	0007a983          	lw	s3,0(a5)
+   108e4:	01412c23          	sw	s4,24(sp)
+   108e8:	01512a23          	sw	s5,20(sp)
+   108ec:	01612823          	sw	s6,16(sp)
+   108f0:	02112623          	sw	ra,44(sp)
+   108f4:	02812423          	sw	s0,40(sp)
+   108f8:	02912223          	sw	s1,36(sp)
+   108fc:	03212023          	sw	s2,32(sp)
+   10900:	01712623          	sw	s7,12(sp)
+   10904:	00050a93          	mv	s5,a0
+   10908:	00058a13          	mv	s4,a1
+   1090c:	00100b13          	li	s6,1
+   10910:	1489a483          	lw	s1,328(s3)
+   10914:	00048c63          	beqz	s1,1092c <__call_exitprocs+0x5c>
+   10918:	0044a403          	lw	s0,4(s1)
+   1091c:	fff40913          	addi	s2,s0,-1
+   10920:	00241413          	slli	s0,s0,0x2
+   10924:	00848433          	add	s0,s1,s0
+   10928:	02095863          	bgez	s2,10958 <__call_exitprocs+0x88>
+   1092c:	02c12083          	lw	ra,44(sp)
+   10930:	02812403          	lw	s0,40(sp)
+   10934:	02412483          	lw	s1,36(sp)
+   10938:	02012903          	lw	s2,32(sp)
+   1093c:	01c12983          	lw	s3,28(sp)
+   10940:	01812a03          	lw	s4,24(sp)
+   10944:	01412a83          	lw	s5,20(sp)
+   10948:	01012b03          	lw	s6,16(sp)
+   1094c:	00c12b83          	lw	s7,12(sp)
+   10950:	03010113          	addi	sp,sp,48
+   10954:	00008067          	ret
+   10958:	000a0c63          	beqz	s4,10970 <__call_exitprocs+0xa0>
+   1095c:	10442783          	lw	a5,260(s0)
+   10960:	01478863          	beq	a5,s4,10970 <__call_exitprocs+0xa0>
+   10964:	fff90913          	addi	s2,s2,-1
+   10968:	ffc40413          	addi	s0,s0,-4
+   1096c:	fbdff06f          	j	10928 <__call_exitprocs+0x58>
+   10970:	0044a703          	lw	a4,4(s1)
+   10974:	00442783          	lw	a5,4(s0)
+   10978:	fff70713          	addi	a4,a4,-1
+   1097c:	03271c63          	bne	a4,s2,109b4 <__call_exitprocs+0xe4>
+   10980:	0124a223          	sw	s2,4(s1)
+   10984:	fe0780e3          	beqz	a5,10964 <__call_exitprocs+0x94>
+   10988:	1884a683          	lw	a3,392(s1)
+   1098c:	012b1733          	sll	a4,s6,s2
+   10990:	0044ab83          	lw	s7,4(s1)
+   10994:	00d776b3          	and	a3,a4,a3
+   10998:	02069263          	bnez	a3,109bc <__call_exitprocs+0xec>
+   1099c:	000780e7          	jalr	a5
+   109a0:	0044a703          	lw	a4,4(s1)
+   109a4:	1489a783          	lw	a5,328(s3)
+   109a8:	f77714e3          	bne	a4,s7,10910 <__call_exitprocs+0x40>
+   109ac:	faf48ce3          	beq	s1,a5,10964 <__call_exitprocs+0x94>
+   109b0:	f61ff06f          	j	10910 <__call_exitprocs+0x40>
+   109b4:	00042223          	sw	zero,4(s0)
+   109b8:	fcdff06f          	j	10984 <__call_exitprocs+0xb4>
+   109bc:	18c4a683          	lw	a3,396(s1)
+   109c0:	08442583          	lw	a1,132(s0)
+   109c4:	00d77733          	and	a4,a4,a3
+   109c8:	00071863          	bnez	a4,109d8 <__call_exitprocs+0x108>
+   109cc:	000a8513          	mv	a0,s5
+   109d0:	000780e7          	jalr	a5
+   109d4:	fcdff06f          	j	109a0 <__call_exitprocs+0xd0>
+   109d8:	00058513          	mv	a0,a1
+   109dc:	000780e7          	jalr	a5
+   109e0:	fc1ff06f          	j	109a0 <__call_exitprocs+0xd0>
+
+000109e4 <_exit>:
+   109e4:	00000593          	li	a1,0
+   109e8:	00000613          	li	a2,0
+   109ec:	00000693          	li	a3,0
+   109f0:	00000713          	li	a4,0
+   109f4:	00000793          	li	a5,0
+   109f8:	05d00893          	li	a7,93
+   109fc:	00000073          	ecall
+   10a00:	02055263          	bgez	a0,10a24 <_exit+0x40>
+   10a04:	ff010113          	addi	sp,sp,-16
+   10a08:	00812423          	sw	s0,8(sp)
+   10a0c:	00050413          	mv	s0,a0
+   10a10:	00112623          	sw	ra,12(sp)
+   10a14:	40800433          	neg	s0,s0
+   10a18:	010000ef          	jal	ra,10a28 <__errno>
+   10a1c:	00852023          	sw	s0,0(a0)
+   10a20:	0000006f          	j	10a20 <_exit+0x3c>
+   10a24:	0000006f          	j	10a24 <_exit+0x40>
+
+00010a28 <__errno>:
+   10a28:	00001797          	auipc	a5,0x1
+   10a2c:	44c78793          	addi	a5,a5,1100 # 11e74 <_impure_ptr>
+   10a30:	0007a503          	lw	a0,0(a5)
+   10a34:	00008067          	ret

@@ -1,0 +1,102 @@
+18:19:17 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/driver_gpio.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF"include/driver_gpio.d" -MT"include/driver_gpio.o" -c -o "include/driver_gpio.o" "../include/driver_gpio.c"
+../include/driver_gpio.c: In function 'set_pin':
+../include/driver_gpio.c:12:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+../include/driver_gpio.c: In function 'set_dir':
+../include/driver_gpio.c:20:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+                           ^
+Finished building: ../include/driver_gpio.c
+ 
+Building file: ../include/driver_rs232.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF"include/driver_rs232.d" -MT"include/driver_rs232.o" -c -o "include/driver_rs232.o" "../include/driver_rs232.c"
+../include/driver_rs232.c: In function 'rs232_tx_init':
+../include/driver_rs232.c:21:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+../include/driver_rs232.c:24:25: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    rs232_tx_clr_add[id] = gpio_n_out;
+                         ^
+../include/driver_rs232.c:26:25: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    rs232_tx_set_add[id] = gpio_n_out;
+                         ^
+../include/driver_rs232.c: In function 'rs232_tx_event':
+../include/driver_rs232.c:96:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n_out = rs232_tx_set_add[tag];
+                           ^
+../include/driver_rs232.c:98:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n_out = rs232_tx_clr_add[tag];
+                           ^
+../include/driver_rs232.c: In function 'rs232_rx_init':
+../include/driver_rs232.c:136:26: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_in = &GPIO_0_IN;
+                          ^
+../include/driver_rs232.c:138:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    rs232_rx_bank[id] = gpio_n_in;
+                      ^
+../include/driver_rs232.c: In function 'rs232_rx':
+../include/driver_rs232.c:164:17: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+       gpio_n_in = rs232_rx_bank[tag];
+                 ^
+../include/driver_rs232.c: In function 'rs232_rx_rearm':
+../include/driver_rs232.c:215:26: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+    unsigned* gpio_n_in = rs232_rx_bank[id]; //&GPIO_0_IN;
+                          ^~~~~~~~~~~~~
+Finished building: ../include/driver_rs232.c
+ 
+Building file: ../include/driver_rs232_custom.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_rs232\ws_drivers_rs232\drivers_rs232_0\include" -std=gnu11 -MMD -MP -MF"include/driver_rs232_custom.d" -MT"include/driver_rs232_custom.o" -c -o "include/driver_rs232_custom.o" "../include/driver_rs232_custom.c"
+Finished building: ../include/driver_rs232_custom.c
+ 
+Building target: drivers_rs232_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_rs232_0.map" -o "drivers_rs232_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_rs232.o ./include/driver_rs232_custom.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
+Finished building target: drivers_rs232_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_rs232_0.elf"  "drivers_rs232_0.hex"
+Finished building: drivers_rs232_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2504	   1080	    376	   3960	    f78	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 
+18:20:48 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2504	   1080	    376	   3960	    f78	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 
+18:23:28 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Building target: drivers_rs232_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_rs232_0.map" -o "drivers_rs232_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_rs232.o ./include/driver_rs232_custom.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
+Finished building target: drivers_rs232_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_rs232_0.elf"  "drivers_rs232_0.hex"
+Finished building: drivers_rs232_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2504	   1080	    376	   3960	    f78	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 

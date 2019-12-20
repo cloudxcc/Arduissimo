@@ -1,0 +1,247 @@
+\def\verbatimboxVersionNumber{v3.13 }
+\ProvidesPackage{verbatimbox}
+        [2014/03/12 \verbatimboxVersionNumber
+Routines for placing verbatim text into boxes, useful in places where
+the verbatim environment is inaccessible.  Secondarily, for adding
+vertical buffer around an object.]
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Steven B. Segletes.
+%
+% verbatimbox.sty is based on boxedverbatim environment found
+% in moreverb.sty.
+%
+% An enabling routine, \addvbuffer[]{} shares some functional
+% similarities to \raisebox, but it is not the same.
+%
+% 2.01 -Added LPPL License info to package
+% 3.0  -Added myverbbox environment
+%      -Corrected problem when no optional arguments are passed to
+%         verbbox environment
+%      -Added optional arguments to \addvbuffer
+%      -Fixed \verbfilebox so that it restored \verbatim@processline
+%      -Produced real documentation
+% 3.01 -renamed \macro@name so as not to conflict with (I think) ltxdoc
+%       package
+% 3.1  -Corrected default argument to \addvbuffer so that it wouldn't
+%       break.  Also, gave better guidance in documentation to use
+%       of optional argument to \addvbuffer
+%      -Added verbnobox environment and \verbfilenobox macro
+%      -Improved documentation showing line-specific optional arguments
+% 3.11 -Eliminated the use of the stringstrings package, which resets
+%       the definition of \|
+% 3.12 -Corrected bug introduced in V3.11, which occured with [t] 
+%       option to \theverbbox
+%      -When using two lengths in \addvbuffer optional argument,
+%       they MUST be individually in {}, rather than "~" or "\ " between
+% 3.13 -Corrected residual bug from V3.11, when \addvbuffer called
+%       without an optional argument,
+\NeedsTeXFormat{LaTeX2e}
+\@ifundefined{verbatim@processline}{\RequirePackage{verbatim}}{}
+\usepackage{readarray}
+
+% Following 3 lines thanks to Prof. Enrico Gregorio, from: 
+% http://tex.stackexchange.com/questions/42318/
+%   removing-a-backslash-from-a-character-sequence
+\begingroup\lccode`\|=`\\
+\lowercase{\endgroup\def\removebs#1{\if#1|\else#1\fi}}
+\newcommand{\@macro@name}[1]{\expandafter\removebs\string#1}
+%
+
+\global\newsavebox{\savedverbbox}
+\newcounter{VerbboxLineNo}
+%%%%%ORIGINAL FORM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The verbbox environment is based on 
+% the boxedverbatim environment found in moreverb.sty
+% The optional argument allows the user to modify properties of the text
+%   such as fontsize
+%
+\newenvironment{origverbbox}[1][]{%
+  \def\verbatim@processline{%
+    {\setbox0=\hbox{\the\verbatim@line}%
+    \hsize=\wd0 \the\verbatim@line\par}}%
+  \@minipagetrue%
+  \@tempswatrue%
+  \setbox0=\vbox\bgroup #1 \verbatim
+}
+{%
+  \endverbatim
+  \unskip\setbox0=\lastbox %
+  \egroup
+  \global\sbox{\savedverbbox}{\box0}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% David Carlisle provided the \verbbox@inner approach to avoid
+% problem when no optional argument is provided to verbbox environment:
+% http://tex.stackexchange.com/questions/109030/optional-arguments-in
+%   -verbatim-environments
+\newcommand\verbbox@inner[1][]{{\nfss@catcodes\scantokens{\gdef\@tmp{#1}}}}
+\def\@tmp{}
+
+\newenvironment{verbbox}{%
+  \setcounter{VerbboxLineNo}{-1}%
+% FOR SOME REASON, USING \my@par INSTEAD OF \par PREVENTS EXTRA SPACE
+% ABOVE verbbox WHEN USING OPTIONAL ARGUMENTS
+  \let\my@par\par%
+  \def\verbatim@processline{%
+%   FIRST \@tmp APPLIES OPTIONAL ARGUMENT TO EACH VERBATIM LINE
+%   SECOND \@tmp MAKES SURE ANY PRINTED MATTER OF OPTIONAL ARGUMENT
+%   IS ACCOUNTED FOR IN VERBATIM BOX WIDTH
+    {\addtocounter{VerbboxLineNo}{1}%
+    \@tmp\setbox0=\hbox{\@tmp\the\verbatim@line}%
+    \hsize=\wd0 \the\verbatim@line\my@par}}%
+  \@minipagetrue%
+  \@tempswatrue%
+  \setbox0=\vbox\bgroup \verbatim\verbbox@inner%
+}
+{%
+  \endverbatim%
+  \unskip\setbox0=\lastbox %
+  \egroup%
+  \global\sbox{\savedverbbox}{\box0}%
+  \global\def\@tmp{}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The myverbbox environment is altered from verbbox environment
+% The optional argument allows the user to modify properties of 
+%   the text such as fontsize
+% The mandatory argument is a command which is formed so as to
+%   regurgitate the boxed content created within the environment
+%
+\newenvironment{myverbbox}[2][]{%
+  \setcounter{VerbboxLineNo}{0}%
+  \def\verbatim@processline{%
+% THE FIRST #1 ACCOUNTS FOR NON-PRINTING COMMANDS; THE SECOND #1 IS FOR
+% PRINTED OPTIONAL MATERIAL
+    {\addtocounter{VerbboxLineNo}{1}%
+    #1\setbox0=\hbox{#1\the\verbatim@line}%
+    \hsize=\wd0 \the\verbatim@line\par}}%
+  \@minipagetrue%
+  \@tempswatrue%
+  \global\edef\sv@name{\@macro@name{#2}}%
+  \@ifundefined{\sv@name content}{%
+    \expandafter\newsavebox\expandafter{\csname\sv@name content\endcsname}%
+  }%
+  \expandafter\global\expandafter\edef\csname\sv@name\endcsname{\usebox{%
+  \csname\sv@name content\endcsname}}%
+  \setbox0=\vbox\bgroup \verbatim
+}
+{%
+  \endverbatim%
+  \unskip\setbox0=\lastbox %
+  \egroup%
+  \global\sbox{\csname\sv@name content\endcsname}{\box0}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The verbfilebox command is like the verbbox environment, but takes
+% a file as input, rather than text typed into an environment.
+% The optional argument allows the user to modify properties of the text
+% such as fontsize
+% Example: \verbfilebox[\scriptsize]{myfile}
+
+\let\sv@verbatim@processline\verbatim@processline
+
+\newcommand\verbfilebox[2][]{%
+  \setcounter{VerbboxLineNo}{0}%
+  \def\verbatim@processline{%
+    {\addtocounter{VerbboxLineNo}{1}%
+    #1\setbox0=\hbox{#1\the\verbatim@line}%
+    \hsize=\wd0 \the\verbatim@line\par}}%
+  \@minipagetrue%
+  \@tempswatrue%
+  \setbox0=\vbox\bgroup \verbatiminput{#2}
+  \unskip\setbox0=\lastbox %
+  \egroup
+  \global\sbox{\savedverbbox}{\box0}
+  \let\verbatim@processline\sv@verbatim@processline
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\theverbbox[1][x]{%
+  \if #1t%
+%   The t option is for outputting the savedverbbox inside a tabular
+%   environment (else insufficent vertical space above box)
+    \addvbuffer[{\boxtopsep} {\boxbottomsep}]{\usebox{\savedverbbox}}%
+  \else%
+    \usebox{\savedverbbox}%
+  \fi%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \addvbuffer is based on \fbox, 
+% but without a frame.  Empty buffer space
+% is added above and below the object, making a new box.
+% An optional argument can specify the buffer spaces or, if no
+% optional argument is specified:
+% above the box is added \boxtopsep (initially 3pt) vertical space;
+% below the box is added \boxbottomsep (initially 0pt) vertical space.
+%
+\newdimen\boxtopsep
+\newdimen\boxbottomsep
+\newdimen\ps@tempdima
+\newbox\ps@tempboxa
+\setlength\boxtopsep{3pt}
+\setlength\boxbottomsep{0pt}
+\long\def\add@vbuffer#1{\leavevmode\setbox\ps@tempboxa\hbox{#1}\ps@tempdima
+   0pt \advance\ps@tempdima \dp\ps@tempboxa \hbox{\lower\ps@tempdima\hbox
+  {\vbox{\hbox{\vbox{\vskip\boxtop@sep \box\ps@tempboxa \vskip 
+  \boxbottom@sep}}}}}}
+
+\global\newlength\boxtop@sep
+\global\newlength\boxbottom@sep
+\newcommand\addvbuffer[2][{\boxtopsep} {\boxbottomsep}]{%
+  \getargsC{#1}%
+  \setlength\boxtop@sep{\argi}%
+  \if1\narg\setlength\boxbottom@sep{\argi}\else%
+           \setlength\boxbottom@sep{\argii}\fi%
+  \add@vbuffer{#2}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following two "nobox" commands are basically versions of
+% \verbatiminput and \verbatim that have been adapted to take the
+% optional argument style of this package.  No boxes are created,
+% but breaking across page boundaries is not a problem here, as
+% it would be with a box.
+
+\newcommand\verbfilenobox[2][]{%
+  \setcounter{VerbboxLineNo}{0}%
+  \def\verbatim@processline{%
+    {\addtocounter{VerbboxLineNo}{1}%
+    #1\setbox0=\hbox{#1\the\verbatim@line}%
+    \hsize=\wd0 \the\verbatim@line\par}}%
+  \verbatiminput{#2}
+  \let\verbatim@processline\sv@verbatim@processline
+}
+
+\newenvironment{verbnobox}{%
+  \setcounter{VerbboxLineNo}{-1}%
+% FOR SOME REASON, USING \my@par INSTEAD OF \par PREVENTS EXTRA SPACE
+% ABOVE verbbox WHEN USING OPTIONAL ARGUMENTS
+  \let\my@par\par%
+  \def\verbatim@processline{%
+%   FIRST \@tmp APPLIES OPTIONAL ARGUMENT TO EACH VERBATIM LINE
+%   SECOND \@tmp MAKES SURE ANY PRINTED MATTER OF OPTIONAL ARGUMENT
+%   IS ACCOUNTED FOR IN VERBATIM BOX WIDTH
+    {\addtocounter{VerbboxLineNo}{1}%
+    \@tmp\setbox0=\hbox{\@tmp\the\verbatim@line}%
+    \hsize=\wd0 \the\verbatim@line\my@par}}%
+\verbatim\verbbox@inner%
+}
+{%
+  \endverbatim%
+  \global\def\@tmp{}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\endinput

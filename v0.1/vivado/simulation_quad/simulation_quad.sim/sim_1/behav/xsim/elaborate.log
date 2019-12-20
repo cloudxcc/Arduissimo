@@ -1,0 +1,41 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto d6964b5d764f404483b60e27f1159462 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_quad_behav xil_defaultlib.tb_quad xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 128 differs from formal bit length 256 for port 'uart_prog_douta' [D:/projects/arduissimo/release/v0.1/testbench/testbench_quad.v:827]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 4 for port 'dbus_rdwr_be' [D:/projects/arduissimo/release/v0.1/dut/quad.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 31 for port 'gpio_command' [D:/projects/arduissimo/release/v0.1/dut/quad.v:122]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'dinb' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:634]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 9 for port 'addra' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:761]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 9 for port 'addrb' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:764]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 6 for port 'thread_pipe_valid' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:826]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 4 for port 'dbus_rdwr_be' [D:/projects/arduissimo/release/v0.1/dut/quad.v:140]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 31 for port 'gpio_command' [D:/projects/arduissimo/release/v0.1/dut/quad.v:157]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 4 for port 'dbus_rdwr_be' [D:/projects/arduissimo/release/v0.1/dut/quad.v:175]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 31 for port 'gpio_command' [D:/projects/arduissimo/release/v0.1/dut/quad.v:192]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 4 for port 'dbus_rdwr_be' [D:/projects/arduissimo/release/v0.1/dut/quad.v:210]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 31 for port 'gpio_command' [D:/projects/arduissimo/release/v0.1/dut/quad.v:227]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'dinb' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:645]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 9 for port 'addra' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:769]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 9 for port 'addrb' [D:/projects/arduissimo/release/v0.1/dut/core_D16.v:772]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/projects/arduissimo/release/v0.1/vivado/simulation_quad/simulation_quad.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.gpio
+Compiling module xil_defaultlib.mp
+Compiling module xil_defaultlib.tdp_ram_512x33
+Compiling module xil_defaultlib.ca
+Compiling module xil_defaultlib.tdp_ram_6144x16x2
+Compiling module xil_defaultlib.sdp_ram_512x32x4
+Compiling module xil_defaultlib.RF_D16
+Compiling module xil_defaultlib.Reg_D16
+Compiling module xil_defaultlib.CUBEV_RV32iMC_P3C4D16
+Compiling module xil_defaultlib.core_D16
+Compiling module xil_defaultlib.quad
+Compiling module xil_defaultlib.tb_quad
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_quad_behav

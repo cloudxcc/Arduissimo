@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="sdp_ram_16x32_synth_1" LaunchDir="D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.runs/sdp_ram_16x32_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="tdp_ram_512x32_synth_1" LaunchDir="D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.runs/tdp_ram_512x32_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="sdp_ram_512x32x4_synth_1" LaunchDir="D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.runs/sdp_ram_512x32x4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="tdp_ram_6144x16x2_synth_1" LaunchDir="D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.runs/tdp_ram_6144x16x2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="tdp_ram_512x33_synth_1" LaunchDir="D:/projects/arduissimo/release/v0.1/vivado/fpga_top/fpga_top.runs/tdp_ram_512x33_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

@@ -1,0 +1,156 @@
+17:52:00 **** Incremental Build of configuration Release for project drivers_i2c_1 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../include/driver_gpio.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include" -std=gnu11 -MMD -MP -MF"include/driver_gpio.d" -MT"include/driver_gpio.o" -c -o "include/driver_gpio.o" "../include/driver_gpio.c"
+../include/driver_gpio.c: In function 'set_pin':
+../include/driver_gpio.c:12:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+../include/driver_gpio.c: In function 'set_dir':
+../include/driver_gpio.c:20:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+                           ^
+Finished building: ../include/driver_gpio.c
+ 
+Building file: ../include/driver_i2c.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include" -std=gnu11 -MMD -MP -MF"include/driver_i2c.d" -MT"include/driver_i2c.o" -c -o "include/driver_i2c.o" "../include/driver_i2c.c"
+../include/driver_i2c.c: In function 'i2c_master_init':
+../include/driver_i2c.c:25:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+../include/driver_i2c.c:36:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_scl_clr_add[id] = gpio_n_out;
+                               ^
+../include/driver_i2c.c:38:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_scl_set_add[id] = gpio_n_out;
+                               ^
+../include/driver_i2c.c:43:15: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n_out = &GPIO_0_OUT_CLR;
+               ^
+../include/driver_i2c.c:52:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_sda_clr_add[id] = gpio_n_out;
+                               ^
+../include/driver_i2c.c:54:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_sda_set_add[id] = gpio_n_out;
+                               ^
+../include/driver_i2c.c:59:28: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_sda_bank[id] = gpio_n_out;
+                            ^
+../include/driver_i2c.c: In function 'i2c_master_event':
+../include/driver_i2c.c:127:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n_out = i2c_master_sda_clr_add[tag];
+                        ^
+../include/driver_i2c.c:137:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n_out = i2c_master_sda_set_add[tag];
+                        ^
+../include/driver_i2c.c:148:38: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+                unsigned* gpio_n_in = i2c_master_sda_bank[tag];
+                                      ^~~~~~~~~~~~~~~~~~~
+../include/driver_i2c.c:168:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n_out = i2c_master_scl_set_add[tag];
+                        ^
+../include/driver_i2c.c:178:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n_out = i2c_master_sda_set_add[tag];
+                           ^
+../include/driver_i2c.c:180:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n_out = i2c_master_sda_clr_add[tag];
+                           ^
+../include/driver_i2c.c:189:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n_out = i2c_master_scl_clr_add[tag];
+                        ^
+../include/driver_i2c.c: In function 'i2c_slave_init':
+../include/driver_i2c.c:227:26: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_in = &GPIO_0_IN;
+                          ^
+../include/driver_i2c.c:229:27: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_slave_scl_bank[id] = gpio_n_in;
+                           ^
+../include/driver_i2c.c:246:14: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n_in = &GPIO_0_CAP;
+              ^
+../include/driver_i2c.c:248:27: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_slave_sda_bank[id] = gpio_n_in;
+                           ^
+../include/driver_i2c.c: In function 'i2c_slave_enable':
+../include/driver_i2c.c:267:26: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+    unsigned* gpio_n_in = i2c_slave_sda_bank[id];
+                          ^~~~~~~~~~~~~~~~~~
+../include/driver_i2c.c: In function 'i2c_slave_event':
+../include/driver_i2c.c:311:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = i2c_slave_sda_bank[tag];
+                          ^
+../include/driver_i2c.c:320:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n = i2c_slave_sda_bank[tag];
+                       ^
+../include/driver_i2c.c:358:20: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n = i2c_slave_scl_bank[tag] ;
+                    ^
+../include/driver_i2c.c:367:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n = i2c_slave_sda_bank[tag];
+                       ^
+../include/driver_i2c.c:377:23: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                gpio_n = i2c_slave_scl_bank[tag];
+                       ^
+Finished building: ../include/driver_i2c.c
+ 
+Building file: ../include/driver_i2c_custom.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include" -std=gnu11 -MMD -MP -MF"include/driver_i2c_custom.d" -MT"include/driver_i2c_custom.o" -c -o "include/driver_i2c_custom.o" "../include/driver_i2c_custom.c"
+Finished building: ../include/driver_i2c_custom.c
+ 
+Building target: drivers_i2c_1.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_i2c_1.map" -o "drivers_i2c_1.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_i2c.o ./include/driver_i2c_custom.o   
+Finished building target: drivers_i2c_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_i2c_1.elf"  "drivers_i2c_1.hex"
+Finished building: drivers_i2c_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_i2c_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2272	   1080	    408	   3760	    eb0	drivers_i2c_1.elf
+Finished building: drivers_i2c_1.siz
+ 
+18:10:54 **** Incremental Build of configuration Release for project drivers_i2c_1 ****
+make all 
+Building target: drivers_i2c_1.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_i2c_1.map" -o "drivers_i2c_1.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_i2c.o ./include/driver_i2c_custom.o   
+Finished building target: drivers_i2c_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_i2c_1.elf"  "drivers_i2c_1.hex"
+Finished building: drivers_i2c_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_i2c_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2272	   1080	    408	   3760	    eb0	drivers_i2c_1.elf
+Finished building: drivers_i2c_1.siz
+ 
+18:11:04 **** Incremental Build of configuration Release for project drivers_i2c_0 ****
+make all 
+Building target: drivers_i2c_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_i2c_0.map" -o "drivers_i2c_0.elf"  ./src/main.o  ./include/driver_gpio.o ./include/driver_i2c.o ./include/driver_i2c_custom.o   
+Finished building target: drivers_i2c_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_i2c_0.elf"  "drivers_i2c_0.hex"
+Finished building: drivers_i2c_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_i2c_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2264	   1080	    120	   3464	    d88	drivers_i2c_0.elf
+Finished building: drivers_i2c_0.siz
+ 

@@ -1,0 +1,11 @@
+15:37:00 **** Incremental Build of configuration Release for project blinky64_2 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "blinky64_2.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2280	   1080	     28	   3388	    d3c	blinky64_2.elf
+Finished building: blinky64_2.siz
+ 
+
+15:37:01 Build Finished (took 985ms)
+

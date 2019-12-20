@@ -1,0 +1,20 @@
+22:33:30 **** Incremental Build of configuration Release for project blinky64_1 ****
+make all 
+Building target: blinky64_1.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"blinky64_1.map" -o "blinky64_1.elf"  ./src/main.o   
+Finished building target: blinky64_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "blinky64_1.elf"  "blinky64_1.hex"
+Finished building: blinky64_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "blinky64_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2932	   1080	     28	   4040	    fc8	blinky64_1.elf
+Finished building: blinky64_1.siz
+ 
+
+22:33:33 Build Finished (took 2s.567ms)
+

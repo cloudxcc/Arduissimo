@@ -1,0 +1,476 @@
+Archive member included to satisfy reference by file (symbol)
+
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-atexit.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o (atexit)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o (exit)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-fini.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o (__libc_fini_array)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-impure.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o) (_global_impure_ptr)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-init.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o (__libc_init_array)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-memset.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o (memset)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__atexit.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-atexit.o) (__register_exitproc)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__call_atexit.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o) (__call_exitprocs)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o) (_exit)
+d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-errno.o)
+                              d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o) (__errno)
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+ .sdata         0x0000000000000000        0x8 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+ .group         0x0000000000000000        0x8 ./src/main.o
+ .text          0x0000000000000000        0x0 ./src/main.o
+ .data          0x0000000000000000        0x0 ./src/main.o
+ .bss           0x0000000000000000        0x0 ./src/main.o
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-atexit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-atexit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-fini.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-fini.o)
+ .text          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-init.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-init.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__atexit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__atexit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__call_atexit.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__call_atexit.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o)
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-errno.o)
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-errno.o)
+ .text          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+ .data          0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+ .bss           0x0000000000000000        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+LOAD ./src/main.o
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libstdc++.a
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libm.a
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d\libgcc.a
+START GROUP
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a
+END GROUP
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d\libgcc.a
+LOAD d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+                [!provide]                        PROVIDE (__executable_start, SEGMENT_START ("text-segment", 0x10000))
+                0x00000000000100b0                . = (SEGMENT_START ("text-segment", 0x10000) + SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rela.dyn       0x00000000000100b0        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ .rela.text     0x00000000000100b0        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start, .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end, .)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT(.init))
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x00000000000100b0      0x8c0
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00000000000100b0       0x40 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d/crt0.o
+                0x00000000000100b0                _start
+                0x00000000000100ee                _fini
+                0x00000000000100ee                _init
+ .text          0x00000000000100f0       0xbc d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+ .text.main     0x00000000000101ac      0x146 ./src/main.o
+                0x00000000000101ac                main
+ .text          0x00000000000102f2        0xc d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-atexit.o)
+                0x00000000000102f2                atexit
+ .text          0x00000000000102fe       0x24 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o)
+                0x00000000000102fe                exit
+ .text          0x0000000000010322       0x4c d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-fini.o)
+                0x0000000000010322                __libc_fini_array
+ .text          0x000000000001036e       0x62 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-init.o)
+                0x000000000001036e                __libc_init_array
+ .text          0x00000000000103d0       0xaa d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-memset.o)
+                0x00000000000103d0                memset
+ .text          0x000000000001047a       0x6a d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__atexit.o)
+                0x000000000001047a                __register_exitproc
+ .text          0x00000000000104e4       0xb6 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__call_atexit.o)
+                0x00000000000104e4                __call_exitprocs
+ .text          0x000000000001059a      0x3ca d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o)
+                0x00000000000105dc                __syscall_error
+                0x0000000000010610                open
+                0x000000000001062c                openat
+                0x0000000000010648                lseek
+                0x0000000000010658                read
+                0x0000000000010668                write
+                0x0000000000010678                fstat
+                0x00000000000106aa                stat
+                0x00000000000106dc                lstat
+                0x000000000001070e                fstatat
+                0x0000000000010740                access
+                0x000000000001075c                faccessat
+                0x0000000000010778                close
+                0x0000000000010794                link
+                0x00000000000107b0                unlink
+                0x00000000000107cc                execve
+                0x00000000000107e0                fork
+                0x00000000000107f4                getpid
+                0x00000000000107f8                kill
+                0x000000000001080c                wait
+                0x0000000000010820                isatty
+                0x000000000001083e                gettimeofday
+                0x000000000001085a                times
+                0x00000000000108b4                ftime
+                0x00000000000108c0                utime
+                0x00000000000108c4                chown
+                0x00000000000108c8                chmod
+                0x00000000000108cc                chdir
+                0x00000000000108d0                getcwd
+                0x00000000000108d4                sysconf
+                0x00000000000108e8                sbrk
+                0x000000000001094e                _exit
+ .text          0x0000000000010964        0xc d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-errno.o)
+                0x0000000000010964                __errno
+ *(.gnu.warning)
+
+.fini
+ *(SORT(.fini))
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x0000000000010970        0x4
+ *(.eh_frame)
+ .eh_frame      0x0000000000010970        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+ .eh_frame      0x0000000000010970        0x4 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000000011000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000000011000        0x0
+                0x0000000000011000                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000000011000                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000000000011000        0x8
+                0x0000000000011000                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*) SORT(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x0000000000011000        0x8 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+                0x0000000000011008                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000000000011008        0x8
+                0x0000000000011008                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*) SORT(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000000011008        0x8 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+                0x0000000000011010                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+                0x0000000000011010                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000000011010      0x748
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000011010      0x748 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-impure.o)
+
+.tm_clone_table
+                0x0000000000011758        0x0
+ .tm_clone_table
+                0x0000000000011758        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+ .tm_clone_table
+                0x0000000000011758        0x0 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata          0x0000000000011758       0x10
+                0x0000000000011f58                __global_pointer$ = (. + 0x800)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x0000000000011758       0x10 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-impure.o)
+                0x0000000000011758                _global_impure_ptr
+                0x0000000000011760                _impure_ptr
+                0x0000000000011768                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0x0000000000011768                . = .
+                0x0000000000011768                __bss_start = .
+
+.sbss           0x0000000000011768        0x8
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000000011768        0x8 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o)
+ *(.scommon)
+
+.bss            0x0000000000011770       0x48
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000011770       0x38 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+ .bss           0x00000000000117a8       0x10 d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o)
+ *(COMMON)
+                0x00000000000117b8                . = ALIGN ((. != 0x0)?0x8:0x1)
+                0x00000000000117b8                . = ALIGN (0x8)
+                0x00000000000117b8                . = SEGMENT_START ("ldata-segment", .)
+                0x00000000000117b8                . = ALIGN (0x8)
+                0x00000000000117b8                _end = .
+                [!provide]                        PROVIDE (end, .)
+                0x00000000000117b8                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x1a
+ *(.comment)
+ .comment       0x0000000000000000       0x1a d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtbegin.o
+                                         0x1b (size before relaxing)
+ .comment       0x000000000000001a       0x1b ./src/main.o
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-atexit.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-exit.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-fini.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-impure.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-init.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__atexit.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-__call_atexit.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libgloss.a(syscalls.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/../../../../riscv64-unknown-elf/lib/rv64imafdc/lp64d\libc.a(lib_a-errno.o)
+ .comment       0x000000000000001a       0x1b d:/edaptix/software/riscv64-unknown-elf-gcc-20170612-x86_64-w64-mingw32/bin/../lib/gcc/riscv64-unknown-elf/7.1.1/rv64imafdc/lp64d/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x30
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x30 ./src/main.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000       0x71
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x71 ./src/main.o
+
+.debug_abbrev   0x0000000000000000       0x5f
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x5f ./src/main.o
+
+.debug_line     0x0000000000000000      0x206
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x206 ./src/main.o
+
+.debug_frame    0x0000000000000000       0x50
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x50 ./src/main.o
+
+.debug_str      0x0000000000000000     0x28a1
+ *(.debug_str)
+ .debug_str     0x0000000000000000     0x28a1 ./src/main.o
+                                       0x28ae (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x20
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x20 ./src/main.o
+
+.debug_macro    0x0000000000000000      0x855
+ *(.debug_macro)
+ .debug_macro   0x0000000000000000       0x11 ./src/main.o
+ .debug_macro   0x0000000000000011      0x844 ./src/main.o
+
+.debug_addr
+ *(.debug_addr)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(motion.elf elf64-littleriscv)

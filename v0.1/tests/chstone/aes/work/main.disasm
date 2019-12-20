@@ -1,0 +1,2613 @@
+
+aes.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010074 <main>:
+
+int
+SubByte (int in)
+{
+  return Sbox[(in / 16)][(in % 16)];
+}
+   10074:	1141                	addi	sp,sp,-16
+   10076:	c422                	sw	s0,8(sp)
+   10078:	c226                	sw	s1,4(sp)
+   1007a:	c04a                	sw	s2,0(sp)
+   1007c:	c606                	sw	ra,12(sp)
+   1007e:	10012437          	lui	s0,0x10012
+   10082:	004004b7          	lui	s1,0x400
+   10086:	8201a623          	sw	zero,-2004(gp) # 1245c <main_result>
+   1008a:	06a010ef          	jal	ra,110f4 <aes_main>
+   1008e:	82c1a783          	lw	a5,-2004(gp) # 1245c <main_result>
+   10092:	cb85                	beqz	a5,100c2 <main+0x4e>
+   10094:	100127b7          	lui	a5,0x10012
+   10098:	00080737          	lui	a4,0x80
+   1009c:	c7d8                	sw	a4,12(a5)
+   1009e:	00000013          	nop
+   100a2:	00000013          	nop
+   100a6:	00000013          	nop
+   100aa:	00000013          	nop
+   100ae:	c7d8                	sw	a4,12(a5)
+   100b0:	00000013          	nop
+   100b4:	00000013          	nop
+   100b8:	00000013          	nop
+   100bc:	00000013          	nop
+   100c0:	a001                	j	100c0 <main+0x4c>
+   100c2:	c444                	sw	s1,12(s0)
+   100c4:	00000013          	nop
+   100c8:	00000013          	nop
+   100cc:	00000013          	nop
+   100d0:	00000013          	nop
+   100d4:	c444                	sw	s1,12(s0)
+   100d6:	00000013          	nop
+   100da:	00000013          	nop
+   100de:	00000013          	nop
+   100e2:	00000013          	nop
+   100e6:	b745                	j	10086 <main+0x12>
+
+000100e8 <_start>:
+   100e8:	00003197          	auipc	gp,0x3
+   100ec:	b4818193          	addi	gp,gp,-1208 # 12c30 <__global_pointer$>
+   100f0:	80818513          	addi	a0,gp,-2040 # 12438 <_edata>
+   100f4:	0b418613          	addi	a2,gp,180 # 12ce4 <_end>
+   100f8:	40a60633          	sub	a2,a2,a0
+   100fc:	00000593          	li	a1,0
+   10100:	324010ef          	jal	ra,11424 <memset>
+   10104:	00001517          	auipc	a0,0x1
+   10108:	12c50513          	addi	a0,a0,300 # 11230 <__libc_fini_array>
+   1010c:	0d8010ef          	jal	ra,111e4 <atexit>
+   10110:	194010ef          	jal	ra,112a4 <__libc_init_array>
+   10114:	00012503          	lw	a0,0(sp)
+   10118:	00410593          	addi	a1,sp,4
+   1011c:	00000613          	li	a2,0
+   10120:	f55ff0ef          	jal	ra,10074 <main>
+   10124:	0d40106f          	j	111f8 <exit>
+
+00010128 <_fini>:
+   10128:	00008067          	ret
+
+0001012c <deregister_tm_clones>:
+   1012c:	00002517          	auipc	a0,0x2
+   10130:	30450513          	addi	a0,a0,772 # 12430 <_global_impure_ptr>
+   10134:	00002797          	auipc	a5,0x2
+   10138:	2fc78793          	addi	a5,a5,764 # 12430 <_global_impure_ptr>
+   1013c:	00a78a63          	beq	a5,a0,10150 <deregister_tm_clones+0x24>
+   10140:	ffff0317          	auipc	t1,0xffff0
+   10144:	ec030313          	addi	t1,t1,-320 # 0 <main-0x10074>
+   10148:	00030463          	beqz	t1,10150 <deregister_tm_clones+0x24>
+   1014c:	00030067          	jr	t1
+   10150:	00008067          	ret
+
+00010154 <register_tm_clones>:
+   10154:	00002517          	auipc	a0,0x2
+   10158:	2dc50513          	addi	a0,a0,732 # 12430 <_global_impure_ptr>
+   1015c:	00002597          	auipc	a1,0x2
+   10160:	2d458593          	addi	a1,a1,724 # 12430 <_global_impure_ptr>
+   10164:	40a585b3          	sub	a1,a1,a0
+   10168:	4025d593          	srai	a1,a1,0x2
+   1016c:	00200793          	li	a5,2
+   10170:	02f5c5b3          	div	a1,a1,a5
+   10174:	00058a63          	beqz	a1,10188 <register_tm_clones+0x34>
+   10178:	ffff0317          	auipc	t1,0xffff0
+   1017c:	e8830313          	addi	t1,t1,-376 # 0 <main-0x10074>
+   10180:	00030463          	beqz	t1,10188 <register_tm_clones+0x34>
+   10184:	00030067          	jr	t1
+   10188:	00008067          	ret
+
+0001018c <__do_global_dtors_aux>:
+   1018c:	00002797          	auipc	a5,0x2
+   10190:	2ac7c783          	lbu	a5,684(a5) # 12438 <_edata>
+   10194:	04079263          	bnez	a5,101d8 <__do_global_dtors_aux+0x4c>
+   10198:	ff010113          	addi	sp,sp,-16
+   1019c:	00112623          	sw	ra,12(sp)
+   101a0:	f8dff0ef          	jal	ra,1012c <deregister_tm_clones>
+   101a4:	ffff0797          	auipc	a5,0xffff0
+   101a8:	e5c78793          	addi	a5,a5,-420 # 0 <main-0x10074>
+   101ac:	00078a63          	beqz	a5,101c0 <__do_global_dtors_aux+0x34>
+   101b0:	00002517          	auipc	a0,0x2
+   101b4:	e3450513          	addi	a0,a0,-460 # 11fe4 <__EH_FRAME_BEGIN__>
+   101b8:	ffff0097          	auipc	ra,0xffff0
+   101bc:	e48080e7          	jalr	-440(ra) # 0 <main-0x10074>
+   101c0:	00c12083          	lw	ra,12(sp)
+   101c4:	00100793          	li	a5,1
+   101c8:	00002717          	auipc	a4,0x2
+   101cc:	26f70823          	sb	a5,624(a4) # 12438 <_edata>
+   101d0:	01010113          	addi	sp,sp,16
+   101d4:	00008067          	ret
+   101d8:	00008067          	ret
+
+000101dc <frame_dummy>:
+   101dc:	ffff0797          	auipc	a5,0xffff0
+   101e0:	e2478793          	addi	a5,a5,-476 # 0 <main-0x10074>
+   101e4:	02078663          	beqz	a5,10210 <frame_dummy+0x34>
+   101e8:	ff010113          	addi	sp,sp,-16
+   101ec:	00002597          	auipc	a1,0x2
+   101f0:	25058593          	addi	a1,a1,592 # 1243c <object.5181>
+   101f4:	00002517          	auipc	a0,0x2
+   101f8:	df050513          	addi	a0,a0,-528 # 11fe4 <__EH_FRAME_BEGIN__>
+   101fc:	00112623          	sw	ra,12(sp)
+   10200:	ffff0097          	auipc	ra,0xffff0
+   10204:	e00080e7          	jalr	-512(ra) # 0 <main-0x10074>
+   10208:	00c12083          	lw	ra,12(sp)
+   1020c:	01010113          	addi	sp,sp,16
+   10210:	f45ff06f          	j	10154 <register_tm_clones>
+
+00010214 <KeySchedule>:
+   10214:	0002f7b7          	lui	a5,0x2f
+   10218:	ec078713          	addi	a4,a5,-320 # 2eec0 <_end+0x1c1dc>
+   1021c:	24e50a63          	beq	a0,a4,10470 <KeySchedule+0x25c>
+   10220:	20a74763          	blt	a4,a0,1042e <KeySchedule+0x21a>
+   10224:	677d                	lui	a4,0x1f
+   10226:	4c070693          	addi	a3,a4,1216 # 1f4c0 <_end+0xc7dc>
+   1022a:	24d50d63          	beq	a0,a3,10484 <KeySchedule+0x270>
+   1022e:	00a6c863          	blt	a3,a0,1023e <KeySchedule+0x2a>
+   10232:	48070713          	addi	a4,a4,1152
+   10236:	22e50663          	beq	a0,a4,10462 <KeySchedule+0x24e>
+   1023a:	557d                	li	a0,-1
+   1023c:	8082                	ret
+   1023e:	50070713          	addi	a4,a4,1280
+   10242:	22e50463          	beq	a0,a4,1046a <KeySchedule+0x256>
+   10246:	e8078793          	addi	a5,a5,-384
+   1024a:	fef518e3          	bne	a0,a5,1023a <KeySchedule+0x26>
+   1024e:	4731                	li	a4,12
+   10250:	4511                	li	a0,4
+   10252:	4619                	li	a2,6
+   10254:	1101                	addi	sp,sp,-32
+   10256:	67c9                	lui	a5,0x12
+   10258:	56478e93          	addi	t4,a5,1380 # 12564 <word>
+   1025c:	56478313          	addi	t1,a5,1380
+   10260:	ce22                	sw	s0,28(sp)
+   10262:	cc26                	sw	s1,24(sp)
+   10264:	ca4a                	sw	s2,20(sp)
+   10266:	c84e                	sw	s3,16(sp)
+   10268:	4681                	li	a3,0
+   1026a:	56478793          	addi	a5,a5,1380
+   1026e:	1e000f13          	li	t5,480
+   10272:	4f91                	li	t6,4
+   10274:	00469813          	slli	a6,a3,0x4
+   10278:	982e                	add	a6,a6,a1
+   1027a:	4881                	li	a7,0
+   1027c:	03e88e33          	mul	t3,a7,t5
+   10280:	00082283          	lw	t0,0(a6)
+   10284:	0885                	addi	a7,a7,1
+   10286:	0811                	addi	a6,a6,4
+   10288:	9e1a                	add	t3,t3,t1
+   1028a:	005e2023          	sw	t0,0(t3)
+   1028e:	fff897e3          	bne	a7,t6,1027c <KeySchedule+0x68>
+   10292:	0685                	addi	a3,a3,1
+   10294:	0311                	addi	t1,t1,4
+   10296:	fcd61fe3          	bne	a2,a3,10274 <KeySchedule+0x60>
+   1029a:	5e71                	li	t3,-4
+   1029c:	03c68e33          	mul	t3,a3,t3
+   102a0:	0705                	addi	a4,a4,1
+   102a2:	00269613          	slli	a2,a3,0x2
+   102a6:	6f45                	lui	t5,0x11
+   102a8:	97b2                	add	a5,a5,a2
+   102aa:	8836                	mv	a6,a3
+   102ac:	100128b7          	lui	a7,0x10012
+   102b0:	5ffd                	li	t6,-1
+   102b2:	73c1                	lui	t2,0xffff0
+   102b4:	76cf0f13          	addi	t5,t5,1900 # 1176c <Rcon0>
+   102b8:	02a70733          	mul	a4,a4,a0
+   102bc:	6545                	lui	a0,0x11
+   102be:	7e450513          	addi	a0,a0,2020 # 117e4 <Sbox>
+   102c2:	4641                	li	a2,16
+   102c4:	4311                	li	t1,4
+   102c6:	4299                	li	t0,6
+   102c8:	0108a023          	sw	a6,0(a7) # 10012000 <_end+0xffff31c>
+   102cc:	00000013          	nop
+   102d0:	00000013          	nop
+   102d4:	00000013          	nop
+   102d8:	00000013          	nop
+   102dc:	00d8a023          	sw	a3,0(a7)
+   102e0:	00000013          	nop
+   102e4:	00000013          	nop
+   102e8:	00000013          	nop
+   102ec:	00000013          	nop
+   102f0:	02d86433          	rem	s0,a6,a3
+   102f4:	18041b63          	bnez	s0,1048a <KeySchedule+0x276>
+   102f8:	0078a023          	sw	t2,0(a7)
+   102fc:	00000013          	nop
+   10300:	00000013          	nop
+   10304:	00000013          	nop
+   10308:	00000013          	nop
+   1030c:	1dc7a903          	lw	s2,476(a5)
+   10310:	02d844b3          	div	s1,a6,a3
+   10314:	02c945b3          	div	a1,s2,a2
+   10318:	14fd                	addi	s1,s1,-1
+   1031a:	048a                	slli	s1,s1,0x2
+   1031c:	94fa                	add	s1,s1,t5
+   1031e:	4084                	lw	s1,0(s1)
+   10320:	02c96933          	rem	s2,s2,a2
+   10324:	0592                	slli	a1,a1,0x4
+   10326:	95ca                	add	a1,a1,s2
+   10328:	058a                	slli	a1,a1,0x2
+   1032a:	95aa                	add	a1,a1,a0
+   1032c:	418c                	lw	a1,0(a1)
+   1032e:	8da5                	xor	a1,a1,s1
+   10330:	3bc7a483          	lw	s1,956(a5)
+   10334:	c02e                	sw	a1,0(sp)
+   10336:	02c4c5b3          	div	a1,s1,a2
+   1033a:	02c4e4b3          	rem	s1,s1,a2
+   1033e:	0592                	slli	a1,a1,0x4
+   10340:	95a6                	add	a1,a1,s1
+   10342:	058a                	slli	a1,a1,0x2
+   10344:	95aa                	add	a1,a1,a0
+   10346:	418c                	lw	a1,0(a1)
+   10348:	59c7a483          	lw	s1,1436(a5)
+   1034c:	c22e                	sw	a1,4(sp)
+   1034e:	02c4c5b3          	div	a1,s1,a2
+   10352:	02c4e4b3          	rem	s1,s1,a2
+   10356:	0592                	slli	a1,a1,0x4
+   10358:	95a6                	add	a1,a1,s1
+   1035a:	058a                	slli	a1,a1,0x2
+   1035c:	95aa                	add	a1,a1,a0
+   1035e:	418c                	lw	a1,0(a1)
+   10360:	ffc7a483          	lw	s1,-4(a5)
+   10364:	c42e                	sw	a1,8(sp)
+   10366:	02c4c5b3          	div	a1,s1,a2
+   1036a:	02c4e4b3          	rem	s1,s1,a2
+   1036e:	0592                	slli	a1,a1,0x4
+   10370:	95a6                	add	a1,a1,s1
+   10372:	058a                	slli	a1,a1,0x2
+   10374:	95aa                	add	a1,a1,a0
+   10376:	418c                	lw	a1,0(a1)
+   10378:	848a                	mv	s1,sp
+   1037a:	c62e                	sw	a1,12(sp)
+   1037c:	8926                	mv	s2,s1
+   1037e:	4581                	li	a1,0
+   10380:	00092983          	lw	s3,0(s2)
+   10384:	0138a023          	sw	s3,0(a7)
+   10388:	00000013          	nop
+   1038c:	00000013          	nop
+   10390:	00000013          	nop
+   10394:	00000013          	nop
+   10398:	0585                	addi	a1,a1,1
+   1039a:	0911                	addi	s2,s2,4
+   1039c:	fe6592e3          	bne	a1,t1,10380 <KeySchedule+0x16c>
+   103a0:	02d2d763          	ble	a3,t0,103ce <KeySchedule+0x1ba>
+   103a4:	02641563          	bne	s0,t1,103ce <KeySchedule+0x1ba>
+   103a8:	8426                	mv	s0,s1
+   103aa:	4981                	li	s3,0
+   103ac:	00042903          	lw	s2,0(s0) # 10012000 <_end+0xffff31c>
+   103b0:	0985                	addi	s3,s3,1
+   103b2:	0411                	addi	s0,s0,4
+   103b4:	02c945b3          	div	a1,s2,a2
+   103b8:	02c96933          	rem	s2,s2,a2
+   103bc:	0592                	slli	a1,a1,0x4
+   103be:	95ca                	add	a1,a1,s2
+   103c0:	058a                	slli	a1,a1,0x2
+   103c2:	95aa                	add	a1,a1,a0
+   103c4:	418c                	lw	a1,0(a1)
+   103c6:	feb42e23          	sw	a1,-4(s0)
+   103ca:	fe6991e3          	bne	s3,t1,103ac <KeySchedule+0x198>
+   103ce:	85be                	mv	a1,a5
+   103d0:	4401                	li	s0,0
+   103d2:	01c58933          	add	s2,a1,t3
+   103d6:	0004a983          	lw	s3,0(s1) # 400000 <_end+0x3ed31c>
+   103da:	00092903          	lw	s2,0(s2)
+   103de:	0405                	addi	s0,s0,1
+   103e0:	0491                	addi	s1,s1,4
+   103e2:	01394933          	xor	s2,s2,s3
+   103e6:	0125a023          	sw	s2,0(a1)
+   103ea:	1e058593          	addi	a1,a1,480
+   103ee:	fe6412e3          	bne	s0,t1,103d2 <KeySchedule+0x1be>
+   103f2:	0805                	addi	a6,a6,1
+   103f4:	0791                	addi	a5,a5,4
+   103f6:	ed0719e3          	bne	a4,a6,102c8 <KeySchedule+0xb4>
+   103fa:	4781                	li	a5,0
+   103fc:	100126b7          	lui	a3,0x10012
+   10400:	4721                	li	a4,8
+   10402:	000ea603          	lw	a2,0(t4)
+   10406:	c290                	sw	a2,0(a3)
+   10408:	00000013          	nop
+   1040c:	00000013          	nop
+   10410:	00000013          	nop
+   10414:	00000013          	nop
+   10418:	0785                	addi	a5,a5,1
+   1041a:	0e91                	addi	t4,t4,4
+   1041c:	fee793e3          	bne	a5,a4,10402 <KeySchedule+0x1ee>
+   10420:	4472                	lw	s0,28(sp)
+   10422:	44e2                	lw	s1,24(sp)
+   10424:	4952                	lw	s2,20(sp)
+   10426:	49c2                	lw	s3,16(sp)
+   10428:	4501                	li	a0,0
+   1042a:	6105                	addi	sp,sp,32
+   1042c:	8082                	ret
+   1042e:	0003f737          	lui	a4,0x3f
+   10432:	88070693          	addi	a3,a4,-1920 # 3e880 <_end+0x2bb9c>
+   10436:	04d50063          	beq	a0,a3,10476 <KeySchedule+0x262>
+   1043a:	00a6c963          	blt	a3,a0,1044c <KeySchedule+0x238>
+   1043e:	f0078793          	addi	a5,a5,-256
+   10442:	def51ce3          	bne	a0,a5,1023a <KeySchedule+0x26>
+   10446:	4739                	li	a4,14
+   10448:	4521                	li	a0,8
+   1044a:	b521                	j	10252 <KeySchedule+0x3e>
+   1044c:	8c070793          	addi	a5,a4,-1856
+   10450:	02f50763          	beq	a0,a5,1047e <KeySchedule+0x26a>
+   10454:	90070713          	addi	a4,a4,-1792
+   10458:	dee511e3          	bne	a0,a4,1023a <KeySchedule+0x26>
+   1045c:	4739                	li	a4,14
+   1045e:	4521                	li	a0,8
+   10460:	a829                	j	1047a <KeySchedule+0x266>
+   10462:	4729                	li	a4,10
+   10464:	4511                	li	a0,4
+   10466:	4611                	li	a2,4
+   10468:	b3f5                	j	10254 <KeySchedule+0x40>
+   1046a:	4739                	li	a4,14
+   1046c:	4521                	li	a0,8
+   1046e:	bfe5                	j	10466 <KeySchedule+0x252>
+   10470:	4731                	li	a4,12
+   10472:	4519                	li	a0,6
+   10474:	bbf9                	j	10252 <KeySchedule+0x3e>
+   10476:	4739                	li	a4,14
+   10478:	4511                	li	a0,4
+   1047a:	4621                	li	a2,8
+   1047c:	bbe1                	j	10254 <KeySchedule+0x40>
+   1047e:	4739                	li	a4,14
+   10480:	4519                	li	a0,6
+   10482:	bfe5                	j	1047a <KeySchedule+0x266>
+   10484:	4731                	li	a4,12
+   10486:	4519                	li	a0,6
+   10488:	bff9                	j	10466 <KeySchedule+0x252>
+   1048a:	01f8a023          	sw	t6,0(a7)
+   1048e:	00000013          	nop
+   10492:	00000013          	nop
+   10496:	00000013          	nop
+   1049a:	00000013          	nop
+   1049e:	ffc7a583          	lw	a1,-4(a5)
+   104a2:	c02e                	sw	a1,0(sp)
+   104a4:	1dc7a583          	lw	a1,476(a5)
+   104a8:	c22e                	sw	a1,4(sp)
+   104aa:	3bc7a583          	lw	a1,956(a5)
+   104ae:	c42e                	sw	a1,8(sp)
+   104b0:	59c7a583          	lw	a1,1436(a5)
+   104b4:	b5d1                	j	10378 <KeySchedule+0x164>
+
+000104b6 <ByteSub_ShiftRow>:
+   104b6:	4799                	li	a5,6
+   104b8:	0af58c63          	beq	a1,a5,10570 <ByteSub_ShiftRow+0xba>
+   104bc:	47a1                	li	a5,8
+   104be:	1af58563          	beq	a1,a5,10668 <ByteSub_ShiftRow+0x1b2>
+   104c2:	4791                	li	a5,4
+   104c4:	2ef59563          	bne	a1,a5,107ae <ByteSub_ShiftRow+0x2f8>
+   104c8:	4158                	lw	a4,4(a0)
+   104ca:	67c5                	lui	a5,0x11
+   104cc:	7e478793          	addi	a5,a5,2020 # 117e4 <Sbox>
+   104d0:	070a                	slli	a4,a4,0x2
+   104d2:	973e                	add	a4,a4,a5
+   104d4:	4314                	lw	a3,0(a4)
+   104d6:	4958                	lw	a4,20(a0)
+   104d8:	070a                	slli	a4,a4,0x2
+   104da:	973e                	add	a4,a4,a5
+   104dc:	4318                	lw	a4,0(a4)
+   104de:	c158                	sw	a4,4(a0)
+   104e0:	5158                	lw	a4,36(a0)
+   104e2:	070a                	slli	a4,a4,0x2
+   104e4:	973e                	add	a4,a4,a5
+   104e6:	4318                	lw	a4,0(a4)
+   104e8:	c958                	sw	a4,20(a0)
+   104ea:	5958                	lw	a4,52(a0)
+   104ec:	d954                	sw	a3,52(a0)
+   104ee:	070a                	slli	a4,a4,0x2
+   104f0:	973e                	add	a4,a4,a5
+   104f2:	4318                	lw	a4,0(a4)
+   104f4:	d158                	sw	a4,36(a0)
+   104f6:	4518                	lw	a4,8(a0)
+   104f8:	070a                	slli	a4,a4,0x2
+   104fa:	973e                	add	a4,a4,a5
+   104fc:	4314                	lw	a3,0(a4)
+   104fe:	5518                	lw	a4,40(a0)
+   10500:	d514                	sw	a3,40(a0)
+   10502:	070a                	slli	a4,a4,0x2
+   10504:	973e                	add	a4,a4,a5
+   10506:	4318                	lw	a4,0(a4)
+   10508:	c518                	sw	a4,8(a0)
+   1050a:	4d18                	lw	a4,24(a0)
+   1050c:	070a                	slli	a4,a4,0x2
+   1050e:	973e                	add	a4,a4,a5
+   10510:	4314                	lw	a3,0(a4)
+   10512:	5d18                	lw	a4,56(a0)
+   10514:	dd14                	sw	a3,56(a0)
+   10516:	070a                	slli	a4,a4,0x2
+   10518:	973e                	add	a4,a4,a5
+   1051a:	4318                	lw	a4,0(a4)
+   1051c:	cd18                	sw	a4,24(a0)
+   1051e:	4558                	lw	a4,12(a0)
+   10520:	070a                	slli	a4,a4,0x2
+   10522:	973e                	add	a4,a4,a5
+   10524:	4314                	lw	a3,0(a4)
+   10526:	5d58                	lw	a4,60(a0)
+   10528:	070a                	slli	a4,a4,0x2
+   1052a:	973e                	add	a4,a4,a5
+   1052c:	4318                	lw	a4,0(a4)
+   1052e:	c558                	sw	a4,12(a0)
+   10530:	5558                	lw	a4,44(a0)
+   10532:	070a                	slli	a4,a4,0x2
+   10534:	973e                	add	a4,a4,a5
+   10536:	4318                	lw	a4,0(a4)
+   10538:	dd58                	sw	a4,60(a0)
+   1053a:	4d58                	lw	a4,28(a0)
+   1053c:	cd54                	sw	a3,28(a0)
+   1053e:	070a                	slli	a4,a4,0x2
+   10540:	973e                	add	a4,a4,a5
+   10542:	4318                	lw	a4,0(a4)
+   10544:	d558                	sw	a4,44(a0)
+   10546:	4118                	lw	a4,0(a0)
+   10548:	070a                	slli	a4,a4,0x2
+   1054a:	973e                	add	a4,a4,a5
+   1054c:	4318                	lw	a4,0(a4)
+   1054e:	c118                	sw	a4,0(a0)
+   10550:	4918                	lw	a4,16(a0)
+   10552:	070a                	slli	a4,a4,0x2
+   10554:	973e                	add	a4,a4,a5
+   10556:	4318                	lw	a4,0(a4)
+   10558:	c918                	sw	a4,16(a0)
+   1055a:	5118                	lw	a4,32(a0)
+   1055c:	070a                	slli	a4,a4,0x2
+   1055e:	973e                	add	a4,a4,a5
+   10560:	4318                	lw	a4,0(a4)
+   10562:	d118                	sw	a4,32(a0)
+   10564:	5918                	lw	a4,48(a0)
+   10566:	070a                	slli	a4,a4,0x2
+   10568:	97ba                	add	a5,a5,a4
+   1056a:	439c                	lw	a5,0(a5)
+   1056c:	d91c                	sw	a5,48(a0)
+   1056e:	8082                	ret
+   10570:	4158                	lw	a4,4(a0)
+   10572:	67c5                	lui	a5,0x11
+   10574:	7e478793          	addi	a5,a5,2020 # 117e4 <Sbox>
+   10578:	070a                	slli	a4,a4,0x2
+   1057a:	973e                	add	a4,a4,a5
+   1057c:	4314                	lw	a3,0(a4)
+   1057e:	4958                	lw	a4,20(a0)
+   10580:	070a                	slli	a4,a4,0x2
+   10582:	973e                	add	a4,a4,a5
+   10584:	4318                	lw	a4,0(a4)
+   10586:	c158                	sw	a4,4(a0)
+   10588:	5158                	lw	a4,36(a0)
+   1058a:	070a                	slli	a4,a4,0x2
+   1058c:	973e                	add	a4,a4,a5
+   1058e:	4318                	lw	a4,0(a4)
+   10590:	c958                	sw	a4,20(a0)
+   10592:	5958                	lw	a4,52(a0)
+   10594:	070a                	slli	a4,a4,0x2
+   10596:	973e                	add	a4,a4,a5
+   10598:	4318                	lw	a4,0(a4)
+   1059a:	d158                	sw	a4,36(a0)
+   1059c:	4178                	lw	a4,68(a0)
+   1059e:	070a                	slli	a4,a4,0x2
+   105a0:	973e                	add	a4,a4,a5
+   105a2:	4318                	lw	a4,0(a4)
+   105a4:	d958                	sw	a4,52(a0)
+   105a6:	4978                	lw	a4,84(a0)
+   105a8:	c974                	sw	a3,84(a0)
+   105aa:	070a                	slli	a4,a4,0x2
+   105ac:	973e                	add	a4,a4,a5
+   105ae:	4318                	lw	a4,0(a4)
+   105b0:	c178                	sw	a4,68(a0)
+   105b2:	4518                	lw	a4,8(a0)
+   105b4:	070a                	slli	a4,a4,0x2
+   105b6:	973e                	add	a4,a4,a5
+   105b8:	4314                	lw	a3,0(a4)
+   105ba:	5518                	lw	a4,40(a0)
+   105bc:	070a                	slli	a4,a4,0x2
+   105be:	973e                	add	a4,a4,a5
+   105c0:	4318                	lw	a4,0(a4)
+   105c2:	c518                	sw	a4,8(a0)
+   105c4:	4538                	lw	a4,72(a0)
+   105c6:	c534                	sw	a3,72(a0)
+   105c8:	070a                	slli	a4,a4,0x2
+   105ca:	973e                	add	a4,a4,a5
+   105cc:	4318                	lw	a4,0(a4)
+   105ce:	d518                	sw	a4,40(a0)
+   105d0:	4d18                	lw	a4,24(a0)
+   105d2:	070a                	slli	a4,a4,0x2
+   105d4:	973e                	add	a4,a4,a5
+   105d6:	4314                	lw	a3,0(a4)
+   105d8:	5d18                	lw	a4,56(a0)
+   105da:	070a                	slli	a4,a4,0x2
+   105dc:	973e                	add	a4,a4,a5
+   105de:	4318                	lw	a4,0(a4)
+   105e0:	cd18                	sw	a4,24(a0)
+   105e2:	4d38                	lw	a4,88(a0)
+   105e4:	cd34                	sw	a3,88(a0)
+   105e6:	070a                	slli	a4,a4,0x2
+   105e8:	973e                	add	a4,a4,a5
+   105ea:	4318                	lw	a4,0(a4)
+   105ec:	dd18                	sw	a4,56(a0)
+   105ee:	4558                	lw	a4,12(a0)
+   105f0:	070a                	slli	a4,a4,0x2
+   105f2:	973e                	add	a4,a4,a5
+   105f4:	4314                	lw	a3,0(a4)
+   105f6:	5d58                	lw	a4,60(a0)
+   105f8:	dd54                	sw	a3,60(a0)
+   105fa:	070a                	slli	a4,a4,0x2
+   105fc:	973e                	add	a4,a4,a5
+   105fe:	4318                	lw	a4,0(a4)
+   10600:	c558                	sw	a4,12(a0)
+   10602:	4d58                	lw	a4,28(a0)
+   10604:	070a                	slli	a4,a4,0x2
+   10606:	973e                	add	a4,a4,a5
+   10608:	4314                	lw	a3,0(a4)
+   1060a:	4578                	lw	a4,76(a0)
+   1060c:	c574                	sw	a3,76(a0)
+   1060e:	070a                	slli	a4,a4,0x2
+   10610:	973e                	add	a4,a4,a5
+   10612:	4318                	lw	a4,0(a4)
+   10614:	cd58                	sw	a4,28(a0)
+   10616:	5558                	lw	a4,44(a0)
+   10618:	070a                	slli	a4,a4,0x2
+   1061a:	973e                	add	a4,a4,a5
+   1061c:	4314                	lw	a3,0(a4)
+   1061e:	4d78                	lw	a4,92(a0)
+   10620:	cd74                	sw	a3,92(a0)
+   10622:	070a                	slli	a4,a4,0x2
+   10624:	973e                	add	a4,a4,a5
+   10626:	4318                	lw	a4,0(a4)
+   10628:	d558                	sw	a4,44(a0)
+   1062a:	4118                	lw	a4,0(a0)
+   1062c:	070a                	slli	a4,a4,0x2
+   1062e:	973e                	add	a4,a4,a5
+   10630:	4318                	lw	a4,0(a4)
+   10632:	c118                	sw	a4,0(a0)
+   10634:	4918                	lw	a4,16(a0)
+   10636:	070a                	slli	a4,a4,0x2
+   10638:	973e                	add	a4,a4,a5
+   1063a:	4318                	lw	a4,0(a4)
+   1063c:	c918                	sw	a4,16(a0)
+   1063e:	5118                	lw	a4,32(a0)
+   10640:	070a                	slli	a4,a4,0x2
+   10642:	973e                	add	a4,a4,a5
+   10644:	4318                	lw	a4,0(a4)
+   10646:	d118                	sw	a4,32(a0)
+   10648:	5918                	lw	a4,48(a0)
+   1064a:	070a                	slli	a4,a4,0x2
+   1064c:	973e                	add	a4,a4,a5
+   1064e:	4318                	lw	a4,0(a4)
+   10650:	d918                	sw	a4,48(a0)
+   10652:	4138                	lw	a4,64(a0)
+   10654:	070a                	slli	a4,a4,0x2
+   10656:	973e                	add	a4,a4,a5
+   10658:	4318                	lw	a4,0(a4)
+   1065a:	c138                	sw	a4,64(a0)
+   1065c:	4938                	lw	a4,80(a0)
+   1065e:	070a                	slli	a4,a4,0x2
+   10660:	97ba                	add	a5,a5,a4
+   10662:	439c                	lw	a5,0(a5)
+   10664:	c93c                	sw	a5,80(a0)
+   10666:	8082                	ret
+   10668:	4158                	lw	a4,4(a0)
+   1066a:	67c5                	lui	a5,0x11
+   1066c:	7e478793          	addi	a5,a5,2020 # 117e4 <Sbox>
+   10670:	070a                	slli	a4,a4,0x2
+   10672:	973e                	add	a4,a4,a5
+   10674:	4314                	lw	a3,0(a4)
+   10676:	4958                	lw	a4,20(a0)
+   10678:	070a                	slli	a4,a4,0x2
+   1067a:	973e                	add	a4,a4,a5
+   1067c:	4318                	lw	a4,0(a4)
+   1067e:	c158                	sw	a4,4(a0)
+   10680:	5158                	lw	a4,36(a0)
+   10682:	070a                	slli	a4,a4,0x2
+   10684:	973e                	add	a4,a4,a5
+   10686:	4318                	lw	a4,0(a4)
+   10688:	c958                	sw	a4,20(a0)
+   1068a:	5958                	lw	a4,52(a0)
+   1068c:	070a                	slli	a4,a4,0x2
+   1068e:	973e                	add	a4,a4,a5
+   10690:	4318                	lw	a4,0(a4)
+   10692:	d158                	sw	a4,36(a0)
+   10694:	4178                	lw	a4,68(a0)
+   10696:	070a                	slli	a4,a4,0x2
+   10698:	973e                	add	a4,a4,a5
+   1069a:	4318                	lw	a4,0(a4)
+   1069c:	d958                	sw	a4,52(a0)
+   1069e:	4978                	lw	a4,84(a0)
+   106a0:	070a                	slli	a4,a4,0x2
+   106a2:	973e                	add	a4,a4,a5
+   106a4:	4318                	lw	a4,0(a4)
+   106a6:	c178                	sw	a4,68(a0)
+   106a8:	5178                	lw	a4,100(a0)
+   106aa:	070a                	slli	a4,a4,0x2
+   106ac:	973e                	add	a4,a4,a5
+   106ae:	4318                	lw	a4,0(a4)
+   106b0:	c978                	sw	a4,84(a0)
+   106b2:	5978                	lw	a4,116(a0)
+   106b4:	d974                	sw	a3,116(a0)
+   106b6:	070a                	slli	a4,a4,0x2
+   106b8:	973e                	add	a4,a4,a5
+   106ba:	4318                	lw	a4,0(a4)
+   106bc:	d178                	sw	a4,100(a0)
+   106be:	4518                	lw	a4,8(a0)
+   106c0:	070a                	slli	a4,a4,0x2
+   106c2:	973e                	add	a4,a4,a5
+   106c4:	4314                	lw	a3,0(a4)
+   106c6:	5d18                	lw	a4,56(a0)
+   106c8:	070a                	slli	a4,a4,0x2
+   106ca:	973e                	add	a4,a4,a5
+   106cc:	4318                	lw	a4,0(a4)
+   106ce:	c518                	sw	a4,8(a0)
+   106d0:	5538                	lw	a4,104(a0)
+   106d2:	070a                	slli	a4,a4,0x2
+   106d4:	973e                	add	a4,a4,a5
+   106d6:	4318                	lw	a4,0(a4)
+   106d8:	dd18                	sw	a4,56(a0)
+   106da:	4d18                	lw	a4,24(a0)
+   106dc:	070a                	slli	a4,a4,0x2
+   106de:	973e                	add	a4,a4,a5
+   106e0:	4318                	lw	a4,0(a4)
+   106e2:	d538                	sw	a4,104(a0)
+   106e4:	4538                	lw	a4,72(a0)
+   106e6:	070a                	slli	a4,a4,0x2
+   106e8:	973e                	add	a4,a4,a5
+   106ea:	4318                	lw	a4,0(a4)
+   106ec:	cd18                	sw	a4,24(a0)
+   106ee:	5d38                	lw	a4,120(a0)
+   106f0:	070a                	slli	a4,a4,0x2
+   106f2:	973e                	add	a4,a4,a5
+   106f4:	4318                	lw	a4,0(a4)
+   106f6:	c538                	sw	a4,72(a0)
+   106f8:	5518                	lw	a4,40(a0)
+   106fa:	070a                	slli	a4,a4,0x2
+   106fc:	973e                	add	a4,a4,a5
+   106fe:	4318                	lw	a4,0(a4)
+   10700:	dd38                	sw	a4,120(a0)
+   10702:	4d38                	lw	a4,88(a0)
+   10704:	cd34                	sw	a3,88(a0)
+   10706:	070a                	slli	a4,a4,0x2
+   10708:	973e                	add	a4,a4,a5
+   1070a:	4318                	lw	a4,0(a4)
+   1070c:	d518                	sw	a4,40(a0)
+   1070e:	4558                	lw	a4,12(a0)
+   10710:	070a                	slli	a4,a4,0x2
+   10712:	973e                	add	a4,a4,a5
+   10714:	4314                	lw	a3,0(a4)
+   10716:	4578                	lw	a4,76(a0)
+   10718:	c574                	sw	a3,76(a0)
+   1071a:	070a                	slli	a4,a4,0x2
+   1071c:	973e                	add	a4,a4,a5
+   1071e:	4318                	lw	a4,0(a4)
+   10720:	c558                	sw	a4,12(a0)
+   10722:	4d58                	lw	a4,28(a0)
+   10724:	070a                	slli	a4,a4,0x2
+   10726:	973e                	add	a4,a4,a5
+   10728:	4314                	lw	a3,0(a4)
+   1072a:	4d78                	lw	a4,92(a0)
+   1072c:	cd74                	sw	a3,92(a0)
+   1072e:	070a                	slli	a4,a4,0x2
+   10730:	973e                	add	a4,a4,a5
+   10732:	4318                	lw	a4,0(a4)
+   10734:	cd58                	sw	a4,28(a0)
+   10736:	5558                	lw	a4,44(a0)
+   10738:	070a                	slli	a4,a4,0x2
+   1073a:	973e                	add	a4,a4,a5
+   1073c:	4314                	lw	a3,0(a4)
+   1073e:	5578                	lw	a4,108(a0)
+   10740:	070a                	slli	a4,a4,0x2
+   10742:	973e                	add	a4,a4,a5
+   10744:	4318                	lw	a4,0(a4)
+   10746:	d558                	sw	a4,44(a0)
+   10748:	5d58                	lw	a4,60(a0)
+   1074a:	d574                	sw	a3,108(a0)
+   1074c:	070a                	slli	a4,a4,0x2
+   1074e:	973e                	add	a4,a4,a5
+   10750:	4314                	lw	a3,0(a4)
+   10752:	5d78                	lw	a4,124(a0)
+   10754:	dd74                	sw	a3,124(a0)
+   10756:	070a                	slli	a4,a4,0x2
+   10758:	973e                	add	a4,a4,a5
+   1075a:	4318                	lw	a4,0(a4)
+   1075c:	dd58                	sw	a4,60(a0)
+   1075e:	4118                	lw	a4,0(a0)
+   10760:	070a                	slli	a4,a4,0x2
+   10762:	973e                	add	a4,a4,a5
+   10764:	4318                	lw	a4,0(a4)
+   10766:	c118                	sw	a4,0(a0)
+   10768:	4918                	lw	a4,16(a0)
+   1076a:	070a                	slli	a4,a4,0x2
+   1076c:	973e                	add	a4,a4,a5
+   1076e:	4318                	lw	a4,0(a4)
+   10770:	c918                	sw	a4,16(a0)
+   10772:	5118                	lw	a4,32(a0)
+   10774:	070a                	slli	a4,a4,0x2
+   10776:	973e                	add	a4,a4,a5
+   10778:	4318                	lw	a4,0(a4)
+   1077a:	d118                	sw	a4,32(a0)
+   1077c:	5918                	lw	a4,48(a0)
+   1077e:	070a                	slli	a4,a4,0x2
+   10780:	973e                	add	a4,a4,a5
+   10782:	4318                	lw	a4,0(a4)
+   10784:	d918                	sw	a4,48(a0)
+   10786:	4138                	lw	a4,64(a0)
+   10788:	070a                	slli	a4,a4,0x2
+   1078a:	973e                	add	a4,a4,a5
+   1078c:	4318                	lw	a4,0(a4)
+   1078e:	c138                	sw	a4,64(a0)
+   10790:	4938                	lw	a4,80(a0)
+   10792:	070a                	slli	a4,a4,0x2
+   10794:	973e                	add	a4,a4,a5
+   10796:	4318                	lw	a4,0(a4)
+   10798:	c938                	sw	a4,80(a0)
+   1079a:	5138                	lw	a4,96(a0)
+   1079c:	070a                	slli	a4,a4,0x2
+   1079e:	973e                	add	a4,a4,a5
+   107a0:	4318                	lw	a4,0(a4)
+   107a2:	d138                	sw	a4,96(a0)
+   107a4:	5938                	lw	a4,112(a0)
+   107a6:	070a                	slli	a4,a4,0x2
+   107a8:	97ba                	add	a5,a5,a4
+   107aa:	439c                	lw	a5,0(a5)
+   107ac:	d93c                	sw	a5,112(a0)
+   107ae:	8082                	ret
+
+000107b0 <InversShiftRow_ByteSub>:
+void
+InversShiftRow_ByteSub (int statemt[32], int nb)
+{
+  int temp;
+
+  switch (nb)
+   107b0:	4799                	li	a5,6
+   107b2:	0af58c63          	beq	a1,a5,1086a <InversShiftRow_ByteSub+0xba>
+   107b6:	47a1                	li	a5,8
+   107b8:	1af58563          	beq	a1,a5,10962 <InversShiftRow_ByteSub+0x1b2>
+   107bc:	4791                	li	a5,4
+   107be:	2ef59563          	bne	a1,a5,10aa8 <InversShiftRow_ByteSub+0x2f8>
+    {
+    case 4:
+      temp = invSbox[statemt[13] >> 4][statemt[13] & 0xf];
+   107c2:	5958                	lw	a4,52(a0)
+   107c4:	67c9                	lui	a5,0x12
+   107c6:	be478793          	addi	a5,a5,-1052 # 11be4 <invSbox>
+   107ca:	070a                	slli	a4,a4,0x2
+   107cc:	973e                	add	a4,a4,a5
+   107ce:	4314                	lw	a3,0(a4)
+      statemt[13] = invSbox[statemt[9] >> 4][statemt[9] & 0xf];
+   107d0:	5158                	lw	a4,36(a0)
+   107d2:	070a                	slli	a4,a4,0x2
+   107d4:	973e                	add	a4,a4,a5
+   107d6:	4318                	lw	a4,0(a4)
+   107d8:	d958                	sw	a4,52(a0)
+      statemt[9] = invSbox[statemt[5] >> 4][statemt[5] & 0xf];
+   107da:	4958                	lw	a4,20(a0)
+   107dc:	070a                	slli	a4,a4,0x2
+   107de:	973e                	add	a4,a4,a5
+   107e0:	4318                	lw	a4,0(a4)
+   107e2:	d158                	sw	a4,36(a0)
+      statemt[5] = invSbox[statemt[1] >> 4][statemt[1] & 0xf];
+   107e4:	4158                	lw	a4,4(a0)
+      statemt[1] = temp;
+   107e6:	c154                	sw	a3,4(a0)
+      statemt[5] = invSbox[statemt[1] >> 4][statemt[1] & 0xf];
+   107e8:	070a                	slli	a4,a4,0x2
+   107ea:	973e                	add	a4,a4,a5
+   107ec:	4318                	lw	a4,0(a4)
+   107ee:	c958                	sw	a4,20(a0)
+
+      temp = invSbox[statemt[14] >> 4][statemt[14] & 0xf];
+   107f0:	5d18                	lw	a4,56(a0)
+   107f2:	070a                	slli	a4,a4,0x2
+   107f4:	973e                	add	a4,a4,a5
+   107f6:	4314                	lw	a3,0(a4)
+      statemt[14] = invSbox[statemt[6] >> 4][statemt[6] & 0xf];
+   107f8:	4d18                	lw	a4,24(a0)
+      statemt[6] = temp;
+   107fa:	cd14                	sw	a3,24(a0)
+      statemt[14] = invSbox[statemt[6] >> 4][statemt[6] & 0xf];
+   107fc:	070a                	slli	a4,a4,0x2
+   107fe:	973e                	add	a4,a4,a5
+   10800:	4318                	lw	a4,0(a4)
+   10802:	dd18                	sw	a4,56(a0)
+      temp = invSbox[statemt[2] >> 4][statemt[2] & 0xf];
+   10804:	4518                	lw	a4,8(a0)
+   10806:	070a                	slli	a4,a4,0x2
+   10808:	973e                	add	a4,a4,a5
+   1080a:	4314                	lw	a3,0(a4)
+      statemt[2] = invSbox[statemt[10] >> 4][statemt[10] & 0xf];
+   1080c:	5518                	lw	a4,40(a0)
+      statemt[10] = temp;
+   1080e:	d514                	sw	a3,40(a0)
+      statemt[2] = invSbox[statemt[10] >> 4][statemt[10] & 0xf];
+   10810:	070a                	slli	a4,a4,0x2
+   10812:	973e                	add	a4,a4,a5
+   10814:	4318                	lw	a4,0(a4)
+   10816:	c518                	sw	a4,8(a0)
+
+      temp = invSbox[statemt[15] >> 4][statemt[15] & 0xf];
+   10818:	5d58                	lw	a4,60(a0)
+   1081a:	070a                	slli	a4,a4,0x2
+   1081c:	973e                	add	a4,a4,a5
+   1081e:	4314                	lw	a3,0(a4)
+      statemt[15] = invSbox[statemt[3] >> 4][statemt[3] & 0xf];
+   10820:	4558                	lw	a4,12(a0)
+   10822:	070a                	slli	a4,a4,0x2
+   10824:	973e                	add	a4,a4,a5
+   10826:	4318                	lw	a4,0(a4)
+   10828:	dd58                	sw	a4,60(a0)
+      statemt[3] = invSbox[statemt[7] >> 4][statemt[7] & 0xf];
+   1082a:	4d58                	lw	a4,28(a0)
+   1082c:	070a                	slli	a4,a4,0x2
+   1082e:	973e                	add	a4,a4,a5
+   10830:	4318                	lw	a4,0(a4)
+   10832:	c558                	sw	a4,12(a0)
+      statemt[7] = invSbox[statemt[11] >> 4][statemt[11] & 0xf];
+   10834:	5558                	lw	a4,44(a0)
+      statemt[11] = temp;
+   10836:	d554                	sw	a3,44(a0)
+      statemt[7] = invSbox[statemt[11] >> 4][statemt[11] & 0xf];
+   10838:	070a                	slli	a4,a4,0x2
+   1083a:	973e                	add	a4,a4,a5
+   1083c:	4318                	lw	a4,0(a4)
+   1083e:	cd58                	sw	a4,28(a0)
+
+      statemt[0] = invSbox[statemt[0] >> 4][statemt[0] & 0xf];
+   10840:	4118                	lw	a4,0(a0)
+   10842:	070a                	slli	a4,a4,0x2
+   10844:	973e                	add	a4,a4,a5
+   10846:	4318                	lw	a4,0(a4)
+   10848:	c118                	sw	a4,0(a0)
+      statemt[4] = invSbox[statemt[4] >> 4][statemt[4] & 0xf];
+   1084a:	4918                	lw	a4,16(a0)
+   1084c:	070a                	slli	a4,a4,0x2
+   1084e:	973e                	add	a4,a4,a5
+   10850:	4318                	lw	a4,0(a4)
+   10852:	c918                	sw	a4,16(a0)
+      statemt[8] = invSbox[statemt[8] >> 4][statemt[8] & 0xf];
+   10854:	5118                	lw	a4,32(a0)
+   10856:	070a                	slli	a4,a4,0x2
+   10858:	973e                	add	a4,a4,a5
+   1085a:	4318                	lw	a4,0(a4)
+   1085c:	d118                	sw	a4,32(a0)
+      statemt[12] = invSbox[statemt[12] >> 4][statemt[12] & 0xf];
+   1085e:	5918                	lw	a4,48(a0)
+   10860:	070a                	slli	a4,a4,0x2
+   10862:	97ba                	add	a5,a5,a4
+   10864:	439c                	lw	a5,0(a5)
+   10866:	d91c                	sw	a5,48(a0)
+      break;
+   10868:	8082                	ret
+    case 6:
+      temp = invSbox[statemt[21] >> 4][statemt[21] & 0xf];
+   1086a:	4978                	lw	a4,84(a0)
+   1086c:	67c9                	lui	a5,0x12
+   1086e:	be478793          	addi	a5,a5,-1052 # 11be4 <invSbox>
+   10872:	070a                	slli	a4,a4,0x2
+   10874:	973e                	add	a4,a4,a5
+   10876:	4314                	lw	a3,0(a4)
+      statemt[21] = invSbox[statemt[17] >> 4][statemt[17] & 0xf];
+   10878:	4178                	lw	a4,68(a0)
+   1087a:	070a                	slli	a4,a4,0x2
+   1087c:	973e                	add	a4,a4,a5
+   1087e:	4318                	lw	a4,0(a4)
+   10880:	c978                	sw	a4,84(a0)
+      statemt[17] = invSbox[statemt[13] >> 4][statemt[13] & 0xf];
+   10882:	5958                	lw	a4,52(a0)
+   10884:	070a                	slli	a4,a4,0x2
+   10886:	973e                	add	a4,a4,a5
+   10888:	4318                	lw	a4,0(a4)
+   1088a:	c178                	sw	a4,68(a0)
+      statemt[13] = invSbox[statemt[9] >> 4][statemt[9] & 0xf];
+   1088c:	5158                	lw	a4,36(a0)
+   1088e:	070a                	slli	a4,a4,0x2
+   10890:	973e                	add	a4,a4,a5
+   10892:	4318                	lw	a4,0(a4)
+   10894:	d958                	sw	a4,52(a0)
+      statemt[9] = invSbox[statemt[5] >> 4][statemt[5] & 0xf];
+   10896:	4958                	lw	a4,20(a0)
+   10898:	070a                	slli	a4,a4,0x2
+   1089a:	973e                	add	a4,a4,a5
+   1089c:	4318                	lw	a4,0(a4)
+   1089e:	d158                	sw	a4,36(a0)
+      statemt[5] = invSbox[statemt[1] >> 4][statemt[1] & 0xf];
+   108a0:	4158                	lw	a4,4(a0)
+      statemt[1] = temp;
+   108a2:	c154                	sw	a3,4(a0)
+      statemt[5] = invSbox[statemt[1] >> 4][statemt[1] & 0xf];
+   108a4:	070a                	slli	a4,a4,0x2
+   108a6:	973e                	add	a4,a4,a5
+   108a8:	4318                	lw	a4,0(a4)
+   108aa:	c958                	sw	a4,20(a0)
+
+      temp = invSbox[statemt[22] >> 4][statemt[22] & 0xf];
+   108ac:	4d38                	lw	a4,88(a0)
+   108ae:	070a                	slli	a4,a4,0x2
+   108b0:	973e                	add	a4,a4,a5
+   108b2:	4314                	lw	a3,0(a4)
+      statemt[22] = invSbox[statemt[14] >> 4][statemt[14] & 0xf];
+   108b4:	5d18                	lw	a4,56(a0)
+   108b6:	070a                	slli	a4,a4,0x2
+   108b8:	973e                	add	a4,a4,a5
+   108ba:	4318                	lw	a4,0(a4)
+   108bc:	cd38                	sw	a4,88(a0)
+      statemt[14] = invSbox[statemt[6] >> 4][statemt[6] & 0xf];
+   108be:	4d18                	lw	a4,24(a0)
+      statemt[6] = temp;
+   108c0:	cd14                	sw	a3,24(a0)
+      statemt[14] = invSbox[statemt[6] >> 4][statemt[6] & 0xf];
+   108c2:	070a                	slli	a4,a4,0x2
+   108c4:	973e                	add	a4,a4,a5
+   108c6:	4318                	lw	a4,0(a4)
+   108c8:	dd18                	sw	a4,56(a0)
+      temp = invSbox[statemt[18] >> 4][statemt[18] & 0xf];
+   108ca:	4538                	lw	a4,72(a0)
+   108cc:	070a                	slli	a4,a4,0x2
+   108ce:	973e                	add	a4,a4,a5
+   108d0:	4314                	lw	a3,0(a4)
+      statemt[18] = invSbox[statemt[10] >> 4][statemt[10] & 0xf];
+   108d2:	5518                	lw	a4,40(a0)
+   108d4:	070a                	slli	a4,a4,0x2
+   108d6:	973e                	add	a4,a4,a5
+   108d8:	4318                	lw	a4,0(a4)
+   108da:	c538                	sw	a4,72(a0)
+      statemt[10] = invSbox[statemt[2] >> 4][statemt[2] & 0xf];
+   108dc:	4518                	lw	a4,8(a0)
+      statemt[2] = temp;
+   108de:	c514                	sw	a3,8(a0)
+      statemt[10] = invSbox[statemt[2] >> 4][statemt[2] & 0xf];
+   108e0:	070a                	slli	a4,a4,0x2
+   108e2:	973e                	add	a4,a4,a5
+   108e4:	4318                	lw	a4,0(a4)
+   108e6:	d518                	sw	a4,40(a0)
+
+      temp = invSbox[statemt[15] >> 4][statemt[15] & 0xf];
+   108e8:	5d58                	lw	a4,60(a0)
+   108ea:	070a                	slli	a4,a4,0x2
+   108ec:	973e                	add	a4,a4,a5
+   108ee:	4314                	lw	a3,0(a4)
+      statemt[15] = invSbox[statemt[3] >> 4][statemt[3] & 0xf];
+   108f0:	4558                	lw	a4,12(a0)
+      statemt[3] = temp;
+   108f2:	c554                	sw	a3,12(a0)
+      statemt[15] = invSbox[statemt[3] >> 4][statemt[3] & 0xf];
+   108f4:	070a                	slli	a4,a4,0x2
+   108f6:	973e                	add	a4,a4,a5
+   108f8:	4318                	lw	a4,0(a4)
+   108fa:	dd58                	sw	a4,60(a0)
+      temp = invSbox[statemt[19] >> 4][statemt[19] & 0xf];
+   108fc:	4578                	lw	a4,76(a0)
+   108fe:	070a                	slli	a4,a4,0x2
+   10900:	973e                	add	a4,a4,a5
+   10902:	4314                	lw	a3,0(a4)
+      statemt[19] = invSbox[statemt[7] >> 4][statemt[7] & 0xf];
+   10904:	4d58                	lw	a4,28(a0)
+      statemt[7] = temp;
+   10906:	cd54                	sw	a3,28(a0)
+      statemt[19] = invSbox[statemt[7] >> 4][statemt[7] & 0xf];
+   10908:	070a                	slli	a4,a4,0x2
+   1090a:	973e                	add	a4,a4,a5
+   1090c:	4318                	lw	a4,0(a4)
+   1090e:	c578                	sw	a4,76(a0)
+      temp = invSbox[statemt[23] >> 4][statemt[23] & 0xf];
+   10910:	4d78                	lw	a4,92(a0)
+   10912:	070a                	slli	a4,a4,0x2
+   10914:	973e                	add	a4,a4,a5
+   10916:	4314                	lw	a3,0(a4)
+      statemt[23] = invSbox[statemt[11] >> 4][statemt[11] & 0xf];
+   10918:	5558                	lw	a4,44(a0)
+      statemt[11] = temp;
+   1091a:	d554                	sw	a3,44(a0)
+      statemt[23] = invSbox[statemt[11] >> 4][statemt[11] & 0xf];
+   1091c:	070a                	slli	a4,a4,0x2
+   1091e:	973e                	add	a4,a4,a5
+   10920:	4318                	lw	a4,0(a4)
+   10922:	cd78                	sw	a4,92(a0)
+
+      statemt[0] = invSbox[statemt[0] >> 4][statemt[0] & 0xf];
+   10924:	4118                	lw	a4,0(a0)
+   10926:	070a                	slli	a4,a4,0x2
+   10928:	973e                	add	a4,a4,a5
+   1092a:	4318                	lw	a4,0(a4)
+   1092c:	c118                	sw	a4,0(a0)
+      statemt[4] = invSbox[statemt[4] >> 4][statemt[4] & 0xf];
+   1092e:	4918                	lw	a4,16(a0)
+   10930:	070a                	slli	a4,a4,0x2
+   10932:	973e                	add	a4,a4,a5
+   10934:	4318                	lw	a4,0(a4)
+   10936:	c918                	sw	a4,16(a0)
+      statemt[8] = invSbox[statemt[8] >> 4][statemt[8] & 0xf];
+   10938:	5118                	lw	a4,32(a0)
+   1093a:	070a                	slli	a4,a4,0x2
+   1093c:	973e                	add	a4,a4,a5
+   1093e:	4318                	lw	a4,0(a4)
+   10940:	d118                	sw	a4,32(a0)
+      statemt[12] = invSbox[statemt[12] >> 4][statemt[12] & 0xf];
+   10942:	5918                	lw	a4,48(a0)
+   10944:	070a                	slli	a4,a4,0x2
+   10946:	973e                	add	a4,a4,a5
+   10948:	4318                	lw	a4,0(a4)
+   1094a:	d918                	sw	a4,48(a0)
+      statemt[16] = invSbox[statemt[16] >> 4][statemt[16] & 0xf];
+   1094c:	4138                	lw	a4,64(a0)
+   1094e:	070a                	slli	a4,a4,0x2
+   10950:	973e                	add	a4,a4,a5
+   10952:	4318                	lw	a4,0(a4)
+   10954:	c138                	sw	a4,64(a0)
+      statemt[20] = invSbox[statemt[20] >> 4][statemt[20] & 0xf];
+   10956:	4938                	lw	a4,80(a0)
+   10958:	070a                	slli	a4,a4,0x2
+   1095a:	97ba                	add	a5,a5,a4
+   1095c:	439c                	lw	a5,0(a5)
+   1095e:	c93c                	sw	a5,80(a0)
+      break;
+   10960:	8082                	ret
+    case 8:
+      temp = invSbox[statemt[29] >> 4][statemt[29] & 0xf];
+   10962:	5978                	lw	a4,116(a0)
+   10964:	67c9                	lui	a5,0x12
+   10966:	be478793          	addi	a5,a5,-1052 # 11be4 <invSbox>
+   1096a:	070a                	slli	a4,a4,0x2
+   1096c:	973e                	add	a4,a4,a5
+   1096e:	4314                	lw	a3,0(a4)
+      statemt[29] = invSbox[statemt[25] >> 4][statemt[25] & 0xf];
+   10970:	5178                	lw	a4,100(a0)
+   10972:	070a                	slli	a4,a4,0x2
+   10974:	973e                	add	a4,a4,a5
+   10976:	4318                	lw	a4,0(a4)
+   10978:	d978                	sw	a4,116(a0)
+      statemt[25] = invSbox[statemt[21] >> 4][statemt[21] & 0xf];
+   1097a:	4978                	lw	a4,84(a0)
+   1097c:	070a                	slli	a4,a4,0x2
+   1097e:	973e                	add	a4,a4,a5
+   10980:	4318                	lw	a4,0(a4)
+   10982:	d178                	sw	a4,100(a0)
+      statemt[21] = invSbox[statemt[17] >> 4][statemt[17] & 0xf];
+   10984:	4178                	lw	a4,68(a0)
+   10986:	070a                	slli	a4,a4,0x2
+   10988:	973e                	add	a4,a4,a5
+   1098a:	4318                	lw	a4,0(a4)
+   1098c:	c978                	sw	a4,84(a0)
+      statemt[17] = invSbox[statemt[13] >> 4][statemt[13] & 0xf];
+   1098e:	5958                	lw	a4,52(a0)
+   10990:	070a                	slli	a4,a4,0x2
+   10992:	973e                	add	a4,a4,a5
+   10994:	4318                	lw	a4,0(a4)
+   10996:	c178                	sw	a4,68(a0)
+      statemt[13] = invSbox[statemt[9] >> 4][statemt[9] & 0xf];
+   10998:	5158                	lw	a4,36(a0)
+   1099a:	070a                	slli	a4,a4,0x2
+   1099c:	973e                	add	a4,a4,a5
+   1099e:	4318                	lw	a4,0(a4)
+   109a0:	d958                	sw	a4,52(a0)
+      statemt[9] = invSbox[statemt[5] >> 4][statemt[5] & 0xf];
+   109a2:	4958                	lw	a4,20(a0)
+   109a4:	070a                	slli	a4,a4,0x2
+   109a6:	973e                	add	a4,a4,a5
+   109a8:	4318                	lw	a4,0(a4)
+   109aa:	d158                	sw	a4,36(a0)
+      statemt[5] = invSbox[statemt[1] >> 4][statemt[1] & 0xf];
+   109ac:	4158                	lw	a4,4(a0)
+      statemt[1] = temp;
+   109ae:	c154                	sw	a3,4(a0)
+      statemt[5] = invSbox[statemt[1] >> 4][statemt[1] & 0xf];
+   109b0:	070a                	slli	a4,a4,0x2
+   109b2:	973e                	add	a4,a4,a5
+   109b4:	4318                	lw	a4,0(a4)
+   109b6:	c958                	sw	a4,20(a0)
+
+      temp = invSbox[statemt[30] >> 4][statemt[30] & 0xf];
+   109b8:	5d38                	lw	a4,120(a0)
+   109ba:	070a                	slli	a4,a4,0x2
+   109bc:	973e                	add	a4,a4,a5
+   109be:	4314                	lw	a3,0(a4)
+      statemt[30] = invSbox[statemt[18] >> 4][statemt[18] & 0xf];
+   109c0:	4538                	lw	a4,72(a0)
+   109c2:	070a                	slli	a4,a4,0x2
+   109c4:	973e                	add	a4,a4,a5
+   109c6:	4318                	lw	a4,0(a4)
+   109c8:	dd38                	sw	a4,120(a0)
+      statemt[18] = invSbox[statemt[6] >> 4][statemt[6] & 0xf];
+   109ca:	4d18                	lw	a4,24(a0)
+   109cc:	070a                	slli	a4,a4,0x2
+   109ce:	973e                	add	a4,a4,a5
+   109d0:	4318                	lw	a4,0(a4)
+   109d2:	c538                	sw	a4,72(a0)
+      statemt[6] = invSbox[statemt[26] >> 4][statemt[26] & 0xf];
+   109d4:	5538                	lw	a4,104(a0)
+   109d6:	070a                	slli	a4,a4,0x2
+   109d8:	973e                	add	a4,a4,a5
+   109da:	4318                	lw	a4,0(a4)
+   109dc:	cd18                	sw	a4,24(a0)
+      statemt[26] = invSbox[statemt[14] >> 4][statemt[14] & 0xf];
+   109de:	5d18                	lw	a4,56(a0)
+   109e0:	070a                	slli	a4,a4,0x2
+   109e2:	973e                	add	a4,a4,a5
+   109e4:	4318                	lw	a4,0(a4)
+   109e6:	d538                	sw	a4,104(a0)
+      statemt[14] = invSbox[statemt[2] >> 4][statemt[2] & 0xf];
+   109e8:	4518                	lw	a4,8(a0)
+   109ea:	070a                	slli	a4,a4,0x2
+   109ec:	973e                	add	a4,a4,a5
+   109ee:	4318                	lw	a4,0(a4)
+   109f0:	dd18                	sw	a4,56(a0)
+      statemt[2] = invSbox[statemt[22] >> 4][statemt[22] & 0xf];
+   109f2:	4d38                	lw	a4,88(a0)
+   109f4:	070a                	slli	a4,a4,0x2
+   109f6:	973e                	add	a4,a4,a5
+   109f8:	4318                	lw	a4,0(a4)
+   109fa:	c518                	sw	a4,8(a0)
+      statemt[22] = invSbox[statemt[10] >> 4][statemt[10] & 0xf];
+   109fc:	5518                	lw	a4,40(a0)
+      statemt[10] = temp;
+   109fe:	d514                	sw	a3,40(a0)
+      statemt[22] = invSbox[statemt[10] >> 4][statemt[10] & 0xf];
+   10a00:	070a                	slli	a4,a4,0x2
+   10a02:	973e                	add	a4,a4,a5
+   10a04:	4318                	lw	a4,0(a4)
+   10a06:	cd38                	sw	a4,88(a0)
+
+      temp = invSbox[statemt[31] >> 4][statemt[31] & 0xf];
+   10a08:	5d78                	lw	a4,124(a0)
+   10a0a:	070a                	slli	a4,a4,0x2
+   10a0c:	973e                	add	a4,a4,a5
+   10a0e:	4314                	lw	a3,0(a4)
+      statemt[31] = invSbox[statemt[15] >> 4][statemt[15] & 0xf];
+   10a10:	5d58                	lw	a4,60(a0)
+      statemt[15] = temp;
+   10a12:	dd54                	sw	a3,60(a0)
+      statemt[31] = invSbox[statemt[15] >> 4][statemt[15] & 0xf];
+   10a14:	070a                	slli	a4,a4,0x2
+   10a16:	973e                	add	a4,a4,a5
+   10a18:	4318                	lw	a4,0(a4)
+   10a1a:	dd78                	sw	a4,124(a0)
+      temp = invSbox[statemt[27] >> 4][statemt[27] & 0xf];
+   10a1c:	5578                	lw	a4,108(a0)
+   10a1e:	070a                	slli	a4,a4,0x2
+   10a20:	973e                	add	a4,a4,a5
+   10a22:	4314                	lw	a3,0(a4)
+      statemt[27] = invSbox[statemt[11] >> 4][statemt[11] & 0xf];
+   10a24:	5558                	lw	a4,44(a0)
+      statemt[11] = temp;
+   10a26:	d554                	sw	a3,44(a0)
+      statemt[27] = invSbox[statemt[11] >> 4][statemt[11] & 0xf];
+   10a28:	070a                	slli	a4,a4,0x2
+   10a2a:	973e                	add	a4,a4,a5
+   10a2c:	4318                	lw	a4,0(a4)
+   10a2e:	d578                	sw	a4,108(a0)
+      temp = invSbox[statemt[23] >> 4][statemt[23] & 0xf];
+   10a30:	4d78                	lw	a4,92(a0)
+   10a32:	070a                	slli	a4,a4,0x2
+   10a34:	973e                	add	a4,a4,a5
+   10a36:	4314                	lw	a3,0(a4)
+      statemt[23] = invSbox[statemt[7] >> 4][statemt[7] & 0xf];
+   10a38:	4d58                	lw	a4,28(a0)
+   10a3a:	070a                	slli	a4,a4,0x2
+   10a3c:	973e                	add	a4,a4,a5
+   10a3e:	4318                	lw	a4,0(a4)
+   10a40:	cd78                	sw	a4,92(a0)
+      statemt[7] = temp;
+      temp = invSbox[statemt[19] >> 4][statemt[19] & 0xf];
+   10a42:	4578                	lw	a4,76(a0)
+      statemt[7] = temp;
+   10a44:	cd54                	sw	a3,28(a0)
+      temp = invSbox[statemt[19] >> 4][statemt[19] & 0xf];
+   10a46:	070a                	slli	a4,a4,0x2
+   10a48:	973e                	add	a4,a4,a5
+   10a4a:	4314                	lw	a3,0(a4)
+      statemt[19] = invSbox[statemt[3] >> 4][statemt[3] & 0xf];
+   10a4c:	4558                	lw	a4,12(a0)
+      statemt[3] = temp;
+   10a4e:	c554                	sw	a3,12(a0)
+      statemt[19] = invSbox[statemt[3] >> 4][statemt[3] & 0xf];
+   10a50:	070a                	slli	a4,a4,0x2
+   10a52:	973e                	add	a4,a4,a5
+   10a54:	4318                	lw	a4,0(a4)
+   10a56:	c578                	sw	a4,76(a0)
+
+      statemt[0] = invSbox[statemt[0] >> 4][statemt[0] & 0xf];
+   10a58:	4118                	lw	a4,0(a0)
+   10a5a:	070a                	slli	a4,a4,0x2
+   10a5c:	973e                	add	a4,a4,a5
+   10a5e:	4318                	lw	a4,0(a4)
+   10a60:	c118                	sw	a4,0(a0)
+      statemt[4] = invSbox[statemt[4] >> 4][statemt[4] & 0xf];
+   10a62:	4918                	lw	a4,16(a0)
+   10a64:	070a                	slli	a4,a4,0x2
+   10a66:	973e                	add	a4,a4,a5
+   10a68:	4318                	lw	a4,0(a4)
+   10a6a:	c918                	sw	a4,16(a0)
+      statemt[8] = invSbox[statemt[8] >> 4][statemt[8] & 0xf];
+   10a6c:	5118                	lw	a4,32(a0)
+   10a6e:	070a                	slli	a4,a4,0x2
+   10a70:	973e                	add	a4,a4,a5
+   10a72:	4318                	lw	a4,0(a4)
+   10a74:	d118                	sw	a4,32(a0)
+      statemt[12] = invSbox[statemt[12] >> 4][statemt[12] & 0xf];
+   10a76:	5918                	lw	a4,48(a0)
+   10a78:	070a                	slli	a4,a4,0x2
+   10a7a:	973e                	add	a4,a4,a5
+   10a7c:	4318                	lw	a4,0(a4)
+   10a7e:	d918                	sw	a4,48(a0)
+      statemt[16] = invSbox[statemt[16] >> 4][statemt[16] & 0xf];
+   10a80:	4138                	lw	a4,64(a0)
+   10a82:	070a                	slli	a4,a4,0x2
+   10a84:	973e                	add	a4,a4,a5
+   10a86:	4318                	lw	a4,0(a4)
+   10a88:	c138                	sw	a4,64(a0)
+      statemt[20] = invSbox[statemt[20] >> 4][statemt[20] & 0xf];
+   10a8a:	4938                	lw	a4,80(a0)
+   10a8c:	070a                	slli	a4,a4,0x2
+   10a8e:	973e                	add	a4,a4,a5
+   10a90:	4318                	lw	a4,0(a4)
+   10a92:	c938                	sw	a4,80(a0)
+      statemt[24] = invSbox[statemt[24] >> 4][statemt[24] & 0xf];
+   10a94:	5138                	lw	a4,96(a0)
+   10a96:	070a                	slli	a4,a4,0x2
+   10a98:	973e                	add	a4,a4,a5
+   10a9a:	4318                	lw	a4,0(a4)
+   10a9c:	d138                	sw	a4,96(a0)
+      statemt[28] = invSbox[statemt[28] >> 4][statemt[28] & 0xf];
+   10a9e:	5938                	lw	a4,112(a0)
+   10aa0:	070a                	slli	a4,a4,0x2
+   10aa2:	97ba                	add	a5,a5,a4
+   10aa4:	439c                	lw	a5,0(a5)
+   10aa6:	d93c                	sw	a5,112(a0)
+      break;
+    }
+}
+   10aa8:	8082                	ret
+
+00010aaa <MixColumn_AddRoundKey>:
+      //*dbg0 = word[0][j + nb * n];
+      //asm volatile ("addi x0, x0, 0");
+      //asm volatile ("addi x0, x0, 0");
+      //asm volatile ("addi x0, x0, 0");
+      //asm volatile ("addi x0, x0, 0");
+      ret[j * 4] ^= statemt[2 + j * 4] ^ statemt[3 + j * 4] ^ word[0][j + nb * n];
+   10aaa:	02c58633          	mul	a2,a1,a2
+{
+   10aae:	7175                	addi	sp,sp,-144
+   10ab0:	67c9                	lui	a5,0x12
+   10ab2:	56478793          	addi	a5,a5,1380 # 12564 <word>
+   10ab6:	830a                	mv	t1,sp
+   10ab8:	c722                	sw	s0,140(sp)
+   10aba:	c526                	sw	s1,136(sp)
+  for (j = 0; j < nb; ++j)
+   10abc:	8eaa                	mv	t4,a0
+   10abe:	4f01                	li	t5,0
+      if ((ret[j * 4] >> 8) == 1)
+   10ac0:	4885                	li	a7,1
+   10ac2:	060a                	slli	a2,a2,0x2
+   10ac4:	963e                	add	a2,a2,a5
+  for (j = 0; j < nb; ++j)
+   10ac6:	879a                	mv	a5,t1
+   10ac8:	00bf4a63          	blt	t5,a1,10adc <MixColumn_AddRoundKey+0x32>
+  //asm volatile ("addi x0, x0, 0");
+  //asm volatile ("addi x0, x0, 0");
+  //asm volatile ("addi x0, x0, 0");
+  //asm volatile ("addi x0, x0, 0");
+  //}
+  for (j = 0; j < nb; ++j)
+   10acc:	4781                	li	a5,0
+   10ace:	14b7c163          	blt	a5,a1,10c10 <MixColumn_AddRoundKey+0x166>
+      statemt[1 + j * 4] = ret[1 + j * 4];
+      statemt[2 + j * 4] = ret[2 + j * 4];
+      statemt[3 + j * 4] = ret[3 + j * 4];
+    }
+  return 0;
+}
+   10ad2:	443a                	lw	s0,140(sp)
+   10ad4:	44aa                	lw	s1,136(sp)
+   10ad6:	4501                	li	a0,0
+   10ad8:	6149                	addi	sp,sp,144
+   10ada:	8082                	ret
+      ret[j * 4] = (statemt[j * 4] << 1);
+   10adc:	000ea683          	lw	a3,0(t4)
+   10ae0:	00169293          	slli	t0,a3,0x1
+      if ((ret[j * 4] >> 8) == 1)
+   10ae4:	4082d713          	srai	a4,t0,0x8
+   10ae8:	11170763          	beq	a4,a7,10bf6 <MixColumn_AddRoundKey+0x14c>
+      ret[j * 4] = (statemt[j * 4] << 1);
+   10aec:	0057a023          	sw	t0,0(a5)
+      x = statemt[1 + j * 4];
+   10af0:	004eaf83          	lw	t6,4(t4)
+   10af4:	4398                	lw	a4,0(a5)
+      x ^= (x << 1);
+   10af6:	001f9393          	slli	t2,t6,0x1
+   10afa:	01f3c833          	xor	a6,t2,t6
+      if ((x >> 8) == 1)
+   10afe:	40885e13          	srai	t3,a6,0x8
+   10b02:	011e1463          	bne	t3,a7,10b0a <MixColumn_AddRoundKey+0x60>
+    	  ret[j * 4] ^= (x ^ 283);
+   10b06:	11b74713          	xori	a4,a4,283
+    	  ret[j * 4] ^= x;
+   10b0a:	00e84733          	xor	a4,a6,a4
+   10b0e:	c398                	sw	a4,0(a5)
+      ret[j * 4] ^= statemt[2 + j * 4] ^ statemt[3 + j * 4] ^ word[0][j + nb * n];
+   10b10:	0007ae03          	lw	t3,0(a5)
+   10b14:	008ea703          	lw	a4,8(t4)
+   10b18:	00cea803          	lw	a6,12(t4)
+   10b1c:	4200                	lw	s0,0(a2)
+   10b1e:	01c74e33          	xor	t3,a4,t3
+   10b22:	010e4e33          	xor	t3,t3,a6
+   10b26:	008e4e33          	xor	t3,t3,s0
+   10b2a:	01c7a023          	sw	t3,0(a5)
+      if ((ret[1 + j * 4] >> 8) == 1)
+   10b2e:	4083de13          	srai	t3,t2,0x8
+   10b32:	0d1e0663          	beq	t3,a7,10bfe <MixColumn_AddRoundKey+0x154>
+	ret[1 + j * 4] ^= 283;
+   10b36:	0077a223          	sw	t2,4(a5)
+      x ^= (x << 1);
+   10b3a:	00171393          	slli	t2,a4,0x1
+   10b3e:	00774433          	xor	s0,a4,t2
+      if ((x >> 8) == 1)
+   10b42:	40845493          	srai	s1,s0,0x8
+   10b46:	0047ae03          	lw	t3,4(a5)
+   10b4a:	01149463          	bne	s1,a7,10b52 <MixColumn_AddRoundKey+0xa8>
+	ret[1 + j * 4] ^= (x ^ 283);
+   10b4e:	11be4e13          	xori	t3,t3,283
+	ret[1 + j * 4] ^= x;
+   10b52:	01c44e33          	xor	t3,s0,t3
+   10b56:	01c7a223          	sw	t3,4(a5)
+      ret[1 + j * 4] ^=
+   10b5a:	43c0                	lw	s0,4(a5)
+   10b5c:	0106ce33          	xor	t3,a3,a6
+   10b60:	008e4e33          	xor	t3,t3,s0
+   10b64:	1e062403          	lw	s0,480(a2)
+   10b68:	008e4e33          	xor	t3,t3,s0
+   10b6c:	01c7a223          	sw	t3,4(a5)
+      if ((ret[2 + j * 4] >> 8) == 1)
+   10b70:	4083de13          	srai	t3,t2,0x8
+   10b74:	091e0863          	beq	t3,a7,10c04 <MixColumn_AddRoundKey+0x15a>
+      x ^= (x << 1);
+   10b78:	00181e13          	slli	t3,a6,0x1
+   10b7c:	01c84833          	xor	a6,a6,t3
+	ret[2 + j * 4] ^= 283;
+   10b80:	0077a423          	sw	t2,8(a5)
+      if ((x >> 8) == 1)
+   10b84:	40885413          	srai	s0,a6,0x8
+   10b88:	0087a383          	lw	t2,8(a5)
+   10b8c:	01141463          	bne	s0,a7,10b94 <MixColumn_AddRoundKey+0xea>
+	ret[2 + j * 4] ^= (x ^ 283);
+   10b90:	11b3c393          	xori	t2,t2,283
+	ret[2 + j * 4] ^= x;
+   10b94:	00784833          	xor	a6,a6,t2
+   10b98:	0107a423          	sw	a6,8(a5)
+      ret[2 + j * 4] ^=
+   10b9c:	0087a383          	lw	t2,8(a5)
+   10ba0:	01f6c833          	xor	a6,a3,t6
+   10ba4:	00784833          	xor	a6,a6,t2
+   10ba8:	3c062383          	lw	t2,960(a2)
+   10bac:	00784833          	xor	a6,a6,t2
+   10bb0:	0107a423          	sw	a6,8(a5)
+      if ((ret[3 + j * 4] >> 8) == 1)
+   10bb4:	408e5813          	srai	a6,t3,0x8
+   10bb8:	05180963          	beq	a6,a7,10c0a <MixColumn_AddRoundKey+0x160>
+      x ^= (x << 1);
+   10bbc:	0056c6b3          	xor	a3,a3,t0
+	ret[3 + j * 4] ^= 283;
+   10bc0:	01c7a623          	sw	t3,12(a5)
+      if ((x >> 8) == 1)
+   10bc4:	4086de13          	srai	t3,a3,0x8
+   10bc8:	00c7a803          	lw	a6,12(a5)
+   10bcc:	011e1463          	bne	t3,a7,10bd4 <MixColumn_AddRoundKey+0x12a>
+	ret[3 + j * 4] ^= (x ^ 283);
+   10bd0:	11b84813          	xori	a6,a6,283
+	ret[3 + j * 4] ^= x;
+   10bd4:	0106c6b3          	xor	a3,a3,a6
+   10bd8:	c7d4                	sw	a3,12(a5)
+      ret[3 + j * 4] ^=
+   10bda:	47d4                	lw	a3,12(a5)
+   10bdc:	01f74733          	xor	a4,a4,t6
+  for (j = 0; j < nb; ++j)
+   10be0:	0f05                	addi	t5,t5,1
+      ret[3 + j * 4] ^=
+   10be2:	8f35                	xor	a4,a4,a3
+   10be4:	5a062683          	lw	a3,1440(a2)
+   10be8:	07c1                	addi	a5,a5,16
+   10bea:	0611                	addi	a2,a2,4
+   10bec:	8f35                	xor	a4,a4,a3
+   10bee:	fee7ae23          	sw	a4,-4(a5)
+   10bf2:	0ec1                	addi	t4,t4,16
+   10bf4:	bdd1                	j	10ac8 <MixColumn_AddRoundKey+0x1e>
+    	  ret[j * 4] ^= 283;
+   10bf6:	11b2c713          	xori	a4,t0,283
+   10bfa:	c398                	sw	a4,0(a5)
+   10bfc:	bdd5                	j	10af0 <MixColumn_AddRoundKey+0x46>
+	ret[1 + j * 4] ^= 283;
+   10bfe:	11b3c393          	xori	t2,t2,283
+   10c02:	bf15                	j	10b36 <MixColumn_AddRoundKey+0x8c>
+	ret[2 + j * 4] ^= 283;
+   10c04:	11b3c393          	xori	t2,t2,283
+   10c08:	bf85                	j	10b78 <MixColumn_AddRoundKey+0xce>
+	ret[3 + j * 4] ^= 283;
+   10c0a:	11be4e13          	xori	t3,t3,283
+   10c0e:	b77d                	j	10bbc <MixColumn_AddRoundKey+0x112>
+      statemt[j * 4] = ret[j * 4];
+   10c10:	00032703          	lw	a4,0(t1)
+  for (j = 0; j < nb; ++j)
+   10c14:	0785                	addi	a5,a5,1
+   10c16:	0341                	addi	t1,t1,16
+      statemt[j * 4] = ret[j * 4];
+   10c18:	c118                	sw	a4,0(a0)
+      statemt[1 + j * 4] = ret[1 + j * 4];
+   10c1a:	ff432703          	lw	a4,-12(t1)
+   10c1e:	0541                	addi	a0,a0,16
+   10c20:	fee52a23          	sw	a4,-12(a0)
+      statemt[2 + j * 4] = ret[2 + j * 4];
+   10c24:	ff832703          	lw	a4,-8(t1)
+   10c28:	fee52c23          	sw	a4,-8(a0)
+      statemt[3 + j * 4] = ret[3 + j * 4];
+   10c2c:	ffc32703          	lw	a4,-4(t1)
+   10c30:	fee52e23          	sw	a4,-4(a0)
+   10c34:	bd69                	j	10ace <MixColumn_AddRoundKey+0x24>
+
+00010c36 <AddRoundKey_InversMixColumn>:
+  int ret[8 * 4], i, j;
+  register int x;
+
+  for (j = 0; j < nb; ++j)
+    {
+      statemt[j * 4] ^= word[0][j + nb * n];
+   10c36:	02b60633          	mul	a2,a2,a1
+   10c3a:	67c9                	lui	a5,0x12
+   10c3c:	56478793          	addi	a5,a5,1380 # 12564 <word>
+{
+   10c40:	7119                	addi	sp,sp,-128
+   10c42:	88aa                	mv	a7,a0
+  for (j = 0; j < nb; ++j)
+   10c44:	4701                	li	a4,0
+   10c46:	060a                	slli	a2,a2,0x2
+   10c48:	963e                	add	a2,a2,a5
+   10c4a:	87aa                	mv	a5,a0
+   10c4c:	00b74e63          	blt	a4,a1,10c68 <AddRoundKey_InversMixColumn+0x32>
+      statemt[1 + j * 4] ^= word[1][j + nb * n];
+      statemt[2 + j * 4] ^= word[2][j + nb * n];
+      statemt[3 + j * 4] ^= word[3][j + nb * n];
+    }
+  for (j = 0; j < nb; ++j)
+   10c50:	4e01                	li	t3,0
+    for (i = 0; i < 4; ++i)
+      {
+	x = (statemt[i + j * 4] << 1);
+	if ((x >> 8) == 1)
+   10c52:	4805                	li	a6,1
+    for (i = 0; i < 4; ++i)
+   10c54:	4f91                	li	t6,4
+  for (j = 0; j < nb; ++j)
+   10c56:	04be4c63          	blt	t3,a1,10cae <AddRoundKey_InversMixColumn+0x78>
+   10c5a:	878a                	mv	a5,sp
+	if ((x >> 8) == 1)
+	  x ^= 283;
+	x ^= statemt[(i + 3) % 4 + j * 4];
+	ret[i + j * 4] ^= x;
+      }
+  for (i = 0; i < nb; ++i)
+   10c5c:	4701                	li	a4,0
+   10c5e:	16b74363          	blt	a4,a1,10dc4 <AddRoundKey_InversMixColumn+0x18e>
+      statemt[1 + i * 4] = ret[1 + i * 4];
+      statemt[2 + i * 4] = ret[2 + i * 4];
+      statemt[3 + i * 4] = ret[3 + i * 4];
+    }
+  return 0;
+}
+   10c62:	4501                	li	a0,0
+   10c64:	6109                	addi	sp,sp,128
+   10c66:	8082                	ret
+      statemt[j * 4] ^= word[0][j + nb * n];
+   10c68:	00062803          	lw	a6,0(a2)
+   10c6c:	4394                	lw	a3,0(a5)
+  for (j = 0; j < nb; ++j)
+   10c6e:	0705                	addi	a4,a4,1
+   10c70:	07c1                	addi	a5,a5,16
+      statemt[j * 4] ^= word[0][j + nb * n];
+   10c72:	0106c6b3          	xor	a3,a3,a6
+   10c76:	fed7a823          	sw	a3,-16(a5)
+      statemt[1 + j * 4] ^= word[1][j + nb * n];
+   10c7a:	1e062803          	lw	a6,480(a2)
+   10c7e:	ff47a683          	lw	a3,-12(a5)
+   10c82:	0611                	addi	a2,a2,4
+   10c84:	0106c6b3          	xor	a3,a3,a6
+   10c88:	fed7aa23          	sw	a3,-12(a5)
+      statemt[2 + j * 4] ^= word[2][j + nb * n];
+   10c8c:	3bc62803          	lw	a6,956(a2)
+   10c90:	ff87a683          	lw	a3,-8(a5)
+   10c94:	0106c6b3          	xor	a3,a3,a6
+   10c98:	fed7ac23          	sw	a3,-8(a5)
+      statemt[3 + j * 4] ^= word[3][j + nb * n];
+   10c9c:	59c62803          	lw	a6,1436(a2)
+   10ca0:	ffc7a683          	lw	a3,-4(a5)
+   10ca4:	0106c6b3          	xor	a3,a3,a6
+   10ca8:	fed7ae23          	sw	a3,-4(a5)
+   10cac:	b745                	j	10c4c <AddRoundKey_InversMixColumn+0x16>
+   10cae:	002e1f13          	slli	t5,t3,0x2
+   10cb2:	004e1e93          	slli	t4,t3,0x4
+    for (i = 0; i < 4; ++i)
+   10cb6:	4301                	li	t1,0
+	x = (statemt[i + j * 4] << 1);
+   10cb8:	01d507b3          	add	a5,a0,t4
+   10cbc:	0007a283          	lw	t0,0(a5)
+   10cc0:	00129793          	slli	a5,t0,0x1
+	if ((x >> 8) == 1)
+   10cc4:	4087d713          	srai	a4,a5,0x8
+   10cc8:	01071463          	bne	a4,a6,10cd0 <AddRoundKey_InversMixColumn+0x9a>
+	  x ^= 283;
+   10ccc:	11b7c793          	xori	a5,a5,283
+	x ^= statemt[i + j * 4];
+   10cd0:	00f2c7b3          	xor	a5,t0,a5
+	x = (x << 1);
+   10cd4:	0786                	slli	a5,a5,0x1
+	if ((x >> 8) == 1)
+   10cd6:	4087d713          	srai	a4,a5,0x8
+   10cda:	01071463          	bne	a4,a6,10ce2 <AddRoundKey_InversMixColumn+0xac>
+	  x ^= 283;
+   10cde:	11b7c793          	xori	a5,a5,283
+	x ^= statemt[i + j * 4];
+   10ce2:	00f2c2b3          	xor	t0,t0,a5
+	x = (x << 1);
+   10ce6:	0286                	slli	t0,t0,0x1
+	if ((x >> 8) == 1)
+   10ce8:	4082d793          	srai	a5,t0,0x8
+   10cec:	01079463          	bne	a5,a6,10cf4 <AddRoundKey_InversMixColumn+0xbe>
+	  x ^= 283;
+   10cf0:	11b2c293          	xori	t0,t0,283
+	x = (statemt[(i + 1) % 4 + j * 4] << 1);
+   10cf4:	0305                	addi	t1,t1,1
+   10cf6:	00337793          	andi	a5,t1,3
+   10cfa:	97fa                	add	a5,a5,t5
+   10cfc:	078a                	slli	a5,a5,0x2
+   10cfe:	97aa                	add	a5,a5,a0
+   10d00:	4398                	lw	a4,0(a5)
+   10d02:	00171613          	slli	a2,a4,0x1
+	if ((x >> 8) == 1)
+   10d06:	40865793          	srai	a5,a2,0x8
+   10d0a:	01079463          	bne	a5,a6,10d12 <AddRoundKey_InversMixColumn+0xdc>
+	  x ^= 283;
+   10d0e:	11b64613          	xori	a2,a2,283
+	x = (x << 1);
+   10d12:	0606                	slli	a2,a2,0x1
+	if ((x >> 8) == 1)
+   10d14:	40865793          	srai	a5,a2,0x8
+   10d18:	01079463          	bne	a5,a6,10d20 <AddRoundKey_InversMixColumn+0xea>
+	  x ^= 283;
+   10d1c:	11b64613          	xori	a2,a2,283
+	x ^= statemt[(i + 1) % 4 + j * 4];
+   10d20:	8e39                	xor	a2,a2,a4
+	x = (x << 1);
+   10d22:	0606                	slli	a2,a2,0x1
+	if ((x >> 8) == 1)
+   10d24:	40865793          	srai	a5,a2,0x8
+   10d28:	01079463          	bne	a5,a6,10d30 <AddRoundKey_InversMixColumn+0xfa>
+	  x ^= 283;
+   10d2c:	11b64613          	xori	a2,a2,283
+	x = (statemt[(i + 2) % 4 + j * 4] << 1);
+   10d30:	00130793          	addi	a5,t1,1
+   10d34:	8b8d                	andi	a5,a5,3
+   10d36:	97fa                	add	a5,a5,t5
+   10d38:	078a                	slli	a5,a5,0x2
+   10d3a:	97aa                	add	a5,a5,a0
+   10d3c:	439c                	lw	a5,0(a5)
+   10d3e:	00f746b3          	xor	a3,a4,a5
+   10d42:	00179713          	slli	a4,a5,0x1
+	if ((x >> 8) == 1)
+   10d46:	40875393          	srai	t2,a4,0x8
+   10d4a:	01039463          	bne	t2,a6,10d52 <AddRoundKey_InversMixColumn+0x11c>
+	  x ^= 283;
+   10d4e:	11b74713          	xori	a4,a4,283
+	x ^= statemt[(i + 2) % 4 + j * 4];
+   10d52:	8fb9                	xor	a5,a5,a4
+	x = (x << 1);
+   10d54:	0786                	slli	a5,a5,0x1
+	if ((x >> 8) == 1)
+   10d56:	4087d713          	srai	a4,a5,0x8
+   10d5a:	01071463          	bne	a4,a6,10d62 <AddRoundKey_InversMixColumn+0x12c>
+	  x ^= 283;
+   10d5e:	11b7c793          	xori	a5,a5,283
+	x = (x << 1);
+   10d62:	0786                	slli	a5,a5,0x1
+	if ((x >> 8) == 1)
+   10d64:	4087d713          	srai	a4,a5,0x8
+   10d68:	01071463          	bne	a4,a6,10d70 <AddRoundKey_InversMixColumn+0x13a>
+	  x ^= 283;
+   10d6c:	11b7c793          	xori	a5,a5,283
+	x = (statemt[(i + 3) % 4 + j * 4] << 1);
+   10d70:	00230713          	addi	a4,t1,2
+   10d74:	8b0d                	andi	a4,a4,3
+   10d76:	977a                	add	a4,a4,t5
+   10d78:	070a                	slli	a4,a4,0x2
+   10d7a:	972a                	add	a4,a4,a0
+   10d7c:	4318                	lw	a4,0(a4)
+   10d7e:	8eb9                	xor	a3,a3,a4
+   10d80:	0056c6b3          	xor	a3,a3,t0
+   10d84:	0706                	slli	a4,a4,0x1
+   10d86:	8eb1                	xor	a3,a3,a2
+	if ((x >> 8) == 1)
+   10d88:	40875613          	srai	a2,a4,0x8
+   10d8c:	01061463          	bne	a2,a6,10d94 <AddRoundKey_InversMixColumn+0x15e>
+	  x ^= 283;
+   10d90:	11b74713          	xori	a4,a4,283
+	x = (x << 1);
+   10d94:	0706                	slli	a4,a4,0x1
+	if ((x >> 8) == 1)
+   10d96:	40875613          	srai	a2,a4,0x8
+   10d9a:	01061463          	bne	a2,a6,10da2 <AddRoundKey_InversMixColumn+0x16c>
+	  x ^= 283;
+   10d9e:	11b74713          	xori	a4,a4,283
+	x = (x << 1);
+   10da2:	0706                	slli	a4,a4,0x1
+	if ((x >> 8) == 1)
+   10da4:	40875613          	srai	a2,a4,0x8
+   10da8:	01061463          	bne	a2,a6,10db0 <AddRoundKey_InversMixColumn+0x17a>
+	  x ^= 283;
+   10dac:	11b74713          	xori	a4,a4,283
+	ret[i + j * 4] ^= x;
+   10db0:	8fb5                	xor	a5,a5,a3
+   10db2:	01d10633          	add	a2,sp,t4
+   10db6:	8f3d                	xor	a4,a4,a5
+   10db8:	c218                	sw	a4,0(a2)
+   10dba:	0e91                	addi	t4,t4,4
+    for (i = 0; i < 4; ++i)
+   10dbc:	eff31ee3          	bne	t1,t6,10cb8 <AddRoundKey_InversMixColumn+0x82>
+  for (j = 0; j < nb; ++j)
+   10dc0:	0e05                	addi	t3,t3,1
+   10dc2:	bd51                	j	10c56 <AddRoundKey_InversMixColumn+0x20>
+      statemt[i * 4] = ret[i * 4];
+   10dc4:	4394                	lw	a3,0(a5)
+  for (i = 0; i < nb; ++i)
+   10dc6:	0705                	addi	a4,a4,1
+   10dc8:	07c1                	addi	a5,a5,16
+      statemt[i * 4] = ret[i * 4];
+   10dca:	00d8a023          	sw	a3,0(a7)
+      statemt[1 + i * 4] = ret[1 + i * 4];
+   10dce:	ff47a683          	lw	a3,-12(a5)
+   10dd2:	08c1                	addi	a7,a7,16
+   10dd4:	fed8aa23          	sw	a3,-12(a7)
+      statemt[2 + i * 4] = ret[2 + i * 4];
+   10dd8:	ff87a683          	lw	a3,-8(a5)
+   10ddc:	fed8ac23          	sw	a3,-8(a7)
+      statemt[3 + i * 4] = ret[3 + i * 4];
+   10de0:	ffc7a683          	lw	a3,-4(a5)
+   10de4:	fed8ae23          	sw	a3,-4(a7)
+   10de8:	bd9d                	j	10c5e <AddRoundKey_InversMixColumn+0x28>
+
+00010dea <AddRoundKey>:
+int
+AddRoundKey (int statemt[32], int type, int n)
+{
+  int j, nb;
+
+  switch (type)
+   10dea:	0002f737          	lui	a4,0x2f
+   10dee:	ec070693          	addi	a3,a4,-320 # 2eec0 <_end+0x1c1dc>
+   10df2:	0ad58963          	beq	a1,a3,10ea4 <AddRoundKey+0xba>
+   10df6:	08b6c063          	blt	a3,a1,10e76 <AddRoundKey+0x8c>
+   10dfa:	66fd                	lui	a3,0x1f
+   10dfc:	4c068813          	addi	a6,a3,1216 # 1f4c0 <_end+0xc7dc>
+   10e00:	0b058263          	beq	a1,a6,10ea4 <AddRoundKey+0xba>
+   10e04:	04b84f63          	blt	a6,a1,10e62 <AddRoundKey+0x78>
+   10e08:	48068693          	addi	a3,a3,1152
+   10e0c:	06d58363          	beq	a1,a3,10e72 <AddRoundKey+0x88>
+      nb = 8;
+      break;
+    }
+  for (j = 0; j < nb; ++j)
+    {
+      statemt[j * 4] ^= word[0][j + nb * n];
+   10e10:	02c78633          	mul	a2,a5,a2
+   10e14:	6749                	lui	a4,0x12
+   10e16:	56470713          	addi	a4,a4,1380 # 12564 <word>
+   10e1a:	0792                	slli	a5,a5,0x4
+   10e1c:	97aa                	add	a5,a5,a0
+   10e1e:	060a                	slli	a2,a2,0x2
+   10e20:	963a                	add	a2,a2,a4
+   10e22:	4214                	lw	a3,0(a2)
+   10e24:	4118                	lw	a4,0(a0)
+   10e26:	0541                	addi	a0,a0,16
+   10e28:	0611                	addi	a2,a2,4
+   10e2a:	8f35                	xor	a4,a4,a3
+   10e2c:	fee52823          	sw	a4,-16(a0)
+      statemt[1 + j * 4] ^= word[1][j + nb * n];
+   10e30:	1dc62683          	lw	a3,476(a2)
+   10e34:	ff452703          	lw	a4,-12(a0)
+   10e38:	8f35                	xor	a4,a4,a3
+   10e3a:	fee52a23          	sw	a4,-12(a0)
+      statemt[2 + j * 4] ^= word[2][j + nb * n];
+   10e3e:	3bc62683          	lw	a3,956(a2)
+   10e42:	ff852703          	lw	a4,-8(a0)
+   10e46:	8f35                	xor	a4,a4,a3
+   10e48:	fee52c23          	sw	a4,-8(a0)
+      statemt[3 + j * 4] ^= word[3][j + nb * n];
+   10e4c:	59c62683          	lw	a3,1436(a2)
+   10e50:	ffc52703          	lw	a4,-4(a0)
+   10e54:	8f35                	xor	a4,a4,a3
+   10e56:	fee52e23          	sw	a4,-4(a0)
+  for (j = 0; j < nb; ++j)
+   10e5a:	fca794e3          	bne	a5,a0,10e22 <AddRoundKey+0x38>
+    }
+  return 0;
+}
+   10e5e:	4501                	li	a0,0
+   10e60:	8082                	ret
+  switch (type)
+   10e62:	50068693          	addi	a3,a3,1280
+   10e66:	02d58463          	beq	a1,a3,10e8e <AddRoundKey+0xa4>
+   10e6a:	e8070713          	addi	a4,a4,-384
+   10e6e:	fae591e3          	bne	a1,a4,10e10 <AddRoundKey+0x26>
+      nb = 4;
+   10e72:	4791                	li	a5,4
+   10e74:	bf71                	j	10e10 <AddRoundKey+0x26>
+  switch (type)
+   10e76:	0003f6b7          	lui	a3,0x3f
+   10e7a:	88068813          	addi	a6,a3,-1920 # 3e880 <_end+0x2bb9c>
+   10e7e:	ff058ae3          	beq	a1,a6,10e72 <AddRoundKey+0x88>
+   10e82:	00b84863          	blt	a6,a1,10e92 <AddRoundKey+0xa8>
+   10e86:	f0070713          	addi	a4,a4,-256
+   10e8a:	f8e593e3          	bne	a1,a4,10e10 <AddRoundKey+0x26>
+      nb = 8;
+   10e8e:	47a1                	li	a5,8
+      break;
+   10e90:	b741                	j	10e10 <AddRoundKey+0x26>
+  switch (type)
+   10e92:	8c068713          	addi	a4,a3,-1856
+   10e96:	00e58763          	beq	a1,a4,10ea4 <AddRoundKey+0xba>
+   10e9a:	90068693          	addi	a3,a3,-1792
+   10e9e:	fed588e3          	beq	a1,a3,10e8e <AddRoundKey+0xa4>
+   10ea2:	b7bd                	j	10e10 <AddRoundKey+0x26>
+      nb = 6;
+   10ea4:	4799                	li	a5,6
+      break;
+   10ea6:	b7ad                	j	10e10 <AddRoundKey+0x26>
+
+00010ea8 <encrypt>:
+ *
+ */
+/*  ******* encrypto ************ */
+int
+encrypt (int statemt[32], int key[32], int type)
+{
+   10ea8:	711d                	addi	sp,sp,-96
+   10eaa:	c8ca                	sw	s2,80(sp)
+   10eac:	892e                	mv	s2,a1
++--------------------------------------------------------------------------+
+| * Test Vector (added for CHStone)                                        |
+|     out_enc_statemt : expected output data for "encrypt"                 |
++--------------------------------------------------------------------------+
+*/
+  const int out_enc_statemt[16] =
+   10eae:	65c5                	lui	a1,0x11
+{
+   10eb0:	cca2                	sw	s0,88(sp)
+   10eb2:	caa6                	sw	s1,84(sp)
+   10eb4:	8432                	mv	s0,a2
+  const int out_enc_statemt[16] =
+   10eb6:	6ec58593          	addi	a1,a1,1772 # 116ec <__errno+0x10>
+   10eba:	04000613          	li	a2,64
+{
+   10ebe:	84aa                	mv	s1,a0
+  const int out_enc_statemt[16] =
+   10ec0:	850a                	mv	a0,sp
+{
+   10ec2:	ce86                	sw	ra,92(sp)
+   10ec4:	c6ce                	sw	s3,76(sp)
+   10ec6:	c4d2                	sw	s4,72(sp)
+  const int out_enc_statemt[16] =
+   10ec8:	2995                	jal	1133c <memcpy>
+    { 0x39, 0x25, 0x84, 0x1d, 0x2, 0xdc, 0x9, 0xfb, 0xdc, 0x11, 0x85, 0x97,
+    0x19, 0x6a, 0xb, 0x32
+  };
+
+  KeySchedule (type, key);
+   10eca:	85ca                	mv	a1,s2
+   10ecc:	8522                	mv	a0,s0
+   10ece:	b46ff0ef          	jal	ra,10214 <KeySchedule>
+  switch (type)
+   10ed2:	0002f7b7          	lui	a5,0x2f
+   10ed6:	ec078713          	addi	a4,a5,-320 # 2eec0 <_end+0x1c1dc>
+   10eda:	0ce40c63          	beq	s0,a4,10fb2 <encrypt+0x10a>
+   10ede:	08874663          	blt	a4,s0,10f6a <encrypt+0xc2>
+   10ee2:	677d                	lui	a4,0x1f
+   10ee4:	4c070693          	addi	a3,a4,1216 # 1f4c0 <_end+0xc7dc>
+   10ee8:	0cd40563          	beq	s0,a3,10fb2 <encrypt+0x10a>
+   10eec:	0686c363          	blt	a3,s0,10f52 <encrypt+0xaa>
+   10ef0:	48070713          	addi	a4,a4,1152
+   10ef4:	0ae40563          	beq	s0,a4,10f9e <encrypt+0xf6>
+    case 256256:
+      round = 4;
+      nb = 8;
+      break;
+    }
+  AddRoundKey (statemt, type, 0);
+   10ef8:	4601                	li	a2,0
+   10efa:	85a2                	mv	a1,s0
+   10efc:	8526                	mv	a0,s1
+   10efe:	35f5                	jal	10dea <AddRoundKey>
+  for (i = 1; i <= round + 9; ++i)
+   10f00:	4a05                	li	s4,1
+   10f02:	8241a783          	lw	a5,-2012(gp) # 12454 <round>
+   10f06:	8b01a583          	lw	a1,-1872(gp) # 124e0 <nb>
+    {
+      ByteSub_ShiftRow (statemt, nb);
+   10f0a:	8526                	mv	a0,s1
+  for (i = 1; i <= round + 9; ++i)
+   10f0c:	07a5                	addi	a5,a5,9
+   10f0e:	0b47d963          	ble	s4,a5,10fc0 <encrypt+0x118>
+      //asm volatile ("addi x0, x0, 0");
+      //asm volatile ("addi x0, x0, 0");
+      //asm volatile ("addi x0, x0, 0");
+      //}
+    }
+  ByteSub_ShiftRow (statemt, nb);
+   10f12:	da4ff0ef          	jal	ra,104b6 <ByteSub_ShiftRow>
+  AddRoundKey (statemt, type, i);
+   10f16:	8652                	mv	a2,s4
+   10f18:	85a2                	mv	a1,s0
+   10f1a:	8526                	mv	a0,s1
+   10f1c:	35f9                	jal	10dea <AddRoundKey>
+   10f1e:	870a                	mv	a4,sp
+   10f20:	04048613          	addi	a2,s1,64
+  //*dbg0 = out_enc_statemt[i];
+  //asm volatile ("addi x0, x0, 0");
+  //asm volatile ("addi x0, x0, 0");
+  //asm volatile ("addi x0, x0, 0");
+  //asm volatile ("addi x0, x0, 0");
+    main_result += (statemt[i] != out_enc_statemt[i]);
+   10f24:	409c                	lw	a5,0(s1)
+   10f26:	430c                	lw	a1,0(a4)
+   10f28:	0491                	addi	s1,s1,4
+   10f2a:	0711                	addi	a4,a4,4
+   10f2c:	8f8d                	sub	a5,a5,a1
+   10f2e:	82c1a583          	lw	a1,-2004(gp) # 1245c <main_result>
+   10f32:	00f037b3          	snez	a5,a5
+   10f36:	97ae                	add	a5,a5,a1
+   10f38:	82f1a623          	sw	a5,-2004(gp) # 1245c <main_result>
+  for (i = 0; i < 16; i++)
+   10f3c:	fe9614e3          	bne	a2,s1,10f24 <encrypt+0x7c>
+  //}
+
+  return 0;
+}
+   10f40:	40f6                	lw	ra,92(sp)
+   10f42:	4466                	lw	s0,88(sp)
+   10f44:	44d6                	lw	s1,84(sp)
+   10f46:	4946                	lw	s2,80(sp)
+   10f48:	49b6                	lw	s3,76(sp)
+   10f4a:	4a26                	lw	s4,72(sp)
+   10f4c:	4501                	li	a0,0
+   10f4e:	6125                	addi	sp,sp,96
+   10f50:	8082                	ret
+  switch (type)
+   10f52:	50070713          	addi	a4,a4,1280
+   10f56:	02e40663          	beq	s0,a4,10f82 <encrypt+0xda>
+   10f5a:	e8078793          	addi	a5,a5,-384
+   10f5e:	f8f41de3          	bne	s0,a5,10ef8 <encrypt+0x50>
+      round = 2;
+   10f62:	4789                	li	a5,2
+   10f64:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+   10f68:	a82d                	j	10fa2 <encrypt+0xfa>
+  switch (type)
+   10f6a:	0003f737          	lui	a4,0x3f
+   10f6e:	88070693          	addi	a3,a4,-1920 # 3e880 <_end+0x2bb9c>
+   10f72:	02d40c63          	beq	s0,a3,10faa <encrypt+0x102>
+   10f76:	0086cb63          	blt	a3,s0,10f8c <encrypt+0xe4>
+   10f7a:	f0078793          	addi	a5,a5,-256
+   10f7e:	f6f41de3          	bne	s0,a5,10ef8 <encrypt+0x50>
+      round = 4;
+   10f82:	4791                	li	a5,4
+   10f84:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+      nb = 8;
+   10f88:	47a1                	li	a5,8
+   10f8a:	a829                	j	10fa4 <encrypt+0xfc>
+  switch (type)
+   10f8c:	8c070793          	addi	a5,a4,-1856
+   10f90:	02f40663          	beq	s0,a5,10fbc <encrypt+0x114>
+   10f94:	90070713          	addi	a4,a4,-1792
+   10f98:	fee405e3          	beq	s0,a4,10f82 <encrypt+0xda>
+   10f9c:	bfb1                	j	10ef8 <encrypt+0x50>
+      round = 0;
+   10f9e:	8201a223          	sw	zero,-2012(gp) # 12454 <round>
+      nb = 4;
+   10fa2:	4791                	li	a5,4
+      nb = 8;
+   10fa4:	8af1a823          	sw	a5,-1872(gp) # 124e0 <nb>
+      break;
+   10fa8:	bf81                	j	10ef8 <encrypt+0x50>
+      round = 4;
+   10faa:	4791                	li	a5,4
+   10fac:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+   10fb0:	bfd5                	j	10fa4 <encrypt+0xfc>
+      round = 2;
+   10fb2:	4789                	li	a5,2
+      round = 4;
+   10fb4:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+      nb = 6;
+   10fb8:	4799                	li	a5,6
+   10fba:	b7ed                	j	10fa4 <encrypt+0xfc>
+      round = 4;
+   10fbc:	4791                	li	a5,4
+   10fbe:	bfdd                	j	10fb4 <encrypt+0x10c>
+      ByteSub_ShiftRow (statemt, nb);
+   10fc0:	cf6ff0ef          	jal	ra,104b6 <ByteSub_ShiftRow>
+      MixColumn_AddRoundKey (statemt, nb, i);
+   10fc4:	8b01a583          	lw	a1,-1872(gp) # 124e0 <nb>
+   10fc8:	8652                	mv	a2,s4
+   10fca:	8526                	mv	a0,s1
+   10fcc:	3cf9                	jal	10aaa <MixColumn_AddRoundKey>
+  for (i = 1; i <= round + 9; ++i)
+   10fce:	0a05                	addi	s4,s4,1
+   10fd0:	bf0d                	j	10f02 <encrypt+0x5a>
+
+00010fd2 <decrypt>:
+ *   WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ *
+ */
+int
+decrypt (int statemt[32], int key[32], int type)
+{
+   10fd2:	711d                	addi	sp,sp,-96
+   10fd4:	c8ca                	sw	s2,80(sp)
+   10fd6:	892e                	mv	s2,a1
++--------------------------------------------------------------------------+
+| * Test Vector (added for CHStone)                                        |
+|     out_enc_statemt : expected output data for "decrypt"                 |
++--------------------------------------------------------------------------+
+*/
+  const int out_dec_statemt[16] =
+   10fd8:	65c5                	lui	a1,0x11
+{
+   10fda:	cca2                	sw	s0,88(sp)
+   10fdc:	caa6                	sw	s1,84(sp)
+   10fde:	8432                	mv	s0,a2
+  const int out_dec_statemt[16] =
+   10fe0:	72c58593          	addi	a1,a1,1836 # 1172c <__errno+0x50>
+   10fe4:	04000613          	li	a2,64
+{
+   10fe8:	84aa                	mv	s1,a0
+  const int out_dec_statemt[16] =
+   10fea:	850a                	mv	a0,sp
+{
+   10fec:	ce86                	sw	ra,92(sp)
+   10fee:	c6ce                	sw	s3,76(sp)
+  const int out_dec_statemt[16] =
+   10ff0:	26b1                	jal	1133c <memcpy>
+    { 0x32, 0x43, 0xf6, 0xa8, 0x88, 0x5a, 0x30, 0x8d, 0x31, 0x31, 0x98, 0xa2,
+    0xe0, 0x37, 0x7, 0x34
+  };
+  KeySchedule (type, key);
+   10ff2:	85ca                	mv	a1,s2
+   10ff4:	8522                	mv	a0,s0
+   10ff6:	a1eff0ef          	jal	ra,10214 <KeySchedule>
+
+  switch (type)
+   10ffa:	0002f7b7          	lui	a5,0x2f
+   10ffe:	ec078713          	addi	a4,a5,-320 # 2eec0 <_end+0x1c1dc>
+   11002:	0ce40563          	beq	s0,a4,110cc <decrypt+0xfa>
+   11006:	08874763          	blt	a4,s0,11094 <decrypt+0xc2>
+   1100a:	677d                	lui	a4,0x1f
+   1100c:	4c070693          	addi	a3,a4,1216 # 1f4c0 <_end+0xc7dc>
+   11010:	0ad40e63          	beq	s0,a3,110cc <decrypt+0xfa>
+   11014:	0686c363          	blt	a3,s0,1107a <decrypt+0xa8>
+   11018:	48070713          	addi	a4,a4,1152
+    {
+    case 128128:
+      round = 10;
+   1101c:	47a9                	li	a5,10
+  switch (type)
+   1101e:	06e40763          	beq	s0,a4,1108c <decrypt+0xba>
+      round = 14;
+      nb = 8;
+      break;
+    }
+
+  AddRoundKey (statemt, type, round);
+   11022:	8241a603          	lw	a2,-2012(gp) # 12454 <round>
+   11026:	85a2                	mv	a1,s0
+   11028:	8526                	mv	a0,s1
+   1102a:	33c1                	jal	10dea <AddRoundKey>
+
+  InversShiftRow_ByteSub (statemt, nb);
+   1102c:	8b01a583          	lw	a1,-1872(gp) # 124e0 <nb>
+   11030:	8526                	mv	a0,s1
+   11032:	f7eff0ef          	jal	ra,107b0 <InversShiftRow_ByteSub>
+
+  for (i = round - 1; i >= 1; --i)
+   11036:	8241a983          	lw	s3,-2012(gp) # 12454 <round>
+   1103a:	19fd                	addi	s3,s3,-1
+   1103c:	0b304163          	bgtz	s3,110de <decrypt+0x10c>
+    {
+      AddRoundKey_InversMixColumn (statemt, nb, i);
+      InversShiftRow_ByteSub (statemt, nb);
+    }
+
+  AddRoundKey (statemt, type, 0);
+   11040:	4601                	li	a2,0
+   11042:	85a2                	mv	a1,s0
+   11044:	8526                	mv	a0,s1
+   11046:	3355                	jal	10dea <AddRoundKey>
+   11048:	870a                	mv	a4,sp
+   1104a:	04048613          	addi	a2,s1,64
+//	printf ("0");
+  //    printf ("%x", statemt[i]);
+   // }
+
+  for (i = 0; i < 16; i++)
+    main_result += (statemt[i] != out_dec_statemt[i]);
+   1104e:	409c                	lw	a5,0(s1)
+   11050:	430c                	lw	a1,0(a4)
+   11052:	0491                	addi	s1,s1,4
+   11054:	0711                	addi	a4,a4,4
+   11056:	8f8d                	sub	a5,a5,a1
+   11058:	82c1a583          	lw	a1,-2004(gp) # 1245c <main_result>
+   1105c:	00f037b3          	snez	a5,a5
+   11060:	97ae                	add	a5,a5,a1
+   11062:	82f1a623          	sw	a5,-2004(gp) # 1245c <main_result>
+  for (i = 0; i < 16; i++)
+   11066:	fe9614e3          	bne	a2,s1,1104e <decrypt+0x7c>
+
+  return 0;
+}
+   1106a:	40f6                	lw	ra,92(sp)
+   1106c:	4466                	lw	s0,88(sp)
+   1106e:	44d6                	lw	s1,84(sp)
+   11070:	4946                	lw	s2,80(sp)
+   11072:	49b6                	lw	s3,76(sp)
+   11074:	4501                	li	a0,0
+   11076:	6125                	addi	sp,sp,96
+   11078:	8082                	ret
+  switch (type)
+   1107a:	50070713          	addi	a4,a4,1280
+   1107e:	02e40763          	beq	s0,a4,110ac <decrypt+0xda>
+   11082:	e8078793          	addi	a5,a5,-384
+   11086:	f8f41ee3          	bne	s0,a5,11022 <decrypt+0x50>
+      round = 12;
+   1108a:	47b1                	li	a5,12
+      round = 14;
+   1108c:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+      nb = 4;
+   11090:	4791                	li	a5,4
+   11092:	a00d                	j	110b4 <decrypt+0xe2>
+  switch (type)
+   11094:	0003f737          	lui	a4,0x3f
+   11098:	88070693          	addi	a3,a4,-1920 # 3e880 <_end+0x2bb9c>
+   1109c:	02d40d63          	beq	s0,a3,110d6 <decrypt+0x104>
+   110a0:	0086cd63          	blt	a3,s0,110ba <decrypt+0xe8>
+   110a4:	f0078793          	addi	a5,a5,-256
+   110a8:	f6f41de3          	bne	s0,a5,11022 <decrypt+0x50>
+      round = 14;
+   110ac:	47b9                	li	a5,14
+   110ae:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+      nb = 8;
+   110b2:	47a1                	li	a5,8
+      nb = 6;
+   110b4:	8af1a823          	sw	a5,-1872(gp) # 124e0 <nb>
+      break;
+   110b8:	b7ad                	j	11022 <decrypt+0x50>
+  switch (type)
+   110ba:	8c070793          	addi	a5,a4,-1856
+   110be:	00f40e63          	beq	s0,a5,110da <decrypt+0x108>
+   110c2:	90070713          	addi	a4,a4,-1792
+   110c6:	fee403e3          	beq	s0,a4,110ac <decrypt+0xda>
+   110ca:	bfa1                	j	11022 <decrypt+0x50>
+      round = 12;
+   110cc:	47b1                	li	a5,12
+      round = 14;
+   110ce:	82f1a223          	sw	a5,-2012(gp) # 12454 <round>
+      nb = 6;
+   110d2:	4799                	li	a5,6
+   110d4:	b7c5                	j	110b4 <decrypt+0xe2>
+      round = 14;
+   110d6:	47b9                	li	a5,14
+   110d8:	bf55                	j	1108c <decrypt+0xba>
+      round = 14;
+   110da:	47b9                	li	a5,14
+   110dc:	bfcd                	j	110ce <decrypt+0xfc>
+      AddRoundKey_InversMixColumn (statemt, nb, i);
+   110de:	8b01a583          	lw	a1,-1872(gp) # 124e0 <nb>
+   110e2:	864e                	mv	a2,s3
+   110e4:	8526                	mv	a0,s1
+   110e6:	3e81                	jal	10c36 <AddRoundKey_InversMixColumn>
+      InversShiftRow_ByteSub (statemt, nb);
+   110e8:	8b01a583          	lw	a1,-1872(gp) # 124e0 <nb>
+   110ec:	8526                	mv	a0,s1
+   110ee:	ec2ff0ef          	jal	ra,107b0 <InversShiftRow_ByteSub>
+   110f2:	b7a1                	j	1103a <decrypt+0x68>
+
+000110f4 <aes_main>:
+#include "aes_func.c"
+
+/* ***************** main **************************** */
+int
+aes_main (void)
+{
+   110f4:	1141                	addi	sp,sp,-16
+   110f6:	c422                	sw	s0,8(sp)
+   +--------------------------------------------------------------------------+
+   | * Test Vectors (added for CHStone)                              |
+   |    statemt, key : input data                                 |
+   +--------------------------------------------------------------------------+
+   */
+   statemt[0] = 50;
+   110f8:	03200793          	li	a5,50
+{
+   110fc:	c606                	sw	ra,12(sp)
+   110fe:	c226                	sw	s1,4(sp)
+   11100:	c04a                	sw	s2,0(sp)
+   statemt[0] = 50;
+   11102:	8af1aa23          	sw	a5,-1868(gp) # 124e4 <statemt>
+   statemt[1] = 67;
+   statemt[2] = 246;
+   statemt[3] = 168;
+   statemt[4] = 136;
+   statemt[5] = 90;
+   11106:	05a00693          	li	a3,90
+   statemt[1] = 67;
+   1110a:	8b418793          	addi	a5,gp,-1868 # 124e4 <statemt>
+   statemt[5] = 90;
+   1110e:	cbd4                	sw	a3,20(a5)
+   statemt[6] = 48;
+   11110:	03000693          	li	a3,48
+   11114:	cf94                	sw	a3,24(a5)
+   statemt[7] = 141;
+   11116:	08d00693          	li	a3,141
+   1111a:	cfd4                	sw	a3,28(a5)
+   statemt[8] = 49;
+   1111c:	03100693          	li	a3,49
+   11120:	d394                	sw	a3,32(a5)
+   statemt[9] = 49;
+   11122:	d3d4                	sw	a3,36(a5)
+   statemt[10] = 152;
+   11124:	09800693          	li	a3,152
+   11128:	d794                	sw	a3,40(a5)
+   statemt[11] = 162;
+   1112a:	0a200693          	li	a3,162
+   1112e:	d7d4                	sw	a3,44(a5)
+   statemt[1] = 67;
+   11130:	04300713          	li	a4,67
+   statemt[12] = 224;
+   11134:	0e000693          	li	a3,224
+   statemt[1] = 67;
+   11138:	c3d8                	sw	a4,4(a5)
+   statemt[12] = 224;
+   1113a:	db94                	sw	a3,48(a5)
+   statemt[2] = 246;
+   1113c:	0f600713          	li	a4,246
+   statemt[13] = 55;
+   11140:	03700693          	li	a3,55
+   statemt[2] = 246;
+   11144:	c798                	sw	a4,8(a5)
+   statemt[13] = 55;
+   11146:	dbd4                	sw	a3,52(a5)
+   statemt[3] = 168;
+   11148:	0a800713          	li	a4,168
+   statemt[14] = 7;
+   1114c:	469d                	li	a3,7
+   statemt[3] = 168;
+   1114e:	c7d8                	sw	a4,12(a5)
+   statemt[14] = 7;
+   11150:	df94                	sw	a3,56(a5)
+   statemt[4] = 136;
+   11152:	08800713          	li	a4,136
+   statemt[15] = 52;
+   11156:	03400693          	li	a3,52
+
+   key[0] = 43;
+   1115a:	64c9                	lui	s1,0x12
+   statemt[4] = 136;
+   1115c:	cb98                	sw	a4,16(a5)
+   statemt[15] = 52;
+   1115e:	dfd4                	sw	a3,60(a5)
+   key[0] = 43;
+   11160:	02b00793          	li	a5,43
+   11164:	46f4a023          	sw	a5,1120(s1) # 12460 <key>
+   key[1] = 126;
+   key[2] = 21;
+   key[3] = 22;
+   11168:	4659                	li	a2,22
+   key[1] = 126;
+   1116a:	46048793          	addi	a5,s1,1120
+   key[3] = 22;
+   1116e:	c7d0                	sw	a2,12(a5)
+   key[4] = 40;
+   11170:	02800613          	li	a2,40
+   11174:	cb90                	sw	a2,16(a5)
+   key[5] = 174;
+   11176:	0ae00613          	li	a2,174
+   1117a:	cbd0                	sw	a2,20(a5)
+   key[6] = 210;
+   1117c:	0d200613          	li	a2,210
+   11180:	cf90                	sw	a2,24(a5)
+   key[7] = 166;
+   11182:	0a600613          	li	a2,166
+   11186:	cfd0                	sw	a2,28(a5)
+   key[1] = 126;
+   11188:	07e00693          	li	a3,126
+   key[8] = 171;
+   1118c:	0ab00613          	li	a2,171
+   key[1] = 126;
+   11190:	c3d4                	sw	a3,4(a5)
+   key[8] = 171;
+   11192:	d390                	sw	a2,32(a5)
+   key[2] = 21;
+   11194:	46d5                	li	a3,21
+   key[9] = 247;
+   11196:	0f700613          	li	a2,247
+   1119a:	d3d0                	sw	a2,36(a5)
+   key[10] = 21;
+   key[11] = 136;
+   1119c:	d7d8                	sw	a4,44(a5)
+   key[2] = 21;
+   1119e:	c794                	sw	a3,8(a5)
+   key[10] = 21;
+   111a0:	d794                	sw	a3,40(a5)
+   key[12] = 9;
+   111a2:	4725                	li	a4,9
+   111a4:	db98                	sw	a4,48(a5)
+   key[13] = 207;
+   111a6:	0cf00713          	li	a4,207
+   111aa:	dbd8                	sw	a4,52(a5)
+   key[14] = 79;
+   key[15] = 60;
+
+   encrypt (statemt, key, 128128);
+   111ac:	697d                	lui	s2,0x1f
+   key[14] = 79;
+   111ae:	04f00713          	li	a4,79
+   111b2:	df98                	sw	a4,56(a5)
+   encrypt (statemt, key, 128128);
+   111b4:	48090613          	addi	a2,s2,1152 # 1f480 <_end+0xc79c>
+   key[15] = 60;
+   111b8:	03c00713          	li	a4,60
+   encrypt (statemt, key, 128128);
+   111bc:	46048593          	addi	a1,s1,1120
+   111c0:	8b418513          	addi	a0,gp,-1868 # 124e4 <statemt>
+   key[15] = 60;
+   111c4:	dfd8                	sw	a4,60(a5)
+   encrypt (statemt, key, 128128);
+   111c6:	31cd                	jal	10ea8 <encrypt>
+   decrypt (statemt, key, 128128);
+   111c8:	48090613          	addi	a2,s2,1152
+   111cc:	46048593          	addi	a1,s1,1120
+   111d0:	8b418513          	addi	a0,gp,-1868 # 124e4 <statemt>
+   111d4:	3bfd                	jal	10fd2 <decrypt>
+   return 0;
+}
+   111d6:	40b2                	lw	ra,12(sp)
+   111d8:	4422                	lw	s0,8(sp)
+   111da:	4492                	lw	s1,4(sp)
+   111dc:	4902                	lw	s2,0(sp)
+   111de:	4501                	li	a0,0
+   111e0:	0141                	addi	sp,sp,16
+   111e2:	8082                	ret
+
+000111e4 <atexit>:
+   111e4:	00050593          	mv	a1,a0
+   111e8:	00000693          	li	a3,0
+   111ec:	00000613          	li	a2,0
+   111f0:	00000513          	li	a0,0
+   111f4:	30c0006f          	j	11500 <__register_exitproc>
+
+000111f8 <exit>:
+   111f8:	ff010113          	addi	sp,sp,-16
+   111fc:	00000593          	li	a1,0
+   11200:	00812423          	sw	s0,8(sp)
+   11204:	00112623          	sw	ra,12(sp)
+   11208:	00050413          	mv	s0,a0
+   1120c:	378000ef          	jal	ra,11584 <__call_exitprocs>
+   11210:	00001797          	auipc	a5,0x1
+   11214:	22078793          	addi	a5,a5,544 # 12430 <_global_impure_ptr>
+   11218:	0007a503          	lw	a0,0(a5)
+   1121c:	03c52783          	lw	a5,60(a0)
+   11220:	00078463          	beqz	a5,11228 <exit+0x30>
+   11224:	000780e7          	jalr	a5
+   11228:	00040513          	mv	a0,s0
+   1122c:	46c000ef          	jal	ra,11698 <_exit>
+
+00011230 <__libc_fini_array>:
+   11230:	fe010113          	addi	sp,sp,-32
+   11234:	00001797          	auipc	a5,0x1
+   11238:	dd478793          	addi	a5,a5,-556 # 12008 <__fini_array_end>
+   1123c:	00812c23          	sw	s0,24(sp)
+   11240:	00001417          	auipc	s0,0x1
+   11244:	dc440413          	addi	s0,s0,-572 # 12004 <__init_array_end>
+   11248:	40878433          	sub	s0,a5,s0
+   1124c:	00912a23          	sw	s1,20(sp)
+   11250:	01212823          	sw	s2,16(sp)
+   11254:	01312623          	sw	s3,12(sp)
+   11258:	00112e23          	sw	ra,28(sp)
+   1125c:	40245413          	srai	s0,s0,0x2
+   11260:	00000493          	li	s1,0
+   11264:	00078913          	mv	s2,a5
+   11268:	ffc00993          	li	s3,-4
+   1126c:	02941063          	bne	s0,s1,1128c <__libc_fini_array+0x5c>
+   11270:	01812403          	lw	s0,24(sp)
+   11274:	01c12083          	lw	ra,28(sp)
+   11278:	01412483          	lw	s1,20(sp)
+   1127c:	01012903          	lw	s2,16(sp)
+   11280:	00c12983          	lw	s3,12(sp)
+   11284:	02010113          	addi	sp,sp,32
+   11288:	ea1fe06f          	j	10128 <_fini>
+   1128c:	033487b3          	mul	a5,s1,s3
+   11290:	00148493          	addi	s1,s1,1
+   11294:	00f907b3          	add	a5,s2,a5
+   11298:	ffc7a783          	lw	a5,-4(a5)
+   1129c:	000780e7          	jalr	a5
+   112a0:	fcdff06f          	j	1126c <__libc_fini_array+0x3c>
+
+000112a4 <__libc_init_array>:
+   112a4:	ff010113          	addi	sp,sp,-16
+   112a8:	00812423          	sw	s0,8(sp)
+   112ac:	00912223          	sw	s1,4(sp)
+   112b0:	00001417          	auipc	s0,0x1
+   112b4:	d5040413          	addi	s0,s0,-688 # 12000 <__frame_dummy_init_array_entry>
+   112b8:	00001497          	auipc	s1,0x1
+   112bc:	d4848493          	addi	s1,s1,-696 # 12000 <__frame_dummy_init_array_entry>
+   112c0:	408484b3          	sub	s1,s1,s0
+   112c4:	01212023          	sw	s2,0(sp)
+   112c8:	00112623          	sw	ra,12(sp)
+   112cc:	4024d493          	srai	s1,s1,0x2
+   112d0:	00000913          	li	s2,0
+   112d4:	04991063          	bne	s2,s1,11314 <__libc_init_array+0x70>
+   112d8:	00001417          	auipc	s0,0x1
+   112dc:	d2840413          	addi	s0,s0,-728 # 12000 <__frame_dummy_init_array_entry>
+   112e0:	00001497          	auipc	s1,0x1
+   112e4:	d2448493          	addi	s1,s1,-732 # 12004 <__init_array_end>
+   112e8:	408484b3          	sub	s1,s1,s0
+   112ec:	e3dfe0ef          	jal	ra,10128 <_fini>
+   112f0:	4024d493          	srai	s1,s1,0x2
+   112f4:	00000913          	li	s2,0
+   112f8:	02991863          	bne	s2,s1,11328 <__libc_init_array+0x84>
+   112fc:	00c12083          	lw	ra,12(sp)
+   11300:	00812403          	lw	s0,8(sp)
+   11304:	00412483          	lw	s1,4(sp)
+   11308:	00012903          	lw	s2,0(sp)
+   1130c:	01010113          	addi	sp,sp,16
+   11310:	00008067          	ret
+   11314:	00042783          	lw	a5,0(s0)
+   11318:	00190913          	addi	s2,s2,1
+   1131c:	00440413          	addi	s0,s0,4
+   11320:	000780e7          	jalr	a5
+   11324:	fb1ff06f          	j	112d4 <__libc_init_array+0x30>
+   11328:	00042783          	lw	a5,0(s0)
+   1132c:	00190913          	addi	s2,s2,1
+   11330:	00440413          	addi	s0,s0,4
+   11334:	000780e7          	jalr	a5
+   11338:	fc1ff06f          	j	112f8 <__libc_init_array+0x54>
+
+0001133c <memcpy>:
+   1133c:	00a5c7b3          	xor	a5,a1,a0
+   11340:	0037f793          	andi	a5,a5,3
+   11344:	00c50733          	add	a4,a0,a2
+   11348:	00079663          	bnez	a5,11354 <memcpy+0x18>
+   1134c:	00300793          	li	a5,3
+   11350:	02c7e463          	bltu	a5,a2,11378 <memcpy+0x3c>
+   11354:	00050793          	mv	a5,a0
+   11358:	00e56c63          	bltu	a0,a4,11370 <memcpy+0x34>
+   1135c:	00008067          	ret
+   11360:	0005c683          	lbu	a3,0(a1)
+   11364:	00178793          	addi	a5,a5,1
+   11368:	00158593          	addi	a1,a1,1
+   1136c:	fed78fa3          	sb	a3,-1(a5)
+   11370:	fee7e8e3          	bltu	a5,a4,11360 <memcpy+0x24>
+   11374:	00008067          	ret
+   11378:	00357793          	andi	a5,a0,3
+   1137c:	08079263          	bnez	a5,11400 <memcpy+0xc4>
+   11380:	00050793          	mv	a5,a0
+   11384:	ffc77693          	andi	a3,a4,-4
+   11388:	fe068613          	addi	a2,a3,-32
+   1138c:	08c7f663          	bleu	a2,a5,11418 <memcpy+0xdc>
+   11390:	0005a383          	lw	t2,0(a1)
+   11394:	0045a283          	lw	t0,4(a1)
+   11398:	0085af83          	lw	t6,8(a1)
+   1139c:	00c5af03          	lw	t5,12(a1)
+   113a0:	0105ae83          	lw	t4,16(a1)
+   113a4:	0145ae03          	lw	t3,20(a1)
+   113a8:	0185a303          	lw	t1,24(a1)
+   113ac:	01c5a883          	lw	a7,28(a1)
+   113b0:	02458593          	addi	a1,a1,36
+   113b4:	02478793          	addi	a5,a5,36
+   113b8:	ffc5a803          	lw	a6,-4(a1)
+   113bc:	fc77ae23          	sw	t2,-36(a5)
+   113c0:	fe57a023          	sw	t0,-32(a5)
+   113c4:	fff7a223          	sw	t6,-28(a5)
+   113c8:	ffe7a423          	sw	t5,-24(a5)
+   113cc:	ffd7a623          	sw	t4,-20(a5)
+   113d0:	ffc7a823          	sw	t3,-16(a5)
+   113d4:	fe67aa23          	sw	t1,-12(a5)
+   113d8:	ff17ac23          	sw	a7,-8(a5)
+   113dc:	ff07ae23          	sw	a6,-4(a5)
+   113e0:	fadff06f          	j	1138c <memcpy+0x50>
+   113e4:	0005c683          	lbu	a3,0(a1)
+   113e8:	00178793          	addi	a5,a5,1
+   113ec:	00158593          	addi	a1,a1,1
+   113f0:	fed78fa3          	sb	a3,-1(a5)
+   113f4:	0037f693          	andi	a3,a5,3
+   113f8:	fe0696e3          	bnez	a3,113e4 <memcpy+0xa8>
+   113fc:	f89ff06f          	j	11384 <memcpy+0x48>
+   11400:	00050793          	mv	a5,a0
+   11404:	ff1ff06f          	j	113f4 <memcpy+0xb8>
+   11408:	0005a603          	lw	a2,0(a1)
+   1140c:	00478793          	addi	a5,a5,4
+   11410:	00458593          	addi	a1,a1,4
+   11414:	fec7ae23          	sw	a2,-4(a5)
+   11418:	fed7e8e3          	bltu	a5,a3,11408 <memcpy+0xcc>
+   1141c:	f4e7eae3          	bltu	a5,a4,11370 <memcpy+0x34>
+   11420:	00008067          	ret
+
+00011424 <memset>:
+   11424:	00f00313          	li	t1,15
+   11428:	00050713          	mv	a4,a0
+   1142c:	02c37e63          	bleu	a2,t1,11468 <memset+0x44>
+   11430:	00f77793          	andi	a5,a4,15
+   11434:	0a079063          	bnez	a5,114d4 <memset+0xb0>
+   11438:	08059263          	bnez	a1,114bc <memset+0x98>
+   1143c:	ff067693          	andi	a3,a2,-16
+   11440:	00f67613          	andi	a2,a2,15
+   11444:	00e686b3          	add	a3,a3,a4
+   11448:	00b72023          	sw	a1,0(a4)
+   1144c:	00b72223          	sw	a1,4(a4)
+   11450:	00b72423          	sw	a1,8(a4)
+   11454:	00b72623          	sw	a1,12(a4)
+   11458:	01070713          	addi	a4,a4,16
+   1145c:	fed766e3          	bltu	a4,a3,11448 <memset+0x24>
+   11460:	00061463          	bnez	a2,11468 <memset+0x44>
+   11464:	00008067          	ret
+   11468:	40c306b3          	sub	a3,t1,a2
+   1146c:	00269693          	slli	a3,a3,0x2
+   11470:	00000297          	auipc	t0,0x0
+   11474:	005686b3          	add	a3,a3,t0
+   11478:	00c68067          	jr	12(a3)
+   1147c:	00b70723          	sb	a1,14(a4)
+   11480:	00b706a3          	sb	a1,13(a4)
+   11484:	00b70623          	sb	a1,12(a4)
+   11488:	00b705a3          	sb	a1,11(a4)
+   1148c:	00b70523          	sb	a1,10(a4)
+   11490:	00b704a3          	sb	a1,9(a4)
+   11494:	00b70423          	sb	a1,8(a4)
+   11498:	00b703a3          	sb	a1,7(a4)
+   1149c:	00b70323          	sb	a1,6(a4)
+   114a0:	00b702a3          	sb	a1,5(a4)
+   114a4:	00b70223          	sb	a1,4(a4)
+   114a8:	00b701a3          	sb	a1,3(a4)
+   114ac:	00b70123          	sb	a1,2(a4)
+   114b0:	00b700a3          	sb	a1,1(a4)
+   114b4:	00b70023          	sb	a1,0(a4)
+   114b8:	00008067          	ret
+   114bc:	0ff5f593          	andi	a1,a1,255
+   114c0:	00859693          	slli	a3,a1,0x8
+   114c4:	00d5e5b3          	or	a1,a1,a3
+   114c8:	01059693          	slli	a3,a1,0x10
+   114cc:	00d5e5b3          	or	a1,a1,a3
+   114d0:	f6dff06f          	j	1143c <memset+0x18>
+   114d4:	00279693          	slli	a3,a5,0x2
+   114d8:	00000297          	auipc	t0,0x0
+   114dc:	005686b3          	add	a3,a3,t0
+   114e0:	00008293          	mv	t0,ra
+   114e4:	fa0680e7          	jalr	-96(a3)
+   114e8:	00028093          	mv	ra,t0
+   114ec:	ff078793          	addi	a5,a5,-16
+   114f0:	40f70733          	sub	a4,a4,a5
+   114f4:	00f60633          	add	a2,a2,a5
+   114f8:	f6c378e3          	bleu	a2,t1,11468 <memset+0x44>
+   114fc:	f3dff06f          	j	11438 <memset+0x14>
+
+00011500 <__register_exitproc>:
+   11500:	00001797          	auipc	a5,0x1
+   11504:	f3078793          	addi	a5,a5,-208 # 12430 <_global_impure_ptr>
+   11508:	0007a703          	lw	a4,0(a5)
+   1150c:	00050313          	mv	t1,a0
+   11510:	14872783          	lw	a5,328(a4)
+   11514:	00079663          	bnez	a5,11520 <__register_exitproc+0x20>
+   11518:	14c70793          	addi	a5,a4,332
+   1151c:	14f72423          	sw	a5,328(a4)
+   11520:	0047a703          	lw	a4,4(a5)
+   11524:	01f00813          	li	a6,31
+   11528:	fff00513          	li	a0,-1
+   1152c:	04e84a63          	blt	a6,a4,11580 <__register_exitproc+0x80>
+   11530:	00271893          	slli	a7,a4,0x2
+   11534:	02030c63          	beqz	t1,1156c <__register_exitproc+0x6c>
+   11538:	01178533          	add	a0,a5,a7
+   1153c:	08c52423          	sw	a2,136(a0)
+   11540:	1887a803          	lw	a6,392(a5)
+   11544:	00100613          	li	a2,1
+   11548:	00e61633          	sll	a2,a2,a4
+   1154c:	00c86833          	or	a6,a6,a2
+   11550:	1907a423          	sw	a6,392(a5)
+   11554:	10d52423          	sw	a3,264(a0)
+   11558:	00200693          	li	a3,2
+   1155c:	00d31863          	bne	t1,a3,1156c <__register_exitproc+0x6c>
+   11560:	18c7a683          	lw	a3,396(a5)
+   11564:	00c6e633          	or	a2,a3,a2
+   11568:	18c7a623          	sw	a2,396(a5)
+   1156c:	00170713          	addi	a4,a4,1
+   11570:	00e7a223          	sw	a4,4(a5)
+   11574:	011787b3          	add	a5,a5,a7
+   11578:	00b7a423          	sw	a1,8(a5)
+   1157c:	00000513          	li	a0,0
+   11580:	00008067          	ret
+
+00011584 <__call_exitprocs>:
+   11584:	fd010113          	addi	sp,sp,-48
+   11588:	00001797          	auipc	a5,0x1
+   1158c:	ea878793          	addi	a5,a5,-344 # 12430 <_global_impure_ptr>
+   11590:	01312e23          	sw	s3,28(sp)
+   11594:	0007a983          	lw	s3,0(a5)
+   11598:	01412c23          	sw	s4,24(sp)
+   1159c:	01512a23          	sw	s5,20(sp)
+   115a0:	01612823          	sw	s6,16(sp)
+   115a4:	02112623          	sw	ra,44(sp)
+   115a8:	02812423          	sw	s0,40(sp)
+   115ac:	02912223          	sw	s1,36(sp)
+   115b0:	03212023          	sw	s2,32(sp)
+   115b4:	01712623          	sw	s7,12(sp)
+   115b8:	00050a93          	mv	s5,a0
+   115bc:	00058a13          	mv	s4,a1
+   115c0:	00100b13          	li	s6,1
+   115c4:	1489a483          	lw	s1,328(s3)
+   115c8:	00048c63          	beqz	s1,115e0 <__call_exitprocs+0x5c>
+   115cc:	0044a403          	lw	s0,4(s1)
+   115d0:	fff40913          	addi	s2,s0,-1
+   115d4:	00241413          	slli	s0,s0,0x2
+   115d8:	00848433          	add	s0,s1,s0
+   115dc:	02095863          	bgez	s2,1160c <__call_exitprocs+0x88>
+   115e0:	02c12083          	lw	ra,44(sp)
+   115e4:	02812403          	lw	s0,40(sp)
+   115e8:	02412483          	lw	s1,36(sp)
+   115ec:	02012903          	lw	s2,32(sp)
+   115f0:	01c12983          	lw	s3,28(sp)
+   115f4:	01812a03          	lw	s4,24(sp)
+   115f8:	01412a83          	lw	s5,20(sp)
+   115fc:	01012b03          	lw	s6,16(sp)
+   11600:	00c12b83          	lw	s7,12(sp)
+   11604:	03010113          	addi	sp,sp,48
+   11608:	00008067          	ret
+   1160c:	000a0c63          	beqz	s4,11624 <__call_exitprocs+0xa0>
+   11610:	10442783          	lw	a5,260(s0)
+   11614:	01478863          	beq	a5,s4,11624 <__call_exitprocs+0xa0>
+   11618:	fff90913          	addi	s2,s2,-1
+   1161c:	ffc40413          	addi	s0,s0,-4
+   11620:	fbdff06f          	j	115dc <__call_exitprocs+0x58>
+   11624:	0044a703          	lw	a4,4(s1)
+   11628:	00442783          	lw	a5,4(s0)
+   1162c:	fff70713          	addi	a4,a4,-1
+   11630:	03271c63          	bne	a4,s2,11668 <__call_exitprocs+0xe4>
+   11634:	0124a223          	sw	s2,4(s1)
+   11638:	fe0780e3          	beqz	a5,11618 <__call_exitprocs+0x94>
+   1163c:	1884a683          	lw	a3,392(s1)
+   11640:	012b1733          	sll	a4,s6,s2
+   11644:	0044ab83          	lw	s7,4(s1)
+   11648:	00d776b3          	and	a3,a4,a3
+   1164c:	02069263          	bnez	a3,11670 <__call_exitprocs+0xec>
+   11650:	000780e7          	jalr	a5
+   11654:	0044a703          	lw	a4,4(s1)
+   11658:	1489a783          	lw	a5,328(s3)
+   1165c:	f77714e3          	bne	a4,s7,115c4 <__call_exitprocs+0x40>
+   11660:	faf48ce3          	beq	s1,a5,11618 <__call_exitprocs+0x94>
+   11664:	f61ff06f          	j	115c4 <__call_exitprocs+0x40>
+   11668:	00042223          	sw	zero,4(s0)
+   1166c:	fcdff06f          	j	11638 <__call_exitprocs+0xb4>
+   11670:	18c4a683          	lw	a3,396(s1)
+   11674:	08442583          	lw	a1,132(s0)
+   11678:	00d77733          	and	a4,a4,a3
+   1167c:	00071863          	bnez	a4,1168c <__call_exitprocs+0x108>
+   11680:	000a8513          	mv	a0,s5
+   11684:	000780e7          	jalr	a5
+   11688:	fcdff06f          	j	11654 <__call_exitprocs+0xd0>
+   1168c:	00058513          	mv	a0,a1
+   11690:	000780e7          	jalr	a5
+   11694:	fc1ff06f          	j	11654 <__call_exitprocs+0xd0>
+
+00011698 <_exit>:
+   11698:	00000593          	li	a1,0
+   1169c:	00000613          	li	a2,0
+   116a0:	00000693          	li	a3,0
+   116a4:	00000713          	li	a4,0
+   116a8:	00000793          	li	a5,0
+   116ac:	05d00893          	li	a7,93
+   116b0:	00000073          	ecall
+   116b4:	02055263          	bgez	a0,116d8 <_exit+0x40>
+   116b8:	ff010113          	addi	sp,sp,-16
+   116bc:	00812423          	sw	s0,8(sp)
+   116c0:	00050413          	mv	s0,a0
+   116c4:	00112623          	sw	ra,12(sp)
+   116c8:	40800433          	neg	s0,s0
+   116cc:	010000ef          	jal	ra,116dc <__errno>
+   116d0:	00852023          	sw	s0,0(a0)
+   116d4:	0000006f          	j	116d4 <_exit+0x3c>
+   116d8:	0000006f          	j	116d8 <_exit+0x40>
+
+000116dc <__errno>:
+   116dc:	00001797          	auipc	a5,0x1
+   116e0:	d5878793          	addi	a5,a5,-680 # 12434 <_impure_ptr>
+   116e4:	0007a503          	lw	a0,0(a5)
+   116e8:	00008067          	ret

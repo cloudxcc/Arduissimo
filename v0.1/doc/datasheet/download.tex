@@ -1,0 +1,176 @@
+\chapter{Download bit and hex files to the ARTY board}
+\label{atomics}
+
+
+The release comes with a precompiled ''bit'' file (\$project/bit/fpga\_top.bit), which can be used for downloading via the standalone LAB tool version from Xilinx, or by using the Hardware Manager in the Vivado GUI.
+
+In order to understand the proposed ''hex'' file download process, it is best to look at the two examples in \$project/ftdi/arty\_ftdi/work/. When using cygwin, ''make colors'' and ''make downloadHex'' can be used to download the colors example ''hex'' files. The results will be reported once the download has finished. Alternatively the colors.bat command can be executed in a Windows command prompt. Here the downloading progress will be prompted directly.
+
+In this initial version of the Arduissimo project, programming via the UART basically means: 
+
+1) to loopback a byte in order to test the USB - FTDI - FPGA(UART) link,\\
+2) to control the reset status of the system,\\
+3) to write to the individual program memories,\\
+4) to write to and to read from the data memories of the individual cores and\\
+5) to communicate with core 0.
+
+As of now, no debugging capabilities are implemented (other than the data memory read feature).
+
+In order to access the system via the UART, a byte or a sequence of bytes has to be written via the FTDI chip first. The first byte defines the access type:
+
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+				\begin{tabular}{c c}
+					\hline
+					\multicolumn{1}{|c|}{Byte 0} &
+					\multicolumn{1}{|c|}{Access type} \\
+					\hline
+					\multicolumn{1}{|c|}{0x1X} &
+					\multicolumn{1}{|c|}{set/clear reset} \\
+					\hline
+					\multicolumn{1}{|c|}{0x20} &
+					\multicolumn{1}{|c|}{loopback} \\
+					\hline
+					\multicolumn{1}{|c|}{0x30} &
+					\multicolumn{1}{|c|}{memory write follows} \\
+					\hline
+					\multicolumn{1}{|c|}{0x40} &
+					\multicolumn{1}{|c|}{memory read follows} \\
+					\hline
+					\multicolumn{1}{|c|}{0x50} &
+					\multicolumn{1}{|c|}{user communication in write direction follows} \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{small}
+	}
+	\caption{Access type resulting from byte 0.}
+	\label{uart_byte_0}
+\end{table}
+
+A reset command sets or clears the internal system reset. The 4 LSB of that byte define the reset flag state of indivial core.
+
+In loopback mode, the next byte is sent back via uart\_tx\_out.
+
+When the memory write or memory read option is chosen, the following bytes define the data stream:
+
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+				\begin{tabular}{c c}
+					\hline
+					\multicolumn{1}{|c|}{Byte} &
+					\multicolumn{1}{|c|}{Meaning} \\
+					\hline
+					\multicolumn{1}{|c|}{1} &
+					\multicolumn{1}{|c|}{bit [17:16] of memory start address} \\
+					\hline
+					\multicolumn{1}{|c|}{2} &
+					\multicolumn{1}{|c|}{bit [15:8] of memory start address} \\
+					\hline
+					\multicolumn{1}{|c|}{3} &
+					\multicolumn{1}{|c|}{bit [7:0]  of memory start address} \\
+					\hline
+					\multicolumn{1}{|c|}{4} &
+					\multicolumn{1}{|c|}{high byte of access length} \\
+					\hline
+					\multicolumn{1}{|c|}{5} &
+					\multicolumn{1}{|c|}{low byte of access length} \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{small}
+	}
+	\caption{Meaning of bytes 1 through 5.}
+	\label{uart_byte_1_5}
+\end{table}
+
+The program and data memory offsets are as follows (from the UART perspective):
+
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+				\begin{tabular}{c c}
+					\hline
+					\multicolumn{1}{|c|}{Core/Memory} &
+					\multicolumn{1}{|c|}{Offset} \\
+					\hline
+					\multicolumn{1}{|c|}{core 0} &
+					\multicolumn{1}{|c|}{0x00000000} \\
+					\hline
+					\multicolumn{1}{|c|}{core 1} &
+					\multicolumn{1}{|c|}{0x00020000} \\
+					\hline
+					\multicolumn{1}{|c|}{core 2} &
+					\multicolumn{1}{|c|}{0x00040000} \\
+					\hline
+					\multicolumn{1}{|c|}{core 3} &
+					\multicolumn{1}{|c|}{0x00060000} \\
+					\hline
+					\multicolumn{1}{|c|}{program} &
+					\multicolumn{1}{|c|}{0x00000000} \\
+					\hline
+					\multicolumn{1}{|c|}{data} &
+					\multicolumn{1}{|c|}{0x00010000} \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{small}
+	}
+	\caption{Meaning of bytes 1 through 5.}
+	\label{uart_byte_1_5}
+\end{table}
+
+When the memory write option is chosen, the user must write the memory content according to the programmed access length. The received data is automatically replied. The user can use this feature to verify the transferred data.
+
+%[6...n]		program or data memory content
+
+In case of the memory readback option, the FPGA will send the requested memory content according to the programmed access length directly after the configuration stream has finished.
+
+For setting or clearing reset flags and memory write or read access, the C program \$project/ftdi/arty\_ftdi/source/downloadHex.c provides the relevant routines to be used for interfacing. The arguments are :
+
+\indent -srb: Set reset at beginning.\\ 
+\indent -srb: Set reset at end.\\ 
+\indent -lb: Loopback test.\\
+\indent -dc: Download to core [0..3] the following ''hex'' file.
+
+When no argument is given, the following arguments will be used as default:
+
+downloadHex -srb f -sre 0 -lb -dc 0 main\_0.hex -dc 1 main\_1.hex -dc 2 main\_2.hex -dc 3 main\_3.hex
+
+When the user communication in write direction (PC -\textgreater\space FTDI -\textgreater\space FPGA) option is chosen, then the following bytes qualify the data stream. The user must write the user communication content according to the programmed access length.
+
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+				\begin{tabular}{c c}
+					\hline
+					\multicolumn{1}{|c|}{byte} &
+					\multicolumn{1}{|c|}{meaning} \\
+					\hline
+					\multicolumn{1}{|c|}{1} &
+					\multicolumn{1}{|c|}{high byte of transfer length} \\
+					\hline
+					\multicolumn{1}{|c|}{2} &
+					\multicolumn{1}{|c|}{low byte of transfer length} \\
+					\hline
+					\multicolumn{1}{|c|}{[3...n]} &
+					\multicolumn{1}{|c|}{write stream content} \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{small}
+	}
+	\caption{Meaning of bytes 1 through n.}
+	\label{uart_byte_1_5}
+\end{table}
+
+
+The user communication in read direction (FPGA -\textgreater\space FTDI -\textgreater\space PC) is initiated and defined by the program executed on core 0. The USB driver running on the PC must be ready and capable to handle the upcoming data stream. As of now, no programming example is provided.
+
+

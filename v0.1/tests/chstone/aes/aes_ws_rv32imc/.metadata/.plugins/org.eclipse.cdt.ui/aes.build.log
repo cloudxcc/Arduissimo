@@ -1,0 +1,11 @@
+17:12:53 **** Incremental Build of configuration Release for project aes ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "aes.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9400	   1080	   2232	  12712	   31a8	aes.elf
+Finished building: aes.siz
+ 
+
+17:12:53 Build Finished (took 536ms)
+

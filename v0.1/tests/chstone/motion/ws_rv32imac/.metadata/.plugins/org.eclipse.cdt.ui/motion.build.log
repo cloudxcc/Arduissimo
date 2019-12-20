@@ -1,0 +1,25 @@
+14:06:14 **** Incremental Build of configuration Release for project motion ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GNU RISC-V Cross C++ Compiler
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -std=gnu++11 -fabi-version=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: motion.elf
+Invoking: GNU RISC-V Cross C++ Linker
+riscv64-unknown-elf-g++ -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"motion.map" -o "motion.elf"  ./src/main.o ./src/mpeg2.o   
+Finished building target: motion.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "motion.elf"  "motion.hex"
+Finished building: motion.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "motion.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6944	   1080	   2112	  10136	   2798	motion.elf
+Finished building: motion.siz
+ 
+
+14:06:18 Build Finished (took 3s.997ms)
+

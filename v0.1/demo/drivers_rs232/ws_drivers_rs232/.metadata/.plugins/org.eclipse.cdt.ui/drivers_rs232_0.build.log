@@ -1,0 +1,20 @@
+21:33:32 **** Incremental Build of configuration Release for project drivers_rs232_0 ****
+make all 
+Building target: drivers_rs232_0.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_rs232_0.map" -o "drivers_rs232_0.elf"  ./src/main.o  ./include/ca_util.o ./include/driver_gpio.o ./include/driver_rs232.o ./include/driver_rs232_custom.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
+Finished building target: drivers_rs232_0.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_rs232_0.elf"  "drivers_rs232_0.hex"
+Finished building: drivers_rs232_0.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_rs232_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2864	   1080	    744	   4688	   1250	drivers_rs232_0.elf
+Finished building: drivers_rs232_0.siz
+ 
+
+21:33:35 Build Finished (took 2s.952ms)
+

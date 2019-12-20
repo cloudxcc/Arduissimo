@@ -1,0 +1,137 @@
+19:53:04 **** Incremental Build of configuration Release for project drivers_i2c_1 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_gpio.h: In function 'set_dir':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_gpio.h:12:25: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  unsigned* gpio_n_dir = &GPIO_0_DIR_CLR;
+                         ^
+In file included from ../src/main.c:4:0:
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h: In function 'i2c_master_init':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:74:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:85:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_scl_clr_add[id] = gpio_n_out;
+                               ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:87:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_scl_set_add[id] = gpio_n_out;
+                               ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:92:15: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n_out = &GPIO_0_OUT_CLR;
+               ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:101:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_sda_clr_add[id] = gpio_n_out;
+                               ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:103:31: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_sda_set_add[id] = gpio_n_out;
+                               ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:108:28: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_master_sda_bank[id] = gpio_n_out;
+                            ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h: In function 'i2c_master_event':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:175:25: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              gpio_n_out = i2c_master_sda_clr_add[tag];
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:185:25: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              gpio_n_out = i2c_master_sda_set_add[tag];
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:196:38: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+                unsigned* gpio_n_in = i2c_master_sda_bank[tag];
+                                      ^~~~~~~~~~~~~~~~~~~
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:216:25: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              gpio_n_out = i2c_master_scl_set_add[tag];
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:226:28: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                 gpio_n_out = i2c_master_sda_set_add[tag];
+                            ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:228:25: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              gpio_n_out = i2c_master_sda_clr_add[tag];
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:237:25: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              gpio_n_out = i2c_master_scl_clr_add[tag];
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h: In function 'i2c_slave_init':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:275:26: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_in = &GPIO_0_IN;
+                          ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:277:27: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_slave_scl_bank[id] = gpio_n_in;
+                           ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:294:14: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    gpio_n_in = &GPIO_0_CAP;
+              ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:296:27: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    i2c_slave_sda_bank[id] = gpio_n_in;
+                           ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h: In function 'i2c_slave_enable':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:315:26: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+    unsigned* gpio_n_in = i2c_slave_sda_bank[id];
+                          ^~~~~~~~~~~~~~~~~~
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h: In function 'i2c_slave_event':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:359:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                   gpio_n = i2c_slave_sda_bank[tag];
+                          ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:368:21: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              gpio_n = i2c_slave_sda_bank[tag];
+                     ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:406:18: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+           gpio_n = i2c_slave_scl_bank[tag] ;
+                  ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:415:19: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+            gpio_n = i2c_slave_sda_bank[tag];
+                   ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_i2c.h:425:19: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+            gpio_n = i2c_slave_scl_bank[tag];
+                   ^
+In file included from ../src/main.c:6:0:
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h: In function 'rs232_tx_init':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:57:27: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+                           ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:60:25: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    rs232_tx_clr_add[id] = gpio_n_out;
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:62:25: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    rs232_tx_set_add[id] = gpio_n_out;
+                         ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h: In function 'rs232_tx_event':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:129:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n_out = rs232_tx_set_add[tag];
+                        ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:131:24: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             gpio_n_out = rs232_tx_clr_add[tag];
+                        ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h: In function 'rs232_rx_init':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:172:26: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    unsigned* gpio_n_in = &GPIO_0_IN;
+                          ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:174:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    rs232_rx_bank[id] = gpio_n_in;
+                      ^
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h: In function 'rs232_rx':
+D:\EDAptix\projects\arduissimo\work\tests\drivers\drivers_i2c\ws_drivers_i2c\drivers_i2c_1\include/driver_rs232.h:200:17: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+       gpio_n_in = rs232_rx_bank[tag];
+                 ^
+Finished building: ../src/main.c
+ 
+Building target: drivers_i2c_1.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"drivers_i2c_1.map" -o "drivers_i2c_1.elf"  ./src/main.o  ./include/drivers.o ./include/system.o   
+Finished building target: drivers_i2c_1.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "drivers_i2c_1.elf"  "drivers_i2c_1.hex"
+Finished building: drivers_i2c_1.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "drivers_i2c_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3640	   1080	    640	   5360	   14f0	drivers_i2c_1.elf
+Finished building: drivers_i2c_1.siz
+ 
+
+19:53:18 Build Finished (took 14s.185ms)
+

@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../fpga_top.srcs/sources_1/ip/sdp_ram_16x32/sim/sdp_ram_16x32.v" \
+"../../../../fpga_top.srcs/sources_1/ip/tdp_ram_512x32/sim/tdp_ram_512x32.v" \
+"../../../../fpga_top.srcs/sources_1/ip/sdp_ram_512x32x4/sim/sdp_ram_512x32x4.v" \
+"../../../../fpga_top.srcs/sources_1/ip/tdp_ram_6144x16x2/sim/tdp_ram_6144x16x2.v" \
+"../../../../fpga_top.srcs/sources_1/ip/tdp_ram_512x33/sim/tdp_ram_512x33.v" \
+"../../../../../../dut/CUBEV_RV32iMC_P3C4D16.v" \
+"../../../../../../dut/mem_syn/RF_D16_syn.v" \
+"../../../../../../dut/mem_syn/Reg_D16_syn.v" \
+"../../../../../../dut/ca.v" \
+"../../../../../../dut/core_D16.v" \
+"../../../../../../dut/fpga_func.v" \
+"../../../../../../dut/gpio.v" \
+"../../../../../../dut/mp.v" \
+"../../../../../../dut/quad.v" \
+"../../../../../../dut/uart.v" \
+"../../../../../../testbench/testbench_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

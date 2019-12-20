@@ -1,0 +1,54 @@
+14:53:46 **** Build of configuration Release for project colors_3 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -I"D:\EDAptix\projects\arduissimo\dev\demo\colors\ws_colors\colors_3\include" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: colors_3.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -msmall-data-limit=8 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -Xlinker --gc-sections -Wl,-Map,"colors_3.map" -o "colors_3.elf"  ./src/main.o   
+Finished building target: colors_3.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "colors_3.elf"  "colors_3.hex"
+Finished building: colors_3.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "colors_3.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1732	   1080	     28	   2840	    b18	colors_3.elf
+Finished building: colors_3.siz
+ 
+14:53:57 **** Incremental Build of configuration Release for project colors_3 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "colors_3.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1732	   1080	     28	   2840	    b18	colors_3.elf
+Finished building: colors_3.siz
+ 
+14:54:01 **** Incremental Build of configuration Release for project colors_2 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "colors_2.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1736	   1080	     28	   2844	    b1c	colors_2.elf
+Finished building: colors_2.siz
+ 
+14:54:06 **** Incremental Build of configuration Release for project colors_1 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "colors_1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1720	   1080	     28	   2828	    b0c	colors_1.elf
+Finished building: colors_1.siz
+ 
+14:54:10 **** Incremental Build of configuration Release for project colors_0 ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "colors_0.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1720	   1080	     28	   2828	    b0c	colors_0.elf
+Finished building: colors_0.siz
+ 

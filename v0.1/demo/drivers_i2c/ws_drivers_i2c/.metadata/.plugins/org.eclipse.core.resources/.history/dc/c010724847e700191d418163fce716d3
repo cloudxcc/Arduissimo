@@ -1,0 +1,440 @@
+//
+// This is a basic I2C implementation.
+// Only 7 bit wide addressing and a data length of 8 bits is
+// implemented so far. No clock stretching, etc..
+// Thought I leave some programming exercise for you.
+//
+// In case of a master_write, the 8th bit of the read data
+// (i2c_master_read_data[tag][8]) indicates the inverse ack signal.
+// Bit 8 is 0 for acknowledged by a slave, 1 for not acknowledged.
+// Master continues transfer even if not acknowledged.
+//
+// In case of a slave access, the 8th bit of the read data
+// (i2c_slave_read_data[tag][8]) indicates the access mode.
+// Bit 8 is 0 for a read, 1 for a write.
+//
+// i2c_master_init(unsigned id,     // user I2C master peripheral id
+//                 char scl_pin,    // SCL pin,
+//                 char sda_pin,    // SDA pin,
+//                 unsigned delay); // delay in cycles
+//
+// i2c_slave_init(unsigned id,      // user I2C slave peripheral id
+//                char scl_pin,     // SCL pin, SDA = SCL pin + 1
+//                unsigned add)     // slave address
+//
+
+#define I2C_baud_10k 4500
+#define I2C_baud_50k 900
+#define I2C_baud_100k 450
+
+int i2c_master_state [i2c_master_vp];
+unsigned i2c_master_delay [i2c_master_vp];
+char i2c_master_scl_bit [i2c_master_vp];
+unsigned i2c_master_scl_clr_add [i2c_master_vp];
+unsigned i2c_master_scl_set_add [i2c_master_vp];
+unsigned i2c_master_sda_bit [i2c_master_vp];
+unsigned i2c_master_sda_clr_add [i2c_master_vp];
+unsigned i2c_master_sda_set_add [i2c_master_vp];
+unsigned i2c_master_hash [i2c_master_vp];
+unsigned i2c_master_write_data [i2c_master_vp];
+unsigned i2c_master_read_data [i2c_master_vp];
+unsigned i2c_master_trigger [i2c_master_vp];
+unsigned i2c_master_sda_bank [i2c_master_vp];
+
+unsigned i2c_slave_state [i2c_slave_vp];
+unsigned i2c_slave_scl_bank [i2c_slave_vp];
+unsigned i2c_slave_scl_bit [i2c_slave_vp];
+unsigned i2c_slave_sda_bank [i2c_slave_vp];
+unsigned i2c_slave_sda_bit [i2c_slave_vp];
+unsigned i2c_slave_add [i2c_slave_vp];
+unsigned i2c_slave_write_data [i2c_slave_vp];
+unsigned i2c_slave_read_data [i2c_slave_vp];
+unsigned i2c_slave_hash [i2c_slave_vp];
+
+void i2c_master_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned delay);
+void i2c_master_write(unsigned tag, unsigned add, unsigned data);
+void i2c_master_read(unsigned tag, unsigned add);
+void i2c_master_event(unsigned tag, int start_time);
+unsigned i2c_master_final(unsigned tag, int start_time);
+
+void i2c_slave_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned add);
+unsigned i2c_slave_enable(unsigned tag, unsigned data);
+unsigned i2c_slave_event(unsigned tag, int start_time);
+unsigned i2c_slave_final(unsigned tag, int start_time);
+
+///////////////////////////////////////////////////
+//	i2c_master_init
+///////////////////////////////////////////////////
+void i2c_master_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned delay) {
+   // save the day
+   i2c_master_delay[id] = delay;
+   // link master final
+   int dummy = CA_CT;  // workaround
+   i2c_master_hash[id] = i2c_master_final(id, dummy);
+   ///////////////////////////////////
+   // SCL
+   ///////////////////////////////////
+   // get GPIO_N basic register
+   unsigned* gpio_n_out = &GPIO_0_OUT_CLR;
+   gpio_n_out += 0x40 * (scl_pin >> 3);
+   // get bit number
+   unsigned bit_mask = 0x1 << (scl_pin & 0x7);
+   i2c_master_scl_bit[id] = bit_mask;
+   // clr bit
+   *gpio_n_out = bit_mask;
+   // set input
+   set_dir(scl_pin, 0);
+   // save clr and set addresses
+   gpio_n_out -= 0x3;
+   i2c_master_scl_clr_add[id] = gpio_n_out;
+   gpio_n_out -= 0x1;
+   i2c_master_scl_set_add[id] = gpio_n_out;
+   ///////////////////////////////////
+   // SDA
+   ///////////////////////////////////
+   // get GPIO_N basic register
+   gpio_n_out = &GPIO_0_OUT_CLR;
+   gpio_n_out += 0x40 * (sda_pin >> 3);
+   // get bit number
+   bit_mask = 0x1 << (sda_pin & 0x7);
+   i2c_master_sda_bit[id] = bit_mask;
+   // clr bit
+   *gpio_n_out = bit_mask;
+   // save clr and set addresses
+   gpio_n_out -= 0x3;
+   i2c_master_sda_clr_add[id] = gpio_n_out;
+   gpio_n_out -= 0x1;
+   i2c_master_sda_set_add[id] = gpio_n_out;
+   // set input
+   *gpio_n_out = bit_mask;
+   // get GPIO_N_IN register
+   gpio_n_out += 0x8;
+   i2c_master_sda_bank[id] = gpio_n_out;
+}
+
+///////////////////////////////////////////////////
+//	i2c_master_write
+///////////////////////////////////////////////////
+void i2c_master_write(unsigned tag, unsigned add, unsigned data) {
+   // prepare write_data frame
+	i2c_master_write_data[tag] = ((add & 0x7f) << 11)    // 7b address
+	                             + 0x200                 // write mode, tristate ack
+		                         + (data << 1);          // data
+
+   // reset state to -72d
+   i2c_master_state[tag] = 0 - ((18 * 4));
+
+   i2c_master_read_data[tag] = 0;   // why not for clear as well
+
+   unsigned trigger = CA_CT + 600;  // 120 cycle when 4 threads running,
+                                    // 480 for maximal number of threads
+
+   i2c_master_trigger[tag] = trigger;
+   i2c_master_event(tag, trigger);
+}
+
+///////////////////////////////////////////////////
+//	i2c_master_read
+///////////////////////////////////////////////////
+void i2c_master_read(unsigned tag, unsigned add) {
+   // prepare write_data frame
+   i2c_master_write_data[tag] = ((add & 0x7f) << 11) // 7b address
+		                         + 0x7fe;             // read mode, tristate ack and data
+
+   // reset state to -72d
+   i2c_master_state[tag] = 0 - ((18 * 4));
+
+   i2c_master_read_data[tag] = 0;   // why not for write as well
+
+   unsigned trigger = CA_CT + 600;  // 120 cycle when 4 threads running,
+                                    // 480 for maximal number of threads
+   i2c_master_trigger[tag] = trigger;
+   i2c_master_event(tag, trigger);
+}
+
+///////////////////////////////////////////////////
+//	i2c_master_event
+// state is counting like -72d, 71d, 70d, ... 0
+///////////////////////////////////////////////////
+void i2c_master_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+      CA_COM = 0xc0000000 +                                      // execute threa
+               (tag << 14) +                                     // save tag
+               (((unsigned)&&i2c_master_write_event_label >> 1) & 0x3fff); // set pc
+      CA_ET = start_time;
+   } else {
+   	  unsigned* gpio_n_out;
+      unsigned bit_mask, data, trigger;
+      int state;
+      i2c_master_write_event_label:
+         // get state
+         state = i2c_master_state[tag];
+         // get data, including frame length
+    	 data = i2c_master_write_data[tag];
+         ///////////////////////////////
+         // start condition
+         ///////////////////////////////
+         if (state < 0)
+         {
+             gpio_n_out = i2c_master_sda_clr_add[tag];
+    	     bit_mask = i2c_master_sda_bit[tag];
+        	 *gpio_n_out = bit_mask;
+        	 state = 0 - state;
+         } else
+         ///////////////////////////////
+         // stop condition
+         ///////////////////////////////
+         if (state == 0)
+         {
+             gpio_n_out = i2c_master_sda_set_add[tag];
+    	     bit_mask = i2c_master_sda_bit[tag];
+        	 *gpio_n_out = bit_mask;
+         } else
+         ///////////////////////////////
+         // read SDA
+         ///////////////////////////////
+         if ((state & 0x3) == 0x0)
+         {
+             if (state < 37)
+             {
+          	    unsigned* gpio_n_in = i2c_master_sda_bank[tag];
+         	    unsigned read = *gpio_n_in;
+         	    char bit = read & i2c_master_sda_bit[tag];
+                if (state == 36) {                          // check ack
+                    if (bit) {
+            	       //state = 0; // continues read
+            	       i2c_master_read_data[tag] = 0x1; }
+                } else {                                    // save in read even in write mode
+                	data = i2c_master_read_data[tag] << 1;
+                	if (bit)
+                		data += 1;
+                	i2c_master_read_data[tag] = data;
+                }
+             }
+         } else
+         ///////////////////////////////
+         // SCL = 1
+         ///////////////////////////////
+         if ((state & 0x3) == 0x1)
+         {
+             gpio_n_out = i2c_master_scl_set_add[tag];
+    	     bit_mask = i2c_master_scl_bit[tag];
+        	 *gpio_n_out = bit_mask;
+         } else
+         ///////////////////////////////
+         // SDA = bit
+         ///////////////////////////////
+         if ((state & 0x3) == 0x2)
+         {
+        	 if ((data >> (state >> 2)) & 0x1)
+                gpio_n_out = i2c_master_sda_set_add[tag];
+             else
+        	    gpio_n_out = i2c_master_sda_clr_add[tag];
+      	     bit_mask = i2c_master_sda_bit[tag];
+        	 *gpio_n_out = bit_mask;
+         } else
+         ///////////////////////////////
+         // SCL = 0
+         ///////////////////////////////
+         if ((state & 0x3) == 0x3)
+         {
+             gpio_n_out = i2c_master_scl_clr_add[tag];
+    	     bit_mask = i2c_master_scl_bit[tag];
+        	 *gpio_n_out = bit_mask;
+         }
+         if (state) {
+        	// update trigger
+            trigger = i2c_master_trigger[tag] + i2c_master_delay[tag];
+   	   	    // re-arm the calendar
+   	   	    CA_COM = 0xc0000000 +                                      // execute thread
+   	   	             (tag << 14) +                                     // save id
+   	   	   	         (((unsigned)&&i2c_master_write_event_label >> 1) & 0x3fff); // set pc
+   	   	    CA_ET = trigger;
+        	// save trigger
+   	   	    i2c_master_trigger[tag] = trigger;
+        	// update and save state
+        	i2c_master_state[tag] = state - 1;
+   	     } else
+   	   	    TC_START = i2c_master_hash[tag];
+
+   	  TC_KILL = 0x0;
+   	  asm volatile ("addi x0, x0, 0");
+   }
+}
+
+
+///////////////////////////////////////////////////
+//	i2c_slave_init
+///////////////////////////////////////////////////
+void i2c_slave_init(unsigned id, unsigned scl_pin, unsigned sda_pin, unsigned add) {
+   //char sda_pin = scl_pin + 1;
+   i2c_slave_add[id] = add;
+   // link slave final
+   int dummy = CA_CT;  // workaround
+   i2c_slave_hash[id] = i2c_slave_final(id, dummy);
+   ///////////////////////////////////
+   // SCL
+   ///////////////////////////////////
+   // get GPIO_N_IN register
+   unsigned* gpio_n_in = &GPIO_0_IN;
+   gpio_n_in += 0x40 * (scl_pin >> 3);
+   i2c_slave_scl_bank[id] = gpio_n_in;
+   // get bit number
+   unsigned bit_mask = 0x1 << (scl_pin & 0x7);
+   // save bit number
+   i2c_slave_scl_bit[id] = scl_pin & 0x7;
+   // set input, why not
+   set_dir(scl_pin, 0);
+   ///////////////////////////////////
+   // SDA
+   ///////////////////////////////////
+   // link event execution
+   unsigned event_hash = i2c_slave_event(id, dummy);
+   gpio_event_hash[sda_pin] = event_hash;
+   gpio_event_hash[scl_pin] = event_hash;
+   // link gpio event
+   gpio_event(0x0, dummy);
+   // get GPIO_N_IN register
+   gpio_n_in = &GPIO_0_CAP;
+   gpio_n_in += 0x40 * (sda_pin >> 3);
+   i2c_slave_sda_bank[id] = gpio_n_in;
+   // get bit number
+   bit_mask = 0x1 << (sda_pin & 0x7);
+   // save bit number
+   i2c_slave_sda_bit[id] = sda_pin & 0x7;
+   // set input, why not
+   set_dir(sda_pin, 0);
+}
+
+
+///////////////////////////////////////////////////
+//	i2c_slave_enable
+///////////////////////////////////////////////////
+unsigned i2c_slave_enable(unsigned id, unsigned data) {
+   // save write data
+   i2c_slave_write_data[id] = data & 0xff;
+   // reset slave state
+   i2c_slave_state[id] = 0;
+   // get GPIO_N_IN register
+   unsigned* gpio_n_in = i2c_slave_sda_bank[id];
+   // enable falling edge GPIO event at sda_pin
+   gpio_n_in -= 0x4;
+   *gpio_n_in = 0x1 << i2c_slave_sda_bit[id];
+}
+
+///////////////////////////////////////////////////
+//	i2c_slave_event
+//
+//  = 0011h => check add => set acknowledge when address match
+//  = 0013h => clear acknowledge in master write (slave read) mode
+//  > 0113h => master read (slave write) mode => set output
+//  = 0123h => end of master read mode => release SDA
+//  = XX24h => wait for SDA rise
+//	= XX25h => end of frame
+//		= 0025 => return to i2c_slave_hash after successful master read:
+//                         i2c_slave_read_data[tag][8] = 1
+//                         i2c_slave_read_data[tag][7:0] = read data
+//      = 0125 => return to i2c_slave_hash after successful master write:
+//                         i2c_slave_read_data[tag][8] = 0
+//                         i2c_slave_read_data[tag][7:0] = address accessed
+//      = 0225 => restart by reseting state and re-arming SDA pin
+//
+///////////////////////////////////////////////////
+unsigned i2c_slave_event(unsigned tag, int start_time) {
+   if (start_time >= 0) {
+   	  return 0xc0000000 +                                  // execute thread
+   	         (tag << 14) +                                 // save id
+   	         (((unsigned)&&i2c_slave_label >> 1) & 0x3fff); // set pc
+   } else
+   {
+       unsigned* gpio_n;
+	   unsigned state, data, read;
+	   i2c_slave_label:
+	      // read state
+	      state = i2c_slave_state[tag];
+  	      // after falling edge of SCL
+	      if (state & 0x1) {
+             // check for end of frame
+             if ((state & 0xff) == 0x25) {
+                if (state == 0x225) {
+                   // reset slave state
+              	   i2c_slave_state[tag] = 0;
+              	   // get GPIO_N_IN register
+              	   gpio_n = i2c_slave_sda_bank[tag];
+              	   // enable falling edge GPIO event at sda_pin
+              	   gpio_n -= 0x4;
+              	   *gpio_n = 0x1 << i2c_slave_sda_bit[tag];
+                   TC_KILL = 0x0;
+         	   	   asm volatile ("addi x0, x0, 0");
+              	} else
+                   TC_START = i2c_slave_hash[tag];
+          	 } else {
+    	        gpio_n = i2c_slave_sda_bank[tag];
+   	       	    read = *gpio_n;
+                data = i2c_slave_read_data[tag];
+                char sda_bit = i2c_slave_sda_bit[tag];
+                // mode cycle, check and set ack
+	       	    if (state == 0x11) {
+	       	       // address match => ack
+	       		   if (data == i2c_slave_add[tag]) {
+	       			   gpio_n -= 15;  			 // set output
+	       			   *gpio_n = 0x1 << sda_bit;
+		       		   if ((read >> sda_bit) & 0x1)  // read mode
+		       			  state = 0x111;
+		       		   else                          // write mode
+                          i2c_slave_read_data[tag] = 1;
+	       		   } else
+	       			  state = 0x211;
+	       		// clear ack, master write mode
+	       	    } else if (state == 0x13) {
+       			   gpio_n -= 16;  		// set input
+       			   *gpio_n = 0x1 << sda_bit;
+       			// slave not accessed mode
+   	       	    } else if (state >= 0x213) {
+       			// master read, slave write mode
+	       	    } else if (state >= 0x113) {
+	       	       if ((state == 0x123) |
+	       	    	  ((i2c_slave_write_data[tag] >> (7 - ((state - 0x113) >> 0x1))) & 0x1)) {
+       			      gpio_n -= 16;  					// set input
+	       	       } else {
+       			      gpio_n -= 15;  					// set output
+	       	       }
+       			   *gpio_n = 0x1 << sda_bit;
+       			// address bits and master write, slave read mode
+	       	    } else if (state > 2) {
+	       		   data <<= 1;
+	       	       data += (read >> sda_bit) & 0x1;
+	    	       i2c_slave_read_data[tag] = data;
+	       	    }
+                // enable rising edge GPIO event at scl_pin
+	    	    gpio_n = i2c_slave_scl_bank[tag] ;
+	    	    gpio_n += 0x5;
+	    	    *gpio_n = 0x1 << i2c_slave_scl_bit[tag];
+     	     // after falling edge of SCL
+          	 }
+	      } else {
+	      	 // end of frame
+	    	 if ((state & 0xff) == 0x24) {
+                 // enable rising edge GPIO event at sda_pin
+	    	     gpio_n = i2c_slave_sda_bank[tag];
+	    	     gpio_n -= 3;
+	    	     unsigned bit_mask = 0x1 << i2c_slave_sda_bit[tag];
+	    	     *gpio_n = bit_mask;
+	    	 // frame continues
+	    	 } else {
+	             // end of frame
+		         if (state == 0x0)
+		            i2c_slave_read_data[tag] = 0;
+                 // enable falling edge GPIO event at scl_pin
+	    	     gpio_n = i2c_slave_scl_bank[tag];
+	    	     gpio_n += 0x4;
+	    	     unsigned bit_mask = 0x1 << i2c_slave_scl_bit[tag];
+	    	     *gpio_n = bit_mask;
+             }
+	      }
+          i2c_slave_state[tag] = state + 1;
+          TC_KILL = 0x0;
+	   	  asm volatile ("addi x0, x0, 0");
+   }
+}
+

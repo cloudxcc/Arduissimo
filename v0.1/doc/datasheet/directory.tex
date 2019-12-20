@@ -1,0 +1,38 @@
+\chapter{Release directory}
+
+The release on github is structured as follows:
+
+\textbf{constraints:}	Pinning constraints for the FPGA on ARTY board.
+
+\textbf{demo:}		Demo Freedom Studio software projects. With the project ''colors'', the design can be checked stand alone without additional hardware on the ARTY board. The other projects are set up to simulate virtual peripherals.
+
+\textbf{doc:}		This PDF document and Latex source for this document.
+
+\textbf{dut:}		Verilog files for the complete FPGA design.\\ 
+\textbf{dut/mem\_sim:}	Memory simulation files. Used for simulation speed-up.\\
+\textbf{dut/mem\_syn:}	Memory synthesis files. Used for synthesis.
+
+\textbf{ftdi/arty\_ftdi:} Supporting files to download ''hex'' files to the ARTY board via the FTDI chip.
+
+\textbf{sw:}		C include files for device, drivers, etc.. The file ''device.h'' lists the system registers.
+
+\textbf{testbench:}	Verilog testbench files.\\
+\textbf{testbench/testbench\_P3C4D16.v:} Regression on CUBE-V design, incl. CHStone tests.\\
+\textbf{testbench/testbench\_quad.v:} Runs regression on quad core implementation, testing the core's multithreading capabilities and interaction with peripherals.\\
+\textbf{testbench/testbench\_top.v:} Simulates the complete design, including the UART but without DCM.
+
+\textbf{tests:}		Freedom Studio software projects and C files for simulation and verification.\\
+\textbf{tests/basicC:} Just some very basic C based tests.\\
+\textbf{tests/chstone:} Self-testing CHStone tests to estimate MIPS.\\
+\textbf{tests/codeGenHex:} C file to generate tests on assembler level.\\
+\textbf{tests/drivers:} Freedom Studio software projects to test I2C, PWM, RS232 and SPI drivers.\\
+\textbf{tests/system:} Freedom Studio software projects to test system level features.
+
+\textbf{vivado:}		Vivado project directory.\\
+\textbf{vivado/bit:}		Precompiled ''bit'' file of the design.\\
+\textbf{vivado/fpga\_top:} Syntheses and simulation project for top level.\\
+\textbf{vivado/simuate\_quad:} Simulation project on quad-core level.\\
+\textbf{vivado/simulate\_cubev:} Simulation project on CUBE-V level.
+
+\textbf{work:} 		Makefile to compile ''elf'' file to ''hex'' files and to generate assembler test.
+

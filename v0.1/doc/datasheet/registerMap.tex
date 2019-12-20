@@ -1,0 +1,203 @@
+\chapter{Register map}
+\label{atomics}
+
+This section gives an overview of the register map. The same information is provided in the \$project/sw/include/device.h file.
+
+These core specific register maps apply to each core 0,..,3:
+
+\vspace{-0.6in}
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+	\begin{tabular}{l | l}
+		Register Name & Address\\ \hline \hline
+		TC\_START          & 0x80000000\\
+TC\_KILL           & 0x80000004\\
+TC\_SAK            & 0x80000008\\
+CA\_COM            & 0x80001000\\
+CA\_ET             & 0x80001004\\
+CA\_CT             & 0x80001008\\
+GPIO\_EVENT\_ADD    & 0x80031000\\
+	\end{tabular}
+\end{center}
+\end{small}
+	}
+	\caption{Core specific registers.}
+	\label{register_map_0}
+\end{table}
+
+Core 0 can access the UART:
+
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+	\begin{tabular}{l | l}
+		Register Name & Address\\ \hline \hline
+UART\_SEND         & 0x80020000\\
+UART\_TX\_COM       & 0x80020010\\
+UART\_REC          & 0x80020020\\
+UART\_RX\_COM       & 0x80020030\\
+	\end{tabular}
+\end{center}
+\end{small}
+	}
+	\caption{UART registers accessable by core 0 only.}
+	\label{register_map_1}
+\end{table}
+
+\vspace{2in}
+The following registers can be accessed by any core related to its identifier:
+
+\vspace{-3in}
+\begin{table}[h]
+	{
+		\begin{small}
+             \begin{center}
+	\begin{tabular}{l | l}
+		Register Name & Address\\ \hline \hline
+MP\_OUT\_0          & 0x80040000\\
+MP\_OUT\_1          & 0x80040004\\
+MP\_OUT\_2          & 0x80040008\\
+MP\_OUT\_3          & 0x8004000c\\
+MP\_IN\_0           & 0x80040010\\
+MP\_IN\_1           & 0x80040014\\
+MP\_IN\_2           & 0x80040018\\
+MP\_IN\_3           & 0x8004001c\\
+MP\_COM\_0          & 0x80040020\\
+MP\_COM\_1          & 0x80040024\\
+MP\_COM\_2          & 0x80040028\\
+MP\_COM\_3          & 0x8004002c\\
+	\end{tabular}
+\end{center}
+		\end{small}
+	}
+	\caption{Message passing registers.}
+	\label{register_map_2}
+\end{table}
+
+\indent \space \\
+\indent \space \\
+
+\vspace{10in}
+The following GPIO registers can be accessed by any core:
+
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+	\begin{tabular}{l | l}
+		Register Name & Address\\ \hline \hline
+GPIO\_0\_DIR\_CLR    & 0x80030000\\
+GPIO\_0\_DIR\_SET    & 0x80030004\\
+GPIO\_0\_OUT\_CLR    & 0x80030010\\
+GPIO\_0\_OUT\_SET    & 0x80030014\\
+GPIO\_0\_IN         & 0x80030020\\
+GPIO\_0\_LVL0       & 0x80030030\\
+GPIO\_0\_LVL1       & 0x80030034\\
+GPIO\_0\_CAP        & 0x80030040\\
+GPIO\_1\_DIR\_CLR    & 0x80030100\\
+GPIO\_1\_DIR\_SET    & 0x80030104\\
+GPIO\_1\_OUT\_CLR    & 0x80030110\\
+GPIO\_1\_OUT\_SET    & 0x80030114\\
+GPIO\_1\_IN         & 0x80030120\\
+GPIO\_1\_LVL0       & 0x80030130\\
+GPIO\_1\_LVL1       & 0x80030134\\
+GPIO\_1\_CAP        & 0x80030140\\
+GPIO\_2\_DIR\_CLR    & 0x80030200\\
+GPIO\_2\_DIR\_SET    & 0x80030204\\
+GPIO\_2\_OUT\_CLR    & 0x80030210\\
+GPIO\_2\_OUT\_SET    & 0x80030214\\
+GPIO\_2\_IN         & 0x80030220\\
+GPIO\_2\_LVL0       & 0x80030230\\
+GPIO\_2\_LVL1       & 0x80030234\\
+GPIO\_3\_DIR\_CLR    & 0x80030300\\
+GPIO\_3\_DIR\_SET    & 0x80030304\\
+GPIO\_3\_OUT\_CLR    & 0x80030310\\
+GPIO\_3\_OUT\_SET    & 0x80030314\\
+GPIO\_3\_IN         & 0x80030320\\
+GPIO\_3\_LVL0       & 0x80030330\\
+GPIO\_3\_LVL1       & 0x80030334\\
+GPIO\_4\_DIR\_CLR    & 0x80030400\\
+GPIO\_4\_DIR\_SET    & 0x80030404\\
+GPIO\_4\_OUT\_CLR    & 0x80030410\\
+GPIO\_4\_OUT\_SET    & 0x80030414\\
+GPIO\_4\_IN         & 0x80030420\\
+GPIO\_4\_LVL0       & 0x80030430\\
+GPIO\_4\_LVL1       & 0x80030434\\
+	\end{tabular}
+\end{center}
+\end{small}
+}
+\caption{GPIO registers part I.}
+\label{register_map_3}
+\end{table}
+
+\vspace{-0.2in}
+\begin{table}[h]
+	{
+		\begin{small}
+			\begin{center}
+				\begin{tabular}{l | l}
+					Register Name & Address\\ \hline \hline
+GPIO\_5\_DIR\_CLR    & 0x80030500\\
+GPIO\_5\_DIR\_SET    & 0x80030504\\
+GPIO\_5\_OUT\_CLR    & 0x80030510\\
+GPIO\_5\_OUT\_SET    & 0x80030514\\
+GPIO\_5\_IN         & 0x80030520\\
+GPIO\_5\_LVL0       & 0x80030530\\
+GPIO\_5\_LVL1       & 0x80030534\\
+GPIO\_6\_DIR\_CLR    & 0x80030600\\
+GPIO\_6\_DIR\_SET    & 0x80030604\\
+GPIO\_6\_OUT\_CLR    & 0x80030610\\
+GPIO\_6\_OUT\_SET    & 0x80030614\\
+GPIO\_6\_IN         & 0x80030620\\
+GPIO\_6\_LVL0       & 0x80030630\\
+GPIO\_6\_LVL1       & 0x80030634\\
+GPIO\_7\_DIR\_CLR    & 0x80030700\\
+GPIO\_7\_DIR\_SET    & 0x80030704\\
+GPIO\_7\_OUT\_CLR    & 0x80030710\\
+GPIO\_7\_OUT\_SET    & 0x80030714\\
+GPIO\_7\_IN         & 0x80030720\\
+GPIO\_7\_LVL0       & 0x80030730\\
+GPIO\_7\_LVL1       & 0x80030734\\
+GPIO\_8\_DIR\_CLR    & 0x80030800\\
+GPIO\_8\_DIR\_SET    & 0x80030804\\
+GPIO\_8\_OUT\_CLR    & 0x80030810\\
+GPIO\_8\_OUT\_SET    & 0x80030814\\
+GPIO\_8\_IN         & 0x80030820\\
+GPIO\_8\_LVL0       & 0x80030830\\
+GPIO\_8\_LVL1       & 0x80030834\\
+GPIO\_9\_DIR\_CLR    & 0x80030900\\
+GPIO\_9\_DIR\_SET    & 0x80030904\\
+GPIO\_9\_OUT\_CLR    & 0x80030910\\
+GPIO\_9\_OUT\_SET    & 0x80030914\\
+GPIO\_9\_IN         & 0x80030920\\
+GPIO\_10\_DIR\_CLR   & 0x80030A00\\
+GPIO\_10\_DIR\_SET   & 0x80030A04\\
+GPIO\_10\_OUT\_CLR   & 0x80030A10\\
+GPIO\_10\_OUT\_SET   & 0x80030A14\\
+GPIO\_10\_IN        & 0x80030A20\\
+GPIO\_11\_DIR\_CLR   & 0x80030B00\\
+GPIO\_11\_DIR\_SET   & 0x80030B04\\
+GPIO\_11\_OUT\_CLR   & 0x80030B10\\
+GPIO\_11\_OUT\_SET   & 0x80030B14\\
+GPIO\_11\_IN        & 0x80030B20\\
+GPIO\_12\_DIR\_CLR   & 0x80030C00\\
+GPIO\_12\_DIR\_SET   & 0x80030C04\\
+GPIO\_12\_OUT\_CLR   & 0x80030C10\\
+GPIO\_12\_OUT\_SET   & 0x80030C14\\
+GPIO\_12\_IN        & 0x80030C20\\
+GPIO\_13\_DIR\_CLR   & 0x80030D00\\
+GPIO\_13\_DIR\_SET   & 0x80030D04\\
+GPIO\_13\_OUT\_CLR   & 0x80030D10\\
+GPIO\_13\_OUT\_SET   & 0x80030D14\\
+GPIO\_13\_IN        & 0x80030D20\\
+	\end{tabular}
+\end{center}
+		\end{small}
+	}
+	\caption{GPIO registers part II.}
+	\label{register_map_4}
+\end{table}
